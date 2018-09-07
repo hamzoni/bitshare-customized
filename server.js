@@ -1,5 +1,5 @@
-var phttp = 6011;
-var phttps = 6012;
+var phttp = 6001;
+var phttps = 6002;
 
 var path = require("path");
 var webpack = require("webpack");
