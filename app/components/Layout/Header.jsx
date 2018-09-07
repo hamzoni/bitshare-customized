@@ -1,14 +1,10 @@
 import React from "react";
-import {Link} from "react-router-dom";
 import {connect} from "alt-react";
-import ActionSheet from "react-foundation-apps/src/action-sheet";
 import AccountActions from "actions/AccountActions";
 import AccountStore from "stores/AccountStore";
 import SettingsStore from "stores/SettingsStore";
 import SettingsActions from "actions/SettingsActions";
 import ZfApi from "react-foundation-apps/src/utils/foundation-api";
-import SendModal from "../Modal/SendModal";
-import DepositModal from "../Modal/DepositModal";
 import GatewayStore from "stores/GatewayStore";
 import Icon from "../Icon/Icon";
 import Translate from "react-translate-component";
@@ -22,23 +18,12 @@ import TotalBalanceValue from "../Utility/TotalBalanceValue";
 import ReactTooltip from "react-tooltip";
 import {Apis} from "bitsharesjs-ws";
 import notify from "actions/NotificationActions";
-import AccountImage from "../Account/AccountImage";
 import {ChainStore} from "bitsharesjs";
-import WithdrawModal from "../Modal/WithdrawModalNew";
 import {List} from "immutable";
-import DropDownMenu from "./HeaderDropdown";
 import {withRouter} from "react-router-dom";
 
 import {getLogo} from "branding";
 var logo = getLogo();
-
-// const FlagImage = ({flag, width = 20, height = 20}) => {
-//     return <img height={height} width={width} src={`${__BASE_URL__}language-dropdown/${flag.toUpperCase()}.png`} />;
-// };
-
-const SUBMENUS = {
-    SETTINGS: "SETTINGS"
-};
 
 class Header extends React.Component {
     constructor(props) {
@@ -51,14 +36,8 @@ class Header extends React.Component {
         };
 
         this.unlisten = null;
-        this._toggleAccountDropdownMenu = this._toggleAccountDropdownMenu.bind(
-            this
-        );
-        this._toggleDropdownMenu = this._toggleDropdownMenu.bind(this);
         this._closeDropdown = this._closeDropdown.bind(this);
         this._closeDropdownSubmenu = this._closeDropdownSubmenu.bind(this);
-        this._toggleDropdownSubmenu = this._toggleDropdownSubmenu.bind(this);
-        this._closeMenuDropdown = this._closeMenuDropdown.bind(this);
         this._closeAccountsListDropdown = this._closeAccountsListDropdown.bind(
             this
         );
@@ -107,9 +86,6 @@ class Header extends React.Component {
             nextProps.currentLocale !== this.props.currentLocale ||
             nextState.active !== this.state.active ||
             nextState.hiddenAssets !== this.props.hiddenAssets ||
-            nextState.dropdownActive !== this.state.dropdownActive ||
-            nextState.dropdownSubmenuActive !==
-                this.state.dropdownSubmenuActive ||
             nextState.accountsListDropdownActive !==
                 this.state.accountsListDropdownActive ||
             nextProps.height !== this.props.height ||
@@ -230,33 +206,6 @@ class Header extends React.Component {
         }
     }
 
-    _toggleAccountDropdownMenu() {
-        // prevent state toggling if user cannot have multiple accounts
-
-        const hasLocalWallet = !!WalletDb.getWallet();
-
-        if (!hasLocalWallet) return false;
-
-        this.setState({
-            accountsListDropdownActive: !this.state.accountsListDropdownActive
-        });
-    }
-
-    _toggleDropdownSubmenu(item = this.state.dropdownSubmenuActiveItem, e) {
-        if (e) e.stopPropagation();
-
-        this.setState({
-            dropdownSubmenuActive: !this.state.dropdownSubmenuActive,
-            dropdownSubmenuActiveItem: item
-        });
-    }
-
-    _toggleDropdownMenu() {
-        this.setState({
-            dropdownActive: !this.state.dropdownActive
-        });
-    }
-
     onBodyClick(e) {
         let el = e.target;
         let insideMenuDropdown = false;
@@ -289,28 +238,10 @@ class Header extends React.Component {
 
     render() {
         let {active} = this.state;
-        let {
-            currentAccount,
-            starredAccounts,
-            passwordLogin,
-            passwordAccount,
-            height
-        } = this.props;
+        let {currentAccount, starredAccounts} = this.props;
 
         let tradingAccounts = AccountStore.getMyAccounts();
-        let maxHeight = Math.max(40, height - 67 - 36) + "px";
-
         const a = ChainStore.getAccount(currentAccount);
-        const showAccountLinks = !!a;
-        const isMyAccount = !a
-            ? false
-            : AccountStore.isMyAccount(a) ||
-              (passwordLogin && currentAccount === passwordAccount);
-        const enableDepositWithdraw =
-            !!a &&
-            Apis.instance() &&
-            Apis.instance().chain_id &&
-            Apis.instance().chain_id.substr(0, 8) === "4018d784";
 
         if (starredAccounts.size) {
             for (let i = tradingAccounts.length - 1; i >= 0; i--) {
@@ -325,24 +256,6 @@ class Header extends React.Component {
             });
         }
 
-        let myAccounts = AccountStore.getMyAccounts();
-        let myAccountCount = myAccounts.length;
-
-        let walletBalance =
-            myAccounts.length && this.props.currentAccount ? (
-                <div
-                    className="total-value"
-                    onClick={this._toggleAccountDropdownMenu}
-                >
-                    <TotalBalanceValue.AccountWrapper
-                        hiddenAssets={this.props.hiddenAssets}
-                        accounts={List([this.props.currentAccount])}
-                        noTip
-                        style={{minHeight: 15}}
-                    />
-                </div>
-            ) : null;
-
         let dashboard = (
             <a
                 className={cnames("logo", {
@@ -356,175 +269,9 @@ class Header extends React.Component {
                 <img style={{margin: 0, height: 40}} src={logo} />
             </a>
         );
-
-        let createAccountLink =
-            myAccountCount === 0 ? (
-                <ActionSheet.Button title="" setActiveState={() => {}}>
-                    <a
-                        className="button create-account"
-                        onClick={this._onNavigate.bind(this, "/create-account")}
-                        style={{padding: "1rem", border: "none"}}
-                    >
-                        <Icon
-                            className="icon-14px"
-                            name="user"
-                            title="icons.user.create_account"
-                        />{" "}
-                        <Translate content="header.create_account" />
-                    </a>
-                </ActionSheet.Button>
-            ) : null;
-
-        // let lock_unlock = ((!!this.props.current_wallet) || passwordLogin) ? (
-        //     <div className="grp-menu-item" >
-        //     { this.props.locked ?
-        //         <a style={{padding: "1rem"}} href onClick={this._toggleLock.bind(this)} data-class="unlock-tooltip" data-offset="{'left': 50}" data-tip={locked_tip} data-place="bottom" data-html><Icon className="icon-14px" name="locked" title="icons.locked.common" /></a>
-        //         : <a style={{padding: "1rem"}} href onClick={this._toggleLock.bind(this)} data-class="unlock-tooltip" data-offset="{'left': 50}" data-tip={unlocked_tip} data-place="bottom" data-html><Icon className="icon-14px" name="unlocked" title="icons.unlocked.common" /></a> }
-        //     </div>
-        // ) : null;
-
-        let tradeUrl = this.props.lastMarket
-            ? `/market/${this.props.lastMarket}`
-            : "/market/USD_BTS";
-
-        // Account selector: Only active inside the exchange
-        let account_display_name, accountsList;
-        if (currentAccount) {
-            account_display_name =
-                currentAccount.length > 20
-                    ? `${currentAccount.slice(0, 20)}..`
-                    : currentAccount;
-            if (tradingAccounts.indexOf(currentAccount) < 0 && isMyAccount) {
-                tradingAccounts.push(currentAccount);
-            }
-            if (tradingAccounts.length >= 1) {
-                accountsList = tradingAccounts
-                    .sort()
-                    .filter(name => name !== currentAccount)
-                    .map(name => {
-                        return (
-                            <li
-                                key={name}
-                                className={cnames({
-                                    active:
-                                        active
-                                            .replace("/account/", "")
-                                            .indexOf(name) === 0
-                                })}
-                                onClick={this._accountClickHandler.bind(
-                                    this,
-                                    name
-                                )}
-                            >
-                                <div
-                                    style={{paddingTop: 0}}
-                                    className="table-cell"
-                                >
-                                    <AccountImage
-                                        style={{position: "relative", top: 4}}
-                                        size={{height: 20, width: 20}}
-                                        account={name}
-                                    />
-                                </div>
-                                <div
-                                    className="table-cell"
-                                    style={{paddingLeft: 10}}
-                                >
-                                    <a
-                                        className={
-                                            "text lower-case" +
-                                            (name === account_display_name
-                                                ? " current-account"
-                                                : "")
-                                        }
-                                    >
-                                        {name}
-                                    </a>
-                                </div>
-                            </li>
-                        );
-                    });
-            }
-        }
-
-        let hamburger = this.state.dropdownActive ? (
-            <Icon
-                className="icon-14px"
-                name="hamburger-x"
-                title="icons.hamburger_x"
-            />
-        ) : (
-            <Icon
-                className="icon-14px"
-                name="hamburger"
-                title="icons.hamburger"
-            />
-        );
-        const hasLocalWallet = !!WalletDb.getWallet();
-
         /* Dynamic Menu Item */
         let dynamicMenuItem;
-        if (active.indexOf("transfer") !== -1) {
-            dynamicMenuItem = (
-                <a style={{flexFlow: "row"}} className={cnames({active: true})}>
-                    <Icon
-                        size="1_5x"
-                        style={{position: "relative", top: 0, left: -8}}
-                        name="transfer"
-                        title="icons.transfer"
-                    />
-                    <Translate
-                        className="column-hide-small"
-                        component="span"
-                        content="header.payments"
-                    />
-                </a>
-            );
-        }
-        if (active.indexOf("settings") !== -1) {
-            dynamicMenuItem = (
-                <a
-                    style={{flexFlow: "row"}}
-                    className={cnames({
-                        active: active.indexOf("settings") !== -1
-                    })}
-                >
-                    <Icon
-                        size="1_5x"
-                        style={{position: "relative", top: 0, left: -8}}
-                        name="cogs"
-                        title="icons.cogs"
-                    />
-                    <Translate
-                        className="column-hide-small"
-                        component="span"
-                        content="header.settings"
-                    />
-                </a>
-            );
-        }
-        if (active.indexOf("deposit-withdraw") !== -1) {
-            dynamicMenuItem = (
-                <a
-                    style={{flexFlow: "row"}}
-                    className={cnames({
-                        active: active.indexOf("deposit-withdraw") !== -1
-                    })}
-                >
-                    <Icon
-                        size="1_5x"
-                        style={{position: "relative", top: 0, left: -8}}
-                        name="deposit"
-                        title="icons.deposit.deposit_withdraw"
-                    />
-                    <Translate
-                        className="column-hide-small"
-                        component="span"
-                        content="header.deposit-withdraw"
-                    />
-                </a>
-            );
-        }
+
         if (active.indexOf("news") !== -1) {
             dynamicMenuItem = (
                 <a
@@ -565,28 +312,7 @@ class Header extends React.Component {
                 </a>
             );
         }
-        if (active.indexOf("/voting") !== -1) {
-            dynamicMenuItem = (
-                <a
-                    style={{flexFlow: "row"}}
-                    className={cnames({
-                        active: active.indexOf("/voting") !== -1
-                    })}
-                >
-                    <Icon
-                        size="1_5x"
-                        style={{position: "relative", top: 0, left: -8}}
-                        name="thumbs-up"
-                        title="icons.thumbs_up"
-                    />
-                    <Translate
-                        className="column-hide-small"
-                        component="span"
-                        content="account.voting"
-                    />
-                </a>
-            );
-        }
+
         if (
             active.indexOf("/assets") !== -1 &&
             active.indexOf("explorer") === -1
@@ -723,149 +449,6 @@ class Header extends React.Component {
             );
         }
 
-        const submenus = {
-            [SUBMENUS.SETTINGS]: (
-                <ul
-                    className="dropdown header-menu header-submenu"
-                    style={{
-                        left: -200,
-                        top: 64,
-                        maxHeight: !this.state.dropdownActive ? 0 : maxHeight,
-                        overflowY: "auto"
-                    }}
-                >
-                    <li
-                        className="divider parent-item"
-                        onClick={this._toggleDropdownSubmenu.bind(
-                            this,
-                            undefined
-                        )}
-                    >
-                        <div className="table-cell">
-                            <span className="parent-item-icon">&lt;</span>
-                            <Translate
-                                content="header.settings"
-                                component="span"
-                                className="parent-item-name"
-                            />
-                        </div>
-                    </li>
-                    <li
-                        onClick={this._onNavigate.bind(
-                            this,
-                            "/settings/general"
-                        )}
-                    >
-                        <Translate
-                            content="settings.general"
-                            component="div"
-                            className="table-cell"
-                        />
-                    </li>
-                    {!this.props.settings.get("passwordLogin") && (
-                        <li
-                            onClick={this._onNavigate.bind(
-                                this,
-                                "/settings/wallet"
-                            )}
-                        >
-                            <Translate
-                                content="settings.wallet"
-                                component="div"
-                                className="table-cell"
-                            />
-                        </li>
-                    )}
-                    <li
-                        onClick={this._onNavigate.bind(
-                            this,
-                            "/settings/accounts"
-                        )}
-                    >
-                        <Translate
-                            content="settings.accounts"
-                            component="div"
-                            className="table-cell"
-                        />
-                    </li>
-
-                    {!this.props.settings.get("passwordLogin") && [
-                        <li
-                            key={"settings.password"}
-                            onClick={this._onNavigate.bind(
-                                this,
-                                "/settings/password"
-                            )}
-                        >
-                            <Translate
-                                content="settings.password"
-                                component="div"
-                                className="table-cell"
-                            />
-                        </li>,
-                        <li
-                            key={"settings.backup"}
-                            onClick={this._onNavigate.bind(
-                                this,
-                                "/settings/backup"
-                            )}
-                        >
-                            <Translate
-                                content="settings.backup"
-                                component="div"
-                                className="table-cell"
-                            />
-                        </li>
-                    ]}
-                    <li
-                        onClick={this._onNavigate.bind(
-                            this,
-                            "/settings/restore"
-                        )}
-                    >
-                        <Translate
-                            content="settings.restore"
-                            component="div"
-                            className="table-cell"
-                        />
-                    </li>
-                    <li
-                        onClick={this._onNavigate.bind(
-                            this,
-                            "/settings/access"
-                        )}
-                    >
-                        <Translate
-                            content="settings.access"
-                            component="div"
-                            className="table-cell"
-                        />
-                    </li>
-                    <li
-                        onClick={this._onNavigate.bind(
-                            this,
-                            "/settings/faucet_address"
-                        )}
-                    >
-                        <Translate
-                            content="settings.faucet_address"
-                            component="div"
-                            className="table-cell"
-                        />
-                    </li>
-                    <li
-                        onClick={this._onNavigate.bind(this, "/settings/reset")}
-                    >
-                        <Translate
-                            content="settings.reset"
-                            component="div"
-                            className="table-cell"
-                        />
-                    </li>
-                </ul>
-            )
-        };
-
         return (
             <div className="header-container" style={{minHeight: "64px"}}>
                 <div>
@@ -919,87 +502,6 @@ class Header extends React.Component {
 
                         <ul className="menu-bar">
                             <li>{dashboard}</li>
-                            {!currentAccount || !!createAccountLink ? null : (
-                                <li>
-                                    <Link
-                                        style={{flexFlow: "row"}}
-                                        to={`/account/${currentAccount}`}
-                                        className={cnames({
-                                            active:
-                                                active.indexOf("account/") !==
-                                                    -1 &&
-                                                active.indexOf("/account/") !==
-                                                    -1 &&
-                                                active.indexOf("/assets") ===
-                                                    -1 &&
-                                                active.indexOf("/voting") ===
-                                                    -1 &&
-                                                active.indexOf(
-                                                    "/signedmessages"
-                                                ) === -1 &&
-                                                active.indexOf(
-                                                    "/member-stats"
-                                                ) === -1 &&
-                                                active.indexOf("/vesting") ===
-                                                    -1 &&
-                                                active.indexOf("/whitelist") ===
-                                                    -1 &&
-                                                active.indexOf(
-                                                    "/permissions"
-                                                ) === -1
-                                        })}
-                                    >
-                                        <Icon
-                                            size="1_5x"
-                                            style={{
-                                                position: "relative",
-                                                top: -2,
-                                                left: -8
-                                            }}
-                                            name="dashboard"
-                                            title="icons.dashboard"
-                                        />
-                                        <Translate
-                                            className="column-hide-small"
-                                            content="header.dashboard"
-                                        />
-                                    </Link>
-                                </li>
-                            )}
-                            <li>
-                                <a
-                                    style={{flexFlow: "row"}}
-                                    className={cnames(
-                                        active.indexOf("market/") !== -1
-                                            ? null
-                                            : "column-hide-xxs",
-                                        {
-                                            active:
-                                                active.indexOf("market/") !== -1
-                                        }
-                                    )}
-                                    onClick={this._onNavigate.bind(
-                                        this,
-                                        tradeUrl
-                                    )}
-                                >
-                                    <Icon
-                                        size="1_5x"
-                                        style={{
-                                            position: "relative",
-                                            top: -2,
-                                            left: -8
-                                        }}
-                                        name="trade"
-                                        title="icons.trade.exchange"
-                                    />
-                                    <Translate
-                                        className="column-hide-small"
-                                        component="span"
-                                        content="header.exchange"
-                                    />
-                                </a>
-                            </li>
                             <li>
                                 <a
                                     style={{flexFlow: "row"}}
@@ -1035,28 +537,6 @@ class Header extends React.Component {
                                     />
                                 </a>
                             </li>
-                            {!!createAccountLink ? null : (
-                                <li className="column-hide-small">
-                                    <a
-                                        style={{flexFlow: "row"}}
-                                        onClick={this._showSend.bind(this)}
-                                    >
-                                        <Icon
-                                            size="1_5x"
-                                            style={{
-                                                position: "relative",
-                                                top: 0,
-                                                left: -8
-                                            }}
-                                            name="transfer"
-                                            title="icons.transfer"
-                                        />
-                                        <span>
-                                            <Translate content="header.payments" />
-                                        </span>
-                                    </a>
-                                </li>
-                            )}
                             {/* Dynamic Menu Item */}
                             <li>{dynamicMenuItem}</li>
                         </ul>
@@ -1067,55 +547,7 @@ class Header extends React.Component {
                     className="truncated active-account"
                     style={{cursor: "pointer"}}
                 >
-                    <div
-                        className="text account-name"
-                        onClick={this._toggleAccountDropdownMenu}
-                    >
-                        {currentAccount}
-                    </div>
-                    {walletBalance}
-
-                    {hasLocalWallet && (
-                        <ul
-                            className="dropdown header-menu local-wallet-menu"
-                            style={{
-                                right: 0,
-                                maxHeight: !this.state
-                                    .accountsListDropdownActive
-                                    ? 0
-                                    : maxHeight,
-                                overflowY: "auto",
-                                position: "absolute",
-                                width: "20em"
-                            }}
-                        >
-                            <li
-                                className={cnames(
-                                    {
-                                        active:
-                                            active.indexOf("/accounts") !== -1
-                                    },
-                                    "divider"
-                                )}
-                                onClick={this._onNavigate.bind(
-                                    this,
-                                    "/accounts"
-                                )}
-                            >
-                                <div className="table-cell">
-                                    <Icon
-                                        size="2x"
-                                        name="people"
-                                        title="icons.manage_accounts"
-                                    />
-                                </div>
-                                <div className="table-cell">
-                                    <Translate content="header.accounts_manage" />
-                                </div>
-                            </li>
-                            {accountsList}
-                        </ul>
-                    )}
+                    <div className="text account-name">{currentAccount}</div>
                 </div>
                 <div>
                     {this.props.currentAccount == null ? null : (
@@ -1136,102 +568,49 @@ class Header extends React.Component {
                         </span>
                     )}
                 </div>
-                <div className="app-menu">
-                    <div
-                        onClick={this._toggleDropdownMenu}
-                        className={cnames(
-                            "menu-dropdown-wrapper dropdown-wrapper",
-                            {active: this.state.dropdownActive}
-                        )}
-                    >
-                        <div className="hamburger">{hamburger}</div>
-
-                        {(this.state.dropdownSubmenuActive &&
-                            submenus[this.state.dropdownSubmenuActiveItem] &&
-                            submenus[this.state.dropdownSubmenuActiveItem]) || (
-                            <DropDownMenu
-                                dropdownActive={this.state.dropdownActive}
-                                toggleLock={this._toggleLock.bind(this)}
-                                maxHeight={maxHeight}
-                                locked={this.props.locked}
-                                active={active}
-                                passwordLogin={passwordLogin}
-                                onNavigate={this._onNavigate.bind(this)}
-                                isMyAccount={isMyAccount}
-                                contacts={this.props.contacts}
-                                showAccountLinks={showAccountLinks}
-                                tradeUrl={tradeUrl}
-                                currentAccount={currentAccount}
-                                enableDepositWithdraw={enableDepositWithdraw}
-                                showDeposit={this._showDeposit.bind(this)}
-                                showWithdraw={this._showWithdraw.bind(this)}
-                                toggleDropdownSubmenu={this._toggleDropdownSubmenu.bind(
-                                    this,
-                                    SUBMENUS.SETTINGS
-                                )}
-                            />
-                        )}
-                    </div>
-                </div>
-                <SendModal
-                    id="send_modal_header"
-                    refCallback={e => {
-                        if (e) this.send_modal = e;
-                    }}
-                    from_name={currentAccount}
-                />
-
-                <DepositModal
-                    ref="deposit_modal_new"
-                    modalId="deposit_modal_new"
-                    account={currentAccount}
-                    backedCoins={this.props.backedCoins}
-                />
-                <WithdrawModal
-                    ref="withdraw_modal_new"
-                    modalId="withdraw_modal_new"
-                    backedCoins={this.props.backedCoins}
-                />
             </div>
         );
     }
 }
 
-Header = connect(Header, {
-    listenTo() {
-        return [
-            AccountStore,
-            WalletUnlockStore,
-            WalletManagerStore,
-            SettingsStore,
-            GatewayStore
-        ];
-    },
-    getProps() {
-        const chainID = Apis.instance().chain_id;
-        return {
-            backedCoins: GatewayStore.getState().backedCoins,
-            myActiveAccounts: AccountStore.getState().myActiveAccounts,
-            currentAccount:
-                AccountStore.getState().currentAccount ||
-                AccountStore.getState().passwordAccount,
-            passwordAccount: AccountStore.getState().passwordAccount,
-            locked: WalletUnlockStore.getState().locked,
-            current_wallet: WalletManagerStore.getState().current_wallet,
-            lastMarket: SettingsStore.getState().viewSettings.get(
-                `lastMarket${chainID ? "_" + chainID.substr(0, 8) : ""}`
-            ),
-            starredAccounts: AccountStore.getState().starredAccounts,
-            passwordLogin: SettingsStore.getState().settings.get(
-                "passwordLogin"
-            ),
-            currentLocale: SettingsStore.getState().settings.get("locale"),
-            hiddenAssets: SettingsStore.getState().hiddenAssets,
-            settings: SettingsStore.getState().settings,
-            locales: SettingsStore.getState().defaults.locale,
-            contacts: AccountStore.getState().accountContacts
-        };
+Header = connect(
+    Header,
+    {
+        listenTo() {
+            return [
+                AccountStore,
+                WalletUnlockStore,
+                WalletManagerStore,
+                SettingsStore,
+                GatewayStore
+            ];
+        },
+        getProps() {
+            const chainID = Apis.instance().chain_id;
+            return {
+                backedCoins: GatewayStore.getState().backedCoins,
+                myActiveAccounts: AccountStore.getState().myActiveAccounts,
+                currentAccount:
+                    AccountStore.getState().currentAccount ||
+                    AccountStore.getState().passwordAccount,
+                passwordAccount: AccountStore.getState().passwordAccount,
+                locked: WalletUnlockStore.getState().locked,
+                current_wallet: WalletManagerStore.getState().current_wallet,
+                lastMarket: SettingsStore.getState().viewSettings.get(
+                    `lastMarket${chainID ? "_" + chainID.substr(0, 8) : ""}`
+                ),
+                starredAccounts: AccountStore.getState().starredAccounts,
+                passwordLogin: SettingsStore.getState().settings.get(
+                    "passwordLogin"
+                ),
+                currentLocale: SettingsStore.getState().settings.get("locale"),
+                hiddenAssets: SettingsStore.getState().hiddenAssets,
+                settings: SettingsStore.getState().settings,
+                locales: SettingsStore.getState().defaults.locale,
+                contacts: AccountStore.getState().accountContacts
+            };
+        }
     }
-});
+);
 
 export default withRouter(Header);
