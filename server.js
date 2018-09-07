@@ -1,3 +1,6 @@
+var phttp = 6011;
+var phttps = 6012;
+
 var path = require("path");
 var webpack = require("webpack");
 var express = require("express");
@@ -56,11 +59,15 @@ var options = {
     key: fs.readFileSync("./ssl/server.key"),
     cert: fs.readFileSync("./ssl/server.crt")
 };
+http.createServer(app).listen(phttp);
+https.createServer(options, app).listen(phttps);
 
-http.createServer(app).listen(8080);
-https.createServer(options, app).listen(8085);
+console.log(
+    "Listening at http://localhost:%s/ or https://localhost:%s/",
+    phttp,
+    phttps
+);
 
-console.log("Listening at http://localhost:8080/ or https://localhost:8085/");
 // new WebpackDevServer(compiler, {
 //     publicPath: config.output.publicPath,
 //     hot: true,
