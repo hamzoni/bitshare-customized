@@ -39,10 +39,6 @@ app.use(
 
 app.use(hotMiddleware(compiler));
 
-// app.get("*", function(req, res) {
-//     res.sendFile(path.join(__dirname, "app/assets/index.html"));
-// });
-
 app.use("*", function(req, res, next) {
     var filename = path.join(compiler.outputPath, "index.html");
     compiler.outputFileSystem.readFile(filename, function(err, result) {
@@ -67,17 +63,3 @@ console.log(
     phttp,
     phttps
 );
-
-// new WebpackDevServer(compiler, {
-//     publicPath: config.output.publicPath,
-//     hot: true,
-//     historyApiFallback: true,
-//     quiet: false,
-//     stats: {colors: true},
-//     port: 8080
-// }).listen(8080, '0.0.0.0', function (err, result) {
-//     if (err) {
-//         console.log(err);
-//     }
-//     console.log('Listening at 0.0.0.0:8080');
-// });
