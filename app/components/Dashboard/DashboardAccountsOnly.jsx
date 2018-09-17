@@ -153,24 +153,6 @@ class Accounts extends React.Component {
                         segmented={false}
                         tabsClass="account-overview no-padding bordered-header content-block"
                     >
-                        <Tab title="account.accounts">
-                            <div className="generic-bordered-box">
-                                <div className="box-content">
-                                    <DashboardList
-                                        accounts={Immutable.List(names)}
-                                        ignoredAccounts={Immutable.List(
-                                            ignored
-                                        )}
-                                        width={width}
-                                        onToggleIgnored={this._onToggleIgnored.bind(
-                                            this
-                                        )}
-                                        showIgnored={showIgnored}
-                                        showMyAccounts={true}
-                                    />
-                                </div>
-                            </div>
-                        </Tab>
                         <Tab title="account.contacts">
                             <div className="generic-bordered-box">
                                 <div className="box-content">
