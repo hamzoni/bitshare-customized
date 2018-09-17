@@ -374,14 +374,6 @@ class Header extends React.Component {
                 </ActionSheet.Button>
             ) : null;
 
-        // let lock_unlock = ((!!this.props.current_wallet) || passwordLogin) ? (
-        //     <div className="grp-menu-item" >
-        //     { this.props.locked ?
-        //         <a style={{padding: "1rem"}} href onClick={this._toggleLock.bind(this)} data-class="unlock-tooltip" data-offset="{'left': 50}" data-tip={locked_tip} data-place="bottom" data-html><Icon className="icon-14px" name="locked" title="icons.locked.common" /></a>
-        //         : <a style={{padding: "1rem"}} href onClick={this._toggleLock.bind(this)} data-class="unlock-tooltip" data-offset="{'left': 50}" data-tip={unlocked_tip} data-place="bottom" data-html><Icon className="icon-14px" name="unlocked" title="icons.unlocked.common" /></a> }
-        //     </div>
-        // ) : null;
-
         let tradeUrl = this.props.lastMarket
             ? `/market/${this.props.lastMarket}`
             : "/market/USD_BTS";
@@ -680,8 +672,6 @@ class Header extends React.Component {
                                     </a>
                                 </li>
                             )}
-                            {/* Dynamic Menu Item */}
-                            <li>{dynamicMenuItem}</li>
                         </ul>
                     </div>
                 </div>
