@@ -31,10 +31,6 @@ import {withRouter} from "react-router-dom";
 import {getLogo} from "branding";
 var logo = getLogo();
 
-// const FlagImage = ({flag, width = 20, height = 20}) => {
-//     return <img height={height} width={width} src={`${__BASE_URL__}language-dropdown/${flag.toUpperCase()}.png`} />;
-// };
-
 const SUBMENUS = {
     SETTINGS: "SETTINGS"
 };
