@@ -806,7 +806,10 @@
                         );
                     };
                     return i && o
-                        ? this.connect(t, e)
+                        ? this.connect(
+                              t,
+                              e
+                          )
                               .then(i)
                               .catch(function(t) {
                                   s(0, i, o);
@@ -13334,11 +13337,11 @@
                 n = {
                     address_prefix:
                         t.env.npm_config__graphene_ecc_default_address_prefix ||
-                        "GPH"
+                        "ZCOM"
                 };
             (r = {
-                core_asset: "CORE",
-                address_prefix: "GPH",
+                core_asset: "ZCOM",
+                address_prefix: "ZCOM",
                 expire_in_secs: 15,
                 expire_in_secs_proposal: 86400,
                 review_in_secs_committee: 86400,
@@ -13394,9 +13397,9 @@
                         );
                 },
                 reset: function() {
-                    (r.core_asset = "CORE"),
-                        (r.address_prefix = "GPH"),
-                        (n.address_prefix = "GPH"),
+                    (r.core_asset = "ZCOM"),
+                        (r.address_prefix = "ZCOM"),
+                        (n.address_prefix = "ZCOM"),
                         (r.expire_in_secs = 15),
                         (r.expire_in_secs_proposal = 86400),
                         console.log("Chain config reset");
@@ -13405,7 +13408,7 @@
                     var t =
                         arguments.length > 0 && void 0 !== arguments[0]
                             ? arguments[0]
-                            : "GPH";
+                            : "ZCOM";
                     (r.address_prefix = t), (n.address_prefix = t);
                 }
             }),
@@ -21245,7 +21248,7 @@
                 saveSpec: null,
                 fetchSpec: "1.4.2"
             },
-            _requiredBy: ["/bitsharesjs", "/ecurve", "/steem-js-api"],
+            _requiredBy: ["/zcomjs", "/ecurve", "/steem-js-api"],
             _resolved: "https://registry.npmjs.org/bigi/-/bigi-1.4.2.tgz",
             _spec: "1.4.2",
             _where: "/home/taquy/Projects/VueJS/wallet-bs",

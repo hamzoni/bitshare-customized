@@ -3,7 +3,7 @@ import SettingsActions from "actions/SettingsActions";
 import IntlActions from "actions/IntlActions";
 import Immutable, {fromJS} from "immutable";
 import ls from "common/localStorage";
-import {Apis} from "bitsharesjs-ws";
+import {Apis} from "zcomjs-ws";
 import {settingsAPIs} from "api/apiConfig";
 import {
     getDefaultTheme,
@@ -723,10 +723,10 @@ class SettingsStore {
     }
 
     onUpdateUnits() {
-        this.defaults.unit = getUnits(this._getChainId());
-        if (this.defaults.unit.indexOf(this.settings.get("unit")) === -1) {
-            this.settings = this.settings.set("unit", this.defaults.unit[0]);
-        }
+        // this.defaults.unit = getUnits(this._getChainId());
+        // if (this.defaults.unit.indexOf(this.settings.get("unit")) === -1) {
+        //     this.settings = this.settings.set("unit", this.defaults.unit[0]);
+        // }
     }
 }
 

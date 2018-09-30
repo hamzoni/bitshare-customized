@@ -5,10 +5,10 @@ import SettingsStore from "stores/SettingsStore";
 import Translate from "react-translate-component";
 import WebsocketAddModal from "./Settings/WebsocketAddModal";
 import SettingsActions from "actions/SettingsActions";
-import {Apis} from "bitsharesjs-ws";
+import {Apis} from "zcomjs-ws";
 import counterpart from "counterpart";
 
-const optionalApis = {enableCrypto: true, enableOrders: true};
+const optionalApis = {enableCrypto: true, enableOrders: false};
 class InitError extends React.Component {
     componentWillReceiveProps(nextProps) {
         if (
@@ -170,19 +170,22 @@ class InitError extends React.Component {
     }
 }
 
-export default connect(InitError, {
-    listenTo() {
-        return [BlockchainStore, SettingsStore];
-    },
-    getProps() {
-        return {
-            rpc_connection_status: BlockchainStore.getState()
-                .rpc_connection_status,
-            apis: SettingsStore.getState().defaults.apiServer,
-            apiServer: SettingsStore.getState().settings.get("apiServer"),
-            defaultConnection: SettingsStore.getState().defaultSettings.get(
-                "apiServer"
-            )
-        };
+export default connect(
+    InitError,
+    {
+        listenTo() {
+            return [BlockchainStore, SettingsStore];
+        },
+        getProps() {
+            return {
+                rpc_connection_status: BlockchainStore.getState()
+                    .rpc_connection_status,
+                apis: SettingsStore.getState().defaults.apiServer,
+                apiServer: SettingsStore.getState().settings.get("apiServer"),
+                defaultConnection: SettingsStore.getState().defaultSettings.get(
+                    "apiServer"
+                )
+            };
+        }
     }
-});
+);

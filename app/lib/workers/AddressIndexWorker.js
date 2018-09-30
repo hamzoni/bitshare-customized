@@ -1,4 +1,4 @@
-import {key} from "bitsharesjs";
+import {key} from "zcomjs";
 
 onmessage = function(event) {
     try {
