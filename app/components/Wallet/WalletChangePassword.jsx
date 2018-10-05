@@ -138,14 +138,12 @@ class WalletPassword extends Component {
         } else {
             return (
                 <form onSubmit={this.onPassword.bind(this)}>
-                    <label>
-                        <Translate content="wallet.existing_password" />
-                    </label>
                     <section>
                         <input
                             placeholder={counterpart.translate(
                                 "wallet.current_pass"
                             )}
+                            className="tq-input tq-setting-reset"
                             type="password"
                             id="current-password"
                             autoComplete="current-password"
@@ -153,7 +151,7 @@ class WalletPassword extends Component {
                             value={this.state.password}
                         />
                     </section>
-                    <button className="button outline">
+                    <button className="tq-btn tq-setting-reset">
                         <Translate content="wallet.submit" />
                     </button>
                 </form>

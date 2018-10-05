@@ -364,7 +364,7 @@ class Settings extends React.Component {
                     </div>
 
                     <div
-                        className="grid-content"
+                        className="grid-content tq-setting"
                         style={{
                             maxWidth: 1000
                         }}
@@ -373,11 +373,10 @@ class Settings extends React.Component {
                             {activeEntry != "access" && (
                                 <Translate
                                     unsafe
-                                    style={{paddingTop: 5, marginBottom: 30}}
                                     content={`settings.${
                                         menuEntries[activeSetting]
                                     }_text`}
-                                    className="panel-bg-color"
+                                    className="tq-label"
                                 />
                             )}
                             {entries}
