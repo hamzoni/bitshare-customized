@@ -41,253 +41,180 @@ export default class DropDownMenu extends React.Component {
         let isContact = contacts.has(currentAccount);
 
         return (
-            <ul
-                className="dropdown header-menu"
-                style={{
-                    left: -200,
-                    top: 64,
-                    maxHeight: !dropdownActive ? 0 : maxHeight,
-                    overflowY: "auto"
-                }}
-            >
-                <li className="divider" onClick={toggleLock}>
-                    <div className="table-cell">
-                        <Icon size="2x" name="power" title="icons.power" />
-                    </div>
-                    <div className="table-cell">
-                        <Translate
-                            content={`header.${
-                                this.props.locked
-                                    ? "unlock_short"
-                                    : "lock_short"
-                            }`}
-                        />
-                    </div>
-                </li>
+            <div className="dropdown">
+                <div className="dropdown-menu">
+                    <ul className="dropdown dropdown-content" style={{}}>
+                        <li className="dropdown-item" onClick={toggleLock}>
+                            <Translate
+                                content={`header.${
+                                    this.props.locked
+                                        ? "unlock_short"
+                                        : "lock_short"
+                                }`}
+                            />
+                        </li>
 
-                {locked ? (
-                    <li
-                        className={cnames({
-                            active:
-                                active.indexOf(
+                        {locked ? (
+                            <li
+                                className={
+                                    "dropdown-item " +
+                                    cnames({
+                                        active:
+                                            active.indexOf(
+                                                `/create-account/${
+                                                    !passwordLogin
+                                                        ? "wallet"
+                                                        : "password"
+                                                }`
+                                            ) !== -1
+                                    })
+                                }
+                                onClick={this.props.onNavigate.bind(
+                                    this,
                                     `/create-account/${
                                         !passwordLogin ? "wallet" : "password"
                                     }`
-                                ) !== -1
-                        })}
-                        onClick={this.props.onNavigate.bind(
-                            this,
-                            `/create-account/${
-                                !passwordLogin ? "wallet" : "password"
-                            }`
-                        )}
-                    >
-                        <div className="table-cell">
-                            <Icon
-                                size="2x"
-                                name="user"
-                                title="icons.user.create_account"
-                            />
-                        </div>
-                        <div className="table-cell">
-                            <Translate content="header.create_account" />
-                        </div>
-                    </li>
-                ) : null}
+                                )}
+                            >
+                                <Translate content="header.create_account" />
+                            </li>
+                        ) : null}
 
-                {!this.props.locked ? (
-                    <li
-                        className={cnames({
-                            active: active.indexOf("/account") !== -1
-                        })}
-                        onClick={this.props.onNavigate.bind(
-                            this,
-                            `/account/${currentAccount}`
-                        )}
-                    >
-                        <div className="table-cell">
-                            <Icon
-                                size="2x"
-                                name="dashboard"
-                                title="icons.dasboard"
-                            />
-                        </div>
-                        <div className="table-cell">
-                            <Translate content="header.dashboard" />
-                        </div>
-                    </li>
-                ) : null}
+                        {!this.props.locked ? (
+                            <li
+                                className="dropdown-item"
+                                className={cnames({
+                                    active: active.indexOf("/account") !== -1
+                                })}
+                                onClick={this.props.onNavigate.bind(
+                                    this,
+                                    `/account/${currentAccount}`
+                                )}
+                            >
+                                <Translate content="header.dashboard" />
+                            </li>
+                        ) : null}
 
-                {!isMyAccount && showAccountLinks ? (
-                    <li
-                        className="divider"
-                        onClick={this[
-                            isContact ? "_onRemoveContact" : "_onAddContact"
-                        ].bind(this)}
-                    >
-                        <div className="table-cell">
-                            <Icon
-                                size="2x"
-                                name={`${isContact ? "minus" : "plus"}-circle`}
-                                title={
+                        {!isMyAccount && showAccountLinks ? (
+                            <li
+                                className="dropdown-item"
+                                className="divider"
+                                onClick={this[
                                     isContact
-                                        ? "icons.minus_circle.remove_contact"
-                                        : "icons.plus_circle.add_contact"
-                                }
-                            />
-                        </div>
-                        <div className="table-cell">
-                            <Translate
-                                content={`account.${
-                                    isContact ? "unfollow" : "follow"
-                                }`}
-                            />
-                        </div>
-                    </li>
-                ) : null}
+                                        ? "_onRemoveContact"
+                                        : "_onAddContact"
+                                ].bind(this)}
+                            >
+                                <Translate
+                                    content={`account.${
+                                        isContact ? "unfollow" : "follow"
+                                    }`}
+                                />
+                            </li>
+                        ) : null}
 
-                <li
-                    className={cnames(
-                        {
-                            active: active.indexOf("/market/") !== -1
-                        },
-                        "column-show-small"
-                    )}
-                    onClick={this.props.onNavigate.bind(this, tradeUrl)}
-                >
-                    <div className="table-cell">
-                        <Icon
-                            size="2x"
-                            name="trade"
-                            title="icons.trade.exchange"
-                        />
-                    </div>
-                    <div className="table-cell">
-                        <Translate content="header.exchange" />
-                    </div>
-                </li>
+                        <li
+                            className="dropdown-item"
+                            className={cnames(
+                                {active: active.indexOf("/market/") !== -1},
+                                "column-show-small"
+                            )}
+                            onClick={this.props.onNavigate.bind(this, tradeUrl)}
+                        >
+                            <Translate content="header.exchange" />
+                        </li>
 
-                <li
-                    className={cnames(
-                        {
-                            active: active.indexOf("/explorer") !== -1
-                        },
-                        "column-show-small"
-                    )}
-                    onClick={this.props.onNavigate.bind(
-                        this,
-                        "/explorer/blocks"
-                    )}
-                >
-                    <div className="table-cell">
-                        <Icon size="2x" name="server" title="icons.server" />
-                    </div>
-                    <div className="table-cell">
-                        <Translate content="header.explorer" />
-                    </div>
-                </li>
+                        <li
+                            className="dropdown-item"
+                            className={cnames(
+                                {active: active.indexOf("/explorer") !== -1},
+                                "column-show-small"
+                            )}
+                            onClick={this.props.onNavigate.bind(
+                                this,
+                                "/explorer/blocks"
+                            )}
+                        >
+                            <Translate content="header.explorer" />
+                        </li>
 
-                <li
-                    className={cnames({
-                        active: active.indexOf("/transfer") !== -1,
-                        disabled: !showAccountLinks
-                    })}
-                    onClick={this.props.onNavigate.bind(this, "/transfer")}
-                >
-                    <div className="table-cell">
-                        <Icon
-                            size="2x"
-                            name="transfer"
-                            title="icons.transfer"
-                        />
-                    </div>
-                    <div className="table-cell">
-                        <Translate content="header.payments_legacy" />
-                    </div>
-                </li>
+                        <li
+                            className="dropdown-item"
+                            className={cnames({
+                                active: active.indexOf("/transfer") !== -1,
+                                disabled: !showAccountLinks
+                            })}
+                            onClick={this.props.onNavigate.bind(
+                                this,
+                                "/transfer"
+                            )}
+                        >
+                            <Translate content="header.payments_legacy" />
+                        </li>
 
-                <li
-                    className={cnames(
-                        {
-                            active: active.indexOf("/settings") !== -1
-                        },
-                        "divider",
-                        "desktop-only"
-                    )}
-                    onClick={this.props.onNavigate.bind(this, "/settings")}
-                >
-                    <div className="table-cell">
-                        <Icon size="2x" name="cogs" title="icons.cogs" />
-                    </div>
-                    <div className="table-cell">
-                        <Translate content="header.settings" />
-                    </div>
-                </li>
+                        <li
+                            className="dropdown-item"
+                            className={cnames(
+                                {active: active.indexOf("/settings") !== -1},
+                                "divider",
+                                "desktop-only"
+                            )}
+                            onClick={this.props.onNavigate.bind(
+                                this,
+                                "/settings"
+                            )}
+                        >
+                            <Translate content="header.settings" />
+                        </li>
 
-                <li
-                    className={cnames(
-                        {
-                            active: active.indexOf("/settings") !== -1
-                        },
-                        "divider",
-                        "mobile-only",
-                        "has-submenu"
-                    )}
-                    onClick={this.props.toggleDropdownSubmenu}
-                >
-                    <div className="table-cell">
-                        <Icon size="2x" name="cogs" title="icons.cogs" />
-                    </div>
-                    <div className="table-cell">
-                        <Translate content="header.settings" />{" "}
-                    </div>
-                </li>
+                        <li
+                            className="dropdown-item"
+                            className={cnames(
+                                {active: active.indexOf("/settings") !== -1},
+                                "divider",
+                                "mobile-only",
+                                "has-submenu"
+                            )}
+                            onClick={this.props.toggleDropdownSubmenu}
+                        >
+                            <Translate content="header.settings" />{" "}
+                        </li>
 
-                <li
-                    className={cnames({
-                        active: active.indexOf("/voting") !== -1,
-                        disabled: !showAccountLinks
-                    })}
-                    onClick={this.props.onNavigate.bind(
-                        this,
-                        `/account/${currentAccount}/voting`
-                    )}
-                >
-                    <div className="table-cell">
-                        <Icon
-                            size="2x"
-                            name="thumbs-up"
-                            title="icons.thumbs_up"
-                        />
-                    </div>
-                    <div className="table-cell">
-                        <Translate content="account.voting" />
-                    </div>
-                </li>
+                        <li
+                            className="dropdown-item"
+                            className={cnames({
+                                active: active.indexOf("/voting") !== -1,
+                                disabled: !showAccountLinks
+                            })}
+                            onClick={this.props.onNavigate.bind(
+                                this,
+                                `/account/${currentAccount}/voting`
+                            )}
+                        >
+                            <Translate content="account.voting" />
+                        </li>
 
-                {showAccountLinks ? (
-                    <li
-                        className={cnames(
-                            {
-                                active: active.indexOf("/accounts") !== -1
-                            },
-                            "divider"
-                        )}
-                        onClick={this.props.onNavigate.bind(this, "/accounts")}
-                    >
-                        <div className="table-cell">
-                            <Icon
-                                size="2x"
-                                name="folder"
-                                title="icons.folder"
-                            />
-                        </div>
-                        <div className="table-cell">
-                            <Translate content="explorer.accounts.title" />
-                        </div>
-                    </li>
-                ) : null}
-            </ul>
+                        {showAccountLinks ? (
+                            <li
+                                className="dropdown-item"
+                                className={cnames(
+                                    {
+                                        active:
+                                            active.indexOf("/accounts") !== -1
+                                    },
+                                    "divider"
+                                )}
+                                onClick={this.props.onNavigate.bind(
+                                    this,
+                                    "/accounts"
+                                )}
+                            >
+                                <Translate content="explorer.accounts.title" />
+                            </li>
+                        ) : null}
+                    </ul>
+                </div>
+            </div>
         );
     }
 }

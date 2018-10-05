@@ -10,8 +10,8 @@ $inactive-text-color: darken($primary-text-color, 30%);
 $link-text-color: #1ec3fa;
 $error-text-color: #ff3950;
 
-$settings-select-bg: #3f3f3f;
-$settings-select-color: darken($primary-text-color, 20%);
+$settings-select-bg: #fff;
+$settings-select-color: #000;
 $settings-api-node-border-color: #2a2a2a;
 $main-content-margin-block-bg-color: #1e1e1e;
 $bg-color: #f5f5f5;
@@ -21,9 +21,10 @@ $super-light-panel-bg-color: lighten($light-panel-bg-color, 8%);
 $settings-menu-hover-bg: #fff;
 $settings-menu-active-bg: #fff;
 $settings-menu-default-bg: #fff;
-$button-bg-color: #049cce;
+$button-bg-color: #fff;
 $secondary-button-bg-color: #999999;
 $input-background: lighten($bg-color, 1%);
+$transaction-banner-bg: #fff;
 
 $alert-color: $error-text-color;
 $info-color: #a0d3e8;
@@ -47,7 +48,7 @@ $account-green: #7ed321;
 $account-primarytext: white;
 $account-dimmed: #afafaf;
 $account-border: #323131;
-$account-background: #3f3f3f;
+$account-background: #f5f5f5;
 $account-tabs-background: #2f2f2f;
 
 $pulsate-green-start: $account-green;
@@ -63,7 +64,7 @@ $slider-thumb-color: #f00;
 
 $incognito-bg: #ff3950;
 
-$tab-content-background-color: lighten($account-header, 4%);
+$tab-content-background-color: #eee;
 $explorer-tab-content-background-color: $bg-color;
 
 // * * * Explorer

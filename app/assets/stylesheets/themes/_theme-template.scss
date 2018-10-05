@@ -95,6 +95,10 @@
         padding: 0 12px;
         background-color: $settings-select-bg;
         color: $settings-select-color;
+
+        padding: 25px 15px;
+        border-radius: 10px;
+        border: 1px solid #eee;
     }
     .settings-input {
         /* !important to overwrite styles for Inputs on User Settings. By default inputs take styles from
@@ -699,35 +703,6 @@
     div.input-wrapper {
         > div.input-right-symbol {
             color: $secondary-text-color;
-        }
-    }
-    .dropdown-wrapper {
-        > div:first-of-type {
-            color: $secondary-text-color;
-        }
-        ul.dropdown {
-            @include color($light-text-color, $super-light-panel-bg-color);
-            &::after {
-                border-bottom-color: $super-light-panel-bg-color;
-            }
-            > li > span {
-                color: $light-text-color;
-            }
-            /* Hover state */
-            li:hover > span {
-                @include color(
-                    $light-text-color,
-                    lighten($super-light-panel-bg-color, 4%)
-                );
-                color: $link-text-color;
-            }
-        }
-        &.active:after {
-            border-color: $link-text-color transparent;
-        }
-        &:after {
-            /* Little arrow */
-            border-color: $secondary-text-color transparent;
         }
     }
 
@@ -1858,6 +1833,25 @@
 
     .main-content {
         padding: 50px;
+    }
+
+    .btn-tq-transaction {
+        width: 100%;
+        padding: 1rem 2rem;
+        background: $button-bg-color;
+        border-radius: 10px;
+    }
+
+    .tq-transaction-wrapper {
+        width: 100%;
+        display: block;
+        padding: 3rem 2rem;
+        background: $transaction-banner-bg;
+        border-radius: 10px;
+    }
+
+    .columns.tq-w-100 {
+        width: 100%;
     }
 
     .tq-node-right {
