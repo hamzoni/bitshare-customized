@@ -1525,6 +1525,12 @@
         }
     }
     .api-node {
+        .api-node-left {
+            width: 60%;
+        }
+
+        position: relative;
+
         .icon.shuffle svg > path {
             fill: $button-bg-color !important;
         }
@@ -1549,10 +1555,10 @@
             transition: 0.3s;
             margin-left: 0;
             > li {
-                border-radius: 2px;
                 color: $secondary-text-color;
-                padding: 3px 11px;
-                margin: 5px;
+                background-color: $settings-menu-default-bg;
+                padding: 15px 24px;
+                margin-bottom: 1px;
                 &:hover {
                     color: $primary-text-color;
                     background-color: $settings-menu-hover-bg;
@@ -1564,6 +1570,17 @@
             }
         }
     }
+
+    .settings-menu ul li:first-child {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+
+    .settings-menu ul li:last-child {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
     .settings--notifications {
         .settings--notifications--group {
             .settings--notifications--item {
@@ -1820,21 +1837,73 @@
     span.warning {
         color: darken($warning-color, 15%);
     }
+
+    .api-node-operator {
+        width: 25%;
+        float: left;
+    }
+
+    .api-node-title {
+        float: left;
+        width: 75%;
+
+        > h3 {
+            margin: 0;
+        }
+
+        > p {
+            color: $secondary-text-color;
+        }
+    }
+
+    .main-content {
+        padding: 50px;
+    }
+
+    .tq-node-right {
+        top: 50%;
+        transform: translateY(-50%);
+        position: absolute;
+        display: block;
+
+        > .api-status {
+            display: block;
+            float: right;
+            margin-left: 30px;
+        }
+
+        > a {
+            margin-left: 30px;
+            display: block;
+            float: right;
+        }
+    }
+
     .api-status {
+        p {
+            font-weight: bold;
+        }
+
         .low {
-            color: $bid-color;
+            > p {
+                color: $bid-color;
+            }
             > svg > path {
                 fill: $bid-color;
             }
         }
         .medium {
-            color: $call-color;
+            > p {
+                color: $call-color;
+            }
             > svg > path {
                 fill: $call-color;
             }
         }
         .high {
-            color: $ask-color;
+            > p {
+                color: $ask-color;
+            }
             > svg > path {
                 fill: $ask-color;
             }

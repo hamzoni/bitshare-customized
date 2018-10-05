@@ -252,6 +252,8 @@ class Settings extends React.Component {
         let entries;
         let activeEntry = menuEntries[activeSetting] || menuEntries[0];
 
+        console.log(menuEntries);
+
         switch (activeEntry) {
             case "accounts":
                 entries = <AccountsSettings />;
@@ -337,13 +339,6 @@ class Settings extends React.Component {
                         className="grid-content shrink settings-menu"
                         style={{paddingRight: "2rem"}}
                     >
-                        <Translate
-                            style={{paddingBottom: 10, paddingLeft: 10}}
-                            component="h3"
-                            content="header.settings"
-                            className={"panel-bg-color"}
-                        />
-
                         <ul>
                             {menuEntries.map((entry, index) => {
                                 return (
@@ -375,12 +370,6 @@ class Settings extends React.Component {
                         }}
                     >
                         <div className="grid-block small-12 no-margin vertical">
-                            <Translate
-                                component="h3"
-                                content={
-                                    "settings." + menuEntries[activeSetting]
-                                }
-                            />
                             {activeEntry != "access" && (
                                 <Translate
                                     unsafe

@@ -7,6 +7,7 @@ import SyncError from "./components/SyncError";
 import LoadingIndicator from "./components/LoadingIndicator";
 import BrowserNotifications from "./components/BrowserNotifications/BrowserNotificationsContainer";
 import Header from "components/Layout/Header";
+import Subheader from "components/Layout/Subheader";
 import ReactTooltip from "react-tooltip";
 import NotificationSystem from "react-notification-system";
 import TransactionConfirm from "./components/Blockchain/TransactionConfirm";
@@ -326,6 +327,7 @@ class App extends React.Component {
             content = (
                 <div className="grid-frame vertical">
                     <Header height={this.state.height} {...others} />
+
                     <div id="mainContainer" className="grid-block">
                         <div className="grid-block vertical">
                             <Switch>

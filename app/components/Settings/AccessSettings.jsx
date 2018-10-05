@@ -275,21 +275,28 @@ class ApiNode extends React.Component {
             return (
                 <div className="api-node">
                     <div className="api-node-left">
-                        <p className="api-node-title">{title}</p>
+                        <p className="api-node-title">
+                            <h3>{title}</h3>
+                            <p
+                                className="api-node-url"
+                                id={isActive ? "active_node" : null}
+                            >
+                                {url}
+                            </p>
+                        </p>
                         {!!node.operator && (
                             <p className="api-node-operator">
-                                {node.operator}&nbsp;&nbsp;&nbsp;
+                                <div className="tq-master-node">
+                                    Master nodes:
+                                </div>
+                                <div className="tq-master-node-name">
+                                    {node.operator}
+                                </div>
                             </p>
                         )}
-                        <p
-                            className="api-node-url"
-                            id={isActive ? "active_node" : null}
-                        >
-                            {url}
-                        </p>
                     </div>
                     <div>
-                        <div className="api-status">
+                        <div className="api-status tq-node-right">
                             <span className={ping.color}>
                                 {!!ping.rating && (
                                     <Translate
@@ -300,7 +307,35 @@ class ApiNode extends React.Component {
                             </span>
                         </div>
                     </div>
-                    <div style={{marginTop: "-5px"}}>
+                    <div className="tq-node-right">
+                        <div className="api-status">
+                            {!isActive ? (
+                                <a
+                                    id={url}
+                                    onClick={this.activate.bind(this, url)}
+                                >
+                                    <Icon
+                                        className={ping.color + " default-icon"}
+                                        name={"disconnected"}
+                                        title="icons.connect"
+                                        size="1_5x"
+                                    />
+                                    <Icon
+                                        className={ping.color + " hover-icon"}
+                                        name={"connect"}
+                                        title="icons.connect"
+                                        size="1_5x"
+                                    />
+                                </a>
+                            ) : (
+                                <Icon
+                                    className={ping.color}
+                                    name={"connected"}
+                                    title="icons.connected"
+                                    size="2x"
+                                />
+                            )}
+                        </div>
                         {canBeHidden && (
                             <a
                                 onClick={
@@ -330,34 +365,6 @@ class ApiNode extends React.Component {
                                 />
                             </a>
                         )}
-                        <div className="api-status">
-                            {!isActive ? (
-                                <a
-                                    id={url}
-                                    onClick={this.activate.bind(this, url)}
-                                >
-                                    <Icon
-                                        className={ping.color + " default-icon"}
-                                        name={"disconnected"}
-                                        title="icons.connect"
-                                        size="1_5x"
-                                    />
-                                    <Icon
-                                        className={ping.color + " hover-icon"}
-                                        name={"connect"}
-                                        title="icons.connect"
-                                        size="1_5x"
-                                    />
-                                </a>
-                            ) : (
-                                <Icon
-                                    className={ping.color}
-                                    name={"connected"}
-                                    title="icons.connected"
-                                    size="2x"
-                                />
-                            )}
-                        </div>
                     </div>
                 </div>
             );
@@ -639,19 +646,26 @@ class AccessSettings extends React.Component {
     }
 }
 
-AccessSettings = connect(AccessSettings, {
-    listenTo() {
-        return [SettingsStore];
-    },
-    getProps() {
-        return {
-            // apiServer and activeNode are ambiguous definition when dealing with isActive, autoSelectionActive etc..
-            // using distinct names
-            selectedNode: SettingsStore.getState().settings.get("apiServer"),
-            connectedNode: SettingsStore.getState().settings.get("activeNode"),
-            apiLatencies: SettingsStore.getState().apiLatencies
-        };
+AccessSettings = connect(
+    AccessSettings,
+    {
+        listenTo() {
+            return [SettingsStore];
+        },
+        getProps() {
+            return {
+                // apiServer and activeNode are ambiguous definition when dealing with isActive, autoSelectionActive etc..
+                // using distinct names
+                selectedNode: SettingsStore.getState().settings.get(
+                    "apiServer"
+                ),
+                connectedNode: SettingsStore.getState().settings.get(
+                    "activeNode"
+                ),
+                apiLatencies: SettingsStore.getState().apiLatencies
+            };
+        }
     }
-});
+);
 
 export default AccessSettings;
