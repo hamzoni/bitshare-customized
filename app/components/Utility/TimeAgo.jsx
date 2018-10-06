@@ -55,7 +55,6 @@ class TimeAgo extends React.Component {
             <span
                 className={"tooltip inline-block " + this.props.className}
                 ref={"timeago_ttip_" + time}
-                data-tip={new Date(time)}
                 data-place="bottom"
             >
                 <FormattedRelative

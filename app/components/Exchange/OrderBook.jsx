@@ -292,11 +292,6 @@ class GroupOrderLimitSelector extends React.Component {
                 dir="rtl"
                 value={this.state.groupLimit}
                 onChange={this.props.handleGroupOrderLimitChange}
-                data-tip={
-                    noGroupsAvailable
-                        ? counterpart.translate("tooltip.no_groups_available")
-                        : null
-                }
                 style={noGroupsAvailable ? {cursor: "not-allowed"} : null}
             >
                 <Translate
@@ -701,10 +696,8 @@ class OrderBook extends React.Component {
                             />
                             <span className="header-sub-title">
                                 {" "}
-                                (<AssetName
-                                    dataPlace="top"
-                                    name={baseSymbol}
-                                />)
+                                (<AssetName dataPlace="top" name={baseSymbol} />
+                                )
                             </span>
                         </th>
                         <th>
@@ -761,10 +754,8 @@ class OrderBook extends React.Component {
                             />
                             <span className="header-sub-title">
                                 {" "}
-                                (<AssetName
-                                    dataPlace="top"
-                                    name={baseSymbol}
-                                />)
+                                (<AssetName dataPlace="top" name={baseSymbol} />
+                                )
                             </span>
                         </th>
                     </tr>

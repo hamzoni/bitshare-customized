@@ -329,9 +329,6 @@ class RecentTransactions extends React.Component {
                             <a
                                 className="inline-block"
                                 onClick={this._generateCSV.bind(this)}
-                                data-tip={counterpart.translate(
-                                    "transaction.csv_tip"
-                                )}
                                 data-place="bottom"
                             >
                                 <Icon
@@ -345,8 +342,8 @@ class RecentTransactions extends React.Component {
                 </td>
                 <td className="column-hide-tiny" />
                 <td style={{textAlign: "center"}}>
-                    &nbsp;{(this.props.showMore &&
-                        historyCount > this.props.limit) ||
+                    &nbsp;
+                    {(this.props.showMore && historyCount > this.props.limit) ||
                     (20 && limit < historyCount) ? (
                         <a onClick={this._onIncreaseLimit.bind(this)}>
                             <Icon
@@ -383,10 +380,6 @@ class RecentTransactions extends React.Component {
                                 {this.props.showFilters ? (
                                     <select
                                         data-place="left"
-                                        data-tip={counterpart.translate(
-                                            "tooltip.filter_ops"
-                                        )}
-                                        style={{paddingTop: 5, width: "auto"}}
                                         className="bts-select no-margin"
                                         value={this.state.filter}
                                         onChange={this._onChangeFilter.bind(

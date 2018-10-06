@@ -284,7 +284,6 @@ class TotalValue extends MarketStatsCheck {
             return (
                 <div
                     className="tooltip inline-block"
-                    data-tip={totalsTip}
                     data-place="bottom"
                     data-html={true}
                 >
@@ -324,17 +323,20 @@ class ValueStoreWrapper extends React.Component {
     }
 }
 
-ValueStoreWrapper = connect(ValueStoreWrapper, {
-    listenTo() {
-        return [MarketsStore, SettingsStore];
-    },
-    getProps() {
-        return {
-            allMarketStats: MarketsStore.getState().allMarketStats,
-            settings: SettingsStore.getState().settings
-        };
+ValueStoreWrapper = connect(
+    ValueStoreWrapper,
+    {
+        listenTo() {
+            return [MarketsStore, SettingsStore];
+        },
+        getProps() {
+            return {
+                allMarketStats: MarketsStore.getState().allMarketStats,
+                settings: SettingsStore.getState().settings
+            };
+        }
     }
-});
+);
 
 class TotalBalanceValue extends React.Component {
     static propTypes = {

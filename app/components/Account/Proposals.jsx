@@ -213,12 +213,7 @@ class Proposals extends Component {
                         </td>
                         <td className="approval-buttons">
                             {isScam ? (
-                                <div
-                                    data-tip={counterpart.translate(
-                                        "tooltip.propose_scam"
-                                    )}
-                                    className="tooltip has-error scam-error"
-                                >
+                                <div className="tooltip has-error scam-error">
                                     SCAM
                                 </div>
                             ) : (

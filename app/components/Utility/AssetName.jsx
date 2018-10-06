@@ -101,7 +101,6 @@ class AssetName extends React.Component {
                         (this.props.noTip ? "" : " tooltip") +
                         (customClass ? " " + customClass : "")
                     }
-                    data-tip={tooltip}
                     data-place={this.props.dataPlace}
                     data-html={true}
                 >

@@ -123,6 +123,7 @@
         font-size: 12px;
     }
     #unlock_wallet_modal2 {
+        display: block;
         .upload-button {
             border-color: $border-color;
             span {
@@ -138,9 +139,6 @@
         }
         .login-label {
             color: $primary-text-color;
-        }
-        .themed-input {
-            background-color: $input-background;
         }
     }
     .spinner-button-circle .circle-wrapper {
@@ -318,6 +316,11 @@
             &.has-error > h6 {
                 color: $error-text-color;
             }
+        }
+        .modal-header.tq-modal,
+        .modal-content.tq-modal {
+            width: 100%;
+            display: block;
         }
         .circle-wrapper {
             .circle:before {
@@ -2313,7 +2316,7 @@
     display: none;
 }
 .header-container {
-    display: flex;
+    display: block;
     align-items: center;
     flex-wrap: nowrap;
     height: 64px;

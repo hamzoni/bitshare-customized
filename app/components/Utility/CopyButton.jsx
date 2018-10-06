@@ -16,7 +16,6 @@ const CopyButton = ({
             data-clipboard-text={text}
             className={className}
             data-place={dataPlace}
-            data-tip={counterpart.translate(tip)}
         >
             {!buttonText ? (
                 <Icon name={buttonIcon} title={"icons.clippy.copy"} />

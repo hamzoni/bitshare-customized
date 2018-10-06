@@ -63,7 +63,8 @@ export default class PriceStatWithLabel extends React.Component {
 
         let changeComp = !change ? null : change !== null ? (
             <span className={changeClass}>
-                &nbsp;{changeClass === "change-up" ? (
+                &nbsp;
+                {changeClass === "change-up" ? (
                     <span>&#8593;</span>
                 ) : (
                     <span>&#8595;</span>
@@ -75,7 +76,6 @@ export default class PriceStatWithLabel extends React.Component {
             <li
                 className={cnames("stat", this.props.className)}
                 data-place="bottom"
-                data-tip={toolTip}
             >
                 <span>
                     {content ? (
@@ -85,7 +85,8 @@ export default class PriceStatWithLabel extends React.Component {
                     ) : null}
                     <br />
                     <b className="value stat-primary">
-                        {!ready ? 0 : value}&nbsp;
+                        {!ready ? 0 : value}
+                        &nbsp;
                         {changeComp}
                     </b>
                     <span className="symbol-text">
@@ -101,7 +102,8 @@ export default class PriceStatWithLabel extends React.Component {
                     <span>
                         <span />
                         <b className="value stat-primary">
-                            {!ready ? 0 : <span> / {value2}</span>}&nbsp;
+                            {!ready ? 0 : <span> / {value2}</span>}
+                            &nbsp;
                             {changeComp}
                         </b>
                         <span className="symbol-text">

@@ -169,20 +169,9 @@ class RuDexGatewayDepositRequest extends React.Component {
             );
         }
 
-        // if( !receive_address ) {
-        //     requestDepositAddress(this._getDepositObject());
-        //     return emptyRow;
-        // }
-
         let withdraw_modal_id = this.getWithdrawModalId();
         let deposit_address_fragment = null;
         let deposit_memo = null;
-        // if (this.props.deprecated_in_favor_of)
-        // {
-        //     deposit_address_fragment = <span>please use {this.props.deprecated_in_favor_of.get("symbol")} instead. <span data-tip={this.props.deprecated_message} data-place="right" data-html={true}><Icon name="question-circle" title="icons.question_circle" /></span><ReactTooltip /></span>;
-        // }
-        // else
-        // {
         let clipboardText = "";
         let memoText;
         if (this.props.deposit_account) {
@@ -298,7 +287,8 @@ class RuDexGatewayDepositRequest extends React.Component {
                                     </tr>
                                     <tr>
                                         <td>
-                                            <Translate content="gateway.balance" />:
+                                            <Translate content="gateway.balance" />
+                                            :
                                         </td>
                                         <td
                                             style={{
@@ -331,7 +321,8 @@ class RuDexGatewayDepositRequest extends React.Component {
                             <Translate
                                 content="gateway.deposit_to"
                                 asset={this.props.deposit_asset}
-                            />:
+                            />
+                            :
                         </label>
                         <label className="left-label">
                             <b>
@@ -465,7 +456,8 @@ class RuDexGatewayDepositRequest extends React.Component {
                                     </tr>
                                     <tr>
                                         <td>
-                                            <Translate content="gateway.balance" />:
+                                            <Translate content="gateway.balance" />
+                                            :
                                         </td>
                                         <td
                                             style={{
@@ -500,7 +492,8 @@ class RuDexGatewayDepositRequest extends React.Component {
                             <Translate
                                 content="gateway.withdraw_to"
                                 asset={this.props.deposit_asset}
-                            />:
+                            />
+                            :
                         </label>
                         <div className="button-group" style={{paddingTop: 20}}>
                             <button

@@ -151,7 +151,7 @@ class MarketHistory extends React.Component {
                             </td>
                             <td>{fill.amountToReceive()}</td>
                             <td>{fill.amountToPay()}</td>
-                            <td className="tooltip" data-tip={fill.time}>
+                            <td className="tooltip">
                                 {counterpart.localize(fill.time, {
                                     type: "date",
                                     format:
@@ -261,13 +261,16 @@ MarketHistory.propTypes = {
     history: PropTypes.object.isRequired
 };
 
-export default connect(MarketHistory, {
-    listenTo() {
-        return [SettingsStore];
-    },
-    getProps() {
-        return {
-            viewSettings: SettingsStore.getState().viewSettings
-        };
+export default connect(
+    MarketHistory,
+    {
+        listenTo() {
+            return [SettingsStore];
+        },
+        getProps() {
+            return {
+                viewSettings: SettingsStore.getState().viewSettings
+            };
+        }
     }
-});
+);

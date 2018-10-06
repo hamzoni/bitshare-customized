@@ -1,7 +1,5 @@
 import React from "react";
 import Translate from "react-translate-component";
-import counterpart from "counterpart";
-import {getWalletName} from "branding";
 
 /* Dummy input to trick Chrome into disabling auto-complete */
 export const DisableChromeAutocomplete = () => (
@@ -17,8 +15,8 @@ const stopPropagation = e => e.stopPropagation();
 export const KeyFileLabel = ({showUseOtherWalletLink, onUseOtherWallet}) => (
     <div className="label-container">
         <label className="left-label login-label">
-            <Translate content="wallet.key_file_bin" />{" "}
-        </label>{" "}
+            <Translate content="wallet.key_file_bin" />
+        </label>
         {showUseOtherWalletLink && (
             <a onClick={onUseOtherWallet}>
                 (<Translate content="wallet.use_different" />)
@@ -57,7 +55,7 @@ export const BackupFileSelector = ({onFileChosen, onRestoreOther}) => (
     <div>
         <StyledUpload onFileChosen={onFileChosen} />
         <div className="login-hint">
-            <Translate content="wallet.different_file_type" />{" "}
+            <Translate content="wallet.different_file_type" />
             <a onClick={onRestoreOther}>
                 <Translate content="wallet.restore_it_here" />
             </a>
@@ -83,27 +81,15 @@ export const BackupWarning = ({onChange, checked}) => (
                 type="checkbox"
                 onChange={onChange}
                 checked={checked}
-            />{" "}
+            />
             <Translate content="wallet.dont_ask_for_backup" />
         </div>
     </div>
 );
 
 export const LoginButtons = ({onLogin, backupLogin}) => (
-    <button
-        className="button"
-        data-place="bottom"
-        data-html
-        data-tip={counterpart.translate("tooltip.login", {
-            wallet_name: getWalletName()
-        })}
-        onClick={onLogin}
-    >
-        <Translate
-            content={
-                backupLogin ? "wallet.backup_login" : "header.unlock_short"
-            }
-        />
+    <button className="button" onClick={onLogin}>
+        Login
     </button>
 );
 
@@ -140,8 +126,8 @@ export const WalletDisplay = ({name, onUseOtherWallet}) => (
     <div className="content-box">
         <b>
             <Translate content="wallet.using" />
-        </b>{" "}
-        {name}{" "}
+        </b>
+        {name}
         <a onClick={onUseOtherWallet}>
             (<Translate content="wallet.use_different" />)
         </a>
@@ -150,7 +136,7 @@ export const WalletDisplay = ({name, onUseOtherWallet}) => (
 
 export const CreateLocalWalletLink = ({onCreate}) => (
     <div className="login-hint">
-        <Translate content="wallet.no_wallet" component="span" />{" "}
+        <Translate content="wallet.no_wallet" component="span" />
         <span className="button" onClick={onCreate}>
             <Translate content="wallet.create_wallet" />
         </span>

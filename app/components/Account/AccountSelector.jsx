@@ -314,7 +314,6 @@ class AccountSelector extends React.Component {
             <span
                 className="tooltip green"
                 data-place="top"
-                data-tip={counterpart.translate("tooltip.follow_user")}
                 onClick={this._onRemoveContact.bind(this)}
             >
                 <Icon
@@ -331,7 +330,6 @@ class AccountSelector extends React.Component {
             <span
                 className="tooltip"
                 data-place="top"
-                data-tip={counterpart.translate("tooltip.follow_user_add")}
                 onClick={this._onAddContact.bind(this)}
             >
                 <Icon
@@ -375,8 +373,9 @@ class AccountSelector extends React.Component {
                                 )}
                             >
                                 <span style={{paddingRight: "1.5rem"}}>
-                                    {account && account.statusText}&nbsp;{!!displayText &&
-                                        displayText}
+                                    {account && account.statusText}
+                                    &nbsp;
+                                    {!!displayText && displayText}
                                 </span>
                                 {linked_status}
                             </label>
@@ -389,7 +388,7 @@ class AccountSelector extends React.Component {
                             {useHR && <hr />}
                         </div>
                     ) : null}
-                    <div className="input-area" data-tip={this.props.tooltip}>
+                    <div className="input-area">
                         <div className="inline-label input-wrapper">
                             {account && account.accountType === "pubkey" ? (
                                 <div className="account-image">
@@ -517,16 +516,19 @@ class AccountSelector extends React.Component {
 
 AccountSelector = BindToChainState(AccountSelector);
 
-AccountSelector = connect(AccountSelector, {
-    listenTo() {
-        return [AccountStore];
-    },
-    getProps() {
-        return {
-            myActiveAccounts: AccountStore.getState().myActiveAccounts,
-            contacts: AccountStore.getState().accountContacts
-        };
+AccountSelector = connect(
+    AccountSelector,
+    {
+        listenTo() {
+            return [AccountStore];
+        },
+        getProps() {
+            return {
+                myActiveAccounts: AccountStore.getState().myActiveAccounts,
+                contacts: AccountStore.getState().accountContacts
+            };
+        }
     }
-});
+);
 
 export default AccountSelector;

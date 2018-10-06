@@ -65,7 +65,6 @@ class MemoText extends React.Component {
                     <span
                         className="inline-block"
                         data-class="memo-tip"
-                        data-tip={full_memo !== text ? full_memo : null}
                         data-place="bottom"
                         data-offset="{'bottom': 10}"
                     >
@@ -85,13 +84,16 @@ class MemoTextStoreWrapper extends React.Component {
     }
 }
 
-export default connect(MemoTextStoreWrapper, {
-    listenTo() {
-        return [WalletUnlockStore];
-    },
-    getProps() {
-        return {
-            wallet_locked: WalletUnlockStore.getState().locked
-        };
+export default connect(
+    MemoTextStoreWrapper,
+    {
+        listenTo() {
+            return [WalletUnlockStore];
+        },
+        getProps() {
+            return {
+                wallet_locked: WalletUnlockStore.getState().locked
+            };
+        }
     }
-});
+);

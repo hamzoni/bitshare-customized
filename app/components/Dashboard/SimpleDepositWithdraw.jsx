@@ -571,15 +571,7 @@ class DepositWithdrawContent extends DecimalChecker {
 
                         <div className="form-label select floating-dropdown">
                             <div className="dropdown-wrapper inactive">
-                                <div
-                                    data-place="right"
-                                    data-tip={counterpart.translate(
-                                        "tooltip.withdraw_address",
-                                        {asset: assetName}
-                                    )}
-                                >
-                                    ?
-                                </div>
+                                <div data-place="right">?</div>
                             </div>
                         </div>
                     </div>
@@ -670,18 +662,13 @@ class DepositWithdrawContent extends DecimalChecker {
                 {this._renderCurrentBalance()}
 
                 <div className="SimpleTrade__withdraw-row">
-                    <p
-                        style={{marginBottom: 10}}
-                        data-place="right"
-                        data-tip={counterpart.translate("tooltip.deposit_tip", {
-                            asset: assetName
-                        })}
-                    >
+                    <p style={{marginBottom: 10}} data-place="right">
                         <Translate
                             className="help-tooltip"
                             content="gateway.deposit_to"
                             asset={assetName}
-                        />:
+                        />
+                        :
                         <label className="fz_12 left-label">
                             <Translate content="gateway.deposit_notice_delay" />
                         </label>
@@ -775,7 +762,6 @@ class DepositWithdrawContent extends DecimalChecker {
         ) : (
             <button
                 data-place="right"
-                data-tip={counterpart.translate("tooltip.withdraw_full")}
                 className="button"
                 style={{border: "2px solid black", borderLeft: "none"}}
                 onClick={this._updateAmount.bind(
@@ -797,7 +783,8 @@ class DepositWithdrawContent extends DecimalChecker {
                 <label style={{fontSize: "1rem"}}>
                     {counterpart.translate("gateway.balance_asset", {
                         asset: assetName
-                    })}:
+                    })}
+                    :
                     <span className="inline-label">
                         <input
                             disabled

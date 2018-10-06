@@ -84,7 +84,6 @@ class ValueComponent extends MarketStatsCheck {
                 <div
                     className="tooltip inline-block"
                     data-place="bottom"
-                    data-tip={counterpart.translate("tooltip.no_price")}
                     style={{fontSize: "0.9rem"}}
                 >
                     <Translate content="account.no_price" />
@@ -127,16 +126,19 @@ class EquivalentValueComponent extends React.Component {
     }
 }
 
-EquivalentValueComponent = connect(EquivalentValueComponent, {
-    listenTo() {
-        return [MarketsStore];
-    },
-    getProps() {
-        return {
-            allMarketStats: MarketsStore.getState().allMarketStats
-        };
+EquivalentValueComponent = connect(
+    EquivalentValueComponent,
+    {
+        listenTo() {
+            return [MarketsStore];
+        },
+        getProps() {
+            return {
+                allMarketStats: MarketsStore.getState().allMarketStats
+            };
+        }
     }
-});
+);
 
 class BalanceValueComponent extends React.Component {
     static propTypes = {

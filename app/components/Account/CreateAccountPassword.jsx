@@ -258,13 +258,9 @@ class CreateAccountPassword extends React.Component {
 
                     <section className="form-group">
                         <label className="left-label">
-                            <Translate content="wallet.generated" />&nbsp;&nbsp;<span
-                                className="tooltip"
-                                data-html={true}
-                                data-tip={counterpart.translate(
-                                    "tooltip.generate"
-                                )}
-                            >
+                            <Translate content="wallet.generated" />
+                            &nbsp;&nbsp;
+                            <span className="tooltip" data-html={true}>
                                 <Icon
                                     name="question-circle"
                                     title="icons.question_circle"
@@ -691,11 +687,14 @@ class CreateAccountPassword extends React.Component {
 
 CreateAccountPassword = withRouter(CreateAccountPassword);
 
-export default connect(CreateAccountPassword, {
-    listenTo() {
-        return [AccountStore];
-    },
-    getProps() {
-        return {};
+export default connect(
+    CreateAccountPassword,
+    {
+        listenTo() {
+            return [AccountStore];
+        },
+        getProps() {
+            return {};
+        }
     }
-});
+);

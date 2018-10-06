@@ -246,15 +246,17 @@ class BorrowModalContent extends React.Component {
         let collateral;
 
         if (this.state.lockedCR) {
-            short_amount = (this.state.collateral * feed_price / ratio).toFixed(
-                this.props.backing_asset.get("precision")
-            );
+            short_amount = (
+                (this.state.collateral * feed_price) /
+                ratio
+            ).toFixed(this.props.backing_asset.get("precision"));
             collateral = this.state.collateral;
         } else {
             short_amount = this.state.short_amount;
-            collateral = (this.state.short_amount / feed_price * ratio).toFixed(
-                this.props.backing_asset.get("precision")
-            );
+            collateral = (
+                (this.state.short_amount / feed_price) *
+                ratio
+            ).toFixed(this.props.backing_asset.get("precision"));
         }
 
         let newState = {
@@ -288,7 +290,7 @@ class BorrowModalContent extends React.Component {
                     utils.get_asset_precision(this.props.backing_asset) +
                     initialCollateral -
                     10,
-                this.state.short_amount / this._getFeedPrice() * 1000.0
+                (this.state.short_amount / this._getFeedPrice()) * 1000.0
             )
         );
 
@@ -316,8 +318,7 @@ class BorrowModalContent extends React.Component {
             initialCollateral -
             10;
         const short_amount =
-            maximumCollateral /
-            this.state.collateral_ratio *
+            (maximumCollateral / this.state.collateral_ratio) *
             this._getFeedPrice();
 
         const newState = {
@@ -669,13 +670,7 @@ class BorrowModalContent extends React.Component {
                         <Translate content="borrow.use_max" />
                     </a>
                 ) : (
-                    <span
-                        className="disabled-link"
-                        data-place="left"
-                        data-tip={counterpart.translate(
-                            "borrow.maximize_debt_set_ratio_slider"
-                        )}
-                    >
+                    <span className="disabled-link" data-place="left">
                         <Translate content="borrow.use_max" />
                     </span>
                 )}
@@ -706,13 +701,6 @@ class BorrowModalContent extends React.Component {
         let feed_price = this._getFeedPrice();
 
         let maintenanceRatio = this._getMaintenanceRatio();
-
-        let squeezeRatio =
-            this.props.quote_asset.getIn([
-                "bitasset",
-                "current_feed",
-                "maximum_short_squeeze_ratio"
-            ]) / 1000;
 
         let isPredictionMarket = this._isPredictionMarket(this.props);
 
@@ -791,7 +779,8 @@ class BorrowModalContent extends React.Component {
                             >
                                 <div className="borrow-price-feeds">
                                     <span className="borrow-price-label">
-                                        <Translate content="transaction.feed_price" />:&nbsp;
+                                        <Translate content="transaction.feed_price" />
+                                        :&nbsp;
                                     </span>
                                     <FormattedPrice
                                         noPopOver
@@ -825,22 +814,6 @@ class BorrowModalContent extends React.Component {
                                         ])}
                                     />
                                 </div>
-                                {/* <div className="borrow-price-feeds">
-                                <span
-                                    className="inline-block tooltip borrow-price-label"
-                                    data-place="bottom"
-                                    data-tip={counterpart.translate("tooltip.margin_price")}
-                                ><Translate content="exchange.squeeze" />:&nbsp;</span>
-                                <FormattedPrice
-                                    decimals={2}
-                                    callPrice
-                                    noPopOver
-                                    quote_amount={quote_asset.getIn(["bitasset", "current_feed", "settlement_price", "base", "amount"])}
-                                    quote_asset={quote_asset.getIn(["bitasset", "current_feed", "settlement_price", "base", "asset_id"])}
-                                    base_asset={quote_asset.getIn(["bitasset", "current_feed", "settlement_price", "quote", "asset_id"])}
-                                    base_amount={squeezeRatio * quote_asset.getIn(["bitasset", "current_feed", "settlement_price", "quote", "amount"])}
-                                    />
-                            </div> */}
                                 <b />
                                 <div
                                     className={
@@ -853,7 +826,8 @@ class BorrowModalContent extends React.Component {
                                     }
                                 >
                                     <span className="borrow-price-label">
-                                        <Translate content="exchange.your_price" />:&nbsp;
+                                        <Translate content="exchange.your_price" />
+                                        :&nbsp;
                                     </span>
                                     {this.state.newPosition ? (
                                         <FormattedPrice
@@ -992,13 +966,11 @@ class BorrowModalContent extends React.Component {
                                 >
                                     <span>
                                         <label>
-                                            <Translate content="borrow.target_collateral_ratio" />&nbsp;&nbsp;
+                                            <Translate content="borrow.target_collateral_ratio" />
+                                            &nbsp;&nbsp;
                                             <span
                                                 data-place="top"
                                                 data-html={true}
-                                                data-tip={counterpart.translate(
-                                                    "tooltip.target_collateral_ratio"
-                                                )}
                                             >
                                                 <Icon
                                                     name="question-circle"

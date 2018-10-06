@@ -427,9 +427,11 @@ class Transfer extends React.Component {
             from_error = (
                 <span>
                     {counterpart.translate("account.errors.not_yours")}
-                    &nbsp;(<a onClick={this.onPropose.bind(this, true)}>
+                    &nbsp;(
+                    <a onClick={this.onPropose.bind(this, true)}>
                         {counterpart.translate("propose")}
-                    </a>)
+                    </a>
+                    )
                 </span>
             );
         }
@@ -463,7 +465,8 @@ class Transfer extends React.Component {
                         <Translate
                             component="span"
                             content="transfer.available"
-                        />:{" "}
+                        />
+                        :{" "}
                         <BalanceComponent
                             balance={account_balances[current_asset_id]}
                         />
@@ -577,9 +580,6 @@ class Transfer extends React.Component {
                                 component="label"
                                 content="transfer.memo"
                                 data-place="top"
-                                data-tip={counterpart.translate(
-                                    "tooltip.memo_tip"
-                                )}
                             />
                             <textarea
                                 style={{marginBottom: 0}}
@@ -729,15 +729,18 @@ class Transfer extends React.Component {
     }
 }
 
-export default connect(Transfer, {
-    listenTo() {
-        return [AccountStore];
-    },
-    getProps() {
-        return {
-            currentAccount: AccountStore.getState().currentAccount,
-            passwordAccount: AccountStore.getState().passwordAccount,
-            contactsList: AccountStore.getState().accountContacts
-        };
+export default connect(
+    Transfer,
+    {
+        listenTo() {
+            return [AccountStore];
+        },
+        getProps() {
+            return {
+                currentAccount: AccountStore.getState().currentAccount,
+                passwordAccount: AccountStore.getState().passwordAccount,
+                contactsList: AccountStore.getState().accountContacts
+            };
+        }
     }
-});
+);

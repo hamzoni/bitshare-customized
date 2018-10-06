@@ -231,7 +231,6 @@ class MarginPosition extends React.Component {
                 </td>
                 <td
                     data-place="bottom"
-                    data-tip={this._getCRTip()}
                     className={"center-content " + statusClass}
                 >
                     {utils.format_number(cr, 2)}
@@ -308,13 +307,7 @@ class MarginPosition extends React.Component {
                     </Link>
                 </td>
                 <td>
-                    <div
-                        data-place="left"
-                        data-tip={counterpart.translate(
-                            "tooltip.update_position"
-                        )}
-                        style={{paddingBottom: 5}}
-                    >
+                    <div data-place="left" style={{paddingBottom: 5}}>
                         <a onClick={this._onUpdatePosition.bind(this)}>
                             <Icon
                                 name="adjust"
@@ -325,14 +318,7 @@ class MarginPosition extends React.Component {
                     </div>
                 </td>
                 <td>
-                    <div
-                        data-place="left"
-                        data-tip={counterpart.translate(
-                            "tooltip.close_position",
-                            {amount: d, asset: debtAsset.get("symbol")}
-                        )}
-                        style={{paddingBottom: 5}}
-                    >
+                    <div data-place="left" style={{paddingBottom: 5}}>
                         <a onClick={this._onClosePosition.bind(this)}>
                             <Icon
                                 name="cross-circle"
@@ -508,13 +494,7 @@ class MarginPositionPlaceHolder extends React.Component {
                     </Link>
                 </td>
                 <td>
-                    <div
-                        data-place="left"
-                        data-tip={counterpart.translate(
-                            "tooltip.update_position"
-                        )}
-                        style={{paddingBottom: 5}}
-                    >
+                    <div data-place="left" style={{paddingBottom: 5}}>
                         <a onClick={this._onUpdatePosition.bind(this)}>
                             <Icon
                                 name="adjust"
@@ -640,13 +620,7 @@ const CollateralTable = ({
                         <Translate content="transaction.collateral" />
                     </th>
                     <th>
-                        <div
-                            className="tooltip inline-block"
-                            data-place="top"
-                            data-tip={counterpart.translate(
-                                "tooltip.coll_ratio"
-                            )}
-                        >
+                        <div className="tooltip inline-block" data-place="top">
                             <Translate content="borrow.coll_ratio" />
                         </div>
                     </th>
@@ -664,13 +638,7 @@ const CollateralTable = ({
                         />
                     </th>
                     <th style={alignRight} className="column-hide-small">
-                        <div
-                            className="tooltip inline-block"
-                            data-place="top"
-                            data-tip={counterpart.translate(
-                                "tooltip.call_price"
-                            )}
-                        >
+                        <div className="tooltip inline-block" data-place="top">
                             <Translate content="exchange.call" />
                         </div>
                     </th>
