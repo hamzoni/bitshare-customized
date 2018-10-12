@@ -22,6 +22,7 @@ import counterpart from "counterpart";
 import {connect} from "alt-react";
 import classnames from "classnames";
 import {getWalletName} from "branding";
+import {Button, Row, Col} from "antd";
 
 class SendModal extends React.Component {
     constructor(props) {
@@ -715,14 +716,14 @@ class SendModal extends React.Component {
                                         />
                                     </div>
                                     {/*  M E M O  */}
-                                    <div className="content-block transfer-input">
+                                    <div className="content-block transfer-input ">
                                         {memo && memo.length ? (
                                             <label className="right-label">
                                                 {memo.length}
                                             </label>
                                         ) : null}
                                         <Translate
-                                            className="left-label tooltip"
+                                            className="left-label tooltip mono-label-form"
                                             component="label"
                                             content="transfer.memo"
                                             data-place="top"

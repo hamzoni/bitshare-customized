@@ -110,16 +110,20 @@ class AmountSelector extends React.Component {
                     {this.props.display_balance}
                 </label>
                 <Translate
-                    className="left-label"
+                    className="left-label mono-label-form"
                     component="label"
                     content={this.props.label}
                 />
-                <div className="inline-label input-wrapper">
+                <div className="inline-label input-wrapper mono-bdbt">
                     <input
                         disabled={this.props.disabled}
                         type="text"
                         value={value || ""}
-                        placeholder={this.props.placeholder}
+                        placeholder={
+                            this.props.placeholder
+                                ? this.props.placeholder
+                                : "Textbox"
+                        }
                         onChange={this._onChange.bind(this)}
                         tabIndex={this.props.tabIndex}
                     />
@@ -128,9 +132,8 @@ class AmountSelector extends React.Component {
                         {this.props.isPrice ? (
                             <div className="dropdown-wrapper inactive">
                                 <div>
-                                    {this.props.asset.get("symbol")}/{
-                                        this.props.base
-                                    }
+                                    {this.props.asset.get("symbol")}/
+                                    {this.props.base}
                                 </div>
                             </div>
                         ) : (

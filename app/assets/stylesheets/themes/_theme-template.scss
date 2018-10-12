@@ -244,7 +244,8 @@
                 @include color(
                     $light-text-color,
                     lighten($super-light-panel-bg-color, 4%)
-                ); // color: $link-text-color;
+                );
+                // color: $link-text-color;
             }
         }
     }
@@ -709,8 +710,7 @@
             }
             > li > span {
                 color: $light-text-color;
-            }
-            /* Hover state */
+            } /* Hover state */
             li:hover > span {
                 @include color(
                     $light-text-color,
@@ -2288,12 +2288,13 @@
     margin-bottom: 2rem;
 }
 .mono-btn-light {
+    width: 23% !important;
     background: #fafafa;
     color: #333 !important;
     text-align: center;
-    height: 40px;
-    line-height: 40px;
-    border-radius: 5px;
+    height: 70px;
+    line-height: 70px;
+    border-radius: 10px;
     > link {
         color: #333 !important;
     }
@@ -2366,6 +2367,31 @@
             font-weight: bold;
         }
     }
+}
+.mono-profile {
+    margin-bottom: 1rem;
+}
+.mono-bdbt {
+    border-bottom: 1px solid white !important;
+    > input[type="text"]#{$ant-fix} {
+        background: transparent;
+        border-radius: 0 !important;
+    }
+    > label {
+        color: #333;
+        margin: 0;
+        padding: 0;
+        margin-left: 0.5rem;
+    }
+}
+.mono-label-form {
+    color: #333;
+    margin: 0;
+    padding: 0;
+    margin-left: 0.5rem;
+}
+.typeahead__input {
+    background: transparent !important;
 }
 @media screen and (max-width: 640px) {
     .responsive-list > .help-content > ul {

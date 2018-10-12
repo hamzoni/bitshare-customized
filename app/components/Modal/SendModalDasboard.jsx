@@ -22,6 +22,7 @@ import counterpart from "counterpart";
 import {connect} from "alt-react";
 import classnames from "classnames";
 import {getWalletName} from "branding";
+import {Button, Row, Col} from "antd";
 
 class SendModal extends React.Component {
     constructor(props) {
@@ -73,36 +74,32 @@ class SendModal extends React.Component {
         });
     }
 
-    onClose(publishClose = true) {
-        ZfApi.unsubscribe("transaction_confirm_actions");
-        this.setState(
-            {
-                open: false,
-                from_name: "",
-                to_name: "",
-                from_account: null,
-                to_account: null,
-                orig_account: null,
-                amount: "",
-                asset_id: null,
-                asset: null,
-                memo: "",
-                error: null,
-                knownScammer: null,
-                propose: false,
-                propose_account: "",
-                feeAsset: null,
-                fee_asset_id: "1.3.0",
-                feeAmount: new Asset({amount: 0}),
-                feeStatus: {},
-                maxAmount: false,
-                hidden: false
-            },
-            () => {
-                if (publishClose) ZfApi.publish(this.props.id, "close");
-            }
-        );
-    }
+    onClose = e => {
+        e.preventDefault();
+        //ZfApi.unsubscribe("transaction_confirm_actions");
+        this.setState({
+            open: false,
+            from_name: "",
+            to_name: "",
+            from_account: null,
+            to_account: null,
+            orig_account: null,
+            amount: "",
+            asset_id: null,
+            asset: null,
+            memo: "",
+            error: null,
+            knownScammer: null,
+            propose: false,
+            propose_account: "",
+            feeAsset: null,
+            fee_asset_id: "1.3.0",
+            feeAmount: new Asset({amount: 0}),
+            feeStatus: {},
+            maxAmount: false,
+            hidden: false
+        });
+    };
 
     onSubmit(e) {
         e.preventDefault();
@@ -623,7 +620,7 @@ class SendModal extends React.Component {
             //         overlay={true}
             //         onClose={this.onClose.bind(this, false)}
             //     >
-            <div className="grid-block vertical no-overflow">
+            <div className="grid-block vertical no-overflow ">
                 <div
                     className="content-block"
                     style={{textAlign: "center", textTransform: "none"}}
@@ -631,7 +628,7 @@ class SendModal extends React.Component {
                     {!propose ? (
                         <div
                             style={{
-                                fontSize: "1.8rem",
+                                fontSize: "1.3rem",
                                 fontFamily: "Roboto-Medium, arial, sans-serif"
                             }}
                         >
@@ -644,7 +641,7 @@ class SendModal extends React.Component {
                     ) : (
                         <div
                             style={{
-                                fontSize: "1.8rem",
+                                fontSize: "1.3rem",
                                 fontFamily: "Roboto-Medium, arial, sans-serif"
                             }}
                         >
@@ -658,7 +655,7 @@ class SendModal extends React.Component {
                     <div
                         style={{
                             marginTop: 10,
-                            fontSize: "0.9rem",
+                            fontSize: "0.7rem",
                             marginLeft: "auto",
                             marginRight: "auto"
                         }}
@@ -674,7 +671,7 @@ class SendModal extends React.Component {
                 <form noValidate>
                     <div>
                         {/* T O */}
-                        <div className="content-block">
+                        <div className="content-block mono-bdbt">
                             <AccountSelector
                                 label="transfer.to"
                                 accountName={to_name}
@@ -690,7 +687,7 @@ class SendModal extends React.Component {
                             />
                         </div>
 
-                        <div className="content-block transfer-input">
+                        <div className="content-block transfer-input ">
                             {/*  A M O U N T  */}
                             <AmountSelector
                                 label="transfer.amount"
@@ -709,7 +706,7 @@ class SendModal extends React.Component {
                             />
                         </div>
                         {/*  M E M O  */}
-                        <div className="content-block transfer-input">
+                        <div className="content-block transfer-input mono-bdbt">
                             {memo && memo.length ? (
                                 <label className="right-label">
                                     {memo.length}
@@ -721,10 +718,13 @@ class SendModal extends React.Component {
                                 content="transfer.memo"
                                 data-place="top"
                             />
-                            <textarea
-                                style={{marginBottom: 0}}
-                                rows="3"
+
+                            <input
+                                //style={{ marginBottom: 0 }}
+                                //rows="3"
+                                type="text"
                                 value={memo}
+                                placeholder="Textbox"
                                 tabIndex={tabIndex++}
                                 onChange={this.onMemoChanged.bind(this)}
                             />
@@ -742,7 +742,7 @@ class SendModal extends React.Component {
                             ) : null}
                         </div>
 
-                        <div className="content-block transfer-input">
+                        <div className="content-block transfer-input ">
                             <div className="no-margin no-padding">
                                 {/*  F E E  */}
                                 <div id="txFeeSelector" className="small-12">
@@ -786,86 +786,65 @@ class SendModal extends React.Component {
                                 />
                             </div>
                         ) : null}
-
-                        <div className="content-block transfer-input">
-                            <div className="no-margin no-padding">
-                                <div
-                                    className="small-6"
-                                    style={{
-                                        display: "inline-block",
-                                        paddingRight: "10px"
-                                    }}
-                                >
-                                    {propose ? (
-                                        <button
-                                            className={classnames(
-                                                "button primary",
-                                                {
-                                                    disabled: isSendNotValid
-                                                }
-                                            )}
-                                            type="submit"
-                                            value="Submit"
-                                            onClick={
-                                                !isSendNotValid
-                                                    ? this.onSubmit.bind(this)
-                                                    : null
-                                            }
-                                            tabIndex={tabIndex++}
-                                        >
-                                            <Translate
-                                                component="span"
-                                                content="propose"
-                                            />
-                                        </button>
-                                    ) : (
-                                        <button
-                                            className={classnames(
-                                                "button primary",
-                                                {
-                                                    disabled: isSendNotValid
-                                                }
-                                            )}
-                                            type="submit"
-                                            value="Submit"
-                                            onClick={
-                                                !isSendNotValid
-                                                    ? this.onSubmit.bind(this)
-                                                    : null
-                                            }
-                                            tabIndex={tabIndex++}
-                                        >
-                                            <Translate
-                                                component="span"
-                                                content="transfer.send"
-                                            />
-                                        </button>
+                        <Row type="flex" justify="space-between">
+                            <Col span={11}>
+                                <Button
+                                    className={classnames(
+                                        "button hollow primary mono-btn-vt "
                                     )}
-                                </div>
-                                <div
-                                    className="small-6"
-                                    style={{
-                                        display: "inline-block",
-                                        paddingRight: "10px"
-                                    }}
+                                    tabIndex={tabIndex++}
+                                    onClick={this.props.onCloseModal}
                                 >
-                                    <button
-                                        className={classnames(
-                                            "button hollow primary"
-                                        )}
+                                    <Translate
+                                        component="span"
+                                        content="transfer.cancel"
+                                    />
+                                </Button>
+                            </Col>
+                            <Col span={11}>
+                                {propose ? (
+                                    <Button
+                                        type="primary"
+                                        className={classnames(" mono-btn-vt", {
+                                            disabled: isSendNotValid
+                                        })}
                                         type="submit"
-                                        value="Cancel"
+                                        value="Submit"
+                                        onClick={
+                                            !isSendNotValid
+                                                ? this.onSubmit.bind(this)
+                                                : null
+                                        }
                                         tabIndex={tabIndex++}
-                                        onClick={this.onClose.bind(this)}
                                     >
                                         <Translate
                                             component="span"
-                                            content="transfer.cancel"
+                                            content="propose"
                                         />
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+                                    </Button>
+                                ) : (
+                                    <Button
+                                        type="primary"
+                                        className={classnames("  mono-btn-vt", {
+                                            disabled: isSendNotValid
+                                        })}
+                                        type="submit"
+                                        value="Submit"
+                                        onClick={
+                                            !isSendNotValid
+                                                ? this.onSubmit.bind(this)
+                                                : null
+                                        }
+                                        tabIndex={tabIndex++}
+                                    >
+                                        <Translate
+                                            component="span"
+                                            content="transfer.send"
+                                        />
+                                    </Button>
+                                )}
+                            </Col>
+                        </Row>
                     </div>
                 </form>
             </div>

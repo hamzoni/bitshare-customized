@@ -381,7 +381,10 @@ class AccountSelector extends React.Component {
                             </label>
 
                             <Translate
-                                className={"left-label " + (labelClass || "")}
+                                className={
+                                    "left-label mono-label-form" +
+                                    (labelClass || "")
+                                }
                                 component="label"
                                 content={this.props.label}
                             />

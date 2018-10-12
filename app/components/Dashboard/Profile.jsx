@@ -28,7 +28,7 @@ import DropDownMenu from "../Layout/HeaderDropdown";
 import {withRouter} from "react-router-dom";
 import CreateAccoutModal from "../CreateAccountModal";
 import {Link} from "react-router-dom";
-import {Row, Col, Modal} from "antd";
+import {Row, Col, Modal, Button} from "antd";
 import SendModalDasboard from "../Modal/SendModalDasboard";
 
 import {getLogo} from "branding";
@@ -306,8 +306,8 @@ class Header extends React.Component {
         });
     };
 
-    handleCancel = e => {
-        console.log(e);
+    handleCancel = () => {
+        //console.log(e);
         this.setState({
             visible: false,
             visibleSend: false
@@ -431,8 +431,8 @@ class Header extends React.Component {
         }
 
         return (
-            <Row>
-                <Col span={20} offset={2} className="mono-bg-light">
+            <Row className="mono-profile">
+                <Col span={24} className="mono-bg-light">
                     <Row
                         type="flex"
                         justify="space-around"
@@ -483,9 +483,9 @@ class Header extends React.Component {
                         </Col>
                     </Row>
                 </Col>
-                <Col span={20} offset={2} className="mono-btn-hide">
-                    <Row type="flex" justify="space-between" align="middle">
-                        <Col span={5} className="mono-btn-light">
+                <Col span={24} className="mono-btn-hide">
+                    <Row type="flex" justify="space-between">
+                        <Col span={6} className="mono-btn-light">
                             <Link to="/" onClick={this.showModal}>
                                 Create Account
                             </Link>
@@ -499,7 +499,7 @@ class Header extends React.Component {
                                 <CreateAccoutModal />
                             </Modal>
                         </Col>
-                        <Col span={5} className="mono-btn-light">
+                        <Col span={6} className="mono-btn-light">
                             <Link to="/" onClick={this.showModalSend}>
                                 Send
                             </Link>
@@ -511,19 +511,20 @@ class Header extends React.Component {
                                 onCancel={this.handleCancel}
                             >
                                 <SendModalDasboard
-                                    refCallback={e => {
-                                        if (e) this.send_modal = e;
-                                    }}
-                                    from_name={currentAccount}
+                                    onCloseModal={this.handleCancel.bind(this)}
+                                    // refCallback={e => {
+                                    //     if (e) this.send_modal = e;
+                                    // }}
+                                    //from_name={currentAccount}
                                 />
                             </Modal>
                         </Col>
-                        <Col span={5} className="mono-btn-light">
+                        <Col span={6} className="mono-btn-light">
                             <Link to={`/account/${currentAccount}/voting`}>
                                 Voting
                             </Link>
                         </Col>
-                        <Col span={5} className="mono-btn-light">
+                        <Col span={6} className="mono-btn-light">
                             <Link to="/settings">Settings</Link>
                         </Col>
                     </Row>
