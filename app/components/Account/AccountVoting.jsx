@@ -18,6 +18,7 @@ import counterpart from "counterpart";
 import {EquivalentValueComponent} from "../Utility/EquivalentValueComponent";
 import FormattedAsset from "../Utility/FormattedAsset";
 import SettingsStore from "stores/SettingsStore";
+import {Row, Col, Button} from "antd";
 
 class AccountVoting extends React.Component {
     static propTypes = {
@@ -666,38 +667,41 @@ class AccountVoting extends React.Component {
             });
 
         let actionButtons = (
-            <span>
-                <button
-                    className={cnames(publish_buttons_class, {
-                        success: this.isChanged()
-                    })}
-                    onClick={this.onPublish}
-                    tabIndex={4}
-                >
-                    <Translate content="account.votes.publish" />
-                </button>
-                <button
-                    className={"button " + publish_buttons_class}
-                    onClick={this.onReset}
-                    tabIndex={8}
-                >
-                    <Translate content="account.perm.reset" />
-                </button>
+            <Row type="flex" justify="end">
+                <Col xs={24} sm={12} md={10} lg={6} xl={5}>
+                    <Button
+                        type="primary"
+                        onClick={this.onPublish}
+                        className="mono-btn-vt"
+                    >
+                        <Translate content="account.votes.publish" />
+                    </Button>
+                </Col>
+                <Col xs={24} sm={11} md={10} lg={6} xl={5} offset={1}>
+                    <Button
+                        type="primary"
+                        onClick={this.onReset}
+                        className="mono-btn-vt"
+                    >
+                        <Translate content="account.perm.reset" />
+                    </Button>
+                </Col>
+
                 {accountHasProxy && (
-                    <button
-                        className={"button"}
+                    <Button
+                        type="primary"
                         onClick={this.onRemoveProxy}
-                        tabIndex={9}
+                        className="mono-btn-vt"
                     >
                         <Translate content="account.perm.remove_proxy" />
-                    </button>
+                    </Button>
                 )}
-            </span>
+            </Row>
         );
 
         let proxyInput = (
             <AccountSelector
-                style={{width: "50%", maxWidth: 250, marginBottom: 10}}
+                style={{width: "100%", marginBottom: 10}}
                 account={this.state.current_proxy_input}
                 accountName={this.state.current_proxy_input}
                 onChange={this.onProxyChange.bind(this)}
@@ -720,22 +724,6 @@ class AccountVoting extends React.Component {
                     }}
                 >
                     <Icon name="locked" size="1x" />
-                </span>
-                <span
-                    style={{
-                        paddingLeft: 5,
-                        position: "relative",
-                        top: 9,
-                        display: !hasProxy ? "" : "none"
-                    }}
-                >
-                    <Link to="/help/voting">
-                        <Icon
-                            name="question-circle"
-                            title="icons.question_circle"
-                            size="1x"
-                        />
-                    </Link>
                 </span>
             </AccountSelector>
         );
@@ -771,18 +759,26 @@ class AccountVoting extends React.Component {
                         >
                             <Tab title="explorer.witnesses.title">
                                 <div className={cnames("content-block")}>
-                                    <div className="header-selector">
-                                        {/* <Link to="/help/voting/witness"><Icon name="question-circle" title="icons.question_cirlce" /></Link> */}
-                                        {proxyInput}
-                                        <div
-                                            style={{
-                                                float: "right",
-                                                marginTop: "-2.5rem"
-                                            }}
+                                    <Row className="mono-proxy">
+                                        <Col
+                                            xs={24}
+                                            sm={24}
+                                            md={12}
+                                            lg={9}
+                                            xl={8}
+                                        >
+                                            {proxyInput}
+                                        </Col>
+                                        <Col
+                                            xs={24}
+                                            sm={24}
+                                            md={12}
+                                            lg={15}
+                                            xl={16}
                                         >
                                             {actionButtons}
-                                        </div>
-                                    </div>
+                                        </Col>
+                                    </Row>
 
                                     <VotingAccountsList
                                         type="witness"
@@ -819,18 +815,26 @@ class AccountVoting extends React.Component {
 
                             <Tab title="explorer.committee_members.title">
                                 <div className={cnames("content-block")}>
-                                    <div className="header-selector">
-                                        {/* <Link to="/help/voting/committee"><Icon name="question-circle" title="icons.question_cirlce" /></Link> */}
-                                        {proxyInput}
-                                        <div
-                                            style={{
-                                                float: "right",
-                                                marginTop: "-2.5rem"
-                                            }}
+                                    <Row className="mono-proxy">
+                                        <Col
+                                            xs={24}
+                                            sm={24}
+                                            md={12}
+                                            lg={9}
+                                            xl={8}
+                                        >
+                                            {proxyInput}
+                                        </Col>
+                                        <Col
+                                            xs={24}
+                                            sm={24}
+                                            md={12}
+                                            lg={15}
+                                            xl={16}
                                         >
                                             {actionButtons}
-                                        </div>
-                                    </div>
+                                        </Col>
+                                    </Row>
                                     <VotingAccountsList
                                         type="committee"
                                         label="account.votes.add_committee_label"
@@ -998,9 +1002,11 @@ class AccountVoting extends React.Component {
                                                     style={{textAlign: "left"}}
                                                 >
                                                     <Translate content="account.votes.total_budget" />{" "}
-                                                    (<AssetName
+                                                    (
+                                                    <AssetName
                                                         name={preferredUnit}
-                                                    />)
+                                                    />
+                                                    )
                                                 </th>
                                                 <th
                                                     colSpan="2"
@@ -1084,9 +1090,11 @@ class AccountVoting extends React.Component {
                                                         fontSize: "0.8rem"
                                                     }}
                                                 >
-                                                    (<AssetName
+                                                    (
+                                                    <AssetName
                                                         name={preferredUnit}
-                                                    />)
+                                                    />
+                                                    )
                                                 </div>
                                             </th>
                                             {workerTableIndex === 2 ||
@@ -1101,9 +1109,11 @@ class AccountVoting extends React.Component {
                                                             fontSize: "0.8rem"
                                                         }}
                                                     >
-                                                        (<AssetName
+                                                        (
+                                                        <AssetName
                                                             name={preferredUnit}
-                                                        />)
+                                                        />
+                                                        )
                                                     </div>
                                                 </th>
                                             )}

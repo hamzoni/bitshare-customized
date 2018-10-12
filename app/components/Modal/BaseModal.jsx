@@ -46,7 +46,7 @@ class BaseModal extends React.Component {
                     }
                 }}
             >
-                <div className="modal-header tq-modal">
+                <div className="modal-header ">
                     {!noCloseBtn && (
                         <Trigger close={id}>
                             <a href="#" className="close-button">
@@ -55,7 +55,7 @@ class BaseModal extends React.Component {
                         </Trigger>
                     )}
                 </div>
-                <div className="modal-content tq-modal">{children}</div>
+                <div className="modal-content ">{children}</div>
             </Modal>
         );
     }

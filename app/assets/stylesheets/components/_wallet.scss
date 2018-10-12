@@ -15,14 +15,13 @@
     padding-left: 0;
     padding-right: 0;
     border-radius: 1px;
-    margin: 0 auto;
 
     hr {
         margin-top: 0;
         margin-bottom: 0.5rem;
     }
     .login-type-selector {
-        margin-bottom: 1rem;
+        margin-bottom: 4rem;
     }
 
     .upload-button {
@@ -95,6 +94,7 @@
 
         .login-hint {
             height: 20px;
+            margin-top: 1rem;
             margin-bottom: 1rem;
         }
     }
@@ -106,20 +106,18 @@
     .content-block {
         margin-bottom: 1rem;
     }
-    .login-select,
-    input {
-        padding: 25px 15px;
-        padding-left: 0;
-        border: none;
-        border-bottom: 1px solid #eeeeee;
-        background: #fff !important;
-        color: #000;
+    .login-select {
+        padding: 0;
+        padding-left: 0.2rem;
+        height: 2.4rem;
+        font-size: 14.4px;
     }
-    .button {
-        width: 100%;
-        background-image: linear-gradient(95deg, #11818e, #054264);
-        padding: 15px;
-        height: auto;
+    input {
+        font-size: 14.4px !important;
+        height: 2.4rem;
+        border-radius: 1px !important;
+        padding: 0;
+        padding-left: 0.5rem;
     }
     .has-error {
         font-size: 14.4px;

@@ -6,6 +6,7 @@ import SettingsActions from "actions/SettingsActions";
 import SettingsStore from "stores/SettingsStore";
 import counterpart from "counterpart";
 import {withRouter} from "react-router-dom";
+import Profile from "../Dashboard/Profile";
 
 /**
  *  Renders a tab layout, handling switching and optionally persists the currently open tab using the SettingsStore
@@ -260,14 +261,17 @@ class Tabs extends React.Component {
     }
 }
 
-Tabs = connect(Tabs, {
-    listenTo() {
-        return [SettingsStore];
-    },
-    getProps() {
-        return {viewSettings: SettingsStore.getState().viewSettings};
+Tabs = connect(
+    Tabs,
+    {
+        listenTo() {
+            return [SettingsStore];
+        },
+        getProps() {
+            return {viewSettings: SettingsStore.getState().viewSettings};
+        }
     }
-});
+);
 
 Tabs = withRouter(Tabs);
 

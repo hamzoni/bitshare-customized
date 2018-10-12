@@ -130,11 +130,14 @@ export default class DropDownMenu extends React.Component {
 
                 <li
                     className="dropdown-item"
-                    className={cnames({
-                        active: active.indexOf("/transfer") !== -1,
-                        disabled: !showAccountLinks
-                    })}
-                    onClick={this.props.onNavigate.bind(this, "/transfer")}
+                    className={
+                        "dropdown-item " +
+                        cnames({
+                            active: active.indexOf("/transfer") !== -1,
+                            disabled: !showAccountLinks
+                        })
+                    }
+                    //onClick={this.props.onNavigate.bind(this, "/transfer")}
                 >
                     <Translate content="header.payments_legacy" />
                 </li>

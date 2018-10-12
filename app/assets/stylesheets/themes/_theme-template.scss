@@ -57,19 +57,14 @@
     $explorer--assets--bg
 ) {
     $hamburger-submenu-display-endpoint: 990px;
-
     .explore-witness--info {
         width: 100%;
-
         border: 1px solid $explorer--witnesses--info-border;
         background: $explorer--witnesses--info-bg;
-
         padding: 12px;
         border-radius: 5px;
-
         table {
             width: 100%;
-
             thead {
                 th {
                     font-weight: 400;
@@ -78,7 +73,6 @@
                     padding-bottom: 8px;
                 }
             }
-
             tbody {
                 td {
                     color: $explorer--witnesses--info-table-text-color;
@@ -86,7 +80,6 @@
             }
         }
     }
-
     #incognito {
         background: $incognito-bg;
     }
@@ -95,10 +88,6 @@
         padding: 0 12px;
         background-color: $settings-select-bg;
         color: $settings-select-color;
-
-        padding: 25px 15px;
-        border-radius: 10px;
-        border: 1px solid #eee;
     }
     .settings-input {
         /* !important to overwrite styles for Inputs on User Settings. By default inputs take styles from
@@ -123,7 +112,6 @@
         font-size: 12px;
     }
     #unlock_wallet_modal2 {
-        display: block;
         .upload-button {
             border-color: $border-color;
             span {
@@ -140,6 +128,9 @@
         .login-label {
             color: $primary-text-color;
         }
+        .themed-input {
+            background-color: $input-background;
+        }
     }
     .spinner-button-circle .circle-wrapper {
         display: inline-block;
@@ -150,19 +141,15 @@
             background-color: #fff;
         }
     }
-
     .font-secondary {
         color: $secondary-text-color;
     }
-
     svg > path {
         transition: all 0.3s ease 0s;
     }
-
     #content-wrapper {
         @include color($primary-text-color, $bg-color);
     }
-
     hr {
         border-color: $dark-text-color;
         background-color: $dark-text-color !important;
@@ -216,6 +203,7 @@
     .txtlabel.info {
         color: $info-color;
     }
+
     .txtlabel.warning {
         color: $warning-color;
     }
@@ -232,7 +220,6 @@
     .txtann.warning {
         color: $warning-color;
     }
-
     .txtann.error {
         color: $alert-color;
     }
@@ -246,7 +233,6 @@
     .notification-success {
         border-left-color: $success-color !important;
     }
-
     .action-sheet {
         @include color($light-text-color, $super-light-panel-bg-color);
         &::after {
@@ -259,7 +245,8 @@
                 @include color(
                     $light-text-color,
                     lighten($super-light-panel-bg-color, 4%)
-                ); // color: $link-text-color;
+                );
+                // color: $link-text-color;
             }
         }
     }
@@ -278,7 +265,6 @@
             border-left-color: $super-light-panel-bg-color !important;
         }
     }
-
     .json-inspector__key {
         color: $secondary-text-color !important;
     }
@@ -290,13 +276,17 @@
     h6 {
         color: $primary-text-color;
     }
-
     // copyicons
     .copyIcon {
         background-color: $button-bg-color;
         > button.copyIcon {
             background-color: $button-bg-color;
         }
+    }
+    .modal#marketPicker,
+    .modal#settingsModal {
+        background-color: $bg-color;
+        border: 1px solid black;
     }
     .modal {
         @include color($light-text-color, $account-cells);
@@ -316,11 +306,6 @@
             &.has-error > h6 {
                 color: $error-text-color;
             }
-        }
-        .modal-header.tq-modal,
-        .modal-content.tq-modal {
-            width: 100%;
-            display: block;
         }
         .circle-wrapper {
             .circle:before {
@@ -356,6 +341,7 @@
             border-bottom: 1px solid lighten($bg-color, 4%);
         }
     }
+
     .panel-left {
         @include color($light-text-color, $light-panel-bg-color);
         .block-list li > a {
@@ -373,7 +359,8 @@
         .left-column {
             border-top-color: $bg-color;
             border-bottom-color: $bg-color;
-            background-color: $panel-bg-color; // lighten($bg-color, 4%);
+            background-color: $panel-bg-color;
+            // lighten($bg-color, 4%);
         }
         .left-column-2 {
             border-top-color: $bg-color;
@@ -466,7 +453,6 @@
             background-color: lighten($alert-color, 4%) !important;
         }
     }
-
     .header a.button.create-account {
         transition: color 0s !important;
         color: $button-bg-color !important;
@@ -568,6 +554,12 @@
     .header-container span.icon.lock-unlock > svg > path {
         fill: $button-bg-color;
     }
+    .header-dropdown-sub-link.enabled {
+        color: $secondary-text-color;
+        &:hover {
+            color: $link-text-color;
+        }
+    }
     .grp-menu-item button {
         &:hover,
         &:focus,
@@ -598,7 +590,8 @@
         }
         svg > path {
             fill: #fff;
-        } // svg:hover > path { fill: $primary-text-color; }
+        }
+        // svg:hover > path { fill: $primary-text-color; }
     }
     .settings-cog {
         svg > path {
@@ -708,7 +701,34 @@
             color: $secondary-text-color;
         }
     }
-
+    .dropdown-wrapper {
+        > div:first-of-type {
+            color: $secondary-text-color;
+        }
+        ul.dropdown {
+            @include color($light-text-color, $super-light-panel-bg-color);
+            &::after {
+                border-bottom-color: $super-light-panel-bg-color;
+            }
+            > li > span {
+                color: $light-text-color;
+            } /* Hover state */
+            li:hover > span {
+                @include color(
+                    $light-text-color,
+                    lighten($super-light-panel-bg-color, 4%)
+                );
+                color: $link-text-color;
+            }
+        }
+        &.active:after {
+            border-color: $link-text-color transparent;
+        }
+        &:after {
+            /* Little arrow */
+            border-color: $secondary-text-color transparent;
+        }
+    }
     .account-image {
         .icon:hover {
             svg path {
@@ -861,7 +881,6 @@
             border-bottom: 1px solid $button-bg-color;
         }
     }
-
     // Tabs
     .tabs {
         border-bottom-color: $dark-text-color;
@@ -1019,7 +1038,6 @@
             color: $secondary-text-color;
         }
     }
-
     // Formatted assets
     .facolor-success {
         color: $success-color;
@@ -1036,7 +1054,6 @@
     .facolor-error {
         color: $error-text-color;
     }
-
     .facolor-fee {
         color: $fee-color;
     }
@@ -1357,7 +1374,6 @@
             height: 100%;
             width: 100%;
         }
-
         #sticky-header-row {
             background-color: $panel-bg-color;
         }
@@ -1413,7 +1429,6 @@
         font-size: 11px;
         color: gray;
     }
-
     .buy-sell-box {
         background-color: $header-color;
         > select {
@@ -1453,7 +1468,6 @@
         text-transform: uppercase;
         cursor: pointer;
     }
-
     div.exchange-content-header {
         background-color: $header-color !important;
     }
@@ -1472,9 +1486,7 @@
     }
     li.stat.clickable {
         color: $secondary-text-color;
-        // &:hover{
-        // @include button-focus($primary-text-color, $panel-bg-color, 10);
-        // }
+        // &:hover{ // @include button-focus($primary-text-color, $panel-bg-color, 10); // }
     }
     .mymarkets-tabs {
         > li {
@@ -1503,12 +1515,6 @@
         }
     }
     .api-node {
-        .api-node-left {
-            width: 60%;
-        }
-
-        position: relative;
-
         .icon.shuffle svg > path {
             fill: $button-bg-color !important;
         }
@@ -1533,10 +1539,10 @@
             transition: 0.3s;
             margin-left: 0;
             > li {
+                border-radius: 2px;
                 color: $secondary-text-color;
-                background-color: $settings-menu-default-bg;
-                padding: 15px 24px;
-                margin-bottom: 1px;
+                padding: 3px 11px;
+                margin: 5px;
                 &:hover {
                     color: $primary-text-color;
                     background-color: $settings-menu-hover-bg;
@@ -1548,17 +1554,6 @@
             }
         }
     }
-
-    .settings-menu ul li:first-child {
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-    }
-
-    .settings-menu ul li:last-child {
-        border-bottom-left-radius: 5px;
-        border-bottom-right-radius: 5px;
-    }
-
     .settings--notifications {
         .settings--notifications--group {
             .settings--notifications--item {
@@ -1648,7 +1643,6 @@
             border-bottom: 2px solid #020202;
         }
     }
-
     ul.dashboard-links {
         > li.active {
             color: $primary-text-color;
@@ -1700,7 +1694,6 @@
     td.pub-key {
         word-break: break-all;
     }
-
     /* Table view account */
     div.grid-content.app-tables {
         background-color: $account-background;
@@ -1815,135 +1808,26 @@
     span.warning {
         color: darken($warning-color, 15%);
     }
-
-    .api-node-operator {
-        width: 25%;
-        float: left;
-    }
-
-    .api-node-title {
-        float: left;
-        width: 75%;
-
-        > h3 {
-            margin: 0;
-        }
-
-        > p {
-            color: $secondary-text-color;
-        }
-    }
-
-    .main-content {
-        padding: 50px;
-    }
-
-    .btn-tq-transaction {
-        width: 100%;
-        padding: 1rem 2rem;
-        background: $button-bg-color;
-        border-radius: 10px;
-    }
-
-    .tq-transaction-wrapper {
-        width: 100%;
-        display: block;
-        padding: 3rem 2rem;
-        background: $transaction-banner-bg;
-        border-radius: 10px;
-    }
-
-    .columns.tq-w-100 {
-        width: 100%;
-    }
-
-    .tq-node-right {
-        top: 50%;
-        transform: translateY(-50%);
-        position: absolute;
-        display: block;
-
-        > .api-status {
-            display: block;
-            float: right;
-            margin-left: 30px;
-        }
-
-        > a {
-            margin-left: 30px;
-            display: block;
-            float: right;
-        }
-    }
-
     .api-status {
-        p {
-            font-weight: bold;
-        }
-
         .low {
-            > p {
-                color: $bid-color;
-            }
+            color: $bid-color;
             > svg > path {
                 fill: $bid-color;
             }
         }
         .medium {
-            > p {
-                color: $call-color;
-            }
+            color: $call-color;
             > svg > path {
                 fill: $call-color;
             }
         }
         .high {
-            > p {
-                color: $ask-color;
-            }
+            color: $ask-color;
             > svg > path {
                 fill: $ask-color;
             }
         }
     }
-
-    .tq-setting.grid-content {
-        background: #fff;
-        padding: 30px;
-    }
-
-    .tq-input {
-        padding: 25px 15px !important;
-        border: 1px solid #eeeeee !important;
-        border-radius: 10px;
-        background: #fff !important;
-    }
-
-    .tq-label {
-        color: $secondary-text-color;
-        margin-bottom: 1rem;
-    }
-
-    .tq-input.tq-setting-reset {
-        margin-bottom: 1rem;
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .tq-btn {
-        padding: 15px 30px !important;
-        border-radius: 10px;
-        background-image: linear-gradient(107deg, #11818e, #054264);
-        color: #fff;
-        text-transform: uppercase;
-    }
-
-    .tq-btn.tq-setting-reset {
-        left: 50%;
-        transform: translateX(-50%);
-        position: relative;
-    }
-
     .footer {
         div.footer-status {
             > span.success {
@@ -1970,7 +1854,6 @@
             animation-direction: reverse;
         }
     }
-
     @keyframes pulsate-green {
         0% {
             color: $pulsate-green-start;
@@ -2024,6 +1907,9 @@
     .footer {
         padding-right: 0;
     }
+    .tab-no-background {
+        background-color: transparent !important;
+    }
     .header-container {
         background-color: $account-background;
         .menu-dropdown-wrapper {
@@ -2062,7 +1948,6 @@
     .order-book-button-v {
         display: none;
     }
-
     @include breakpoint(large) {
         .order-book-button-v {
             display: inline-block;
@@ -2189,7 +2074,6 @@
     .qr-address-scanner {
         &-btn {
             background: #049cce;
-
             height: 2.4rem;
             border-radius: 0 5px 5px 0;
             width: 40px;
@@ -2249,9 +2133,22 @@
             font-size: 0.7rem;
             height: 17px;
             margin: 0 0 1px 10px;
+
             > option {
                 background-color: $light-panel-bg-color;
             }
+        }
+    }
+    .login-selector--language-select {
+        .login-selector--language-select--icon {
+            font-size: 18px;
+            margin-top: 7px;
+            margin-right: 7px;
+            color: $link-text-color;
+        }
+        .login-selector--language-select--wrapper {
+            margin-left: 0;
+            // center language select for width icon takes
         }
     }
 }
@@ -2301,6 +2198,7 @@
     background-color: transparent;
     z-index: 1;
     right: 35px;
+
     top: 0;
     bottom: 0;
     margin: auto;
@@ -2316,7 +2214,7 @@
     display: none;
 }
 .header-container {
-    display: block;
+    display: flex;
     align-items: center;
     flex-wrap: nowrap;
     height: 64px;
@@ -2385,6 +2283,77 @@
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+}
+// mono code
+.mono-bg-light {
+    background: #fafafa;
+    color: #333;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+.mono-btn-light {
+    background: #fafafa;
+    color: #333 !important;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 5px;
+    > link {
+        color: #333 !important;
+    }
+}
+.mono-banner {
+    padding: 3rem 0 3rem 0;
+}
+.mono-icon-user > .icon > svg > path {
+    fill: #054264;
+}
+.mono-fbold {
+    color: #054264;
+    font-weight: bold;
+}
+.ant-modal-close-x {
+    display: none !important;
+}
+.mono-send-modal > .modal-overlay {
+    top: 3rem !important;
+    left: auto !important;
+    right: auto !important;
+    display: block !important;
+}
+.mono-btn-vt {
+    height: 40px !important;
+    line-height: 40px !important;
+    width: 100% !important;
+    text-align: center;
+    border-radius: 5px;
+}
+.mono-proxy {
+    padding: 2rem 0 1rem 0;
+}
+.mono-tb-voting > thead > tr {
+    height: 30px;
+    line-height: 30px;
+}
+.mono-tb-voting {
+    border-collapse: separate !important;
+    border-spacing: 0 10px !important;
+}
+.mono-tb-voting > tbody > tr {
+    height: 70px;
+    line-height: 70px;
+    > td:first-child {
+        text-align: center !important;
+        border-radius: 10px 0 0 10px;
+    }
+    > td:last-child {
+        border-radius: 0 10px 10px 0;
+    }
+}
+@media screen and (max-width: 575px) {
+    .mono-btn-vt {
+        margin-bottom: 10px !important;
     }
 }
 @media screen and (max-width: 640px) {

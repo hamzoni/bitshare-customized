@@ -277,10 +277,12 @@ class VotingAccountsList extends React.Component {
                     <h4>{this.props.title}</h4>
                 ) : null}
                 {item_rows.length ? (
-                    <table className="table dashboard-table table-hover">
+                    <table className="table dashboard-table table-hover mono-tb-voting">
                         <thead>
                             <tr>
-                                <th style={{textAlign: "right"}}>#</th>
+                                <th style={{textAlign: "center", maxWidth: 20}}>
+                                    No.
+                                </th>
                                 <th
                                     style={{textAlign: "left", maxWidth: cw[1]}}
                                 >
