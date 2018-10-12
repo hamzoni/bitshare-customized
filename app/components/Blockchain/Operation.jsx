@@ -140,6 +140,8 @@ class Row extends React.Component {
                         />
                     ) : null}
                 </td>
+                <td>x</td>
+                <td>x</td>
             </tr>
         );
     }

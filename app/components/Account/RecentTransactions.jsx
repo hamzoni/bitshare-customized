@@ -426,20 +426,26 @@ class RecentTransactions extends React.Component {
                                         className="column-hide-tiny"
                                         style={alignLeft}
                                     >
-                                        <Translate content="account.transactions.id" />
+                                        {/* <Translate content="account.transactions.id" /> */}
+                                        Status
                                     </th>
                                     <th
                                         className="column-hide-tiny"
                                         style={alignLeft}
                                     >
-                                        <Translate content="account.transactions.type" />
+                                        {/* <Translate content="account.transactions.type" /> */}
+                                        Transaction ID
                                     </th>
                                     <th style={alignLeft}>
-                                        <Translate content="account.transactions.info" />
+                                        {/* <Translate content="account.transactions.info" /> */}
+                                        Sender
                                     </th>
                                     <th>
-                                        <Translate content="account.transactions.time" />
+                                        {/* <Translate content="account.transactions.time" /> */}
+                                        Type
                                     </th>
+                                    <th>Amount</th>
+                                    <th>Time</th>
                                 </tr>
                             }
                             rows={display_history}

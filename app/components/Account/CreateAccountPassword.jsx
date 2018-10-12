@@ -21,6 +21,7 @@ import Icon from "../Icon/Icon";
 import CopyButton from "../Utility/CopyButton";
 import {withRouter} from "react-router-dom";
 import {scroller} from "react-scroll";
+import {Checkbox} from "antd";
 
 class CreateAccountPassword extends React.Component {
     constructor() {
@@ -290,7 +291,7 @@ class CreateAccountPassword extends React.Component {
                     </section>
 
                     <section>
-                        <label className="left-label">
+                        <label className="left-label dsfa">
                             <Translate content="wallet.confirm_password" />
                         </label>
                         <input
@@ -328,9 +329,7 @@ class CreateAccountPassword extends React.Component {
                                 onChange={() => {}}
                                 checked={this.state.understand_3}
                                 style={{
-                                    position: "absolute",
-                                    top: "-5px",
-                                    left: "0"
+                                    position: "absolute"
                                 }}
                             />
                             <div style={{paddingLeft: "30px"}}>
@@ -353,9 +352,7 @@ class CreateAccountPassword extends React.Component {
                                 onChange={() => {}}
                                 checked={this.state.understand_1}
                                 style={{
-                                    position: "absolute",
-                                    top: "-5px",
-                                    left: "0"
+                                    position: "absolute"
                                 }}
                             />
                             <div style={{paddingLeft: "30px"}}>
@@ -380,9 +377,7 @@ class CreateAccountPassword extends React.Component {
                                 onChange={() => {}}
                                 checked={this.state.understand_2}
                                 style={{
-                                    position: "absolute",
-                                    top: "-5px",
-                                    left: "0"
+                                    position: "absolute"
                                 }}
                             />
                             <div style={{paddingLeft: "30px"}}>

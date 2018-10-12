@@ -244,8 +244,7 @@
                 @include color(
                     $light-text-color,
                     lighten($super-light-panel-bg-color, 4%)
-                );
-                // color: $link-text-color;
+                ); // color: $link-text-color;
             }
         }
     }
@@ -710,7 +709,8 @@
             }
             > li > span {
                 color: $light-text-color;
-            } /* Hover state */
+            }
+            /* Hover state */
             li:hover > span {
                 @include color(
                     $light-text-color,
@@ -2392,6 +2392,33 @@
 }
 .typeahead__input {
     background: transparent !important;
+}
+.mono-menu-country {
+    width: auto;
+    padding: 0;
+}
+.mono-no-border {
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+// checkbox
+input[type="checkbox"]#{$ant-fix} {
+    cursor: pointer;
+    height: 20px !important;
+    width: 20px !important;
+    position: relative;
+}
+input[type="checkbox"]#{$ant-fix}:after {
+    background-color: #003d65;
+    padding: 0px 4px 0px 4px !important;
+    border-radius: 2px;
+    color: #f5f5f5;
+    position: absolute;
+    top: 0.5px;
+}
+input[type="checkbox"]#{$ant-fix}:checked:after {
+    content: "\2714";
 }
 @media screen and (max-width: 640px) {
     .responsive-list > .help-content > ul {

@@ -118,7 +118,7 @@ class CreateAccountModal extends React.Component {
         return (
             <div className="grid-block align-center" id="accountForm">
                 <div className="grid-block shrink vertical">
-                    <div className="grid-content shrink text-center account-creation">
+                    <div className="grid-content shrink account-creation mono-no-border">
                         {/* <div>
                             <img src={logo} />
                         </div> */}
@@ -127,30 +127,31 @@ class CreateAccountModal extends React.Component {
                             <Translate
                                 content="header.create_account"
                                 component="h4"
+                                className="align-left"
                             />
                         </div>
 
                         <div>
-                            <Translate
+                            {/* <Translate
                                 content="account.intro_text_title"
                                 component="h4"
                                 wallet_name={getWalletName()}
-                            />
-                            <Translate
-                                unsafe
-                                content="account.intro_text_1"
-                                component="p"
-                            />
+                            /> */}
 
                             <div className="shrink text-center">
-                                <div className="grp-menu-item overflow-visible account-drop-down">
+                                <div className="grp-menu-item overflow-visible account-drop-down mono-menu-country">
                                     <div
                                         className="grp-menu-item overflow-visible"
-                                        style={{margin: "0 auto"}}
                                         data-intro={translator.translate(
                                             "walkthrough.language_flag"
                                         )}
                                     >
+                                        <Translate
+                                            unsafe
+                                            content="account.intro_text_1"
+                                            component="p"
+                                            style={{float: "left"}}
+                                        />
                                         {flagDropdown}
                                     </div>
                                 </div>
@@ -161,7 +162,7 @@ class CreateAccountModal extends React.Component {
                             <Link
                                 id="account_login_button"
                                 to="/create-account/password"
-                                className="button primary"
+                                className="button primary "
                                 data-intro={translator.translate(
                                     "walkthrough.create_cloud_wallet"
                                 )}
