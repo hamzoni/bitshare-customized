@@ -1,0 +1,1 @@
+LESSCHARSET=ascii less vi.txt

@@ -668,7 +668,7 @@ class AccountVoting extends React.Component {
 
         let actionButtons = (
             <Row type="flex" justify="end">
-                <Col xs={24} sm={12} md={10} lg={6} xl={5}>
+                <Col span={11} offset={1}>
                     <Button
                         type="primary"
                         onClick={this.onPublish}
@@ -677,7 +677,7 @@ class AccountVoting extends React.Component {
                         <Translate content="account.votes.publish" />
                     </Button>
                 </Col>
-                <Col xs={24} sm={11} md={10} lg={6} xl={5} offset={1}>
+                <Col span={11} offset={1}>
                     <Button
                         type="primary"
                         onClick={this.onReset}
@@ -701,13 +701,15 @@ class AccountVoting extends React.Component {
 
         let proxyInput = (
             <AccountSelector
-                style={{width: "100%", marginBottom: 10}}
+                style={{width: "100%", maxWidth: "250px", marginBottom: 10}}
                 account={this.state.current_proxy_input}
                 accountName={this.state.current_proxy_input}
                 onChange={this.onProxyChange.bind(this)}
                 onAccountChanged={this.onProxyAccountFound}
                 tabIndex={1}
-                placeholder={counterpart.translate("account.votes.set_proxy")}
+                placeholder={
+                    "   " + counterpart.translate("account.votes.set_proxy")
+                }
                 tooltip={counterpart.translate(
                     !this.state.proxy_account_id
                         ? "tooltip.proxy_search"
@@ -761,20 +763,20 @@ class AccountVoting extends React.Component {
                                 <div className={cnames("content-block")}>
                                     <Row className="mono-proxy">
                                         <Col
-                                            xs={24}
-                                            sm={24}
+                                            xs={8}
+                                            sm={10}
                                             md={12}
-                                            lg={9}
-                                            xl={8}
+                                            lg={14}
+                                            xl={16}
                                         >
                                             {proxyInput}
                                         </Col>
                                         <Col
-                                            xs={24}
-                                            sm={24}
+                                            xs={16}
+                                            sm={14}
                                             md={12}
-                                            lg={15}
-                                            xl={16}
+                                            lg={10}
+                                            xl={8}
                                         >
                                             {actionButtons}
                                         </Col>
@@ -817,20 +819,20 @@ class AccountVoting extends React.Component {
                                 <div className={cnames("content-block")}>
                                     <Row className="mono-proxy">
                                         <Col
-                                            xs={24}
-                                            sm={24}
+                                            xs={8}
+                                            sm={10}
                                             md={12}
-                                            lg={9}
-                                            xl={8}
+                                            lg={14}
+                                            xl={16}
                                         >
                                             {proxyInput}
                                         </Col>
                                         <Col
-                                            xs={24}
-                                            sm={24}
+                                            xs={16}
+                                            sm={14}
                                             md={12}
-                                            lg={15}
-                                            xl={16}
+                                            lg={10}
+                                            xl={8}
                                         >
                                             {actionButtons}
                                         </Col>

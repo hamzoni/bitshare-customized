@@ -483,7 +483,7 @@ class Header extends React.Component {
                         </Col>
                     </Row>
                 </Col>
-                <Col span={20} offset={2}>
+                <Col span={20} offset={2} className="mono-btn-hide">
                     <Row type="flex" justify="space-between" align="middle">
                         <Col span={5} className="mono-btn-light">
                             <Link to="/" onClick={this.showModal}>

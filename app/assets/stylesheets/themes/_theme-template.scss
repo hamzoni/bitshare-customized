@@ -203,7 +203,6 @@
     .txtlabel.info {
         color: $info-color;
     }
-
     .txtlabel.warning {
         color: $warning-color;
     }
@@ -245,8 +244,7 @@
                 @include color(
                     $light-text-color,
                     lighten($super-light-panel-bg-color, 4%)
-                );
-                // color: $link-text-color;
+                ); // color: $link-text-color;
             }
         }
     }
@@ -341,7 +339,6 @@
             border-bottom: 1px solid lighten($bg-color, 4%);
         }
     }
-
     .panel-left {
         @include color($light-text-color, $light-panel-bg-color);
         .block-list li > a {
@@ -712,7 +709,8 @@
             }
             > li > span {
                 color: $light-text-color;
-            } /* Hover state */
+            }
+            /* Hover state */
             li:hover > span {
                 @include color(
                     $light-text-color,
@@ -1701,7 +1699,6 @@
     div.tabs-container {
         background-color: $account-background;
     }
-
     div.account-tabs {
         > div.service-selector {
             background-color: $bg-color;
@@ -2133,7 +2130,6 @@
             font-size: 0.7rem;
             height: 17px;
             margin: 0 0 1px 10px;
-
             > option {
                 background-color: $light-panel-bg-color;
             }
@@ -2198,7 +2194,6 @@
     background-color: transparent;
     z-index: 1;
     right: 35px;
-
     top: 0;
     bottom: 0;
     margin: auto;
@@ -2327,10 +2322,12 @@
     line-height: 40px !important;
     width: 100% !important;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 5px !important;
 }
 .mono-proxy {
-    padding: 2rem 0 1rem 0;
+    padding: 2rem 0 1.5rem 0;
+    border-bottom: 2px solid #adadad;
+    border-top: 2px solid #adadad;
 }
 .mono-tb-voting > thead > tr {
     height: 30px;
@@ -2338,7 +2335,7 @@
 }
 .mono-tb-voting {
     border-collapse: separate !important;
-    border-spacing: 0 10px !important;
+    border-spacing: 0 3px !important;
 }
 .mono-tb-voting > tbody > tr {
     height: 70px;
@@ -2351,9 +2348,23 @@
         border-radius: 0 10px 10px 0;
     }
 }
-@media screen and (max-width: 575px) {
-    .mono-btn-vt {
-        margin-bottom: 10px !important;
+.ant-spin-container {
+    height: 65px;
+}
+.ant-list-item-content {
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    margin-bottom: 0;
+    > li > a > .tab-title {
+        color: #fafafa;
+    }
+    > li.is-active {
+        border-bottom: 5px solid #054264 !important;
+        > a > .tab-title {
+            color: #fafafa;
+            font-weight: bold;
+        }
     }
 }
 @media screen and (max-width: 640px) {
@@ -2371,5 +2382,8 @@
                 border: 0;
             }
         }
+    }
+    .mono-btn-hide {
+        display: none !important;
     }
 }
