@@ -250,14 +250,6 @@
     .json-inspector__key {
         color: $secondary-text-color !important;
     }
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        color: $primary-text-color;
-    }
     // copyicons
     .copyIcon {
         background-color: $button-bg-color;
@@ -2601,7 +2593,8 @@ div.api-node-left {
     background: transparent !important;
 }
 
-.tq-btn {
+.tq-btn,
+.tq-pinging-btn {
     width: 160px;
     height: 50px;
     line-height: 50px;
@@ -2612,6 +2605,10 @@ div.api-node-left {
     left: 50%;
     transform: translateX(-50%);
     position: relative;
+}
+
+.tq-pinging-btn {
+    float: right;
 }
 
 .tq-setting-reset {
@@ -2654,4 +2651,18 @@ div.api-node-left {
 
 .tq-max-width {
     width: 100% !important;
+}
+
+.tq-btn-ping-wrapper {
+}
+
+.tq-larger-wrapper-ast {
+    float: left;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem !important;
+}
+.VAAlign {
 }

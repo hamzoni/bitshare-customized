@@ -549,13 +549,16 @@ class AccessSettings extends React.Component {
             <div>
                 {this.renderAutoSelection(connectedNode)}
                 <div className="active-node tq-active-node">
-                    <LoadingButton
-                        style={{float: "right"}}
-                        caption="settings.ping"
-                        loadingType="inside-feedback-resize"
-                        onClick={this._recalculateLatency.bind(this)}
-                    />
-                    <Translate component="h4" content="settings.active_node" />
+                    <h4 className="tq-larger-wrapper-ast">
+                        <span className="VAAlign">
+                            <Translate content="settings.active_node" />
+                        </span>
+                        <LoadingButton
+                            caption="settings.ping"
+                            loadingType="inside-feedback-resize"
+                            onClick={this._recalculateLatency.bind(this)}
+                        />
+                    </h4>
                     {renderNode(connectedNode, connectedNode)}
                 </div>
                 <div
