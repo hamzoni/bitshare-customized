@@ -360,7 +360,7 @@ class Settings extends React.Component {
                         </ul>
                     </div>
 
-                    <div className="grid-content tq-setting tq-left-settingtq-left-setting tq-right-setting">
+                    <div className="grid-content tq-setting tq-right-setting">
                         <div className="grid-block small-12 no-margin vertical">
                             {activeEntry != "access" && (
                                 <Translate

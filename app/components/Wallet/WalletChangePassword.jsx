@@ -7,6 +7,7 @@ import WalletDb from "stores/WalletDb";
 import PasswordConfirm from "./PasswordConfirm";
 import counterpart from "counterpart";
 import PropTypes from "prop-types";
+import "./taquy.css";
 
 export default class WalletChangePassword extends Component {
     constructor() {

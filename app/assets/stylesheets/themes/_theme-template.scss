@@ -2586,3 +2586,33 @@ div.api-node-left {
         float: right;
     }
 }
+
+.tq-right-setting {
+    overflow: hidden !important;
+}
+.tq-label {
+    margin-bottom: 1rem;
+    color: #999999;
+}
+
+.tq-input {
+    margin-bottom: 1rem !important;
+    height: auto !important;
+    width: 100% !important;
+    max-width: auto !important;
+}
+
+.tq-btn {
+    width: 160px;
+    height: 50px;
+    border-radius: 10px;
+    background-image: linear-gradient(107deg, #11818e, #054264);
+    color: #fff !important;
+}
+
+.tq-setting-reset {
+    margin: 0 auto;
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
+}
