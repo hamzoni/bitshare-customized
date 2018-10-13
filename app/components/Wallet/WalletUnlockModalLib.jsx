@@ -88,7 +88,7 @@ export const BackupWarning = ({onChange, checked}) => (
 );
 
 export const LoginButtons = ({onLogin, backupLogin}) => (
-    <button className="button" onClick={onLogin}>
+    <button className="tq-login-btn tq-btn tq-max-width" onClick={onLogin}>
         Login
     </button>
 );
@@ -151,7 +151,7 @@ export const WalletSelector = ({
     <select
         value={restoringBackup ? "upload." : ""}
         onChange={onWalletChange}
-        className="login-select"
+        className="login-select tq-input"
     >
         <option value="" hidden>
             <Translate content="wallet.select_wallet" />

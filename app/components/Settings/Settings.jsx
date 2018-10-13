@@ -294,7 +294,7 @@ class Settings extends React.Component {
                     <input
                         disabled={!getFaucet().editable}
                         type="text"
-                        className="settings-input"
+                        className="settings-input tq-setting-faucet"
                         defaultValue={settings.get("faucet_address")}
                         onChange={
                             getFaucet().editable
@@ -361,7 +361,7 @@ class Settings extends React.Component {
                     </div>
 
                     <div className="grid-content tq-setting tq-right-setting">
-                        <div className="grid-block small-12 no-margin vertical">
+                        <div className="grid-block small-12 tq-right-setting-child no-margin vertical">
                             {activeEntry != "access" && (
                                 <Translate
                                     unsafe

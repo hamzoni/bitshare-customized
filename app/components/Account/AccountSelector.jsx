@@ -424,6 +424,7 @@ class AccountSelector extends React.Component {
                                                 : "lowercase",
                                         fontVariant: "initial"
                                     }}
+                                    className="tq-input"
                                     name="username"
                                     id="username"
                                     defaultValue={this.props.accountName || ""}
@@ -452,6 +453,7 @@ class AccountSelector extends React.Component {
                                         fontVariant: "initial"
                                     }}
                                     name="username"
+                                    className="tq-input"
                                     id="username"
                                     autoComplete="username"
                                     type="text"

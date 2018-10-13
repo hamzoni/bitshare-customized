@@ -84,19 +84,11 @@
         background: $incognito-bg;
     }
     .settings-select {
-        height: 36px;
-        padding: 0 12px;
-        background-color: $settings-select-bg;
-        color: $settings-select-color;
+        padding: 1rem 17px;
+        border-radius: 10px;
+        color: #000;
     }
     .settings-input {
-        /* !important to overwrite styles for Inputs on User Settings. By default inputs take styles from
-    .block-list and it uses on many places. To keep everything OK and do not break something I just do
-    overwrite for Inputs on settings and keep default styles for inputs on another places. */
-        color: $settings-select-color !important;
-        height: 36px !important;
-        background-color: $settings-select-bg !important;
-        border-bottom: 0 !important;
         max-width: 100% !important;
     }
     .positive {
@@ -112,6 +104,7 @@
         font-size: 12px;
     }
     #unlock_wallet_modal2 {
+        background: #fff !important;
         .upload-button {
             border-color: $border-color;
             span {
@@ -124,12 +117,6 @@
             background: $input-background
                 url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAGCAYAAAAVMmT4AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4gUEEhssVJbYaQAAAHVJREFUGNN1z7ERgkAUBNAHnOUQGdCDRRAaGlwFVkDgGBFeEfZAaA2MY2AL3GCogvz47e78wnVOsl4y2LpWo3IsZb0gajWbMIiyvvI6P9VGQVQb3T1WcNJJhhIkg0n3s7CAUNjPuz9NN8HhG67xJ3AyuSyffgPoxSqQfV+TFgAAAABJRU5ErkJggg==")
                 right 10px center no-repeat;
-        }
-        .login-label {
-            color: $primary-text-color;
-        }
-        .themed-input {
-            background-color: $input-background;
         }
     }
     .spinner-button-circle .circle-wrapper {
@@ -2595,19 +2582,36 @@ div.api-node-left {
     color: #999999;
 }
 
-.tq-input {
+.tq-input,
+#username,
+#password {
+    color: #000 !important;
+    border: none !important;
+    border: 1px solid #eee !important;
     margin-bottom: 1rem !important;
     height: auto !important;
     width: 100% !important;
     max-width: auto !important;
+    border-radius: 10px !important;
+    padding: 17px 20px !important;
+    background: transparent !important;
+}
+
+.tq-input:hover {
+    background: transparent !important;
 }
 
 .tq-btn {
     width: 160px;
     height: 50px;
+    line-height: 50px;
+    text-align: center;
     border-radius: 10px;
     background-image: linear-gradient(107deg, #11818e, #054264);
     color: #fff !important;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
 }
 
 .tq-setting-reset {
@@ -2615,4 +2619,39 @@ div.api-node-left {
     left: 50%;
     position: relative;
     transform: translateX(-50%);
+}
+
+.tq-setting-faucet {
+    background: #fff !important;
+    color: #000 !important;
+    border: 1px solid #eee !important;
+    box-sizing: border-box;
+    border-radius: 10px !important;
+    max-height: auto !important;
+    height: auto !important;
+    padding: 17px 20px !important;
+}
+
+.tq-setting-group-general {
+    line-height: 20px;
+    margin-top: 10px;
+}
+
+.tq-settings-select {
+    float: left !important;
+    border: 1px solid #eee !important;
+}
+
+.tq-block-list {
+    float: left;
+}
+
+.tq-right-setting-child {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.tq-max-width {
+    width: 100% !important;
 }
