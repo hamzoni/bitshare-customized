@@ -150,7 +150,10 @@ class CreateAccountModal extends React.Component {
                                             unsafe
                                             content="account.intro_text_1"
                                             component="p"
-                                            style={{float: "left"}}
+                                            style={{
+                                                float: "left",
+                                                color: "#333"
+                                            }}
                                         />
                                         {flagDropdown}
                                     </div>
@@ -162,7 +165,7 @@ class CreateAccountModal extends React.Component {
                             <Link
                                 id="account_login_button"
                                 to="/create-account/password"
-                                className="button primary "
+                                className="button primary mono-btn-pw"
                                 data-intro={translator.translate(
                                     "walkthrough.create_cloud_wallet"
                                 )}
@@ -171,7 +174,7 @@ class CreateAccountModal extends React.Component {
                             </Link>
 
                             <span
-                                className="button hollow primary"
+                                className="button hollow primary mono-btn-pw"
                                 onClick={() => {
                                     SettingsActions.changeSetting.defer({
                                         setting: "passwordLogin",

@@ -871,77 +871,135 @@ class AccountVoting extends React.Component {
                             </Tab>
 
                             <Tab title="account.votes.workers_short">
-                                <div className="header-selector">
-                                    <div style={{float: "right"}}>
-                                        <Link to="/create-worker">
-                                            <div className="button">
-                                                <Translate content="account.votes.create_worker" />
-                                            </div>
-                                        </Link>
-                                    </div>
-                                    <div className="selector">
-                                        {/* <Link to="/help/voting/worker"><Icon name="question-circle" title="icons.question_cirlce" /></Link> */}
-                                        <div
-                                            style={{paddingLeft: 10}}
-                                            className={cnames("inline-block", {
-                                                inactive: workerTableIndex !== 0
-                                            })}
-                                            onClick={this._setWorkerTableIndex.bind(
-                                                this,
-                                                0
-                                            )}
+                                <Row
+                                    style={{background: "#f5f5f5"}}
+                                    className="mono-proxy"
+                                >
+                                    <Col span={24}>
+                                        <Row
+                                            type="flex"
+                                            justify="space-between"
                                         >
-                                            {counterpart.translate(
-                                                "account.votes.new",
-                                                {count: newWorkers.length}
-                                            )}
-                                        </div>
-                                        <div
-                                            className={cnames("inline-block", {
-                                                inactive: workerTableIndex !== 1
-                                            })}
-                                            onClick={this._setWorkerTableIndex.bind(
-                                                this,
-                                                1
-                                            )}
-                                        >
-                                            {counterpart.translate(
-                                                "account.votes.active",
-                                                {count: workers.length}
-                                            )}
-                                        </div>
-
-                                        {expiredWorkers.length ? (
-                                            <div
-                                                className={cnames(
-                                                    "inline-block",
-                                                    {inactive: !showExpired}
-                                                )}
-                                                onClick={
-                                                    !showExpired
-                                                        ? this._setWorkerTableIndex.bind(
-                                                              this,
-                                                              2
-                                                          )
-                                                        : () => {}
-                                                }
+                                            <Col
+                                                xs={12}
+                                                sm={12}
+                                                md={12}
+                                                lg={14}
+                                                xl={16}
                                             >
-                                                <Translate content="account.votes.expired" />
-                                            </div>
-                                        ) : null}
-                                    </div>
-                                    <div style={{marginTop: "2rem"}}>
-                                        {proxyInput}
-                                        <div
-                                            style={{
-                                                float: "right",
-                                                marginTop: "-2.5rem"
-                                            }}
-                                        >
-                                            {actionButtons}
-                                        </div>
-                                    </div>
-                                </div>
+                                                <div
+                                                    style={{
+                                                        paddingLeft: 10,
+                                                        float: "left",
+                                                        paddingTop: "1rem"
+                                                    }}
+                                                    className={cnames(
+                                                        "inline-block",
+                                                        {
+                                                            inactive:
+                                                                workerTableIndex !==
+                                                                0
+                                                        }
+                                                    )}
+                                                    onClick={this._setWorkerTableIndex.bind(
+                                                        this,
+                                                        0
+                                                    )}
+                                                >
+                                                    {counterpart.translate(
+                                                        "account.votes.new",
+                                                        {
+                                                            count:
+                                                                newWorkers.length
+                                                        }
+                                                    )}
+                                                </div>
+                                                <div
+                                                    style={{paddingTop: "1rem"}}
+                                                    className={cnames(
+                                                        "inline-block",
+                                                        {
+                                                            inactive:
+                                                                workerTableIndex !==
+                                                                1
+                                                        }
+                                                    )}
+                                                    onClick={this._setWorkerTableIndex.bind(
+                                                        this,
+                                                        1
+                                                    )}
+                                                >
+                                                    {counterpart.translate(
+                                                        "account.votes.active",
+                                                        {count: workers.length}
+                                                    )}
+                                                </div>
+
+                                                {expiredWorkers.length ? (
+                                                    <div
+                                                        style={{
+                                                            paddingTop: "1rem"
+                                                        }}
+                                                        className={cnames(
+                                                            "inline-block",
+                                                            {
+                                                                inactive: !showExpired
+                                                            }
+                                                        )}
+                                                        onClick={
+                                                            !showExpired
+                                                                ? this._setWorkerTableIndex.bind(
+                                                                      this,
+                                                                      2
+                                                                  )
+                                                                : () => {}
+                                                        }
+                                                    >
+                                                        <Translate content="account.votes.expired" />
+                                                    </div>
+                                                ) : null}
+                                            </Col>
+                                            <Col
+                                                xs={12}
+                                                sm={12}
+                                                md={12}
+                                                lg={10}
+                                                xl={8}
+                                            >
+                                                <Button
+                                                    type="primary"
+                                                    className="mono-btn-vt"
+                                                >
+                                                    <Link to="/create-worker">
+                                                        <Translate content="account.votes.create_worker" />
+                                                    </Link>
+                                                </Button>
+                                            </Col>
+                                        </Row>
+                                    </Col>
+                                    <Col span={24} style={{marginTop: "1rem"}}>
+                                        <Row>
+                                            <Col
+                                                xs={8}
+                                                sm={10}
+                                                md={12}
+                                                lg={14}
+                                                xl={16}
+                                            >
+                                                {proxyInput}
+                                            </Col>
+                                            <Col
+                                                xs={16}
+                                                sm={14}
+                                                md={12}
+                                                lg={10}
+                                                xl={8}
+                                            >
+                                                {actionButtons}
+                                            </Col>
+                                        </Row>
+                                    </Col>
+                                </Row>
 
                                 {/* {showExpired ? null : (
                                 <div style={{paddingTop: 10, paddingBottom: 20}}>
@@ -961,7 +1019,7 @@ class AccountVoting extends React.Component {
                                     </table>
                                 </div>)} */}
 
-                                <table className="table dashboard-table table-hover">
+                                <table className="table dashboard-table table-hover mono-tb-voting">
                                     {workerTableIndex ===
                                     2 ? null : workerTableIndex === 0 ? (
                                         <thead>

@@ -228,7 +228,8 @@
                 @include color(
                     $light-text-color,
                     lighten($super-light-panel-bg-color, 4%)
-                ); // color: $link-text-color;
+                );
+                // color: $link-text-color;
             }
         }
     }
@@ -685,8 +686,7 @@
             }
             > li > span {
                 color: $light-text-color;
-            }
-            /* Hover state */
+            } /* Hover state */
             li:hover > span {
                 @include color(
                     $light-text-color,
@@ -1211,8 +1211,8 @@
         }
     }
     .menu-group.primary,
-    .menu-group.primary .menu-bar {
-        background-color: $account-background;
+    .menu-group .primary .menu-bar {
+        background-color: transparent !important;
         li {
             > a {
                 color: $account-dimmed;
@@ -1220,15 +1220,21 @@
                     fill: $account-dimmed;
                 }
             }
-            > a:hover,
+            > a:hover {
+                background: transparent;
+            }
             > a.active {
-                background-color: $bg-color !important;
+                // background-color: $bg-color !important;
                 color: $primary-text-color;
                 .icon > svg > path {
                     fill: $primary-text-color;
                 }
             }
         }
+    }
+    // mono
+    .menu-bar {
+        background: transparent !important;
     }
     // Asset Detail
     .asset-card {
@@ -1285,6 +1291,7 @@
             opacity: 0.6;
         }
     }
+
     .orderHistoryCall {
         > span.price-integer,
         > span > span.price-integer,
@@ -2289,19 +2296,33 @@
     width: 100% !important;
     text-align: center;
     border-radius: 5px !important;
+    background-image: linear-gradient(135deg, #11818e, #054264) !important;
+}
+.mono-btn-pw {
+    background-image: linear-gradient(135deg, #11818e, #054264) !important;
+    border-radius: 5px;
 }
 .mono-proxy {
     padding: 2rem 0 1.5rem 0;
-    border-bottom: 2px solid #adadad;
-    border-top: 2px solid #adadad;
+    border-bottom: 1px solid #b3b3b3;
+    border-top: 1px solid #b3b3b3;
+    background: #f5f5f5;
 }
 .mono-tb-voting > thead > tr {
     height: 30px;
     line-height: 30px;
 }
 .mono-tb-voting {
+    width: 101%;
     border-collapse: separate !important;
     border-spacing: 0 3px !important;
+    background: #f5f5f5;
+    > tbody > tr.supported > td {
+        background: white !important;
+        > tbody > tr:hover {
+            background: #fafafa !important;
+        }
+    }
 }
 .mono-tb-voting > tbody > tr {
     height: 70px;
@@ -2323,21 +2344,22 @@
     text-align: center;
     margin-bottom: 0;
     > li > a > .tab-title {
-        color: #fafafa;
+        color: #333;
     }
     > li.is-active {
         border-bottom: 5px solid #054264 !important;
         > a > .tab-title {
-            color: #fafafa;
+            color: #003d65;
             font-weight: bold;
         }
     }
 }
 .mono-profile {
+    margin-top: 2rem;
     margin-bottom: 1rem;
 }
 .mono-bdbt {
-    border-bottom: 1px solid white !important;
+    border-bottom: 1px solid #333 !important;
     > input[type="text"]#{$ant-fix} {
         background: transparent;
         border-radius: 0 !important;
@@ -2350,7 +2372,7 @@
     }
 }
 .mono-label-form {
-    color: #333;
+    color: #b3b3b3;
     margin: 0;
     padding: 0;
     margin-left: 0.5rem;
@@ -2378,12 +2400,15 @@ input[type="checkbox"]#{$ant-fix}:after {
     background-color: #003d65;
     padding: 0px 4px 0px 4px !important;
     border-radius: 2px;
-    color: #f5f5f5;
+    color: white;
     position: absolute;
     top: 0.5px;
 }
 input[type="checkbox"]#{$ant-fix}:checked:after {
     content: "\2714";
+}
+.ant-modal-body {
+    background: #f5f5f5;
 }
 @media screen and (max-width: 640px) {
     .responsive-list > .help-content > ul {
@@ -2403,6 +2428,9 @@ input[type="checkbox"]#{$ant-fix}:checked:after {
     }
     .mono-btn-hide {
         display: none !important;
+    }
+    .mono-hide {
+        display: none;
     }
 }
 //tq - taquy css
