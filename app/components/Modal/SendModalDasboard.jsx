@@ -629,13 +629,15 @@ class SendModal extends React.Component {
                         <div
                             style={{
                                 fontSize: "1.3rem",
-                                fontFamily: "Roboto-Medium, arial, sans-serif"
+                                fontFamily: "Roboto-Medium, arial, sans-serif",
+                                color: "#333"
                             }}
                         >
                             <Translate
                                 unsafe
                                 content="modal.send.header"
                                 with={{fromName: from_name}}
+                                style={{color: "#003d65"}}
                             />
                         </div>
                     ) : (
@@ -656,8 +658,9 @@ class SendModal extends React.Component {
                         style={{
                             marginTop: 10,
                             fontSize: "0.7rem",
-                            marginLeft: "auto",
-                            marginRight: "auto"
+                            marginLeft: "0",
+                            marginRight: "0",
+                            color: "#b3b3b3"
                         }}
                     >
                         <p>

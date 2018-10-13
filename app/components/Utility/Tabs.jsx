@@ -91,11 +91,19 @@ class Tab extends React.Component {
                 }
             >
                 <a>
-                    <span className="tab-title">
+                    <span className="tab-title mono-fix-title">
                         {title}
+                        &nbsp;
                         {updatedTab ? "*" : ""}
                     </span>
-                    {subText && <div className="tab-subtext">{subText}</div>}
+                    {subText && (
+                        <span
+                            className="tab-subtext"
+                            style={{paddingLeft: "0.2rem"}}
+                        >
+                            {subText}
+                        </span>
+                    )}
                 </a>
             </li>
         );
@@ -205,9 +213,9 @@ class Tabs extends React.Component {
         }
 
         return (
-            <div>
+            <div className="mono-list-item">
                 <List
-                    grid={{gutter: 12, xs: 3, sm: 6, md: 8, lg: 10, xl: 12}}
+                    grid={{gutter: 16, xs: 4, sm: 4, md: 4, lg: 4, xl: 6}}
                     size="large"
                     header={null}
                     footer={null}

@@ -231,9 +231,12 @@ class CreateAccountPassword extends React.Component {
             }
         }
 
-        let buttonClass = classNames("submit-button button no-margin", {
-            disabled: !valid || (registrar_account && !isLTM)
-        });
+        let buttonClass = classNames(
+            "submit-button button no-margin mono-btn-pw",
+            {
+                disabled: !valid || (registrar_account && !isLTM)
+            }
+        );
 
         return (
             <div style={{textAlign: "left"}}>
@@ -275,7 +278,7 @@ class CreateAccountPassword extends React.Component {
                                         padding: "0px",
                                         marginBottom: "0px"
                                     }}
-                                    rows="3"
+                                    rows="1"
                                     readOnly
                                     disabled
                                 >

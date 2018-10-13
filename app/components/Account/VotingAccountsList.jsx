@@ -67,12 +67,14 @@ class AccountItemRow extends React.Component {
         const isSupported = action === "remove";
 
         return (
-            <tr className={isSupported ? "" : "unsupported"}>
-                <td style={{textAlign: "right"}}>{this.props.idx + 1}</td>
+            <tr className={isSupported ? "supported" : "unsupported"}>
+                <td className="mono-hide" style={{textAlign: "right"}}>
+                    {this.props.idx + 1}
+                </td>
                 <td style={{textAlign: "left"}}>
                     <LinkToAccountById account={account.get("id")} />
                 </td>
-                <td>
+                <td className="mono-hide">
                     {link && link.indexOf(".") !== -1 ? (
                         <a
                             href={link}
@@ -83,7 +85,7 @@ class AccountItemRow extends React.Component {
                         </a>
                     ) : null}
                 </td>
-                <td>
+                <td className="mono-hide">
                     <FormattedAsset
                         amount={votes}
                         asset="1.3.0"
@@ -280,7 +282,10 @@ class VotingAccountsList extends React.Component {
                     <table className="table dashboard-table table-hover mono-tb-voting">
                         <thead>
                             <tr>
-                                <th style={{textAlign: "center", maxWidth: 20}}>
+                                <th
+                                    className="mono-hide"
+                                    style={{textAlign: "center", maxWidth: 20}}
+                                >
                                     No.
                                 </th>
                                 <th
@@ -288,10 +293,16 @@ class VotingAccountsList extends React.Component {
                                 >
                                     <Translate content="account.votes.name" />
                                 </th>
-                                <th style={{maxWidth: cw[2]}}>
+                                <th
+                                    className="mono-hide"
+                                    style={{maxWidth: cw[2]}}
+                                >
                                     <Translate content="account.votes.about" />
                                 </th>
-                                <th style={{maxWidth: cw[3]}}>
+                                <th
+                                    className="mono-hide"
+                                    style={{maxWidth: cw[3]}}
+                                >
                                     <Translate content="account.votes.votes" />
                                 </th>
                                 <th style={{maxWidth: cw[4]}}>
@@ -301,7 +312,10 @@ class VotingAccountsList extends React.Component {
                                     <Translate content="account.votes.supported" />
                                 </th>
                                 <th style={{maxWidth: cw[5]}}>
-                                    <Translate content="account.votes.toggle" />
+                                    <Translate
+                                        content="account.votes.toggle"
+                                        className="mono-hide"
+                                    />
                                 </th>
                             </tr>
                         </thead>
