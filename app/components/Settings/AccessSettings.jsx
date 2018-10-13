@@ -55,52 +55,44 @@ class AutoSelectionNode extends React.Component {
                 <div>
                     <span
                         className="switch"
-                        style={{
-                            float: "right",
-                            position: "relative",
-                            top: "-15px"
-                        }}
                         onClick={this.activate.bind(
                             this,
                             isActive ? connectedNode.url : autoSelectionUrl
                         )}
                     >
                         <input
-                            id="automatic_node_switcher"
+                            id="automatic_node_switcher  tq-checkbox-node"
                             type="checkbox"
                             checked={isActive}
                             onChange={() => {}}
                         />
-                        <label />
                     </span>
 
-                    <p style={{fontSize: "80%"}}>
+                    <p className="tq-auto-node-text">
                         <Translate content="settings.automatic_short" />:
                     </p>
                 </div>
             );
         } else {
             return (
-                <div className="auto-node">
+                <div className="auto-node tq-auto-node">
                     <div>
                         <span
-                            className="switch"
                             onClick={this.activate.bind(
                                 this,
                                 isActive ? connectedNode.url : autoSelectionUrl
                             )}
                         >
                             <input
-                                id="automatic_node_switcher"
+                                id="automatic_node_switcher tq-checkbox-node"
                                 type="checkbox"
                                 checked={isActive}
                                 onChange={() => {}}
                             />
-                            <label />
                         </span>
                         <Translate
+                            className="tq-auto-node-text"
                             component="div"
-                            style={{paddingLeft: "1rem", paddingTop: "0.5rem"}}
                             content="settings.automatic"
                             totalNodes={totalNodes}
                         />
@@ -261,7 +253,7 @@ class ApiNode extends React.Component {
                             onClick={this.activate.bind(this, url)}
                         />
                         <Icon
-                            className={ping.color + " hover-icon"}
+                            className={ping.color + " hover-icon tq-eye-icon"}
                             name={"connect"}
                             title="icons.connect"
                             size="1_5x"
@@ -295,7 +287,7 @@ class ApiNode extends React.Component {
                             </p>
                         )}
                     </div>
-                    <div>
+                    <div className="tq-api-status">
                         <div className="api-status tq-node-right">
                             <span className={ping.color}>
                                 {!!ping.rating && (
@@ -554,24 +546,20 @@ class AccessSettings extends React.Component {
                 </div>
             </div>
         ) : (
-            <div style={{paddingTop: "1em"}}>
+            <div>
                 {this.renderAutoSelection(connectedNode)}
-                <div className="active-node">
+                <div className="active-node tq-active-node">
                     <LoadingButton
                         style={{float: "right"}}
                         caption="settings.ping"
                         loadingType="inside-feedback-resize"
                         onClick={this._recalculateLatency.bind(this)}
                     />
-                    <Translate
-                        component="h4"
-                        style={{marginLeft: "1rem"}}
-                        content="settings.active_node"
-                    />
+                    <Translate component="h4" content="settings.active_node" />
                     {renderNode(connectedNode, connectedNode)}
                 </div>
                 <div
-                    className="nodes"
+                    className="nodes tq-nodes"
                     style={{
                         display:
                             props.selectedNode === autoSelectionUrl
@@ -581,7 +569,7 @@ class AccessSettings extends React.Component {
                         marginBottom: "2em"
                     }}
                 >
-                    <div className="grid-block shrink" style={{marginLeft: 0}}>
+                    <div className="grid-block tq-mono-tab-bar">
                         {[
                             "available_nodes",
                             "my_nodes",
@@ -606,9 +594,7 @@ class AccessSettings extends React.Component {
                         })}
                     </div>
                     {this.state.activeTab === "my_nodes" && (
-                        <div
-                            style={{paddingLeft: "1rem", paddingBottom: "1rem"}}
-                        >
+                        <div>
                             <div
                                 className="button"
                                 onClick={props.triggerModal.bind(this)}

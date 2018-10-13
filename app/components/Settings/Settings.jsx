@@ -334,7 +334,7 @@ class Settings extends React.Component {
 
         return (
             <div className={this.props.deprecated ? "" : "grid-block"}>
-                <div className="grid-block main-content margin-block wrap">
+                <div className="grid-block main-content tq-setting-wrapper margin-block wrap">
                     <div className="grid-content tq-left-setting settings-menu tq-padding-0">
                         <ul>
                             {menuEntries.map((entry, index) => {
