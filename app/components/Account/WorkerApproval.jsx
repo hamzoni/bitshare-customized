@@ -70,7 +70,7 @@ class WorkerApproval extends React.Component {
         if (worker.daily_pay < this.props.rest) {
             fundedPercent = 100;
         } else if (this.props.rest > 0) {
-            fundedPercent = this.props.rest / worker.daily_pay * 100;
+            fundedPercent = (this.props.rest / worker.daily_pay) * 100;
         }
 
         let startDate = counterpart.localize(
@@ -109,7 +109,7 @@ class WorkerApproval extends React.Component {
                 <td className="worker-name" style={{textAlign: "left"}}>
                     <div
                         className="inline-block"
-                        style={{paddingRight: 5, position: "relative", top: -1}}
+                        style={{paddingRight: 5, position: "relative", top: 5}}
                     >
                         <a
                             style={{
@@ -127,7 +127,7 @@ class WorkerApproval extends React.Component {
                     </div>
                     <div className="inline-block">
                         {worker.name}
-                        <br />
+
                         <LinkToAccountById account={worker.worker_account} />
                     </div>
                 </td>
