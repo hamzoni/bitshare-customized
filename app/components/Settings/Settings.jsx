@@ -335,10 +335,7 @@ class Settings extends React.Component {
         return (
             <div className={this.props.deprecated ? "" : "grid-block"}>
                 <div className="grid-block main-content margin-block wrap">
-                    <div
-                        className="grid-content shrink settings-menu"
-                        style={{paddingRight: "2rem"}}
-                    >
+                    <div className="grid-content tq-left-setting settings-menu tq-padding-0">
                         <ul>
                             {menuEntries.map((entry, index) => {
                                 return (
@@ -363,12 +360,7 @@ class Settings extends React.Component {
                         </ul>
                     </div>
 
-                    <div
-                        className="grid-content tq-setting"
-                        style={{
-                            maxWidth: 1000
-                        }}
-                    >
+                    <div className="grid-content tq-setting tq-left-settingtq-left-setting tq-right-setting">
                         <div className="grid-block small-12 no-margin vertical">
                             {activeEntry != "access" && (
                                 <Translate

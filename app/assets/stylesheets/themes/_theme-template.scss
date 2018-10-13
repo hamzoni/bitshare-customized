@@ -1533,13 +1533,12 @@
     // Settings
     .settings-menu {
         > ul {
-            width: 200px;
             transition: 0.3s;
             margin-left: 0;
             > li {
                 border-radius: 2px;
                 color: $secondary-text-color;
-                padding: 3px 11px;
+                padding: 1rem 1rem;
                 margin: 5px;
                 &:hover {
                     color: $primary-text-color;
@@ -2439,4 +2438,29 @@ input[type="checkbox"]#{$ant-fix}:checked:after {
     .mono-btn-hide {
         display: none !important;
     }
+}
+//tq - taquy css
+.main-content {
+    padding-top: 3rem;
+}
+
+.tq-padding-0 {
+    padding: 0 !important;
+}
+
+.tq-left-setting {
+    > ul {
+        > li {
+            background: #fff;
+            color: #999999;
+        }
+
+        > li.active {
+            background: #fff !important;
+            color: #054264 !important;
+        }
+    }
+}
+.tq-right-setting {
+    width: 70%;
 }
