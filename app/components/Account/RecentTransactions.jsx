@@ -376,11 +376,11 @@ class RecentTransactions extends React.Component {
                     )}
                     <div className="header-selector">
                         <div className="selector">
-                            <div className={cnames("inline-block")}>
+                            <div className={cnames("inline-block mono-pdleft")}>
                                 {this.props.showFilters ? (
                                     <select
                                         data-place="left"
-                                        className="bts-select no-margin"
+                                        className="bts-select no-margin mono-pdleft"
                                         value={this.state.filter}
                                         onChange={this._onChangeFilter.bind(
                                             this

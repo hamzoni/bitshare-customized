@@ -470,8 +470,8 @@ class AccountOverview extends React.Component {
                                 title="account.portfolio"
                                 subText={portfolioActiveAssetsBalance}
                             >
-                                <div className="header-selector">
-                                    <div className="filter inline-block">
+                                <div className="header-selector mono-bg-light">
+                                    <div className="filter inline-block mono-fliter">
                                         <input
                                             type="text"
                                             placeholder="Filter"

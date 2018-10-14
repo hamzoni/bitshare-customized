@@ -1102,9 +1102,7 @@ class AccountVoting extends React.Component {
                                     <thead>
                                         <tr>
                                             {workerTableIndex === 2 ? null : (
-                                                <th
-                                                    style={{textAlign: "right"}}
-                                                >
+                                                <th style={{padding: 0}}>
                                                     <Translate content="account.votes.line" />
                                                 </th>
                                             )}
@@ -1144,7 +1142,7 @@ class AccountVoting extends React.Component {
                                                 className="hide-column-small"
                                             >
                                                 <Translate content="account.votes.daily_pay" />
-                                                <div
+                                                <span
                                                     style={{
                                                         paddingTop: 5,
                                                         fontSize: "0.8rem"
@@ -1155,7 +1153,7 @@ class AccountVoting extends React.Component {
                                                         name={preferredUnit}
                                                     />
                                                     )
-                                                </div>
+                                                </span>
                                             </th>
                                             {workerTableIndex === 2 ||
                                             workerTableIndex === 0 ? null : (
@@ -1163,7 +1161,7 @@ class AccountVoting extends React.Component {
                                                     style={{textAlign: "right"}}
                                                 >
                                                     <Translate content="explorer.witnesses.budget" />
-                                                    <div
+                                                    <span
                                                         style={{
                                                             paddingTop: 5,
                                                             fontSize: "0.8rem"
@@ -1174,7 +1172,7 @@ class AccountVoting extends React.Component {
                                                             name={preferredUnit}
                                                         />
                                                         )
-                                                    </div>
+                                                    </span>
                                                 </th>
                                             )}
 

@@ -2,8 +2,12 @@ import React from "react";
 import Translate from "react-translate-component";
 import cnames from "classnames";
 import AccountActions from "actions/AccountActions";
+import {Modal} from "antd";
+import CreateAccoutModal from "../CreateAccountModal";
 
 export default class DropDownMenu extends React.Component {
+    state = {visible: false};
+
     shouldComponentUpdate(np) {
         let shouldUpdate = false;
         for (let key in np) {
@@ -20,6 +24,27 @@ export default class DropDownMenu extends React.Component {
     _onRemoveContact() {
         AccountActions.removeAccountContact(this.props.currentAccount);
     }
+
+    showModal = e => {
+        e.preventDefault();
+        this.setState({
+            visible: true
+        });
+    };
+
+    handleOk = e => {
+        console.log(e);
+        this.setState({
+            visible: false
+        });
+    };
+
+    handleCancel = () => {
+        //console.log(e);
+        this.setState({
+            visible: false
+        });
+    };
 
     render() {
         const {
@@ -47,29 +72,20 @@ export default class DropDownMenu extends React.Component {
                 </li>
 
                 {locked ? (
-                    <li
-                        className={
-                            "dropdown-item " +
-                            cnames({
-                                active:
-                                    active.indexOf(
-                                        `/create-account/${
-                                            !passwordLogin
-                                                ? "wallet"
-                                                : "password"
-                                        }`
-                                    ) !== -1
-                            })
-                        }
-                        onClick={this.props.onNavigate.bind(
-                            this,
-                            `/create-account/${
-                                !passwordLogin ? "wallet" : "password"
-                            }`
-                        )}
-                    >
-                        <Translate content="header.create_account" />
-                    </li>
+                    <span>
+                        <li onClick={this.showModal}>
+                            <Translate content="header.create_account" />
+                        </li>
+                        <Modal
+                            title={null}
+                            footer={null}
+                            visible={this.state.visible}
+                            onOk={this.handleOk}
+                            onCancel={this.handleCancel}
+                        >
+                            <CreateAccoutModal />
+                        </Modal>
+                    </span>
                 ) : null}
 
                 {!this.props.locked ? (

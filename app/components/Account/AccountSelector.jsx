@@ -453,7 +453,7 @@ class AccountSelector extends React.Component {
                                         fontVariant: "initial"
                                     }}
                                     name="username"
-                                    className="tq-input"
+                                    className="mono-input"
                                     id="username"
                                     autoComplete="username"
                                     type="text"
