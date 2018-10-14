@@ -329,9 +329,6 @@ class RecentTransactions extends React.Component {
                             <a
                                 className="inline-block"
                                 onClick={this._generateCSV.bind(this)}
-                                data-tip={counterpart.translate(
-                                    "transaction.csv_tip"
-                                )}
                                 data-place="bottom"
                             >
                                 <Icon
@@ -379,15 +376,11 @@ class RecentTransactions extends React.Component {
                     )}
                     <div className="header-selector">
                         <div className="selector">
-                            <div className={cnames("inline-block")}>
+                            <div className={cnames("inline-block mono-pdleft")}>
                                 {this.props.showFilters ? (
                                     <select
                                         data-place="left"
-                                        data-tip={counterpart.translate(
-                                            "tooltip.filter_ops"
-                                        )}
-                                        style={{paddingTop: 5, width: "auto"}}
-                                        className="bts-select no-margin"
+                                        className="bts-select no-margin mono-pdleft"
                                         value={this.state.filter}
                                         onChange={this._onChangeFilter.bind(
                                             this
@@ -433,20 +426,26 @@ class RecentTransactions extends React.Component {
                                         className="column-hide-tiny"
                                         style={alignLeft}
                                     >
-                                        <Translate content="account.transactions.id" />
+                                        {/* <Translate content="account.transactions.id" /> */}
+                                        Status
                                     </th>
                                     <th
                                         className="column-hide-tiny"
                                         style={alignLeft}
                                     >
-                                        <Translate content="account.transactions.type" />
+                                        {/* <Translate content="account.transactions.type" /> */}
+                                        Transaction ID
                                     </th>
                                     <th style={alignLeft}>
-                                        <Translate content="account.transactions.info" />
+                                        {/* <Translate content="account.transactions.info" /> */}
+                                        Sender
                                     </th>
                                     <th>
-                                        <Translate content="account.transactions.time" />
+                                        {/* <Translate content="account.transactions.time" /> */}
+                                        Type
                                     </th>
+                                    <th>Amount</th>
+                                    <th>Time</th>
                                 </tr>
                             }
                             rows={display_history}

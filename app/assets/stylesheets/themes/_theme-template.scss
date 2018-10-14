@@ -57,19 +57,14 @@
     $explorer--assets--bg
 ) {
     $hamburger-submenu-display-endpoint: 990px;
-
     .explore-witness--info {
         width: 100%;
-
         border: 1px solid $explorer--witnesses--info-border;
         background: $explorer--witnesses--info-bg;
-
         padding: 12px;
         border-radius: 5px;
-
         table {
             width: 100%;
-
             thead {
                 th {
                     font-weight: 400;
@@ -78,7 +73,6 @@
                     padding-bottom: 8px;
                 }
             }
-
             tbody {
                 td {
                     color: $explorer--witnesses--info-table-text-color;
@@ -86,24 +80,15 @@
             }
         }
     }
-
     #incognito {
         background: $incognito-bg;
     }
     .settings-select {
-        height: 36px;
-        padding: 0 12px;
-        background-color: $settings-select-bg;
-        color: $settings-select-color;
+        padding: 1rem 17px;
+        border-radius: 10px;
+        color: #000;
     }
     .settings-input {
-        /* !important to overwrite styles for Inputs on User Settings. By default inputs take styles from
-    .block-list and it uses on many places. To keep everything OK and do not break something I just do
-    overwrite for Inputs on settings and keep default styles for inputs on another places. */
-        color: $settings-select-color !important;
-        height: 36px !important;
-        background-color: $settings-select-bg !important;
-        border-bottom: 0 !important;
         max-width: 100% !important;
     }
     .positive {
@@ -119,6 +104,7 @@
         font-size: 12px;
     }
     #unlock_wallet_modal2 {
+        background: #fff !important;
         .upload-button {
             border-color: $border-color;
             span {
@@ -132,12 +118,6 @@
                 url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAGCAYAAAAVMmT4AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4gUEEhssVJbYaQAAAHVJREFUGNN1z7ERgkAUBNAHnOUQGdCDRRAaGlwFVkDgGBFeEfZAaA2MY2AL3GCogvz47e78wnVOsl4y2LpWo3IsZb0gajWbMIiyvvI6P9VGQVQb3T1WcNJJhhIkg0n3s7CAUNjPuz9NN8HhG67xJ3AyuSyffgPoxSqQfV+TFgAAAABJRU5ErkJggg==")
                 right 10px center no-repeat;
         }
-        .login-label {
-            color: $primary-text-color;
-        }
-        .themed-input {
-            background-color: $input-background;
-        }
     }
     .spinner-button-circle .circle-wrapper {
         display: inline-block;
@@ -148,19 +128,12 @@
             background-color: #fff;
         }
     }
-
     .font-secondary {
         color: $secondary-text-color;
     }
-
     svg > path {
         transition: all 0.3s ease 0s;
     }
-
-    #content-wrapper {
-        @include color($primary-text-color, $bg-color);
-    }
-
     hr {
         border-color: $dark-text-color;
         background-color: $dark-text-color !important;
@@ -230,7 +203,6 @@
     .txtann.warning {
         color: $warning-color;
     }
-
     .txtann.error {
         color: $alert-color;
     }
@@ -244,7 +216,6 @@
     .notification-success {
         border-left-color: $success-color !important;
     }
-
     .action-sheet {
         @include color($light-text-color, $super-light-panel-bg-color);
         &::after {
@@ -276,25 +247,20 @@
             border-left-color: $super-light-panel-bg-color !important;
         }
     }
-
     .json-inspector__key {
         color: $secondary-text-color !important;
     }
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        color: $primary-text-color;
-    }
-
     // copyicons
     .copyIcon {
         background-color: $button-bg-color;
         > button.copyIcon {
             background-color: $button-bg-color;
         }
+    }
+    .modal#marketPicker,
+    .modal#settingsModal {
+        background-color: $bg-color;
+        border: 1px solid black;
     }
     .modal {
         @include color($light-text-color, $account-cells);
@@ -366,7 +332,8 @@
         .left-column {
             border-top-color: $bg-color;
             border-bottom-color: $bg-color;
-            background-color: $panel-bg-color; // lighten($bg-color, 4%);
+            background-color: $panel-bg-color;
+            // lighten($bg-color, 4%);
         }
         .left-column-2 {
             border-top-color: $bg-color;
@@ -459,7 +426,6 @@
             background-color: lighten($alert-color, 4%) !important;
         }
     }
-
     .header a.button.create-account {
         transition: color 0s !important;
         color: $button-bg-color !important;
@@ -561,6 +527,12 @@
     .header-container span.icon.lock-unlock > svg > path {
         fill: $button-bg-color;
     }
+    .header-dropdown-sub-link.enabled {
+        color: $secondary-text-color;
+        &:hover {
+            color: $link-text-color;
+        }
+    }
     .grp-menu-item button {
         &:hover,
         &:focus,
@@ -591,7 +563,8 @@
         }
         svg > path {
             fill: #fff;
-        } // svg:hover > path { fill: $primary-text-color; }
+        }
+        // svg:hover > path { fill: $primary-text-color; }
     }
     .settings-cog {
         svg > path {
@@ -730,7 +703,6 @@
             border-color: $secondary-text-color transparent;
         }
     }
-
     .account-image {
         .icon:hover {
             svg path {
@@ -883,7 +855,6 @@
             border-bottom: 1px solid $button-bg-color;
         }
     }
-
     // Tabs
     .tabs {
         border-bottom-color: $dark-text-color;
@@ -1041,7 +1012,6 @@
             color: $secondary-text-color;
         }
     }
-
     // Formatted assets
     .facolor-success {
         color: $success-color;
@@ -1058,7 +1028,6 @@
     .facolor-error {
         color: $error-text-color;
     }
-
     .facolor-fee {
         color: $fee-color;
     }
@@ -1242,8 +1211,8 @@
         }
     }
     .menu-group.primary,
-    .menu-group.primary .menu-bar {
-        background-color: $account-background;
+    .menu-group .primary .menu-bar {
+        background-color: transparent !important;
         li {
             > a {
                 color: $account-dimmed;
@@ -1251,15 +1220,21 @@
                     fill: $account-dimmed;
                 }
             }
-            > a:hover,
+            > a:hover {
+                background: transparent;
+            }
             > a.active {
-                background-color: $bg-color !important;
+                // background-color: $bg-color !important;
                 color: $primary-text-color;
                 .icon > svg > path {
                     fill: $primary-text-color;
                 }
             }
         }
+    }
+    // mono
+    .menu-bar {
+        background: transparent !important;
     }
     // Asset Detail
     .asset-card {
@@ -1379,7 +1354,6 @@
             height: 100%;
             width: 100%;
         }
-
         #sticky-header-row {
             background-color: $panel-bg-color;
         }
@@ -1435,7 +1409,6 @@
         font-size: 11px;
         color: gray;
     }
-
     .buy-sell-box {
         background-color: $header-color;
         > select {
@@ -1475,7 +1448,6 @@
         text-transform: uppercase;
         cursor: pointer;
     }
-
     div.exchange-content-header {
         background-color: $header-color !important;
     }
@@ -1494,9 +1466,7 @@
     }
     li.stat.clickable {
         color: $secondary-text-color;
-        // &:hover{
-        // @include button-focus($primary-text-color, $panel-bg-color, 10);
-        // }
+        // &:hover{ // @include button-focus($primary-text-color, $panel-bg-color, 10); // }
     }
     .mymarkets-tabs {
         > li {
@@ -1538,29 +1508,18 @@
             background-color: lighten($bg-color, 4%);
         }
     }
-    .active-node {
-        border-bottom: 1px solid lighten($bg-color, 4%);
-        border-top: 1px solid lighten($bg-color, 4%);
-    }
     // Settings
     .settings-menu {
         > ul {
-            width: 200px;
             transition: 0.3s;
             margin-left: 0;
             > li {
-                border-radius: 2px;
                 color: $secondary-text-color;
-                padding: 3px 11px;
-                margin: 5px;
-                &:hover {
-                    color: $primary-text-color;
-                    background-color: $settings-menu-hover-bg;
-                }
-                &.active {
-                    color: $primary-text-color;
-                    background-color: $settings-menu-active-bg;
-                }
+                padding: 1rem 1rem;
+            }
+            > li:hover {
+                background: #fff;
+                color: #054264;
             }
         }
     }
@@ -1607,8 +1566,7 @@
         }
     }
     .nodes-header {
-        border-bottom-color: $button-bg-color;
-        background-color: $bg-color;
+        border-bottom-color: #000;
         &.inactive {
             border-bottom-color: transparent;
             color: $secondary-text-color;
@@ -1653,7 +1611,6 @@
             border-bottom: 2px solid #020202;
         }
     }
-
     ul.dashboard-links {
         > li.active {
             color: $primary-text-color;
@@ -1705,7 +1662,6 @@
     td.pub-key {
         word-break: break-all;
     }
-
     /* Table view account */
     div.grid-content.app-tables {
         background-color: $account-background;
@@ -1713,11 +1669,13 @@
     div.tabs-container {
         background-color: $account-background;
     }
-
     div.account-tabs {
         > div.service-selector {
             background-color: $bg-color;
         }
+    }
+    .grid-content {
+        background: #f5f5f5;
     }
     ul.account-overview {
         li {
@@ -1866,7 +1824,6 @@
             animation-direction: reverse;
         }
     }
-
     @keyframes pulsate-green {
         0% {
             color: $pulsate-green-start;
@@ -1920,6 +1877,9 @@
     .footer {
         padding-right: 0;
     }
+    .tab-no-background {
+        background-color: transparent !important;
+    }
     .header-container {
         background-color: $account-background;
         .menu-dropdown-wrapper {
@@ -1958,7 +1918,6 @@
     .order-book-button-v {
         display: none;
     }
-
     @include breakpoint(large) {
         .order-book-button-v {
             display: inline-block;
@@ -2085,7 +2044,6 @@
     .qr-address-scanner {
         &-btn {
             background: #049cce;
-
             height: 2.4rem;
             border-radius: 0 5px 5px 0;
             width: 40px;
@@ -2148,6 +2106,18 @@
             > option {
                 background-color: $light-panel-bg-color;
             }
+        }
+    }
+    .login-selector--language-select {
+        .login-selector--language-select--icon {
+            font-size: 18px;
+            margin-top: 7px;
+            margin-right: 7px;
+            color: $link-text-color;
+        }
+        .login-selector--language-select--wrapper {
+            margin-left: 0;
+            // center language select for width icon takes
         }
     }
 }
@@ -2283,6 +2253,170 @@
         justify-content: center;
     }
 }
+// mono code
+.mono-bg-light {
+    background: #fafafa;
+    color: #333;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+.mono-btn-light {
+    width: 23% !important;
+    background: #fafafa;
+    color: #333 !important;
+    text-align: center;
+    height: 70px;
+    line-height: 70px;
+    border-radius: 10px;
+    > link {
+        color: #333 !important;
+    }
+}
+.mono-banner {
+    padding: 3rem 0 3rem 0;
+}
+.mono-icon-user > .icon > svg > path {
+    fill: #054264;
+}
+.mono-fbold {
+    color: #054264;
+    font-weight: bold;
+}
+.ant-modal-close-x {
+    display: none !important;
+}
+.mono-send-modal > .modal-overlay {
+    top: 3rem !important;
+    left: auto !important;
+    right: auto !important;
+    display: block !important;
+}
+.mono-btn-vt {
+    width: 100% !important;
+    height: 50px !important;
+    line-height: 50px !important;
+    text-align: center;
+    border-radius: 5px !important;
+    background-image: linear-gradient(135deg, #11818e, #054264) !important;
+}
+.mono-btn-pw {
+    background-image: linear-gradient(135deg, #11818e, #054264) !important;
+    border-radius: 5px;
+}
+.mono-proxy {
+    padding: 1.5rem 0 0 0;
+    border-bottom: 1px solid #b3b3b3;
+    border-top: 1px solid #b3b3b3;
+    background: #f5f5f5;
+    > .tq-input {
+        background: #fafafa;
+    }
+}
+.mono-tb-voting > thead > tr {
+    height: 30px;
+    line-height: 30px;
+}
+.mono-tb-voting {
+    width: 100%;
+    border-collapse: separate !important;
+    border-spacing: 0 3px !important;
+    background: #f5f5f5;
+    > tbody > tr.supported > td {
+        background: white !important;
+        > tbody > tr:hover {
+            background: #fafafa !important;
+        }
+    }
+}
+.mono-tb-voting > tbody > tr {
+    height: 70px;
+    line-height: 70px;
+    > td:first-child {
+        text-align: center !important;
+        border-radius: 10px 0 0 10px;
+    }
+    > td:last-child {
+        border-radius: 0 10px 10px 0;
+    }
+}
+.ant-spin-container {
+    height: 65px;
+}
+.ant-list-item-content {
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    margin-bottom: 0;
+    > li > a > .tab-title {
+        color: #333;
+    }
+    > li.is-active {
+        border-bottom: 5px solid #054264 !important;
+        > a > .tab-title {
+            color: #003d65;
+            font-weight: bold;
+        }
+    }
+}
+.mono-profile {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+.mono-bdbt {
+    border-bottom: 1px solid #333 !important;
+    > input[type="text"]#{$ant-fix} {
+        background: transparent;
+        border-radius: 0 !important;
+    }
+    > label {
+        color: #333;
+        margin: 0;
+        padding: 0;
+        margin-left: 0.5rem;
+    }
+}
+.mono-label-form {
+    color: #b3b3b3;
+    margin: 0;
+    padding: 0;
+    margin-left: 0.5rem;
+}
+.typeahead__input {
+    background: transparent !important;
+}
+.mono-menu-country {
+    width: auto;
+    padding: 0;
+}
+.mono-no-border {
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+// checkbox
+input[type="checkbox"]#{$ant-fix} {
+    cursor: pointer;
+    height: 20px !important;
+    width: 20px !important;
+    position: relative;
+}
+input[type="checkbox"]#{$ant-fix}:after {
+    background-color: #003d65;
+    text-align: center;
+    height: 19px !important;
+    width: 20px !important;
+    line-height: 19px !important;
+    border-radius: 2px;
+    color: white;
+    position: absolute;
+    top: 0.5px;
+}
+input[type="checkbox"]#{$ant-fix}:checked:after {
+    content: "\2714";
+}
+.ant-modal-body {
+    background: #f5f5f5;
+}
 @media screen and (max-width: 640px) {
     .responsive-list > .help-content > ul {
         height: 300px;
@@ -2299,4 +2433,259 @@
             }
         }
     }
+    .mono-btn-hide {
+        display: none !important;
+    }
+    .mono-hide {
+        display: none;
+    }
+}
+// tq - taquy css
+.main-content {
+    padding-top: 3rem;
+}
+.tq-padding-0 {
+    padding: 0 !important;
+}
+.tq-left-setting {
+    > ul {
+        > li {
+            background: #fff;
+            color: #999999;
+            margin-bottom: 1px !important;
+        }
+        > li:first-child {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        > li:last-child {
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+        > li.active {
+            background: #fff !important;
+            color: #054264 !important;
+        }
+    }
+}
+.tq-right-setting {
+    width: 70%;
+}
+.api-node-operator,
+.api-node-title {
+    float: left;
+}
+.api-node-title {
+    width: 70%;
+}
+.api-node-operator {
+    width: 30%;
+    padding-left: 1rem;
+}
+.api-node-title {
+    > h3 {
+        font-size: 20px !important;
+        color: #054264 !important;
+        margin: 0 !important;
+    }
+}
+div.api-node-left {
+    width: 70% !important;
+}
+.api-node {
+    background: #fff !important;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1px;
+}
+
+.api-node-url {
+    color: #8e8e8f;
+}
+.tq-mono-tab-bar {
+    width: 100%;
+    margin: 0 !important;
+}
+.tq-master-node-name {
+    color: #1e1e20;
+}
+.tq-node-right {
+    width: 70px;
+    > .api-status {
+        margin-right: 1rem;
+        float: left;
+    }
+}
+.tq-eye-icon {
+    float: right;
+}
+
+@media only screen and (max-width: 560px) {
+    .api-node-operator,
+    .tq-api-status {
+        display: none !important;
+    }
+}
+.tq-setting {
+    padding-right: 0px !important;
+}
+.tq-setting-wrapper {
+    padding: 3rem 3rem;
+}
+.tq-checkbox-node {
+    display: none;
+}
+.tq-nodes {
+    width: 100%;
+    float: left;
+    > .api-node:nth-child(2) {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    > .api-node:last-child {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+}
+#content-wrapper {
+    background: #f5f5f5;
+}
+.header-container {
+    background-image: linear-gradient(94deg, #11818e, #054264) !important;
+}
+.tq-active-node {
+    width: 100%;
+    float: left;
+}
+.tq-active-node h4 {
+    color: #000;
+}
+.tq-auto-node {
+    margin: 0 !important;
+}
+.tq-auto-node-text {
+    padding: 1px 10px !important;
+    color: #999999;
+}
+.tq-loading-btn {
+    float: right;
+    width: 100%;
+    > div:first-child {
+        float: right;
+    }
+}
+
+.tq-right-setting {
+    overflow: hidden !important;
+}
+
+.tq-label {
+    margin-bottom: 1rem;
+    color: #999999;
+}
+
+.tq-input,
+#username,
+#password {
+    color: #000 !important;
+    border: none !important;
+    border: 1px solid #eee !important;
+    margin-bottom: 1rem !important;
+    height: auto !important;
+    width: 100% !important;
+    max-width: auto !important;
+    border-radius: 10px !important;
+    padding: 14px 20px !important;
+    background: transparent !important;
+}
+.mono-input {
+    background: white !important;
+    color: #000 !important;
+    border: none !important;
+    border: 1px solid #eee !important;
+    margin-bottom: 1rem !important;
+    height: auto !important;
+    width: 100% !important;
+    max-width: auto !important;
+    border-radius: 10px !important;
+    padding: 17px 20px !important;
+}
+.tq-input:hover {
+    background: transparent !important;
+}
+.tq-btn,
+.tq-pinging-btn {
+    width: 160px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 10px;
+    background-image: linear-gradient(107deg, #11818e, #054264);
+    color: #fff !important;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+}
+.tq-pinging-btn {
+    float: right;
+}
+.tq-setting-reset {
+    margin: 0 auto;
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
+}
+.tq-setting-faucet {
+    background: #fff !important;
+    color: #000 !important;
+    border: 1px solid #eee !important;
+    box-sizing: border-box;
+    border-radius: 10px !important;
+    max-height: auto !important;
+    height: auto !important;
+    padding: 17px 20px !important;
+}
+.tq-setting-group-general {
+    line-height: 20px;
+    margin-top: 10px;
+}
+.tq-settings-select {
+    float: left !important;
+    border: 1px solid #eee !important;
+}
+.tq-block-list {
+    float: left;
+}
+.tq-right-setting-child {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.tq-max-width {
+    width: 100% !important;
+}
+
+.tq-btn-ping-wrapper {
+}
+.tq-larger-wrapper-ast {
+    float: left;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem !important;
+}
+.VAAlign {
+}
+
+// new code
+.mono-fliter > input[type="text"]#{$ant-fix} {
+    background: white !important;
+    height: 40px;
+}
+.mono-bg-light2 {
+    background: #f5f5f5;
+}
+.mono-pdleft {
+    margin-left: 1rem;
 }

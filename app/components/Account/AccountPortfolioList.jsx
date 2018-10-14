@@ -571,14 +571,7 @@ class AccountPortfolioList extends React.Component {
                     <td>{directMarketLink}</td>
                     <td>
                         {isBitAsset ? (
-                            <div
-                                className="inline-block"
-                                data-place="bottom"
-                                data-tip={counterpart.translate(
-                                    "tooltip.borrow",
-                                    {asset: symbol}
-                                )}
-                            >
+                            <div className="inline-block" data-place="bottom">
                                 {borrowLink}
                                 {borrowModal}
                             </div>
@@ -633,10 +626,6 @@ class AccountPortfolioList extends React.Component {
                         style={{textAlign: "center"}}
                         className="column-hide-small"
                         data-place="bottom"
-                        data-tip={counterpart.translate(
-                            "tooltip." +
-                                (includeAsset ? "hide_asset" : "show_asset")
-                        )}
                     >
                         <a
                             style={{marginRight: 0}}
@@ -817,10 +806,6 @@ class AccountPortfolioList extends React.Component {
                                             <div
                                                 className="inline-block"
                                                 data-place="bottom"
-                                                data-tip={counterpart.translate(
-                                                    "tooltip.borrow",
-                                                    {asset: asset.get("symbol")}
-                                                )}
                                             >
                                                 {borrowLink}
                                                 {borrowModal}
@@ -834,12 +819,6 @@ class AccountPortfolioList extends React.Component {
                                         style={{textAlign: "center"}}
                                         className="column-hide-small"
                                         data-place="bottom"
-                                        data-tip={counterpart.translate(
-                                            "tooltip." +
-                                                (includeAsset
-                                                    ? "hide_asset"
-                                                    : "show_asset")
-                                        )}
                                     >
                                         <a
                                             style={{marginRight: 0}}

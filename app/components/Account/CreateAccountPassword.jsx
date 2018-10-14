@@ -21,6 +21,7 @@ import Icon from "../Icon/Icon";
 import CopyButton from "../Utility/CopyButton";
 import {withRouter} from "react-router-dom";
 import {scroller} from "react-scroll";
+import {Checkbox} from "antd";
 
 class CreateAccountPassword extends React.Component {
     constructor() {
@@ -230,9 +231,12 @@ class CreateAccountPassword extends React.Component {
             }
         }
 
-        let buttonClass = classNames("submit-button button no-margin", {
-            disabled: !valid || (registrar_account && !isLTM)
-        });
+        let buttonClass = classNames(
+            "submit-button button no-margin mono-btn-pw",
+            {
+                disabled: !valid || (registrar_account && !isLTM)
+            }
+        );
 
         return (
             <div style={{textAlign: "left"}}>
@@ -260,13 +264,7 @@ class CreateAccountPassword extends React.Component {
                         <label className="left-label">
                             <Translate content="wallet.generated" />
                             &nbsp;&nbsp;
-                            <span
-                                className="tooltip"
-                                data-html={true}
-                                data-tip={counterpart.translate(
-                                    "tooltip.generate"
-                                )}
-                            >
+                            <span className="tooltip" data-html={true}>
                                 <Icon
                                     name="question-circle"
                                     title="icons.question_circle"
@@ -280,7 +278,7 @@ class CreateAccountPassword extends React.Component {
                                         padding: "0px",
                                         marginBottom: "0px"
                                     }}
-                                    rows="3"
+                                    rows="1"
                                     readOnly
                                     disabled
                                 >
@@ -296,7 +294,7 @@ class CreateAccountPassword extends React.Component {
                     </section>
 
                     <section>
-                        <label className="left-label">
+                        <label className="left-label dsfa">
                             <Translate content="wallet.confirm_password" />
                         </label>
                         <input
@@ -334,9 +332,7 @@ class CreateAccountPassword extends React.Component {
                                 onChange={() => {}}
                                 checked={this.state.understand_3}
                                 style={{
-                                    position: "absolute",
-                                    top: "-5px",
-                                    left: "0"
+                                    position: "absolute"
                                 }}
                             />
                             <div style={{paddingLeft: "30px"}}>
@@ -359,9 +355,7 @@ class CreateAccountPassword extends React.Component {
                                 onChange={() => {}}
                                 checked={this.state.understand_1}
                                 style={{
-                                    position: "absolute",
-                                    top: "-5px",
-                                    left: "0"
+                                    position: "absolute"
                                 }}
                             />
                             <div style={{paddingLeft: "30px"}}>
@@ -386,9 +380,7 @@ class CreateAccountPassword extends React.Component {
                                 onChange={() => {}}
                                 checked={this.state.understand_2}
                                 style={{
-                                    position: "absolute",
-                                    top: "-5px",
-                                    left: "0"
+                                    position: "absolute"
                                 }}
                             />
                             <div style={{paddingLeft: "30px"}}>

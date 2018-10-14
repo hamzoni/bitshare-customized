@@ -483,7 +483,6 @@ class Footer extends React.Component {
                                 <div className="grid-block">
                                     <a
                                         className="shrink txtlabel facolor-alert"
-                                        data-tip="Please understand that you are responsible for making your own backup&hellip;"
                                         data-type="warning"
                                         onClick={this.onBackup.bind(this)}
                                     >

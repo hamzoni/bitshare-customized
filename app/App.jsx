@@ -326,6 +326,7 @@ class App extends React.Component {
             content = (
                 <div className="grid-frame vertical">
                     <Header height={this.state.height} {...others} />
+
                     <div id="mainContainer" className="grid-block">
                         <div className="grid-block vertical">
                             <Switch>

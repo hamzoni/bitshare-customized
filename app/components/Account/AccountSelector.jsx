@@ -314,7 +314,6 @@ class AccountSelector extends React.Component {
             <span
                 className="tooltip green"
                 data-place="top"
-                data-tip={counterpart.translate("tooltip.follow_user")}
                 onClick={this._onRemoveContact.bind(this)}
             >
                 <Icon
@@ -331,7 +330,6 @@ class AccountSelector extends React.Component {
             <span
                 className="tooltip"
                 data-place="top"
-                data-tip={counterpart.translate("tooltip.follow_user_add")}
                 onClick={this._onAddContact.bind(this)}
             >
                 <Icon
@@ -383,14 +381,17 @@ class AccountSelector extends React.Component {
                             </label>
 
                             <Translate
-                                className={"left-label " + (labelClass || "")}
+                                className={
+                                    "left-label mono-label-form" +
+                                    (labelClass || "")
+                                }
                                 component="label"
                                 content={this.props.label}
                             />
                             {useHR && <hr />}
                         </div>
                     ) : null}
-                    <div className="input-area" data-tip={this.props.tooltip}>
+                    <div className="input-area">
                         <div className="inline-label input-wrapper">
                             {account && account.accountType === "pubkey" ? (
                                 <div className="account-image">
@@ -423,6 +424,7 @@ class AccountSelector extends React.Component {
                                                 : "lowercase",
                                         fontVariant: "initial"
                                     }}
+                                    className="tq-input"
                                     name="username"
                                     id="username"
                                     defaultValue={this.props.accountName || ""}
@@ -451,6 +453,7 @@ class AccountSelector extends React.Component {
                                         fontVariant: "initial"
                                     }}
                                     name="username"
+                                    className="mono-input"
                                     id="username"
                                     autoComplete="username"
                                     type="text"

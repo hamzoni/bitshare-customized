@@ -358,14 +358,10 @@ class WalletUnlockModal extends React.Component {
         const errorMessage = passwordError
             ? counterpart.translate("wallet.pass_incorrect")
             : customError;
-        // Modal overlayClose must be false pending a fix that allows us to detect
-        // this event and clear the password (via this.refs.password_input.clear())
-        // https://github.com/akiran/react-foundation-apps/issues/34
         return (
             // U N L O C K
             <BaseModal
                 id={modalId}
-                ref="modal"
                 overlay={true}
                 overlayClose={false}
                 modalHeader="header.unlock_short"

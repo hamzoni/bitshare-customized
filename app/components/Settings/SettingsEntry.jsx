@@ -84,7 +84,7 @@ export default class SettingsEntry extends React.Component {
 
                 component = (
                     <div className="settings--notifications">
-                        <div className="settings--notifications--group">
+                        <div className="settings--notifications--group tq-setting-group-general">
                             <div className="settings--notifications--item">
                                 <input
                                     type="checkbox"
@@ -100,7 +100,7 @@ export default class SettingsEntry extends React.Component {
                                     )}
                                 </label>
                             </div>
-                            <div className="settings--notifications--group">
+                            <div className="settings--notifications--group tq-setting-group-general">
                                 <div className="settings--notifications--item">
                                     <input
                                         type="checkbox"
@@ -150,7 +150,7 @@ export default class SettingsEntry extends React.Component {
                 input = (
                     <input
                         type="text"
-                        className="settings-input"
+                        className="tq-input"
                         value={selected}
                         onChange={this.props.onChange.bind(this, setting)}
                     />
@@ -211,7 +211,7 @@ export default class SettingsEntry extends React.Component {
         }
 
         return (
-            <section className="block-list no-border-bottom">
+            <section className="block-list tq-block-list no-border-bottom">
                 {noHeader ? null : (
                     <header>
                         <Translate
@@ -231,7 +231,7 @@ export default class SettingsEntry extends React.Component {
                             {optional}
                             <select
                                 value={value}
-                                className="settings-select"
+                                className="settings-select tq-settings-select"
                                 onChange={this.props.onChange.bind(
                                     this,
                                     setting

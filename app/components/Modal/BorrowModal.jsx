@@ -670,13 +670,7 @@ class BorrowModalContent extends React.Component {
                         <Translate content="borrow.use_max" />
                     </a>
                 ) : (
-                    <span
-                        className="disabled-link"
-                        data-place="left"
-                        data-tip={counterpart.translate(
-                            "borrow.maximize_debt_set_ratio_slider"
-                        )}
-                    >
+                    <span className="disabled-link" data-place="left">
                         <Translate content="borrow.use_max" />
                     </span>
                 )}
@@ -707,13 +701,6 @@ class BorrowModalContent extends React.Component {
         let feed_price = this._getFeedPrice();
 
         let maintenanceRatio = this._getMaintenanceRatio();
-
-        let squeezeRatio =
-            this.props.quote_asset.getIn([
-                "bitasset",
-                "current_feed",
-                "maximum_short_squeeze_ratio"
-            ]) / 1000;
 
         let isPredictionMarket = this._isPredictionMarket(this.props);
 
@@ -827,22 +814,6 @@ class BorrowModalContent extends React.Component {
                                         ])}
                                     />
                                 </div>
-                                {/* <div className="borrow-price-feeds">
-                                <span
-                                    className="inline-block tooltip borrow-price-label"
-                                    data-place="bottom"
-                                    data-tip={counterpart.translate("tooltip.margin_price")}
-                                ><Translate content="exchange.squeeze" />:&nbsp;</span>
-                                <FormattedPrice
-                                    decimals={2}
-                                    callPrice
-                                    noPopOver
-                                    quote_amount={quote_asset.getIn(["bitasset", "current_feed", "settlement_price", "base", "amount"])}
-                                    quote_asset={quote_asset.getIn(["bitasset", "current_feed", "settlement_price", "base", "asset_id"])}
-                                    base_asset={quote_asset.getIn(["bitasset", "current_feed", "settlement_price", "quote", "asset_id"])}
-                                    base_amount={squeezeRatio * quote_asset.getIn(["bitasset", "current_feed", "settlement_price", "quote", "amount"])}
-                                    />
-                            </div> */}
                                 <b />
                                 <div
                                     className={
@@ -1000,9 +971,6 @@ class BorrowModalContent extends React.Component {
                                             <span
                                                 data-place="top"
                                                 data-html={true}
-                                                data-tip={counterpart.translate(
-                                                    "tooltip.target_collateral_ratio"
-                                                )}
                                             >
                                                 <Icon
                                                     name="question-circle"

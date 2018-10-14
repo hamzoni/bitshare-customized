@@ -151,7 +151,7 @@ class MarketHistory extends React.Component {
                             </td>
                             <td>{fill.amountToReceive()}</td>
                             <td>{fill.amountToPay()}</td>
-                            <td className="tooltip" data-tip={fill.time}>
+                            <td className="tooltip">
                                 {counterpart.localize(fill.time, {
                                     type: "date",
                                     format:

@@ -192,7 +192,7 @@ export default class TypeAhead extends React.Component {
                 ) : null}
                 {this.selectedDisplay()}
                 {this.dropDown()}
-                <Icon
+                {/* <Icon
                     onClick={this.onClick}
                     name="chevron-down"
                     title="icons.chevron_down.other"
@@ -202,7 +202,7 @@ export default class TypeAhead extends React.Component {
                         top: !!this.props.label ? 35 : 7,
                         transform: isMenuShowing ? "rotate(180deg)" : null
                     }}
-                />
+                /> */}
             </div>
         );
     }

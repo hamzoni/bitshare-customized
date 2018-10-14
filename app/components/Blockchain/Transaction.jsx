@@ -283,9 +283,6 @@ class Transaction extends React.Component {
                                 data-place="left"
                                 data-class="tooltip-zindex"
                                 className="tooltip"
-                                data-tip={counterpart.translate(
-                                    "tooltip.buy_min"
-                                )}
                             >
                                 <Translate
                                     component="span"

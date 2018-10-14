@@ -646,28 +646,6 @@ class Header extends React.Component {
 
                         <ul className="menu-bar">
                             <li>{dashboard}</li>
-                            {!!createAccountLink ? null : (
-                                <li className="column-hide-small">
-                                    <a
-                                        style={{flexFlow: "row"}}
-                                        onClick={this._showSend.bind(this)}
-                                    >
-                                        <Icon
-                                            size="1_5x"
-                                            style={{
-                                                position: "relative",
-                                                top: 0,
-                                                left: -8
-                                            }}
-                                            name="transfer"
-                                            title="icons.transfer"
-                                        />
-                                        <span>
-                                            <Translate content="header.payments" />
-                                        </span>
-                                    </a>
-                                </li>
-                            )}
                         </ul>
                     </div>
                 </div>

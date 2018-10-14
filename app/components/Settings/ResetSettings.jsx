@@ -54,8 +54,7 @@ export default class ResetSettings extends React.Component {
                 </header>
 
                 <div
-                    style={{height: 60, width: "100%", paddingTop: 20}}
-                    className="button"
+                    className="tq-btn"
                     onClick={() => {
                         SettingsActions.clearSettings().then(() => {
                             this._setMessage(

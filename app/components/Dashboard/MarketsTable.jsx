@@ -240,8 +240,8 @@ class MarketsTable extends React.Component {
             .filter(r => !!r);
         return (
             <div>
-                <div className="header-selector">
-                    <div className="filter inline-block">
+                <div className="header-selector mono-bg-light2">
+                    <div className="filter inline-block mono-fliter">
                         <input
                             type="text"
                             placeholder="Filter"
@@ -291,7 +291,7 @@ class MarketsTable extends React.Component {
                 </div>
                 <PaginatedList
                     style={{paddingLeft: 0, paddingRight: 0}}
-                    className="table dashboard-table table-hover"
+                    className="table dashboard-table table-hover mono-tb-voting"
                     header={
                         <tr>
                             <th style={{textAlign: "left", width: "75px"}} />

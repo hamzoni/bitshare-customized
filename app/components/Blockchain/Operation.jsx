@@ -105,15 +105,6 @@ class Row extends React.Component {
                         <Link
                             className="inline-block"
                             data-place="bottom"
-                            data-tip={counterpart.translate(
-                                "tooltip.show_block",
-                                {
-                                    block: utils.format_number(
-                                        this.props.block,
-                                        0
-                                    )
-                                }
-                            )}
                             to={`/block/${this.props.block}/${
                                 this.props.txIndex
                             }`}
@@ -149,6 +140,8 @@ class Row extends React.Component {
                         />
                     ) : null}
                 </td>
+                <td>x</td>
+                <td>x</td>
             </tr>
         );
     }

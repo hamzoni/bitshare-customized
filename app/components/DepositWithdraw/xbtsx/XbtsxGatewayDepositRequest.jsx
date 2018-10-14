@@ -162,16 +162,6 @@ class XbtsxGatewayDepositRequest extends React.Component {
             receive_address = this.state.receive_address;
 
         if (!receive_address) {
-            let account_name = this.props.account.get("name");
-            // receive_address = this.deposit_address_cache.getCachedInputAddress(
-            //     this.props.gateway,
-            //     account_name,
-            //     this.props.deposit_coin_type,
-            //     this.props.receive_coin_type
-            // );
-        }
-
-        if (!receive_address) {
             requestDepositAddress(this._getDepositObject());
             return emptyRow;
         }
@@ -179,12 +169,6 @@ class XbtsxGatewayDepositRequest extends React.Component {
         let withdraw_modal_id = this.getWithdrawModalId();
         let deposit_address_fragment = null;
         let deposit_memo = null;
-        // if (this.props.deprecated_in_favor_of)
-        // {
-        //     deposit_address_fragment = <span>please use {this.props.deprecated_in_favor_of.get("symbol")} instead. <span data-tip={this.props.deprecated_message} data-place="right" data-html={true}><Icon name="question-circle" title="icons.question_circle" /></span><ReactTooltip /></span>;
-        // }
-        // else
-        // {
         let clipboardText = "";
         let payFromWallet =
             "sth:" +

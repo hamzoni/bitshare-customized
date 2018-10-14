@@ -2,7 +2,6 @@ import React from "react";
 import Icon from "../Icon/Icon";
 import ReactTooltip from "react-tooltip";
 import utils from "common/utils";
-import counterpart from "counterpart";
 import Translate from "react-translate-component";
 
 export class Tooltip extends React.Component {
@@ -10,13 +9,9 @@ export class Tooltip extends React.Component {
         ReactTooltip.rebuild();
     }
     render() {
-        const {className, children, dataTip, content} = this.props;
+        const {className, children} = this.props;
         return (
-            <span
-                className={"tooltip " + className}
-                data-html={true}
-                data-tip={dataTip || counterpart.translate(content)}
-            >
+            <span className={"tooltip " + className} data-html={true}>
                 {children}
             </span>
         );
@@ -87,7 +82,8 @@ export const KeyPermissionBranch = ({available, permission, weight, level}) => (
         <tr>
             <td colSpan="2">
                 <ApprovedIcon approved={permission.isAvailable(available)} />
-                {permission.id.substr(0, 20 - 4 * level)}...
+                {permission.id.substr(0, 20 - 4 * level)}
+                ...
             </td>
             <td>{weight}</td>
         </tr>

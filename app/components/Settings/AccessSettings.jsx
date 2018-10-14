@@ -55,52 +55,44 @@ class AutoSelectionNode extends React.Component {
                 <div>
                     <span
                         className="switch"
-                        style={{
-                            float: "right",
-                            position: "relative",
-                            top: "-15px"
-                        }}
                         onClick={this.activate.bind(
                             this,
                             isActive ? connectedNode.url : autoSelectionUrl
                         )}
                     >
                         <input
-                            id="automatic_node_switcher"
+                            id="automatic_node_switcher  tq-checkbox-node"
                             type="checkbox"
                             checked={isActive}
                             onChange={() => {}}
                         />
-                        <label />
                     </span>
 
-                    <p style={{fontSize: "80%"}}>
+                    <p className="tq-auto-node-text">
                         <Translate content="settings.automatic_short" />:
                     </p>
                 </div>
             );
         } else {
             return (
-                <div className="auto-node">
+                <div className="auto-node tq-auto-node">
                     <div>
                         <span
-                            className="switch"
                             onClick={this.activate.bind(
                                 this,
                                 isActive ? connectedNode.url : autoSelectionUrl
                             )}
                         >
                             <input
-                                id="automatic_node_switcher"
+                                id="automatic_node_switcher tq-checkbox-node"
                                 type="checkbox"
                                 checked={isActive}
                                 onChange={() => {}}
                             />
-                            <label />
                         </span>
                         <Translate
+                            className="tq-auto-node-text"
                             component="div"
-                            style={{paddingLeft: "1rem", paddingTop: "0.5rem"}}
                             content="settings.automatic"
                             totalNodes={totalNodes}
                         />
@@ -261,7 +253,7 @@ class ApiNode extends React.Component {
                             onClick={this.activate.bind(this, url)}
                         />
                         <Icon
-                            className={ping.color + " hover-icon"}
+                            className={ping.color + " hover-icon tq-eye-icon"}
                             name={"connect"}
                             title="icons.connect"
                             size="1_5x"
@@ -275,21 +267,28 @@ class ApiNode extends React.Component {
             return (
                 <div className="api-node">
                     <div className="api-node-left">
-                        <p className="api-node-title">{title}</p>
+                        <p className="api-node-title">
+                            <h3>{title}</h3>
+                            <p
+                                className="api-node-url"
+                                id={isActive ? "active_node" : null}
+                            >
+                                {url}
+                            </p>
+                        </p>
                         {!!node.operator && (
                             <p className="api-node-operator">
-                                {node.operator}&nbsp;&nbsp;&nbsp;
+                                <div className="tq-master-node">
+                                    Master nodes:
+                                </div>
+                                <div className="tq-master-node-name">
+                                    {node.operator}
+                                </div>
                             </p>
                         )}
-                        <p
-                            className="api-node-url"
-                            id={isActive ? "active_node" : null}
-                        >
-                            {url}
-                        </p>
                     </div>
-                    <div>
-                        <div className="api-status">
+                    <div className="tq-api-status">
+                        <div className="api-status tq-node-right">
                             <span className={ping.color}>
                                 {!!ping.rating && (
                                     <Translate
@@ -300,7 +299,35 @@ class ApiNode extends React.Component {
                             </span>
                         </div>
                     </div>
-                    <div style={{marginTop: "-5px"}}>
+                    <div className="tq-node-right">
+                        <div className="api-status">
+                            {!isActive ? (
+                                <a
+                                    id={url}
+                                    onClick={this.activate.bind(this, url)}
+                                >
+                                    <Icon
+                                        className={ping.color + " default-icon"}
+                                        name={"disconnected"}
+                                        title="icons.connect"
+                                        size="1_5x"
+                                    />
+                                    <Icon
+                                        className={ping.color + " hover-icon"}
+                                        name={"connect"}
+                                        title="icons.connect"
+                                        size="1_5x"
+                                    />
+                                </a>
+                            ) : (
+                                <Icon
+                                    className={ping.color}
+                                    name={"connected"}
+                                    title="icons.connected"
+                                    size="2x"
+                                />
+                            )}
+                        </div>
                         {canBeHidden && (
                             <a
                                 onClick={
@@ -330,34 +357,6 @@ class ApiNode extends React.Component {
                                 />
                             </a>
                         )}
-                        <div className="api-status">
-                            {!isActive ? (
-                                <a
-                                    id={url}
-                                    onClick={this.activate.bind(this, url)}
-                                >
-                                    <Icon
-                                        className={ping.color + " default-icon"}
-                                        name={"disconnected"}
-                                        title="icons.connect"
-                                        size="1_5x"
-                                    />
-                                    <Icon
-                                        className={ping.color + " hover-icon"}
-                                        name={"connect"}
-                                        title="icons.connect"
-                                        size="1_5x"
-                                    />
-                                </a>
-                            ) : (
-                                <Icon
-                                    className={ping.color}
-                                    name={"connected"}
-                                    title="icons.connected"
-                                    size="2x"
-                                />
-                            )}
-                        </div>
                     </div>
                 </div>
             );
@@ -547,24 +546,23 @@ class AccessSettings extends React.Component {
                 </div>
             </div>
         ) : (
-            <div style={{paddingTop: "1em"}}>
+            <div>
                 {this.renderAutoSelection(connectedNode)}
-                <div className="active-node">
-                    <LoadingButton
-                        style={{float: "right"}}
-                        caption="settings.ping"
-                        loadingType="inside-feedback-resize"
-                        onClick={this._recalculateLatency.bind(this)}
-                    />
-                    <Translate
-                        component="h4"
-                        style={{marginLeft: "1rem"}}
-                        content="settings.active_node"
-                    />
+                <div className="active-node tq-active-node">
+                    <h4 className="tq-larger-wrapper-ast">
+                        <span className="VAAlign">
+                            <Translate content="settings.active_node" />
+                        </span>
+                        <LoadingButton
+                            caption="settings.ping"
+                            loadingType="inside-feedback-resize"
+                            onClick={this._recalculateLatency.bind(this)}
+                        />
+                    </h4>
                     {renderNode(connectedNode, connectedNode)}
                 </div>
                 <div
-                    className="nodes"
+                    className="nodes tq-nodes"
                     style={{
                         display:
                             props.selectedNode === autoSelectionUrl
@@ -574,7 +572,7 @@ class AccessSettings extends React.Component {
                         marginBottom: "2em"
                     }}
                 >
-                    <div className="grid-block shrink" style={{marginLeft: 0}}>
+                    <div className="grid-block tq-mono-tab-bar">
                         {[
                             "available_nodes",
                             "my_nodes",
@@ -599,9 +597,7 @@ class AccessSettings extends React.Component {
                         })}
                     </div>
                     {this.state.activeTab === "my_nodes" && (
-                        <div
-                            style={{paddingLeft: "1rem", paddingBottom: "1rem"}}
-                        >
+                        <div>
                             <div
                                 className="button"
                                 onClick={props.triggerModal.bind(this)}
@@ -639,19 +635,26 @@ class AccessSettings extends React.Component {
     }
 }
 
-AccessSettings = connect(AccessSettings, {
-    listenTo() {
-        return [SettingsStore];
-    },
-    getProps() {
-        return {
-            // apiServer and activeNode are ambiguous definition when dealing with isActive, autoSelectionActive etc..
-            // using distinct names
-            selectedNode: SettingsStore.getState().settings.get("apiServer"),
-            connectedNode: SettingsStore.getState().settings.get("activeNode"),
-            apiLatencies: SettingsStore.getState().apiLatencies
-        };
+AccessSettings = connect(
+    AccessSettings,
+    {
+        listenTo() {
+            return [SettingsStore];
+        },
+        getProps() {
+            return {
+                // apiServer and activeNode are ambiguous definition when dealing with isActive, autoSelectionActive etc..
+                // using distinct names
+                selectedNode: SettingsStore.getState().settings.get(
+                    "apiServer"
+                ),
+                connectedNode: SettingsStore.getState().settings.get(
+                    "activeNode"
+                ),
+                apiLatencies: SettingsStore.getState().apiLatencies
+            };
+        }
     }
-});
+);
 
 export default AccessSettings;

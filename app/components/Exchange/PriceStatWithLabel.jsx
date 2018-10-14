@@ -60,7 +60,6 @@ export default class PriceStatWithLabel extends React.Component {
             content,
             ready,
             volume,
-            toolTip,
             ignoreColorChange
         } = this.props;
         let {change, marketChange} = this.state;
@@ -87,11 +86,11 @@ export default class PriceStatWithLabel extends React.Component {
                 )}
                 onClick={this.props.onClick}
                 data-place="bottom"
-                data-tip={toolTip}
             >
                 <span>
                     <span className="value stat-primary">
-                        {!ready ? 0 : value}&nbsp;
+                        {!ready ? 0 : value}
+                        &nbsp;
                     </span>
                     <span className="symbol-text">
                         <AssetName name={base.get("symbol")} />

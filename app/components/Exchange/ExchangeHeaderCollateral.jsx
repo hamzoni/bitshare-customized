@@ -101,7 +101,6 @@ class MarginPosition extends React.Component {
                 className={cnames("stressed-stat", this.props.className)}
                 onClick={this.props.onClick}
                 data-place="bottom"
-                data-tip={this._getCRTip()}
             >
                 <span>
                     <span className={cnames("value stat-primary", statusClass)}>

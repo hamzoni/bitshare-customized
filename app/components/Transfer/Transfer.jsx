@@ -580,9 +580,6 @@ class Transfer extends React.Component {
                                 component="label"
                                 content="transfer.memo"
                                 data-place="top"
-                                data-tip={counterpart.translate(
-                                    "tooltip.memo_tip"
-                                )}
                             />
                             <textarea
                                 style={{marginBottom: 0}}

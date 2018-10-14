@@ -252,6 +252,8 @@ class Settings extends React.Component {
         let entries;
         let activeEntry = menuEntries[activeSetting] || menuEntries[0];
 
+        console.log(menuEntries);
+
         switch (activeEntry) {
             case "accounts":
                 entries = <AccountsSettings />;
@@ -292,7 +294,7 @@ class Settings extends React.Component {
                     <input
                         disabled={!getFaucet().editable}
                         type="text"
-                        className="settings-input"
+                        className="settings-input tq-setting-faucet"
                         defaultValue={settings.get("faucet_address")}
                         onChange={
                             getFaucet().editable
@@ -332,18 +334,8 @@ class Settings extends React.Component {
 
         return (
             <div className={this.props.deprecated ? "" : "grid-block"}>
-                <div className="grid-block main-content margin-block wrap">
-                    <div
-                        className="grid-content shrink settings-menu"
-                        style={{paddingRight: "2rem"}}
-                    >
-                        <Translate
-                            style={{paddingBottom: 10, paddingLeft: 10}}
-                            component="h3"
-                            content="header.settings"
-                            className={"panel-bg-color"}
-                        />
-
+                <div className="grid-block main-content tq-setting-wrapper margin-block wrap">
+                    <div className="grid-content tq-left-setting settings-menu tq-padding-0">
                         <ul>
                             {menuEntries.map((entry, index) => {
                                 return (
@@ -368,27 +360,15 @@ class Settings extends React.Component {
                         </ul>
                     </div>
 
-                    <div
-                        className="grid-content"
-                        style={{
-                            maxWidth: 1000
-                        }}
-                    >
-                        <div className="grid-block small-12 no-margin vertical">
-                            <Translate
-                                component="h3"
-                                content={
-                                    "settings." + menuEntries[activeSetting]
-                                }
-                            />
+                    <div className="grid-content tq-setting tq-right-setting">
+                        <div className="grid-block small-12 tq-right-setting-child no-margin vertical">
                             {activeEntry != "access" && (
                                 <Translate
                                     unsafe
-                                    style={{paddingTop: 5, marginBottom: 30}}
                                     content={`settings.${
                                         menuEntries[activeSetting]
                                     }_text`}
-                                    className="panel-bg-color"
+                                    className="tq-label"
                                 />
                             )}
                             {entries}

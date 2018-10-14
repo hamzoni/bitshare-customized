@@ -157,6 +157,7 @@ class AccountNameInput extends React.Component {
                     <input
                         name="username"
                         id="username"
+                        className="tq-input"
                         type="text"
                         ref="input"
                         autoComplete="username"

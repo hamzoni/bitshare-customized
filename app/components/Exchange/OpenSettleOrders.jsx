@@ -19,9 +19,8 @@ class TableHeader extends React.Component {
                         <br />
                         {baseSymbol ? (
                             <span className="header-sub-title">
-                                (<AssetName name={baseSymbol} />/<AssetName
-                                    name={quoteSymbol}
-                                />)
+                                (<AssetName name={baseSymbol} />/
+                                <AssetName name={quoteSymbol} />)
                             </span>
                         ) : null}
                     </th>
@@ -90,7 +89,6 @@ class SettleOrderRow extends React.Component {
                 <td
                     style={{textAlign: "right", width: "25%"}}
                     className="tooltip"
-                    data-tip={new Date(order.settlement_date)}
                 >
                     {counterpart.localize(new Date(order.settlement_date), {
                         type: "date",

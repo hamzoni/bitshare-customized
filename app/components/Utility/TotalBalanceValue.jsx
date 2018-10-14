@@ -284,7 +284,6 @@ class TotalValue extends MarketStatsCheck {
             return (
                 <div
                     className="tooltip inline-block"
-                    data-tip={totalsTip}
                     data-place="bottom"
                     data-html={true}
                 >

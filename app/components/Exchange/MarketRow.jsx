@@ -291,11 +291,6 @@ class MarketRow extends React.Component {
                                         this.props.isDefault
                                     }
                                     disabled={this.props.isDefault}
-                                    data-tip={
-                                        this.props.isDefault
-                                            ? "This market is a default market and cannot be removed"
-                                            : null
-                                    }
                                 />
                             </td>
                         );

@@ -186,12 +186,10 @@ class FormattedPrice extends React.Component {
         ) : (
             <span
                 data-place="bottom"
-                data-tip={noPopOver ? "Click to invert the price" : null}
                 className={noPopOver ? "clickable inline-block" : ""}
                 onClick={noPopOver ? this.onFlip.bind(this) : null}
             >
-                <AssetName name={quote.get("symbol")} />
-                /
+                <AssetName name={quote.get("symbol")} />/
                 <AssetName name={base.get("symbol")} />
             </span>
         );

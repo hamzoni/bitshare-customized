@@ -11,16 +11,18 @@ const LoginTypeSelectorView = ({value, onChange}) => (
         <label className="left-label login-label">
             <Translate content="account.login_with" />
         </label>
-        <select value={value} onChange={onChange} className="login-select">
+        <select
+            value={value}
+            onChange={onChange}
+            className="login-select tq-input"
+        >
             <option value="cloud">
-                {counterpart.translate("account.name")} ({counterpart
-                    .translate("wallet.password_model")
-                    .toLowerCase()})
+                {counterpart.translate("account.name")} (
+                {counterpart.translate("wallet.password_model").toLowerCase()})
             </option>
             <option value="local">
-                {counterpart.translate("wallet.key_file")} ({counterpart
-                    .translate("wallet.wallet_model")
-                    .toLowerCase()})
+                {counterpart.translate("wallet.key_file")} (
+                {counterpart.translate("wallet.wallet_model").toLowerCase()})
             </option>
         </select>
     </div>

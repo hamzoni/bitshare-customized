@@ -18,6 +18,7 @@ import BalanceWrapper from "./BalanceWrapper";
 import AccountTreemap from "./AccountTreemap";
 import AssetWrapper from "../Utility/AssetWrapper";
 import AccountPortfolioList from "./AccountPortfolioList";
+import Profile from "../Dashboard/Profile";
 
 class AccountOverview extends React.Component {
     constructor(props) {
@@ -456,7 +457,8 @@ class AccountOverview extends React.Component {
         return (
             <div className="grid-content app-tables no-padding" ref="appTables">
                 <div className="content-block small-12">
-                    <div className="tabs-container generic-bordered-box">
+                    <div className="tabs-container generic-bordered-box adas">
+                        <Profile />
                         <Tabs
                             defaultActiveTab={0}
                             segmented={false}
@@ -468,8 +470,8 @@ class AccountOverview extends React.Component {
                                 title="account.portfolio"
                                 subText={portfolioActiveAssetsBalance}
                             >
-                                <div className="header-selector">
-                                    <div className="filter inline-block">
+                                <div className="header-selector mono-bg-light">
+                                    <div className="filter inline-block mono-fliter">
                                         <input
                                             type="text"
                                             placeholder="Filter"

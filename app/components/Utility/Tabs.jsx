@@ -6,6 +6,8 @@ import SettingsActions from "actions/SettingsActions";
 import SettingsStore from "stores/SettingsStore";
 import counterpart from "counterpart";
 import {withRouter} from "react-router-dom";
+import Profile from "../Dashboard/Profile";
+import {List} from "antd";
 
 /**
  *  Renders a tab layout, handling switching and optionally persists the currently open tab using the SettingsStore
@@ -89,11 +91,19 @@ class Tab extends React.Component {
                 }
             >
                 <a>
-                    <span className="tab-title">
+                    <span className="tab-title mono-fix-title">
                         {title}
+                        &nbsp;
                         {updatedTab ? "*" : ""}
                     </span>
-                    {subText && <div className="tab-subtext">{subText}</div>}
+                    {subText && (
+                        <span
+                            className="tab-subtext"
+                            style={{paddingLeft: "0.2rem"}}
+                        >
+                            {subText}
+                        </span>
+                    )}
                 </a>
             </li>
         );
@@ -176,8 +186,8 @@ class Tabs extends React.Component {
 
     render() {
         let {children, contentClass, tabsClass, style, segmented} = this.props;
-        const collapseTabs =
-            this.state.width < 900 && React.Children.count(children) > 2;
+        // const collapseTabs =
+        //     this.state.width < 900 && React.Children.count(children) > 2;
 
         let activeContent = null;
 
@@ -185,14 +195,13 @@ class Tabs extends React.Component {
             if (!child) {
                 return null;
             }
-            if (collapseTabs && child.props.disabled) return null;
+            //if (collapseTabs && child.props.disabled) return null;
             let isActive = index === this.state.activeTab;
             if (isActive) {
                 activeContent = child.props.children;
             }
 
             return React.cloneElement(child, {
-                collapsed: collapseTabs,
                 isActive,
                 changeTab: this._changeTab.bind(this),
                 index: index
@@ -204,54 +213,16 @@ class Tabs extends React.Component {
         }
 
         return (
-            <div
-                className={cnames(
-                    !!this.props.actionButtons ? "with-buttons" : "",
-                    this.props.className
-                )}
-            >
-                <div className="service-selector">
-                    <ul
-                        style={style}
-                        className={cnames("button-group no-margin", tabsClass, {
-                            segmented
-                        })}
-                    >
-                        {collapseTabs ? (
-                            <li
-                                style={{
-                                    paddingLeft: 10,
-                                    paddingRight: 10,
-                                    minWidth: "15rem"
-                                }}
-                            >
-                                <select
-                                    value={this.state.activeTab}
-                                    style={{marginTop: 10, marginBottom: 10}}
-                                    className="bts-select"
-                                    onChange={e => {
-                                        let ind = parseInt(e.target.value, 10);
-                                        this._changeTab(
-                                            ind,
-                                            e.target[ind].attributes[
-                                                "data-is-link-to"
-                                            ].value
-                                        );
-                                    }}
-                                >
-                                    {tabs}
-                                </select>
-                            </li>
-                        ) : (
-                            tabs
-                        )}
-                        {this.props.actionButtons ? (
-                            <li className="tabs-action-buttons">
-                                {this.props.actionButtons}
-                            </li>
-                        ) : null}
-                    </ul>
-                </div>
+            <div className="mono-list-item">
+                <List
+                    grid={{gutter: 16, xs: 4, sm: 4, md: 4, lg: 4, xl: 6}}
+                    size="large"
+                    header={null}
+                    footer={null}
+                    //bordered
+                    dataSource={tabs}
+                    renderItem={item => <List.Item>{item}</List.Item>}
+                />
                 <div className={cnames("tab-content", contentClass)}>
                     {activeContent}
                 </div>
@@ -260,14 +231,17 @@ class Tabs extends React.Component {
     }
 }
 
-Tabs = connect(Tabs, {
-    listenTo() {
-        return [SettingsStore];
-    },
-    getProps() {
-        return {viewSettings: SettingsStore.getState().viewSettings};
+Tabs = connect(
+    Tabs,
+    {
+        listenTo() {
+            return [SettingsStore];
+        },
+        getProps() {
+            return {viewSettings: SettingsStore.getState().viewSettings};
+        }
     }
-});
+);
 
 Tabs = withRouter(Tabs);
 
