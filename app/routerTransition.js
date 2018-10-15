@@ -1,5 +1,5 @@
-import {Apis, Manager} from "bitsharesjs-ws";
-import {ChainStore} from "bitsharesjs";
+import {Apis, Manager} from "zcomjs-ws";
+import {ChainStore} from "zcomjs";
 
 // Stores
 import iDB from "idb-instance";
@@ -357,7 +357,7 @@ class RouterTransitioner {
             url: connectionString,
             urls: urls,
             closeCb: this._onConnectionClose.bind(this),
-            optionalApis: {enableOrders: true},
+            optionalApis: {enableOrders: false},
             urlChangeCallback: url => {
                 console.log("fallback to new url:", url);
                 if (!!url) {
@@ -661,7 +661,7 @@ class RouterTransitioner {
     _attemptReconnect(resolve, reject) {
         this._oldChain = "old";
         Apis.reset(this._connectionManager.url, true, undefined, {
-            enableOrders: true
+            enableOrders: false
         }).then(instance => {
             instance.init_promise
                 .then(this._onConnect.bind(this, resolve, reject))

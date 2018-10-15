@@ -1,6 +1,6 @@
 import utils from "common/utils";
 import Immutable from "immutable";
-import {ChainTypes as grapheneChainTypes, ChainValidation} from "bitsharesjs";
+import {ChainTypes as grapheneChainTypes, ChainValidation} from "zcomjs";
 const {object_type} = grapheneChainTypes;
 
 function createChainableTypeChecker(validate) {
