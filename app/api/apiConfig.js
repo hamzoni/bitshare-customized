@@ -105,17 +105,17 @@ export const settingsAPIs = {
     // If you want a location to be translated, add the translation to settings in locale-xx.js
     // and use an object {translate: key} in WS_NODE_LIST
     //DEFAULT_WS_NODE: "wss://fake.automatic-selection.com",
-    DEFAULT_WS_NODE: "ws://127.0.0.1:8090",
+    DEFAULT_WS_NODE: "ws://34.217.40.65:9999",
     WS_NODE_LIST: [
         {
             url: "ws://127.0.0.1:8090",
             location: "Locally hosted"
         },
         {
-            url: "ws://212.237.31.19:9999",
+            url: "ws://34.217.40.65:9999",
             location: "EU node"
         }
     ],
     DEFAULT_FAUCET: getFaucet().url,
-    TESTNET_FAUCET: "http://94.177.190.188:3000"
+    TESTNET_FAUCET: "http://54.201.250.193:3000"
 };

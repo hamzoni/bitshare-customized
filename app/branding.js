@@ -27,7 +27,7 @@ export function getWalletURL() {
  */
 export function getFaucet() {
     return {
-        url: "http://94.177.190.188:3000", // 2017-12-infrastructure worker proposal
+        url: "http://54.201.250.193:3000", // 2017-12-infrastructure worker proposal
         show: true,
         editable: false
     };
