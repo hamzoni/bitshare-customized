@@ -2577,3 +2577,41 @@ hr.mono-hrtb {
     color: #ffffff;
     text-transform: uppercase;
 }
+// witness
+.mono-input-witness {
+    background: #fafafa !important;
+    height: 70px !important;
+    color: #333 !important;
+    border-radius: 10px !important;
+    margin-bottom: 2rem !important;
+}
+.mono-btn-witness {
+    height: 70px !important;
+    background: #054264 !important;
+    width: 100%;
+    border-radius: 10px !important;
+    border: none !important;
+}
+.ant-table-thead {
+    height: 50px;
+    line-height: 50px;
+}
+.mono-row-witness {
+    height: 70px;
+    line-height: 70px;
+    background: #f5f5f5 !important;
+    color: #333;
+    border-bottom: 3px solid #333 !important;
+    &:hover .ant-table-column-has-actions {
+        background: white !important;
+    }
+    &:hover .mono-bt {
+        background: white !important;
+    }
+    > .ant-table-column-has-actions:first-child {
+        border-radius: 7px 0 0 7px;
+    }
+}
+.mono-bt:last-child {
+    border-radius: 0 7px 7px 0;
+}

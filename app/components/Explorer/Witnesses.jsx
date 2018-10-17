@@ -13,7 +13,7 @@ import SettingsActions from "actions/SettingsActions";
 import SettingsStore from "stores/SettingsStore";
 import classNames from "classnames";
 import {withRouter} from "react-router-dom";
-import {Table, Icon, Input, Popover} from "bitshares-ui-style-guide";
+import {Row, Col, Button, Table, Icon, Input, Popover} from "antd";
 
 require("./witnesses.scss");
 
@@ -258,6 +258,7 @@ class WitnessList extends React.Component {
                 }
             },
             {
+                className: "mono-bt",
                 key: "url",
                 title: "URL",
                 dataIndex: "url",
@@ -334,12 +335,19 @@ class WitnessList extends React.Component {
                 }
             },
             {
+                className: "mono-bt",
                 key: "key",
                 title: "KEY",
                 dataIndex: "signing_key",
                 align: "center",
                 render: item => (
-                    <div style={{textAlign: "center", width: "100%"}}>
+                    <div
+                        style={{
+                            textAlign: "center",
+                            width: "100%",
+                            minWidth: "50px"
+                        }}
+                    >
                         {keyRender(item)}
                     </div>
                 )
@@ -347,9 +355,12 @@ class WitnessList extends React.Component {
         ];
 
         const getRowClassName = record => {
-            if (record.id === current) return "active-witness";
+            if (record.id === current) return "mono-row-witness ";
+            {
+                /*active-witness */
+            }
 
-            return "";
+            return "mono-row-witness";
         };
 
         return (
@@ -424,7 +435,7 @@ class Witnesses extends React.Component {
                 <div className="grid-block">
                     <div className="grid-block">
                         <div className="grid-content ">
-                            <div className="explore-witness--info">
+                            {/* <div className="explore-witness--info">
                                 <table>
                                     <thead>
                                         <tr>
@@ -489,7 +500,7 @@ class Witnesses extends React.Component {
                                                     time={
                                                         new Date(
                                                             dynGlobalObject.next_maintenance_time +
-                                                                "Z"
+                                                            "Z"
                                                         )
                                                     }
                                                 />
@@ -497,20 +508,40 @@ class Witnesses extends React.Component {
                                         </tr>
                                     </tbody>
                                 </table>
-                            </div>
+                            </div> */}
 
-                            <Input
-                                placeholder={counterpart.translate(
+                            {/* <Input
+                                className="mono-input-witness"
+                                placeholder={"   " + counterpart.translate(
                                     "explorer.witnesses.filter_by_name"
                                 )}
                                 onChange={this._onFilter.bind(this)}
-                                style={{
-                                    width: "200px",
-                                    marginBottom: "12px",
-                                    marginTop: "4px"
-                                }}
-                                addonAfter={<Icon type="search" />}
-                            />
+                                addonAfter={
+                                    <Button className="mono-btn-witness" type="primary" >Search</Button>
+                                }
+                            /> */}
+                            <Row>
+                                <Col span={19}>
+                                    <Input
+                                        className="mono-input-witness"
+                                        placeholder={
+                                            "   " +
+                                            counterpart.translate(
+                                                "explorer.witnesses.filter_by_name"
+                                            )
+                                        }
+                                        onChange={this._onFilter.bind(this)}
+                                    />
+                                </Col>
+                                <Col span={4} offset={1}>
+                                    <Button
+                                        className="mono-btn-witness"
+                                        type="primary"
+                                    >
+                                        Search
+                                    </Button>
+                                </Col>
+                            </Row>
 
                             <WitnessList
                                 current_aslot={dynGlobalObject.current_aslot}
