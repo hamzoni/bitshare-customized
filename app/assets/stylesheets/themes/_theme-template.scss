@@ -177,18 +177,18 @@
     // select:hover {
     // background-color: $panel-bg-color;
     // }
-    // .label.success {
-    // color: $success-color;
-    // border-color: $success-color;
-    // }
-    // .label.info {
-    // color: $info-color;
-    // border-color: $info-color;
-    // }
-    // .label.warning {
-    // color: $warning-color;
-    // border-color: $warning-color;
-    // }
+    .label.success {
+        color: $success-color;
+        border-color: $success-color;
+    }
+    .label.info {
+        color: $info-color;
+        border-color: $info-color;
+    }
+    .label.warning {
+        color: $warning-color;
+        border-color: $warning-color;
+    }
     .nested-approval-state {
         .tooltip {
             text-decoration: underline dotted $primary-text-color;
@@ -2498,7 +2498,6 @@ hr.mono-hr {
     }
     > td:last-child {
         width: 10px;
-
         border-radius: 0 10px 10px 0;
     }
 }
