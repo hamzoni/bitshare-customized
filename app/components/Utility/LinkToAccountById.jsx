@@ -39,6 +39,7 @@ class LinkToAccountById extends React.Component {
             </span>
         ) : (
             <Link
+                className="mono-text-name"
                 onClick={this.props.onClick ? this.props.onClick : () => {}}
                 to={`/account/${account_name}/${this.props.subpage}/`}
             >
