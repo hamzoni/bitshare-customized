@@ -15,7 +15,11 @@ import utils from "common/utils";
 import ls from "common/localStorage";
 import PaginatedList from "../Utility/PaginatedList";
 import {Apis} from "bitsharesjs-ws";
-import {Radio, Table, Select, Input, Icon} from "bitshares-ui-style-guide";
+import {Row, Col, Radio, Table, Select, Input, Icon, Button} from "antd";
+
+const RadioButton = Radio.Button;
+const RadioGroup = Radio.Group;
+const Option = Select.Option;
 
 let accountStorage = new ls("__graphene__");
 
@@ -192,10 +196,12 @@ class Assets extends React.Component {
                     dataIndex: "marketId",
                     render: item => {
                         return (
-                            <Link to={`/market/${item}`}>
-                                <Icon type={"line-chart"} />{" "}
-                                <Translate content="header.exchange" />
-                            </Link>
+                            <Button type="primary" className="mono-btn-asset">
+                                <Link to={`/market/${item}`}>
+                                    <Icon type={"line-chart"} />{" "}
+                                    <Translate content="header.exchange" />
+                                </Link>
+                            </Button>
                         );
                     }
                 }
@@ -275,10 +281,12 @@ class Assets extends React.Component {
                     dataIndex: "marketId",
                     render: item => {
                         return (
-                            <Link to={`/market/${item}`}>
-                                <Icon type={"line-chart"} />{" "}
-                                <Translate content="header.exchange" />
-                            </Link>
+                            <Button type="primary" className="mono-btn-asset">
+                                <Link to={`/market/${item}`}>
+                                    <Icon type={"line-chart"} />{" "}
+                                    <Translate content="header.exchange" />
+                                </Link>
+                            </Button>
                         );
                     }
                 }
@@ -352,7 +360,10 @@ class Assets extends React.Component {
                                 : "BTS");
 
                     return (
-                        <tr key={asset.id.split(".")[2]}>
+                        <tr
+                            key={asset.id.split(".")[2]}
+                            className="mono-row-pma"
+                        >
                             <td style={{width: "80%"}}>
                                 <div
                                     style={{paddingTop: 10, fontWeight: "bold"}}
@@ -397,12 +408,14 @@ class Assets extends React.Component {
                                 </div>
                             </td>
                             <td style={{width: "20%"}}>
-                                <Link
-                                    className="button outline"
-                                    to={`/market/${marketID}`}
+                                <Button
+                                    type="primary"
+                                    className="mono-btn-asset"
                                 >
-                                    <Translate content="header.exchange" />
-                                </Link>
+                                    <Link to={`/market/${marketID}`}>
+                                        <Translate content="header.exchange" />
+                                    </Link>
+                                </Button>
                             </td>
                         </tr>
                     );
@@ -441,86 +454,81 @@ class Assets extends React.Component {
         );
 
         return (
-            <div className="grid-block vertical">
-                <div className="grid-block vertical">
-                    <div className="grid-block main-content small-12 medium-10 medium-offset-1 main-content vertical">
-                        <div className="generic-bordered-box">
-                            <div
-                                style={{
-                                    textAlign: "right",
-                                    marginBottom: "24px"
-                                }}
-                            >
-                                <span
-                                    style={{
-                                        display: "inline-block",
-                                        width: "24px",
-                                        marginTop: "2px",
-                                        float: "left",
-                                        fontSize: "18px"
-                                    }}
-                                >
-                                    {this.state.isLoading ? (
-                                        <Icon type="loading" />
-                                    ) : null}
-                                </span>
-
-                                <Radio.Group
-                                    value={this.state.activeFilter}
-                                    onChange={this._toggleFilter}
-                                >
-                                    <Radio value={"market"}>
-                                        <Translate content="explorer.assets.market" />
-                                    </Radio>
-                                    <Radio value={"user"}>
-                                        <Translate content="explorer.assets.user" />
-                                    </Radio>
-                                    <Radio value={"prediction"}>
-                                        <Translate content="explorer.assets.prediction" />
-                                    </Radio>
-                                </Radio.Group>
-
-                                <Select
-                                    style={{width: "150px", marginLeft: "24px"}}
-                                    value={this.state.rowsOnPage}
-                                    onChange={this.handleRowsChange}
-                                >
-                                    <Select.Option key={"10"}>
-                                        10 rows
-                                    </Select.Option>
-                                    <Select.Option key={"25"}>
-                                        25 rows
-                                    </Select.Option>
-                                    <Select.Option key={"50"}>
-                                        50 rows
-                                    </Select.Option>
-                                    <Select.Option key={"100"}>
-                                        100 rows
-                                    </Select.Option>
-                                    <Select.Option key={"200"}>
-                                        200 rows
-                                    </Select.Option>
-                                </Select>
-
-                                <Input
-                                    placeholder={"Quick Search"}
-                                    value={this.state.filterSearch}
-                                    style={{width: "200px", marginLeft: "24px"}}
-                                    onChange={this.handleFilterChange}
-                                    addonAfter={<Icon type="search" />}
-                                />
-                            </div>
-
+            <Row type="flex" justify="space-between">
+                <Col span={6}>
+                    <RadioGroup
+                        className="mono-rd-group"
+                        defaultValue="market"
+                        size="large"
+                        value={this.state.activeFilter}
+                        onChange={this._toggleFilter}
+                    >
+                        <RadioButton className="mono-rd-btn" value="market">
+                            <Translate
+                                className="mono-rd-text"
+                                content="explorer.assets.market"
+                            />
+                            <Icon
+                                className="mono-rd-icon"
+                                type="arrow-right"
+                                theme="outlined"
+                            />
+                        </RadioButton>
+                        <RadioButton className="mono-rd-btn" value="user">
+                            <Translate
+                                className="mono-rd-text"
+                                content="explorer.assets.user"
+                            />
+                            <Icon
+                                className="mono-rd-icon"
+                                type="arrow-right"
+                                theme="outlined"
+                            />
+                        </RadioButton>
+                        <RadioButton className="mono-rd-btn" value="prediction">
+                            <Translate
+                                className="mono-rd-text"
+                                content="explorer.assets.prediction"
+                            />
+                            <Icon
+                                className="mono-rd-icon"
+                                type="arrow-right"
+                                theme="outlined"
+                            />
+                        </RadioButton>
+                    </RadioGroup>
+                    <Select
+                        size="large"
+                        className="mono-select"
+                        defaultValue="50"
+                        value={this.state.rowsOnPage}
+                        onChange={this.handleRowsChange}
+                    >
+                        <Option key={"10"}>10 rows</Option>
+                        <Option key={"25"}>25 rows</Option>
+                        <Option key={"50"}>50 rows</Option>
+                        <Option key={"100"}>100 rows</Option>
+                        <Option key={"200"}>200 rows</Option>
+                    </Select>
+                </Col>
+                <Col span={17} offset={1}>
+                    <Row>
+                        <Col span={24}>
+                            <Input
+                                className="mono-input-witness"
+                                placeholder={"Quick Search"}
+                                value={this.state.filterSearch}
+                                onChange={this.handleFilterChange}
+                            />
+                        </Col>
+                        <Col span={24}>
                             {activeFilter == "prediction" ? (
-                                <div
-                                    className="grid-block"
-                                    style={{paddingBottom: 20}}
-                                >
+                                <div style={{paddingBottom: 20}}>
                                     <PaginatedList rows={pm} pageSize={6} />
                                 </div>
                             ) : (
                                 <Table
-                                    style={{width: "100%", marginTop: "16px"}}
+                                    rowClassName="mono-row-assets"
                                     rowKey="symbol"
                                     columns={columns}
                                     dataSource={dataSource}
@@ -530,10 +538,10 @@ class Assets extends React.Component {
                                     }}
                                 />
                             )}
-                        </div>
-                    </div>
-                </div>
-            </div>
+                        </Col>
+                    </Row>
+                </Col>
+            </Row>
         );
     }
 }

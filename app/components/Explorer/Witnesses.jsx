@@ -355,12 +355,12 @@ class WitnessList extends React.Component {
         ];
 
         const getRowClassName = record => {
-            if (record.id === current) return "mono-row-witness ";
+            if (record.id === current) return "mono-row-explorer ";
             {
                 /*active-witness */
             }
 
-            return "mono-row-witness";
+            return "mono-row-explorer";
         };
 
         return (
@@ -435,7 +435,7 @@ class Witnesses extends React.Component {
                 <div className="grid-block">
                     <div className="grid-block">
                         <div className="grid-content ">
-                            {/* <div className="explore-witness--info">
+                            <div className="explore-witness--info">
                                 <table>
                                     <thead>
                                         <tr>
@@ -500,7 +500,7 @@ class Witnesses extends React.Component {
                                                     time={
                                                         new Date(
                                                             dynGlobalObject.next_maintenance_time +
-                                                            "Z"
+                                                                "Z"
                                                         )
                                                     }
                                                 />
@@ -508,7 +508,7 @@ class Witnesses extends React.Component {
                                         </tr>
                                     </tbody>
                                 </table>
-                            </div> */}
+                            </div>
 
                             {/* <Input
                                 className="mono-input-witness"

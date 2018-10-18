@@ -12,7 +12,8 @@ import BalanceComponent from "../Utility/BalanceComponent";
 import AccountStore from "stores/AccountStore";
 import {connect} from "alt-react";
 import LoadingIndicator from "../LoadingIndicator";
-import PaginatedList from "../Utility/PaginatedList";
+import ShowAccountList from "../Utility/ShowAccountList";
+import {Row, Col} from "antd";
 
 class AccountRow extends React.Component {
     static propTypes = {
@@ -50,13 +51,19 @@ class AccountRow extends React.Component {
 
         return (
             <tr key={account.get("id")}>
-                <td>{account.get("id")}</td>
+                <td className="mono-text-left">{account.get("id")}</td>
                 {contacts.has(accountName) ? (
                     <td onClick={this._onRemoveContact.bind(this, accountName)}>
                         <Icon
                             name="minus-circle"
                             title="icons.minus_circle.remove_contact"
                         />
+                        <Link
+                            className="mono-text-name"
+                            to={`/account/${accountName}/overview`}
+                        >
+                            {accountName}
+                        </Link>
                     </td>
                 ) : (
                     <td onClick={this._onAddContact.bind(this, accountName)}>
@@ -64,13 +71,14 @@ class AccountRow extends React.Component {
                             name="plus-circle"
                             title="icons.plus_circle.add_contact"
                         />
+                        <Link
+                            className="mono-text-name"
+                            to={`/account/${accountName}/overview`}
+                        >
+                            {accountName}
+                        </Link>
                     </td>
                 )}
-                <td>
-                    <Link to={`/account/${accountName}/overview`}>
-                        {accountName}
-                    </Link>
-                </td>
                 <td>
                     {!balance ? "n/a" : <BalanceComponent balance={balance} />}
                 </td>
@@ -94,16 +102,19 @@ let AccountRowWrapper = props => {
     return <AccountRow {...props} />;
 };
 
-AccountRowWrapper = connect(AccountRowWrapper, {
-    listenTo() {
-        return [AccountStore];
-    },
-    getProps() {
-        return {
-            contacts: AccountStore.getState().accountContacts
-        };
+AccountRowWrapper = connect(
+    AccountRowWrapper,
+    {
+        listenTo() {
+            return [AccountStore];
+        },
+        getProps() {
+            return {
+                contacts: AccountStore.getState().accountContacts
+            };
+        }
     }
-});
+);
 
 class Accounts extends React.Component {
     constructor(props) {
@@ -175,20 +186,22 @@ class Accounts extends React.Component {
         }
 
         return (
-            <div className="grid-block">
-                <div className="grid-block vertical medium-6 medium-offset-3">
-                    <div className="grid-content shrink">
-                        <Translate
-                            component="h3"
-                            content="explorer.accounts.title"
-                        />
-                        <input
-                            type="text"
-                            value={this.state.searchTerm}
-                            onChange={this._onSearchChange.bind(this)}
-                        />
-                    </div>
-                    <PaginatedList
+            <Row>
+                <Col span={24}>
+                    <Translate
+                        component="h3"
+                        content="explorer.accounts.title"
+                    />
+                    <input
+                        className="mono-input-witness"
+                        type="text"
+                        placeholder="   Search Accounts"
+                        value={this.state.searchTerm}
+                        onChange={this._onSearchChange.bind(this)}
+                    />
+                </Col>
+                <Col span={24}>
+                    <ShowAccountList
                         header={
                             <tr>
                                 <th>
@@ -197,12 +210,12 @@ class Accounts extends React.Component {
                                         content="explorer.assets.id"
                                     />
                                 </th>
-                                <th>
+                                {/* <th>
                                     <Icon
                                         name="user"
                                         title="icons.user.account"
                                     />
-                                </th>
+                                </th> */}
                                 <th>
                                     <Translate
                                         component="span"
@@ -215,7 +228,7 @@ class Accounts extends React.Component {
                                         content="gateway.balance"
                                     />
                                 </th>
-                                <th>
+                                <th style={{minWidth: 200}}>
                                     <Translate
                                         component="span"
                                         content="account.percent"
@@ -231,8 +244,8 @@ class Accounts extends React.Component {
                             <LoadingIndicator type="three-bounce" />
                         </div>
                     ) : null}
-                </div>
-            </div>
+                </Col>
+            </Row>
         );
     }
 }
