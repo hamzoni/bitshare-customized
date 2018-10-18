@@ -44,7 +44,7 @@ class TransactionLabel extends React.Component {
     }
     render() {
         let trxTypes = counterpart.translate("transaction.trxTypes");
-        let labelClass = classNames("label", this.props.color || "info");
+        let labelClass = classNames(`mono-${this.props.color}` || "info");
         return (
             <span className={labelClass}>{trxTypes[ops[this.props.type]]}</span>
         );
@@ -101,14 +101,14 @@ class Row extends React.Component {
         return (
             <tr>
                 {this.props.includeOperationId ? (
-                    <td style={{textAlign: "left"}}>
+                    <td style={{textAlign: "center", width: 230}}>
                         {/* {this.props.block}#{this.props.txIndex}<br /> */}
                         {this.props.operationId}
                     </td>
                 ) : null}
                 {hideOpLabel ? null : (
                     <td
-                        style={{textAlign: "left"}}
+                        style={{textAlign: "center", width: 230}}
                         className="left-td column-hide-tiny"
                     >
                         <Link
@@ -133,7 +133,9 @@ class Row extends React.Component {
                 )}
                 <td style={{padding: "8px 5px", textAlign: "left"}}>
                     <div>
-                        <span>{this.props.info}</span>
+                        <span className="mono-text-content">
+                            {this.props.info}
+                        </span>
                     </div>
                     <div style={{fontSize: 14, paddingTop: 5}}>
                         {/*<span>{counterpart.translate("explorer.block.title").toLowerCase()} <Link to={`/block/${block}`}>{utils.format_number(block, 0)}</Link></span>*/}
