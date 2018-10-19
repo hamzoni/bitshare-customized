@@ -12,8 +12,8 @@ import TransactionConfirmActions from "actions/TransactionConfirmActions";
 import WalletUnlockActions from "actions/WalletUnlockActions";
 import PrivateKeyActions from "actions/PrivateKeyActions";
 import AccountActions from "actions/AccountActions";
-import {ChainStore, PrivateKey, key, Aes} from "bitsharesjs";
-import {Apis, ChainConfig} from "bitsharesjs-ws";
+import {ChainStore, PrivateKey, key, Aes} from "zcomjs";
+import {Apis, ChainConfig} from "zcomjs-ws";
 import AddressIndex from "stores/AddressIndex";
 import SettingsActions from "actions/SettingsActions";
 import notify from "actions/NotificationActions";
@@ -442,9 +442,8 @@ class WalletDb extends BaseStore {
                         if (!foundRole) {
                             let alsoCheckRole =
                                 role === "active" ? "owner" : "active";
-                            acc
-                                .getIn([alsoCheckRole, "key_auths"])
-                                .forEach(auth => {
+                            acc.getIn([alsoCheckRole, "key_auths"]).forEach(
+                                auth => {
                                     if (auth.get(0) === key.pubKey) {
                                         setKey(
                                             alsoCheckRole,
@@ -454,7 +453,8 @@ class WalletDb extends BaseStore {
                                         foundRole = true;
                                         return false;
                                     }
-                                });
+                                }
+                            );
                         }
                     }
                 }

@@ -2,8 +2,8 @@ import React, {Component} from "react";
 import {connect} from "alt-react";
 import cname from "classnames";
 import notify from "actions/NotificationActions";
-import {PrivateKey, Aes, PublicKey, hash} from "bitsharesjs";
-import {ChainConfig} from "bitsharesjs-ws";
+import {PrivateKey, Aes, PublicKey, hash} from "zcomjs";
+import {ChainConfig} from "zcomjs-ws";
 import PrivateKeyStore from "stores/PrivateKeyStore";
 import WalletUnlockActions from "actions/WalletUnlockActions";
 import {WalletCreate} from "components/Wallet/WalletCreate";
@@ -683,7 +683,7 @@ class ImportKeys extends Component {
                                     <span>
                                         Filtering{" "}
                                         {Math.round(
-                                            status.count / status.total * 100
+                                            (status.count / status.total) * 100
                                         )}{" "}
                                         %{" "}
                                     </span>
@@ -742,9 +742,11 @@ class ImportKeys extends Component {
                     {!import_ready ? null : (
                         <span>
                             {" "}
-                            (<a onClick={this.reset.bind(this)}>
+                            (
+                            <a onClick={this.reset.bind(this)}>
                                 <Translate content="wallet.reset" />
-                            </a>)
+                            </a>
+                            )
                         </span>
                     )}
                 </div>
@@ -810,13 +812,15 @@ class ImportKeys extends Component {
                                             <Translate content="wallet.bts_09_export" />
                                             {this.state.no_file ? null : (
                                                 <span>
-                                                    &nbsp; (<a
+                                                    &nbsp; (
+                                                    <a
                                                         onClick={this.reset.bind(
                                                             this
                                                         )}
                                                     >
                                                         Reset
-                                                    </a>)
+                                                    </a>
+                                                    )
                                                 </span>
                                             )}
                                         </label>
@@ -940,15 +944,18 @@ class ImportKeys extends Component {
     }
 }
 
-ImportKeys = connect(ImportKeys, {
-    listenTo() {
-        return [ImportKeysStore];
-    },
-    getProps() {
-        return {
-            importing: ImportKeysStore.getState().importing
-        };
+ImportKeys = connect(
+    ImportKeys,
+    {
+        listenTo() {
+            return [ImportKeysStore];
+        },
+        getProps() {
+            return {
+                importing: ImportKeysStore.getState().importing
+            };
+        }
     }
-});
+);
 
 export default ImportKeys;

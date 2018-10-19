@@ -6,8 +6,8 @@ import SettingsActions from "actions/SettingsActions";
 import WalletActions from "actions/WalletActions";
 import iDB from "idb-instance";
 import PrivateKeyStore from "./PrivateKeyStore";
-import {ChainStore, ChainValidation, FetchChain} from "bitsharesjs";
-import {Apis} from "bitsharesjs-ws";
+import {ChainStore, ChainValidation, FetchChain} from "zcomjs";
+import {Apis} from "zcomjs-ws";
 import AccountRefsStore from "stores/AccountRefsStore";
 import AddressIndex from "stores/AddressIndex";
 import ls from "common/localStorage";
@@ -253,8 +253,7 @@ class AccountStore extends BaseStore {
         let myActiveAccounts = Immutable.Set().asMutable();
         let chainId = Apis.instance().chain_id;
         return new Promise((resolve, reject) => {
-            iDB
-                .load_data("linked_accounts")
+            iDB.load_data("linked_accounts")
                 .then(data => {
                     this.state.linkedAccounts = Immutable.fromJS(
                         data || []

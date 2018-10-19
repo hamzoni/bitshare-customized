@@ -27,7 +27,7 @@ export function getWalletURL() {
  */
 export function getFaucet() {
     return {
-        url: "https://faucet.bitshares.eu/onboarding", // 2017-12-infrastructure worker proposal
+        url: "http://54.201.250.193:3000", // 2017-12-infrastructure worker proposal
         show: true,
         editable: false
     };
