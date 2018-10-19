@@ -8,7 +8,8 @@ import {connect} from "alt-react";
 import SettingsActions from "actions/SettingsActions";
 import FormattedAsset from "../Utility/FormattedAsset";
 import SettingsStore from "stores/SettingsStore";
-import {Icon, Input, Table} from "bitshares-ui-style-guide";
+//import { Icon, Input, Table } from "bitshares-ui-style-guide";
+import {Row, Col, Button, Table, Icon, Input, Popover} from "antd";
 
 class CommitteeMemberList extends React.Component {
     static propTypes = {
@@ -115,11 +116,12 @@ class CommitteeMemberList extends React.Component {
                 }
             },
             {
+                className: "mono-bt ",
                 key: "url",
                 title: "WEBPAGE",
                 dataIndex: "url",
                 render: item => (
-                    <a href={item} target="_blank">
+                    <a className="mono-link-commit" href={item} target="_blank">
                         {item}
                     </a>
                 )
@@ -128,6 +130,7 @@ class CommitteeMemberList extends React.Component {
 
         return (
             <Table
+                rowClassName={"mono-row-explorer"}
                 columns={columns}
                 dataSource={dataSource}
                 pagination={false}
@@ -191,18 +194,28 @@ class CommitteeMembers extends React.Component {
                 <div className="grid-block vertical medium-horizontal">
                     <div className="grid-block vertical">
                         <div className="grid-content">
-                            <Input
-                                placeholder={counterpart.translate(
-                                    "explorer.witnesses.filter_by_name"
-                                )}
-                                onChange={this._onFilter.bind(this)}
-                                style={{
-                                    width: "200px",
-                                    marginBottom: "12px",
-                                    marginTop: "4px"
-                                }}
-                                addonAfter={<Icon type="search" />}
-                            />
+                            <Row>
+                                <Col span={19}>
+                                    <Input
+                                        className="mono-input-witness"
+                                        placeholder={
+                                            "   " +
+                                            counterpart.translate(
+                                                "explorer.witnesses.filter_by_name"
+                                            )
+                                        }
+                                        onChange={this._onFilter.bind(this)}
+                                    />
+                                </Col>
+                                <Col span={4} offset={1}>
+                                    <Button
+                                        className="mono-btn-witness"
+                                        type="primary"
+                                    >
+                                        Search
+                                    </Button>
+                                </Col>
+                            </Row>
                             <CommitteeMemberList
                                 filter={this.state.filterCommitteeMember}
                                 committee_members={Immutable.List(
@@ -227,20 +240,23 @@ class CommitteeMembersStoreWrapper extends React.Component {
     }
 }
 
-CommitteeMembersStoreWrapper = connect(CommitteeMembersStoreWrapper, {
-    listenTo() {
-        return [SettingsStore];
-    },
-    getProps() {
-        return {
-            cardView: SettingsStore.getState().viewSettings.get(
-                "cardViewCommittee"
-            ),
-            filterCommitteeMember: SettingsStore.getState().viewSettings.get(
-                "filterCommitteeMember"
-            )
-        };
+CommitteeMembersStoreWrapper = connect(
+    CommitteeMembersStoreWrapper,
+    {
+        listenTo() {
+            return [SettingsStore];
+        },
+        getProps() {
+            return {
+                cardView: SettingsStore.getState().viewSettings.get(
+                    "cardViewCommittee"
+                ),
+                filterCommitteeMember: SettingsStore.getState().viewSettings.get(
+                    "filterCommitteeMember"
+                )
+            };
+        }
     }
-});
+);
 
 export default CommitteeMembersStoreWrapper;

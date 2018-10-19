@@ -190,7 +190,7 @@ class FeeGroup extends React.Component {
         return (
             <div className="asset-card">
                 <Card>{this.props.title.toUpperCase()}</Card>
-                <table className="table">
+                <table className="table ">
                     <thead>
                         <tr>
                             <th>

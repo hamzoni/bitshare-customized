@@ -3,7 +3,7 @@ import {Pagination} from "antd";
 import counterpart from "counterpart";
 import TransitionWrapper from "../Utility/TransitionWrapper";
 
-export default class PaginatedList extends React.Component {
+export default class ShowAccountList extends React.Component {
     constructor(props) {
         super(props);
 
@@ -52,7 +52,7 @@ export default class PaginatedList extends React.Component {
 
         return (
             <div className="" style={this.props.style}>
-                <table className={this.props.className + " mono-tb-pma"}>
+                <table className={this.props.className + " mono-tb-blockchain"}>
                     {header ? <thead>{header}</thead> : null}
                     {this.props.withTransition && page === 1 ? (
                         <TransitionWrapper
