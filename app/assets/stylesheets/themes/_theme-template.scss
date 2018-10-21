@@ -62,14 +62,19 @@
     $dark-help-text
 ) {
     $hamburger-submenu-display-endpoint: 990px;
+
     .explore-witness--info {
         width: 100%;
+
         border: 1px solid $explorer--witnesses--info-border;
         background: $explorer--witnesses--info-bg;
+
         padding: 12px;
         border-radius: 5px;
+
         table {
             width: 100%;
+
             thead {
                 th {
                     font-weight: 400;
@@ -78,6 +83,7 @@
                     padding-bottom: 8px;
                 }
             }
+
             tbody {
                 td {
                     color: $explorer--witnesses--info-table-text-color;
@@ -85,6 +91,7 @@
             }
         }
     }
+
     #incognito {
         background: $incognito-bg;
     }
@@ -149,15 +156,19 @@
             background-color: #fff;
         }
     }
+
     .font-secondary {
         color: $secondary-text-color;
     }
+
     svg > path {
         transition: all 0.3s ease 0s;
     }
+
     #content-wrapper {
         @include color($primary-text-color, $bg-color);
     }
+
     hr {
         border-color: $dark-text-color;
         background-color: $dark-text-color !important;
@@ -208,7 +219,6 @@
     .txtlabel.success {
         color: $success-color;
     }
-
     .txtlabel.info {
         color: $info-color;
     }
@@ -228,6 +238,7 @@
     .txtann.warning {
         color: $warning-color;
     }
+
     .txtann.error {
         color: $alert-color;
     }
@@ -241,6 +252,7 @@
     .notification-success {
         border-left-color: $success-color !important;
     }
+
     .action-sheet {
         @include color($light-text-color, $super-light-panel-bg-color);
         &::after {
@@ -253,8 +265,7 @@
                 @include color(
                     $light-text-color,
                     lighten($super-light-panel-bg-color, 4%)
-                );
-                // color: $link-text-color;
+                ); // color: $link-text-color;
             }
         }
     }
@@ -273,6 +284,7 @@
             border-left-color: $super-light-panel-bg-color !important;
         }
     }
+
     .json-inspector__key {
         color: $secondary-text-color !important;
     }
@@ -284,6 +296,7 @@
     h6 {
         color: $primary-text-color;
     }
+
     // copyicons
     .copyIcon {
         background-color: $button-bg-color;
@@ -291,11 +304,13 @@
             background-color: $button-bg-color;
         }
     }
+
     .modal#marketPicker,
     .modal#settingsModal {
         background-color: $bg-color;
         border: 1px solid black;
     }
+
     .modal {
         @include color($light-text-color, $account-cells);
         .modal__highlight {
@@ -363,15 +378,18 @@
     }
     .page-layout {
         background-color: lighten($account-header, 4%);
+
         .column-header {
             > ul {
                 border-bottom: 1px solid $panel-bg-color;
+
                 > li.active,
                 li:hover {
                     border-bottom: 3px solid lightblue;
                 }
             }
         }
+
         .left-column {
             border-top-color: $bg-color;
             border-bottom-color: $bg-color;
@@ -468,6 +486,7 @@
             background-color: lighten($alert-color, 4%) !important;
         }
     }
+
     .header a.button.create-account {
         transition: color 0s !important;
         color: $button-bg-color !important;
@@ -580,6 +599,7 @@
         background-color: $primary-text-color !important;
         fill: $primary-text-color !important;
     }
+
     .grp-menu-item button {
         &:hover,
         &:focus,
@@ -610,8 +630,7 @@
         }
         svg > path {
             fill: #fff;
-        }
-        // svg:hover > path { fill: $primary-text-color; }
+        } // svg:hover > path { fill: $primary-text-color; }
     }
     .settings-cog {
         svg > path {
@@ -732,7 +751,8 @@
             }
             > li > span {
                 color: $light-text-color;
-            } /* Hover state */
+            }
+            /* Hover state */
             li:hover > span {
                 @include color(
                     $light-text-color,
@@ -749,6 +769,7 @@
             border-color: $secondary-text-color transparent;
         }
     }
+
     .account-image {
         .icon:hover {
             svg path {
@@ -903,6 +924,7 @@
             border-bottom: 1px solid $button-bg-color;
         }
     }
+
     // Tabs
     .tabs {
         border-bottom-color: $dark-text-color;
@@ -1060,6 +1082,7 @@
             color: $secondary-text-color;
         }
     }
+
     // Formatted assets
     .facolor-success {
         color: $success-color;
@@ -1076,6 +1099,7 @@
     .facolor-error {
         color: $error-text-color;
     }
+
     .facolor-fee {
         color: $fee-color;
     }
@@ -1260,7 +1284,8 @@
     }
     .menu-group.primary,
     .menu-group.primary .menu-bar {
-        background-color: $account-background;
+        background-color: transparent;
+        color: #fff;
         li {
             > a {
                 color: $account-dimmed;
@@ -1270,7 +1295,6 @@
             }
             > a:hover,
             > a.active {
-                background-color: $bg-color !important;
                 color: $primary-text-color;
                 .icon > svg > path {
                     fill: $primary-text-color;
@@ -1292,9 +1316,11 @@
             color: $secondary-text-color;
         }
     }
+
     div.exchange-content-header {
         background-color: transparent !important;
     }
+
     .exchange-content-header {
         color: $light-text-color;
         border-bottom: 1px solid $button-bg-color;
@@ -1399,6 +1425,7 @@
             height: 100%;
             width: 100%;
         }
+
         #sticky-header-row {
             background-color: $panel-bg-color;
         }
@@ -1451,6 +1478,7 @@
         font-size: 11px;
         color: gray;
     }
+
     .buy-sell-box {
         background-color: $header-color;
         > select {
@@ -1490,6 +1518,7 @@
         text-transform: uppercase;
         cursor: pointer;
     }
+
     .table > tbody > tr:nth-of-type(even) {
         background-color: lighten($bg-color, 4%);
     }
@@ -1507,8 +1536,7 @@
         color: $secondary-text-color;
         // &:hover{
         // @include button-focus($primary-text-color, $panel-bg-color, 10);
-        }
-
+        // }
     }
     .mymarkets-tabs {
         > li {
@@ -1665,6 +1693,7 @@
             border-bottom: 2px solid #020202;
         }
     }
+
     ul.dashboard-links {
         > li.active {
             color: $primary-text-color;
@@ -1716,6 +1745,7 @@
     td.pub-key {
         word-break: break-all;
     }
+
     /* Table view account */
     div.grid-content.app-tables {
         background-color: $account-background;
@@ -1723,6 +1753,7 @@
     div.tabs-container {
         background-color: $account-background;
     }
+
     div.account-tabs {
         > div.service-selector {
             background-color: $bg-color;
@@ -1875,6 +1906,7 @@
             animation-direction: reverse;
         }
     }
+
     @keyframes pulsate-green {
         0% {
             color: $pulsate-green-start;
@@ -1969,6 +2001,7 @@
     .order-book-button-v {
         display: none;
     }
+
     @include breakpoint(medium) {
         .order-book-button-v {
             display: inline-block;
@@ -2075,9 +2108,11 @@
             color: $primary-text-color;
             border-bottom: 1px dotted rgb(160, 159, 159);
             margin: 0 0 1px;
+
             font-size: 90%;
             line-height: 1.75rem;
             height: 1.75rem;
+
             > option {
                 background-color: $light-panel-bg-color;
             }
@@ -2095,6 +2130,7 @@
     .qr-address-scanner {
         &-btn {
             background: #049cce;
+
             height: 2.4rem;
             border-radius: 0 5px 5px 0;
             width: 40px;
@@ -2159,6 +2195,7 @@
             }
         }
     }
+
     .login-selector--language-select {
         .login-selector--language-select--icon {
             font-size: 18px;
@@ -2167,17 +2204,19 @@
             color: $link-text-color;
         }
         .login-selector--language-select--wrapper {
-            margin-left: 0;
-            // center language select for width icon takes
+            margin-left: 0; // center language select for width icon takes
         }
     }
+
     .registration-layout {
         .attention-note {
             background-color: rgba($medium-color, 0.06);
         }
+
         .attention-text {
             color: $medium-color;
         }
+
         .button-primary {
             background-color: $button-bg-color;
             color: $light-text-color;
@@ -2188,6 +2227,7 @@
                 background-color: lighten($button-bg-color, 15%) !important;
             }
         }
+
         .button-secondary {
             background-color: initial;
             color: $button-bg-color;
@@ -2201,42 +2241,53 @@
                 color: lighten($button-bg-color, 10%) !important;
             }
         }
+
         .registration-title {
             color: $light-text-color;
         }
+
         .selection-block {
             .selection-title,
             .choice-model,
             .model-option {
                 color: $light-text-color;
             }
+
             .recommended {
                 background-color: $positive-color-alternative;
                 color: $dark-help-text;
             }
+
             .model-option-value {
                 color: $positive-color-alternative;
             }
+
             .account-option-value {
                 color: $negative-color-alternative;
             }
+
             .account-security {
                 color: $medium-color;
             }
+
             .option-border {
                 border-bottom-color: $separator-line;
             }
+
             div.inactive-left-block,
             div.inactive-right-block {
                 background-color: darken($modal-bg-color, 10);
             }
         }
+
         .plate.inactive-model-block {
             background-color: transparentize($modal-bg-color, 0.6);
         }
+
         .plate {
             background-color: $modal-bg-color;
         }
+
         span.checkbox {
             border-color: $button-bg-color;
             background-color: $button-bg-color;
@@ -2245,19 +2296,23 @@
         span.checkbox-active {
             border-color: $button-bg-color;
             background-color: $button-bg-color;
+
             svg path {
                 fill: $bg-color;
             }
         }
+
         @include breakpoint(small only) {
             .plate {
                 background-color: darken($modal-bg-color, 10);
+
                 .header-block,
                 .wallet-block,
                 .account-block,
                 .wallet-block-registration,
                 .account-block-registration {
                     background-color: $modal-bg-color;
+
                     .overflow-bg-block {
                         .content {
                             background-color: $modal-bg-color;
@@ -2267,17 +2322,20 @@
             }
         }
     }
+
     .ant-input {
         border-left: 1px solid $super-light-panel-bg-color !important;
         border-top: 1px solid $super-light-panel-bg-color !important;
         border-bottom: 1px solid $super-light-panel-bg-color !important;
     }
+
     i.anticon.icon-fill {
         &:hover {
             color: $bs-blue;
             cursor: pointer;
         }
     }
+
     .icon-fill {
         svg > path {
             fill: $light-text-color;
@@ -2287,6 +2345,7 @@
             }
         }
     }
+
     .modal--transaction-confirm {
         zindex: 10000; // make transaction confirm modal above another modals
     }
@@ -2340,7 +2399,6 @@
     top: 0;
     bottom: 0;
     margin: auto;
-
     padding: 2px;
     border-radius: 50%;
     text-align: center;
@@ -2441,6 +2499,7 @@
         }
     }
 }
+
 // mono style
 .mono-ex-block {
     width: 23% !important;
@@ -2504,7 +2563,8 @@ hr.mono-hr {
     }
 }
 .mono-tb-blockchain > tbody > tr {
-    height: 70px; // line-height: 70px;
+    height: 70px;
+    // line-height: 70px;
     > td:first-child {
         text-align: center !important;
         border-radius: 10px 0 0 10px;
@@ -2521,12 +2581,14 @@ hr.mono-hr {
     color: #054264 !important;
     font-weight: bold !important;
 }
+
 .mono-block-header {
     color: #333;
     margin: 1.5rem 0 1.5rem 0;
     font-weight: 500;
     font-size: 20px;
 }
+
 .mono-text-content {
     color: #333;
     > span > span > span > a {
@@ -2598,7 +2660,8 @@ hr.mono-hrtb {
     color: #ffffff;
     text-transform: uppercase;
 }
-// witness
+
+//witness
 .mono-input-witness {
     background: #fff !important;
     height: 70px !important;
@@ -2607,6 +2670,7 @@ hr.mono-hrtb {
     margin-bottom: 2rem !important;
     border: none !important;
 }
+
 .mono-btn-witness {
     height: 70px !important;
     background: #054264 !important;
@@ -2614,6 +2678,7 @@ hr.mono-hrtb {
     border-radius: 10px !important;
     border: none !important;
 }
+
 .ant-table-thead {
     height: 50px;
     line-height: 50px;
@@ -2629,12 +2694,14 @@ hr.mono-hrtb {
         background: #f5f5f5 !important;
     }
 }
+
 .ant-table-column-sorter-up,
 .ant-table-column-sorter-down {
     > svg > path {
         fill: #d3d3d3 !important;
     }
 }
+
 .mono-row-explorer {
     height: 70px;
     line-height: 70px;
@@ -2651,14 +2718,16 @@ hr.mono-hrtb {
         border-radius: 7px 0 0 7px;
     }
 }
+
 .mono-bt:last-child {
     border-radius: 0 7px 7px 0;
 }
+
 .mono-link-commit {
     color: #054264 !important;
 }
 
-// help content
+//help content
 .mono-help {
     background: #fff;
     color: #333;
@@ -2671,6 +2740,7 @@ hr.mono-hrtb {
         margin-bottom: 1rem;
     }
 }
+
 .mono-tb-fees > thead > tr {
     height: 70px;
     line-height: 70px;
@@ -2690,15 +2760,20 @@ hr.mono-hrtb {
     }
 }
 .mono-tb-fees > tbody > tr {
-    height: 100px; // line-height: 70px;
+    height: 100px;
+    // line-height: 70px;
     > td:first-child {
-        text-align: center !important; // border-radius: 10px 0 0 10px;
+        text-align: center !important;
+        //border-radius: 10px 0 0 10px;
     }
     > td:last-child {
-        width: 10px; // border-radius: 0 10px 10px 0;
+        width: 10px;
+        //border-radius: 0 10px 10px 0;
     }
 }
-// assets
+
+//assets
+
 .mono-rd-btn {
     height: 70px !important;
     line-height: 70px !important;
@@ -2710,17 +2785,21 @@ hr.mono-hrtb {
         background: #fafafa !important;
     }
 }
+
 .mono-rd-btn:first-child {
     border-radius: 5px 5px 0 0 !important;
 }
+
 .mono-rd-btn:last-child {
     border-radius: 0 0 5px 5px !important;
 }
+
 .mono-rd-text {
     color: #b3b3b3 !important;
     font-size: 13px !important;
     text-transform: capitalize;
 }
+
 .mono-rd-icon {
     float: right;
     margin-top: 25px;
@@ -2728,6 +2807,7 @@ hr.mono-hrtb {
         fill: transparent;
     }
 }
+
 .mono-rd-group {
     border: none !important;
     > .ant-radio-button-wrapper-checked {
@@ -2741,9 +2821,11 @@ hr.mono-hrtb {
         }
     }
 }
+
 .ant-radio-button-wrapper::before {
     display: none !important;
 }
+
 .mono-select {
     margin-top: 1rem !important;
     width: 100%;
@@ -2760,6 +2842,7 @@ hr.mono-hrtb {
         }
     }
 }
+
 .mono-row-assets {
     height: 70px;
     line-height: 70px;
@@ -2787,10 +2870,12 @@ hr.mono-hrtb {
     border: none !important;
     border-radius: 5px !important;
 }
+
 .mono-tb-pma {
     border-collapse: separate !important;
     border-spacing: 0 3px !important;
 }
+
 .mono-row-pma {
     background: #fff !important;
     color: #333;
@@ -2802,10 +2887,12 @@ hr.mono-hrtb {
         border-radius: 0 7px 7px 0;
     }
 }
+
 .mono-row-pma:hover {
     background: #fafafa !important;
 }
-// fees
+
+//fees
 .mono-fees {
     border-bottom: 3px solid #f5f5f5;
 }
@@ -2814,12 +2901,14 @@ hr.mono-hrtb {
     background: #fff;
     color: #333;
     &:first-child {
-        // border-radius: 7px 0 0 7px;
+        //border-radius: 7px 0 0 7px;
     }
 }
+
 .mono-tab-header-fee > tr > th {
     border: none !important;
 }
+
 .ant-card {
     border: none !important;
 }
@@ -2828,4 +2917,8 @@ hr.mono-hrtb {
     color: #333;
     padding-left: 0 !important;
     font-weight: bold;
+}
+
+.ant-tabs-nav-wrap {
+    color: #000;
 }
