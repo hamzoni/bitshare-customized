@@ -12,6 +12,13 @@
     top: 0;
 }
 
+.header-container {
+    padding-left: 5rem;
+    padding-right: 5rem;
+    background: #003d65;
+    background-image: linear-gradient(-90deg, #003d65, #00808e);
+}
+
 .header {
     .electron-navigation > ul > li {
         border: none;
@@ -26,6 +33,7 @@
         padding: 0;
         border-right: none;
         > a {
+            background-image: inherit;
             font-weight: bold;
             line-height: 2rem;
             padding-left: 1.25rem;

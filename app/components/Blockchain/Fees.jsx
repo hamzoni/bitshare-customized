@@ -123,7 +123,7 @@ class FeeGroup extends React.Component {
                 if (!headIncluded) {
                     headIncluded = true;
                     title = (
-                        <td rowSpan="6" style={{width: "15em"}}>
+                        <td rowSpan="6" className="mono-operation">
                             <span className={labelClass}>{feename}</span>
                         </td>
                     );
@@ -134,14 +134,14 @@ class FeeGroup extends React.Component {
                         <tr
                             key={opId.toString() + key}
                             className={
-                                feeTypes[key] === "Annual Membership"
-                                    ? "linethrough"
+                                feeTypes[key] === "Annual Membership "
+                                    ? "linethrough "
                                     : ""
                             }
                         >
                             {title}
                             <td>{feeTypes[key]}</td>
-                            <td style={{textAlign: "right"}}>
+                            <td style={{textAlign: "left"}}>
                                 {assetAmount}
                                 {amount !== 0 && preferredUnit !== "BTS" ? (
                                     <span>
@@ -150,7 +150,7 @@ class FeeGroup extends React.Component {
                                     </span>
                                 ) : null}
                             </td>
-                            <td style={{textAlign: "right"}}>
+                            <td style={{textAlign: "left"}}>
                                 {feeIdx !== 8 ? assetAmountLTM : null}
                                 {feeIdx !== 8 &&
                                 amount !== 0 &&
@@ -168,10 +168,10 @@ class FeeGroup extends React.Component {
                         <tr key={opId.toString() + key}>
                             {title}
                             <td>{feeTypes[key]}</td>
-                            <td style={{textAlign: "right"}}>
+                            <td style={{textAlign: ";left"}}>
                                 - <sup>*</sup>
                             </td>
-                            <td style={{textAlign: "right"}}>
+                            <td style={{textAlign: ";left"}}>
                                 {assetAmountLTM}
                                 {amount !== 0 && preferredUnit !== "BTS" ? (
                                     <span>
@@ -184,14 +184,18 @@ class FeeGroup extends React.Component {
                     );
                 }
             }
-            return <tbody key={feeIdx}>{rows}</tbody>;
+            return (
+                <tbody className="mono-fees" key={feeIdx}>
+                    {rows}
+                </tbody>
+            );
         });
 
         return (
             <div className="asset-card">
                 <Card>{this.props.title.toUpperCase()}</Card>
                 <table className="table ">
-                    <thead>
+                    <thead className="mono-tab-header-fee">
                         <tr>
                             <th>
                                 <Translate content={"explorer.block.op"} />
@@ -199,10 +203,10 @@ class FeeGroup extends React.Component {
                             <th>
                                 <Translate content={"explorer.fees.type"} />
                             </th>
-                            <th style={{textAlign: "right"}}>
+                            <th style={{textAlign: "left"}}>
                                 <Translate content={"explorer.fees.fee"} />
                             </th>
-                            <th style={{textAlign: "right"}}>
+                            <th style={{textAlign: "left"}}>
                                 <Translate content={"explorer.fees.feeltm"} />
                             </th>
                         </tr>

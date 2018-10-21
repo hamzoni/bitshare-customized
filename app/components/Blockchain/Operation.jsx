@@ -101,14 +101,14 @@ class Row extends React.Component {
         return (
             <tr>
                 {this.props.includeOperationId ? (
-                    <td style={{textAlign: "center", width: 230}}>
+                    <td style={{textAlign: "center", width: 220}}>
                         {/* {this.props.block}#{this.props.txIndex}<br /> */}
                         {this.props.operationId}
                     </td>
                 ) : null}
                 {hideOpLabel ? null : (
                     <td
-                        style={{textAlign: "center", width: 230}}
+                        style={{textAlign: "center", width: 220}}
                         className="left-td column-hide-tiny"
                     >
                         <Link

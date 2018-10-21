@@ -60,7 +60,7 @@ var options = {
 http.createServer(app).listen(6015);
 https.createServer(options, app).listen(6016);
 
-console.log("Listening at http://localhost:6012/ or https://localhost:6013/");
+console.log("Listening at http://localhost:6015/ or https://localhost:6016/");
 // new WebpackDevServer(compiler, {
 //     publicPath: config.output.publicPath,
 //     hot: true,

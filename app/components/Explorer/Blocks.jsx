@@ -244,6 +244,7 @@ class Blocks extends React.Component {
                                 <Link
                                     to={`/block/${block.id}`}
                                     className="mono-text-name"
+                                    style={{paddingLeft: "1.2rem"}}
                                 >
                                     #{utils.format_number(block.id, 0)}
                                 </Link>
@@ -696,7 +697,7 @@ class Blocks extends React.Component {
                 <Row type="flex" justify="space-between">
                     <Col span={12} className="mono-blockchain">
                         <div ref="operationsText">
-                            <div className="block-content-header">
+                            <div className="mono-block-header">
                                 <Translate content="account.recent" />
                             </div>
                             <hr className="mono-hrtb" />
@@ -725,7 +726,7 @@ class Blocks extends React.Component {
                     </Col>
                     <Col span={12} className="mono-blockchain">
                         <div ref="blocksText">
-                            <div className="block-content-header">
+                            <div className="mono-block-header">
                                 <Translate
                                     component="span"
                                     content="explorer.blocks.recent"

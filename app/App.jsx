@@ -328,7 +328,7 @@ class App extends React.Component {
                 <div className="grid-frame vertical">
                     <Header height={this.state.height} {...others} />
                     <div id="mainContainer" className="grid-block">
-                        <div className="grid-block vertical">
+                        <div className="grid-block content-block  vertical">
                             <Switch>
                                 <Route
                                     path="/"
