@@ -2691,7 +2691,6 @@ hr.mono-hrtb {
 .mono-link-commit {
     color: #054264 !important;
 }
-
 // help content
 .mono-help {
     background: #fff;
@@ -2726,7 +2725,8 @@ hr.mono-hrtb {
 .mono-tb-fees > tbody > tr {
     height: 100px; // line-height: 70px;
     > td:first-child {
-        text-align: center !important; // border-radius: 10px 0 0 10px;
+        text-align: center !important;
+        // border-radius: 10px 0 0 10px;
     }
     > td:last-child {
         width: 10px; // border-radius: 0 10px 10px 0;
@@ -2822,7 +2822,6 @@ hr.mono-hrtb {
     border: none !important;
     border-radius: 5px !important;
 }
-
 .mono-tb-pma {
     border-collapse: separate !important;
     border-spacing: 0 3px !important;
