@@ -1057,7 +1057,7 @@ class Header extends React.Component {
                     </div>
                 </div>
 
-                <div
+                {/* <div
                     className="truncated active-account"
                     style={{cursor: "pointer"}}
                 >
@@ -1110,8 +1110,8 @@ class Header extends React.Component {
                             {accountsList}
                         </ul>
                     )}
-                </div>
-                <div>
+                </div> */}
+                {/* <div>
                     {this.props.currentAccount == null ? null : (
                         <span
                             onClick={this._toggleLock.bind(this)}
@@ -1129,8 +1129,8 @@ class Header extends React.Component {
                             />
                         </span>
                     )}
-                </div>
-                <div className="app-menu">
+                </div> */}
+                {/* <div className="app-menu">
                     <div
                         onClick={this._toggleDropdownMenu}
                         className={cnames(
@@ -1167,7 +1167,7 @@ class Header extends React.Component {
                             />
                         )}
                     </div>
-                </div>
+                </div> */}
                 <SendModal
                     id="send_modal_header"
                     refCallback={e => {

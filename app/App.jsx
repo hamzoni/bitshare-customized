@@ -330,11 +330,7 @@ class App extends React.Component {
                     <div id="mainContainer" className="grid-block">
                         <div className="grid-block content-block  vertical">
                             <Switch>
-                                <Route
-                                    path="/"
-                                    exact
-                                    component={DashboardPage}
-                                />
+                                <Route path="/" exact component={Explorer} />
                                 <Route
                                     path="/account/:account_name"
                                     component={AccountPage}

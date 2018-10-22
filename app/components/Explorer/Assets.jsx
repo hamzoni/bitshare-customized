@@ -407,7 +407,10 @@ class Assets extends React.Component {
                                     ) : null}
                                 </div>
                             </td>
-                            <td style={{width: "20%"}}>
+                            <td
+                                className="mono-respon-asset"
+                                style={{width: "20%"}}
+                            >
                                 <Button
                                     type="primary"
                                     className="mono-btn-asset"
@@ -455,7 +458,7 @@ class Assets extends React.Component {
 
         return (
             <Row type="flex" justify="space-between">
-                <Col span={6}>
+                <Col xs={24} sm={24} md={24} lg={6} xl={6}>
                     <RadioGroup
                         className="mono-rd-group"
                         defaultValue="market"
@@ -511,7 +514,13 @@ class Assets extends React.Component {
                         <Option key={"200"}>200 rows</Option>
                     </Select>
                 </Col>
-                <Col span={17} offset={1}>
+                <Col
+                    xs={{span: 24, offset: 0}}
+                    sm={{span: 24, offset: 0}}
+                    md={{span: 24, offset: 0}}
+                    lg={{span: 17, offset: 1}}
+                    xl={{span: 17, offset: 1}}
+                >
                     <Row>
                         <Col span={24}>
                             <Input
