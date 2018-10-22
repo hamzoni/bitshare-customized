@@ -361,6 +361,7 @@ class Blocks extends React.Component {
                             </h3>
                         </div>
                     </Col>
+
                     {/*Colunm 2 */}
                     <Col span={6} className="mono-ex-block">
                         <div className="grid-content no-overflow">
@@ -387,22 +388,8 @@ class Blocks extends React.Component {
                                 }
                             </h2>
                         </div>
-                        <hr className="mono-hr" />
-                        <div className="grid-content no-overflow">
-                            <div className="txtlabel mono-text-block">
-                                <Translate
-                                    component="span"
-                                    content="explorer.blocks.block_times"
-                                />
-                            </div>
-                            <BlocktimeChart
-                                blockTimes={blockTimes}
-                                head_block_number={dynGlobalObject.get(
-                                    "head_block_number"
-                                )}
-                            />
-                        </div>
                     </Col>
+
                     {/*Colunm 3 */}
                     <Col span={6} className="mono-ex-block">
                         <div className="grid-content no-overflow">
@@ -431,22 +418,8 @@ class Blocks extends React.Component {
                                 )}
                             </h2>
                         </div>
-                        <hr className="mono-hr" />
-                        <div className="grid-content no-overflow">
-                            <div className="txtlabel mono-text-block">
-                                <Translate
-                                    component="span"
-                                    content="explorer.blocks.trx_per_block"
-                                />
-                            </div>
-                            <TransactionChart
-                                blocks={latestBlocks}
-                                head_block={dynGlobalObject.get(
-                                    "head_block_number"
-                                )}
-                            />
-                        </div>
                     </Col>
+
                     <Col span={6} className="mono-ex-block">
                         <div className="grid-content no-overflow">
                             <span className="txtlabel mono-text-block">
@@ -473,26 +446,6 @@ class Blocks extends React.Component {
                             >
                                 {dynGlobalObject.get("recently_missed_count")}
                             </h2>
-                        </div>
-                        <hr className="mono-hr" />
-                        <div className="grid-content no-overflow clear-fix">
-                            <span className="txtlabel mono-text-block">
-                                <Translate
-                                    component="span"
-                                    content="explorer.asset.summary.stealth_supply"
-                                />
-                            </span>
-                            <h3 className="txtlabel mono-text-block-number">
-                                {dynamicObject ? (
-                                    <FormattedAsset
-                                        amount={dynamicObject.get(
-                                            "confidential_supply"
-                                        )}
-                                        asset={coreAsset.get("id")}
-                                        decimalOffset={5}
-                                    />
-                                ) : null}
-                            </h3>
                         </div>
                     </Col>
                 </Row>

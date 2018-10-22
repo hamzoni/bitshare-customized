@@ -756,11 +756,11 @@
             "title": "Block",
             "transactions": "Transaction count",
             "trx": "Tx",
-            "witness": "Witness"
+            "witness": "Masternote"
         },
         "blocks": {
             "active_committee_members": "Active committee members",
-            "active_witnesses": "Active Witnesses",
+            "active_witnesses": "Active masternote",
             "avg_conf_time": "Average confirmation time",
             "block_time": "Block time",
             "block_times": "Block times",
@@ -803,7 +803,7 @@
         "witnesses": {
             "budget": "Remaining budget",
             "card": "Card view",
-            "current": "Current witness",
+            "current": "Current masternote",
             "last_confirmed": "Last confirmed",
             "missed": "Blocks missed",
             "next_vote": "Next vote update",
@@ -811,7 +811,7 @@
             "pay": "Pay-per-block",
             "rank": "Rank",
             "table": "Table view",
-            "title": "Witnesses",
+            "title": "Masternote",
             "filter_by_name": "Filter By Name"
         },
         "workers": {
