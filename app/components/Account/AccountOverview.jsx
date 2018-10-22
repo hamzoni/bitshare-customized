@@ -464,7 +464,7 @@ class AccountOverview extends React.Component {
                             className="account-tabs"
                             tabsClass="account-overview no-padding bordered-header content-block"
                         >
-                            <Tab
+                            {/* <Tab
                                 title="account.portfolio"
                                 subText={portfolioActiveAssetsBalance}
                             >
@@ -546,9 +546,9 @@ class AccountOverview extends React.Component {
                                         balanceObjects={includedBalancesList}
                                     />
                                 )}
-                            </Tab>
+                            </Tab> */}
 
-                            <Tab
+                            {/* <Tab
                                 title="account.open_orders"
                                 subText={ordersValue}
                             >
@@ -607,7 +607,7 @@ class AccountOverview extends React.Component {
                                         </MarginPositions>
                                     </div>
                                 </div>
-                            </Tab>
+                            </Tab> */}
 
                             <Tab
                                 title="account.activity"

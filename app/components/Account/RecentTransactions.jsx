@@ -408,7 +408,7 @@ class RecentTransactions extends React.Component {
                         )}
                     </div>
                     <div
-                        className="box-content grid-block no-margin"
+                        className="box-content no-margin"
                         style={
                             !this.props.fullHeight
                                 ? {

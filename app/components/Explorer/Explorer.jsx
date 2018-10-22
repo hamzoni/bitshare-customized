@@ -72,7 +72,7 @@ class Explorer extends React.Component {
                 : this.props.location.pathname;
         console.log(defaultActive);
         return (
-            <div>
+            <div className="mono-fix-padding">
                 <Tabs
                     defaultActiveKey={defaultActive}
                     onChange={onChange}

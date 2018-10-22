@@ -210,7 +210,7 @@ class Tabs extends React.Component {
                     this.props.className
                 )}
             >
-                <div className="service-selector">
+                <div className="service-selector mono-activity-account">
                     <ul
                         style={style}
                         className={cnames("button-group no-margin", tabsClass, {
@@ -260,14 +260,17 @@ class Tabs extends React.Component {
     }
 }
 
-Tabs = connect(Tabs, {
-    listenTo() {
-        return [SettingsStore];
-    },
-    getProps() {
-        return {viewSettings: SettingsStore.getState().viewSettings};
+Tabs = connect(
+    Tabs,
+    {
+        listenTo() {
+            return [SettingsStore];
+        },
+        getProps() {
+            return {viewSettings: SettingsStore.getState().viewSettings};
+        }
     }
-});
+);
 
 Tabs = withRouter(Tabs);
 
