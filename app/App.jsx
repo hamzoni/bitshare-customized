@@ -328,13 +328,9 @@ class App extends React.Component {
                 <div className="grid-frame vertical">
                     <Header height={this.state.height} {...others} />
                     <div id="mainContainer" className="grid-block">
-                        <div className="grid-block content-block  vertical">
+                        <div className="grid-block  vertical">
                             <Switch>
-                                <Route
-                                    path="/"
-                                    exact
-                                    component={DashboardPage}
-                                />
+                                <Route path="/" exact component={Explorer} />
                                 <Route
                                     path="/account/:account_name"
                                     component={AccountPage}

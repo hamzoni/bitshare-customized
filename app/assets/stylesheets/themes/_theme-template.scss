@@ -2498,14 +2498,44 @@
             }
         }
     }
+    .mono-transaction-count {
+        min-width: 20px !important;
+        max-width: 20px !important;
+    }
+    .mono-transaction-count > span {
+        display: none;
+    }
+    .mono-respon-asset {
+        display: none;
+    }
+    .mono-row-assets {
+        > td:last-child {
+            display: none !important;
+            width: 0 !important;
+        }
+        > td:nth-child(3) {
+            border-radius: 0 7px 7px 0;
+        }
+    }
+    // .mono-row-assets > td:nth-child(2){
+    // border-radius: 0 7px 7px 0;
+    // }
+    .mono-respon {
+        display: none;
+    }
+    .mono-fix-respon-tab {
+        min-width: 130px !important;
+    }
 }
 
 // mono style
 .mono-ex-block {
-    width: 23% !important;
-    background: #ffffff;
-    border-radius: 10px;
-    padding: 2rem;
+    background: #f5f5f5;
+}
+@media screen and (max-width: 992px) {
+    .mono-ex-block {
+        margin-bottom: 1rem;
+    }
 }
 hr.mono-hr {
     background-color: #eeeeee !important;
@@ -2541,7 +2571,7 @@ hr.mono-hr {
         border: none;
     }
     > th:first-child {
-        padding-left: 1.5rem !important;
+        padding-left: 20px !important;
     }
 }
 .mono-tb-blockchain {
@@ -2566,7 +2596,7 @@ hr.mono-hr {
     height: 70px;
     // line-height: 70px;
     > td:first-child {
-        text-align: center !important;
+        // text-align: center !important;
         border-radius: 10px 0 0 10px;
     }
     > td.mono-text-left {
@@ -2609,8 +2639,6 @@ hr.mono-hr {
     font-weight: bold;
 }
 .mono-blockchain {
-    width: 49% !important;
-    min-width: 49% !important;
 }
 .mono-transaction-count {
     min-width: 150px;
@@ -2704,7 +2732,7 @@ hr.mono-hrtb {
 
 .mono-row-explorer {
     height: 70px;
-    line-height: 70px;
+    padding: 35 0;
     background: #fff !important;
     color: #333;
     border-bottom: 3px solid #f5f5f5 !important;
@@ -2726,8 +2754,7 @@ hr.mono-hrtb {
 .mono-link-commit {
     color: #054264 !important;
 }
-
-//help content
+// help content
 .mono-help {
     background: #fff;
     color: #333;
@@ -2764,7 +2791,7 @@ hr.mono-hrtb {
     // line-height: 70px;
     > td:first-child {
         text-align: center !important;
-        //border-radius: 10px 0 0 10px;
+        // border-radius: 10px 0 0 10px;
     }
     > td:last-child {
         width: 10px;
@@ -2810,6 +2837,7 @@ hr.mono-hrtb {
 
 .mono-rd-group {
     border: none !important;
+    width: 100% !important;
     > .ant-radio-button-wrapper-checked {
         > span > span.mono-rd-text {
             color: #054264 !important;
@@ -2828,6 +2856,7 @@ hr.mono-hrtb {
 
 .mono-select {
     margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
     width: 100%;
     > .ant-select-selection {
         height: 70px !important;
@@ -2864,7 +2893,6 @@ hr.mono-hrtb {
         border-radius: 0 7px 7px 0;
     }
 }
-
 .mono-btn-asset {
     background: #054264 !important;
     border: none !important;
@@ -2918,7 +2946,20 @@ hr.mono-hrtb {
     padding-left: 0 !important;
     font-weight: bold;
 }
+.mono-activity-account {
+    display: none;
+}
+.mono-fix-padding {
+    padding: 0 5% 0 5%;
+}
 
 .ant-tabs-nav-wrap {
     color: #000;
+}
+
+.gutter-box {
+    background: #fff;
+    padding: 2rem 0;
+    height: 100%;
+    border-radius: 10px;
 }

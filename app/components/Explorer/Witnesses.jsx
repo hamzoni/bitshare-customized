@@ -243,6 +243,7 @@ class WitnessList extends React.Component {
         const columns = [
             {
                 key: "#",
+                className: "mono-respon",
                 title: "#",
                 dataIndex: "rank",
                 sorter: (a, b) => {
@@ -258,7 +259,7 @@ class WitnessList extends React.Component {
                 }
             },
             {
-                className: "mono-bt",
+                className: "mono-bt mono-respon",
                 key: "url",
                 title: "URL",
                 dataIndex: "url",
@@ -274,9 +275,8 @@ class WitnessList extends React.Component {
                 title: "LAST CONFIRMED BLOCK",
                 dataIndex: "lastConfirmedBlock",
                 render: item => (
-                    <span>
+                    <span className="mono-fix-respon-tab">
                         <a
-                            style={{display: "inline-block", minWidth: "100px"}}
                             href="javascript:void(0)"
                             onClick={this.handleBlockIdClick(item.id)}
                         >
@@ -335,7 +335,7 @@ class WitnessList extends React.Component {
                 }
             },
             {
-                className: "mono-bt",
+                className: "mono-bt mono-respon",
                 key: "key",
                 title: "KEY",
                 dataIndex: "signing_key",

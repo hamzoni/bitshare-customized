@@ -244,7 +244,7 @@ class Blocks extends React.Component {
                                 <Link
                                     to={`/block/${block.id}`}
                                     className="mono-text-name"
-                                    style={{paddingLeft: "1.2rem"}}
+                                    style={{paddingLeft: "20px"}}
                                 >
                                     #{utils.format_number(block.id, 0)}
                                 </Link>
@@ -308,430 +308,265 @@ class Blocks extends React.Component {
         }
 
         return (
-            <div ref="outerWrapper" className="grid-block vertical">
+            <div ref="outerWrapper">
                 {/* First row of stats */}
-                <Row type="flex" justify="space-between">
+                <Row>
                     {/*Colunm 1 */}
                     <Col span={6} className="mono-ex-block">
-                        <div className="grid-content no-overflow">
-                            <span className="txtlabel mono-text-block">
-                                <Translate
-                                    component="span"
-                                    content="explorer.blocks.current_block"
-                                />
-                            </span>
-                            <h2 className="mono-text-block-number">
-                                #
-                                {utils.format_number(
-                                    dynGlobalObject.get("head_block_number"),
-                                    0
-                                )}
-                            </h2>
-                        </div>
-                        <hr className="mono-hr" />
-                        <div className="grid-content no-overflow clear-fix">
-                            <span className="txtlabel mono-text-block">
-                                <Translate
-                                    component="span"
-                                    content="explorer.blocks.active_witnesses"
-                                />
-                            </span>
-                            <h2 className="txtlabel success mono-text-success">
-                                {globalObject.get("active_witnesses").size}
-                            </h2>
-                        </div>
-                        <hr className="mono-hr" />
-                        <div className="grid-content no-overflow clear-fix">
-                            <span className="txtlabel mono-text-block">
-                                <Translate
-                                    component="span"
-                                    content="explorer.asset.summary.current_supply"
-                                />
-                            </span>
-                            <h3 className="txtlabel mono-text-block-number">
-                                {dynamicObject ? (
-                                    <FormattedAsset
-                                        amount={dynamicObject.get(
-                                            "current_supply"
-                                        )}
-                                        asset={coreAsset.get("id")}
-                                        decimalOffset={5}
+                        <div className="gutter-box">
+                            <div className="grid-content no-overflow">
+                                <span className="txtlabel mono-text-block">
+                                    <Translate
+                                        component="span"
+                                        content="explorer.blocks.current_block"
                                     />
-                                ) : null}
-                            </h3>
+                                </span>
+                                <h2 className="mono-text-block-number">
+                                    #
+                                    {utils.format_number(
+                                        dynGlobalObject.get(
+                                            "head_block_number"
+                                        ),
+                                        0
+                                    )}
+                                </h2>
+                            </div>
+                            <hr className="mono-hr" />
+                            <div className="grid-content no-overflow clear-fix">
+                                <span className="txtlabel mono-text-block">
+                                    <Translate
+                                        component="span"
+                                        content="explorer.blocks.active_witnesses"
+                                    />
+                                </span>
+                                <h2 className="txtlabel success mono-text-success">
+                                    {globalObject.get("active_witnesses").size}
+                                </h2>
+                            </div>
+                            <hr className="mono-hr" />
+                            <div className="grid-content no-overflow clear-fix">
+                                <span className="txtlabel mono-text-block">
+                                    <Translate
+                                        component="span"
+                                        content="explorer.asset.summary.current_supply"
+                                    />
+                                </span>
+                                <h3 className="txtlabel mono-text-block-number">
+                                    {dynamicObject ? (
+                                        <FormattedAsset
+                                            amount={dynamicObject.get(
+                                                "current_supply"
+                                            )}
+                                            asset={coreAsset.get("id")}
+                                            decimalOffset={5}
+                                        />
+                                    ) : null}
+                                </h3>
+                            </div>
                         </div>
                     </Col>
 
                     {/*Colunm 2 */}
                     <Col span={6} className="mono-ex-block">
-                        <div className="grid-content no-overflow">
-                            <span className="txtlabel mono-text-block">
-                                <Translate
-                                    component="span"
-                                    content="explorer.blocks.last_block"
-                                />
-                            </span>
-                            <BlockTimeAgo blockTime={headBlock} />
-                        </div>
-                        <hr className="mono-hr" />
-                        <div className="grid-content no-overflow clear-fix">
-                            <span className="txtlabel mono-text-block">
-                                <Translate
-                                    component="span"
-                                    content="explorer.blocks.active_committee_members"
-                                />
-                            </span>
-                            <h2 className="txtlabel mono-text-success success">
-                                {
-                                    globalObject.get("active_committee_members")
-                                        .size
-                                }
-                            </h2>
+                        <div className="gutter-box">
+                            <div className="grid-content no-overflow">
+                                <span className="txtlabel mono-text-block">
+                                    <Translate
+                                        component="span"
+                                        content="explorer.blocks.last_block"
+                                    />
+                                </span>
+                                <BlockTimeAgo blockTime={headBlock} />
+                            </div>
+                            <hr className="mono-hr" />
+                            <div className="grid-content no-overflow clear-fix">
+                                <span className="txtlabel mono-text-block">
+                                    <Translate
+                                        component="span"
+                                        content="explorer.blocks.active_committee_members"
+                                    />
+                                </span>
+                                <h2 className="txtlabel mono-text-success success">
+                                    {
+                                        globalObject.get(
+                                            "active_committee_members"
+                                        ).size
+                                    }
+                                </h2>
+                            </div>
                         </div>
                     </Col>
 
                     {/*Colunm 3 */}
                     <Col span={6} className="mono-ex-block">
-                        <div className="grid-content no-overflow">
-                            <span className="txtlabel mono-text-block ">
-                                <Translate
-                                    component="span"
-                                    content="explorer.blocks.trx_per_sec"
-                                />
-                            </span>
-                            <h2 className="mono-text-block-number">
-                                {utils.format_number(trxPerSec, 2)}
-                            </h2>
-                        </div>
-                        <hr className="mono-hr" />
-                        <div className="grid-content no-overflow clear-fix">
-                            <span className="txtlabel mono-text-block">
-                                <Translate
-                                    component="span"
-                                    content="explorer.blocks.trx_per_block"
-                                />
-                            </span>
-                            <h2 className="mono-text-block-number">
-                                {utils.format_number(
-                                    trxCount / blockCount || 0,
-                                    2
-                                )}
-                            </h2>
+                        <div className="gutter-box">
+                            <div className="grid-content no-overflow">
+                                <span className="txtlabel mono-text-block ">
+                                    <Translate
+                                        component="span"
+                                        content="explorer.blocks.trx_per_sec"
+                                    />
+                                </span>
+                                <h2 className="mono-text-block-number">
+                                    {utils.format_number(trxPerSec, 2)}
+                                </h2>
+                            </div>
+                            <hr className="mono-hr" />
+                            <div className="grid-content no-overflow clear-fix">
+                                <span className="txtlabel mono-text-block">
+                                    <Translate
+                                        component="span"
+                                        content="explorer.blocks.trx_per_block"
+                                    />
+                                </span>
+                                <h2 className="mono-text-block-number">
+                                    {utils.format_number(
+                                        trxCount / blockCount || 0,
+                                        2
+                                    )}
+                                </h2>
+                            </div>
                         </div>
                     </Col>
 
                     <Col span={6} className="mono-ex-block">
-                        <div className="grid-content no-overflow">
-                            <span className="txtlabel mono-text-block">
-                                <Translate
-                                    component="span"
-                                    content="explorer.blocks.avg_conf_time"
-                                />
-                            </span>
-                            <h2 className="mono-text-block-number">
-                                {utils.format_number(avgTime / 2, 2)}s
-                            </h2>
-                        </div>
-                        <hr className="mono-hr" />
-                        <div className="grid-content no-overflow clear-fix">
-                            <span className="txtlabel mono-text-block">
-                                <Translate
-                                    component="span"
-                                    content="explorer.blocks.recently_missed_blocks"
-                                />
-                            </span>
-                            <h2
-                                className="txtlabel mono-text-success warning"
-                                style={{fontWeight: "100"}}
-                            >
-                                {dynGlobalObject.get("recently_missed_count")}
-                            </h2>
+                        <div className="gutter-box">
+                            <div className="grid-content no-overflow">
+                                <span className="txtlabel mono-text-block">
+                                    <Translate
+                                        component="span"
+                                        content="explorer.blocks.avg_conf_time"
+                                    />
+                                </span>
+                                <h2 className="mono-text-block-number">
+                                    {utils.format_number(avgTime / 2, 2)}s
+                                </h2>
+                            </div>
+                            <hr className="mono-hr" />
+                            <div className="grid-content no-overflow clear-fix">
+                                <span className="txtlabel mono-text-block">
+                                    <Translate
+                                        component="span"
+                                        content="explorer.blocks.recently_missed_blocks"
+                                    />
+                                </span>
+                                <h2
+                                    className="txtlabel mono-text-success warning"
+                                    style={{fontWeight: "100"}}
+                                >
+                                    {dynGlobalObject.get(
+                                        "recently_missed_count"
+                                    )}
+                                </h2>
+                            </div>
                         </div>
                     </Col>
                 </Row>
-                {/* <div className="align-center grid-block shrink small-horizontal blocks-row">
-                    <div className="grid-block text-center small-6 medium-3">
-                        <div className="grid-content no-overflow">
-                            <span className="txtlabel">
-                                <Translate
-                                    component="span"
-                                    content="explorer.blocks.current_block"
-                                />
-                            </span>
-                            <h2>
-                                #{utils.format_number(
-                                    dynGlobalObject.get("head_block_number"),
-                                    0
-                                )}
-                            </h2>
-                        </div>
-                    </div>
-                    <div className="grid-block text-center small-6 medium-3">
-                        <div className="grid-content no-overflow">
-                            <span className="txtlabel">
-                                <Translate
-                                    component="span"
-                                    content="explorer.blocks.last_block"
-                                />
-                            </span>
-                            <BlockTimeAgo blockTime={headBlock} />
-                        </div>
-                    </div>
-                    <div className="grid-block text-center small-6 medium-3">
-                        <div className="grid-content no-overflow">
-                            <span className="txtlabel">
-                                <Translate
-                                    component="span"
-                                    content="explorer.blocks.trx_per_sec"
-                                />
-                            </span>
-                            <h2>{utils.format_number(trxPerSec, 2)}</h2>
-                        </div>
-                    </div>
-                    <div className="grid-block text-center small-6 medium-3">
-                        <div className="grid-content no-overflow">
-                            <span className="txtlabel">
-                                <Translate
-                                    component="span"
-                                    content="explorer.blocks.avg_conf_time"
-                                />
-                            </span>
-                            <h2>{utils.format_number(avgTime / 2, 2)}s</h2>
-                        </div>
-                    </div>
-                </div> */}
-
-                {/* Second row of stats */}
-                {/* <div className="align-center grid-block shrink small-horizontal  blocks-row">
-                    <div className="grid-block text-center small-6 medium-3">
-                        <div className="grid-content no-overflow clear-fix">
-                            <span className="txtlabel">
-                                <Translate
-                                    component="span"
-                                    content="explorer.blocks.active_witnesses"
-                                />
-                            </span>
-                            <h2 className="txtlabel success">
-                                {globalObject.get("active_witnesses").size}
-                            </h2>
-                        </div>
-                    </div>
-
-                    <div className="grid-block text-center small-6 medium-3">
-                        <div className="grid-content no-overflow clear-fix">
-                            <span className="txtlabel">
-                                <Translate
-                                    component="span"
-                                    content="explorer.blocks.active_committee_members"
-                                />
-                            </span>
-                            <h2 className="txtlabel success">
-                                {
-                                    globalObject.get("active_committee_members")
-                                        .size
-                                }
-                            </h2>
-                        </div>
-                    </div>
-
-                    <div className="grid-block text-center small-6 medium-3">
-                        <div className="grid-content no-overflow clear-fix">
-                            <span className="txtlabel">
-                                <Translate
-                                    component="span"
-                                    content="explorer.blocks.trx_per_block"
-                                />
-                            </span>
-                            <h2>
-                                {utils.format_number(
-                                    trxCount / blockCount || 0,
-                                    2
-                                )}
-                            </h2>
-                        </div>
-                    </div>
-                    <div className="grid-block text-center small-6 medium-3">
-                        <div className="grid-content no-overflow clear-fix">
-                            <span className="txtlabel">
-                                <Translate
-                                    component="span"
-                                    content="explorer.blocks.recently_missed_blocks"
-                                />
-                            </span>
-                            <h2
-                                className="txtlabel warning"
-                                style={{ fontWeight: "100" }}
-                            >
-                                {dynGlobalObject.get("recently_missed_count")}
-                            </h2>
-                        </div>
-                    </div>
-                </div> */}
-
-                {/* Third row: graphs */}
-                {/* <div className="align-center grid-block shrink small-vertical medium-horizontal blocks-row">
-                    <div className="grid-block text-center small-12 medium-3">
-                        <div className="grid-content no-overflow clear-fix">
-                            <span className="txtlabel">
-                                <Translate
-                                    component="span"
-                                    content="explorer.asset.summary.current_supply"
-                                />
-                            </span>
-                            <h3 className="txtlabel">
-                                {dynamicObject ? (
-                                    <FormattedAsset
-                                        amount={dynamicObject.get(
-                                            "current_supply"
-                                        )}
-                                        asset={coreAsset.get("id")}
-                                        decimalOffset={5}
-                                    />
-                                ) : null}
-                            </h3>
-                        </div>
-                    </div>
-                    <div className="grid-block text-center small-12 medium-3">
-                        <div className="grid-content no-overflow">
-                            <div className="txtlabel">
-                                <Translate
-                                    component="span"
-                                    content="explorer.blocks.block_times"
-                                />
-                            </div>
-                            <BlocktimeChart
-                                blockTimes={blockTimes}
-                                head_block_number={dynGlobalObject.get(
-                                    "head_block_number"
-                                )}
-                            />
-                        </div>
-                    </div>
-                    <div className="grid-block text-center small-12 medium-3">
-                        <div className="grid-content no-overflow">
-                            <div className="txtlabel">
-                                <Translate
-                                    component="span"
-                                    content="explorer.blocks.trx_per_block"
-                                />
-                            </div>
-                            <TransactionChart
-                                blocks={latestBlocks}
-                                head_block={dynGlobalObject.get(
-                                    "head_block_number"
-                                )}
-                            />
-                        </div>
-                    </div>
-                    <div className="grid-block text-center small-12 medium-3">
-                        <div className="grid-content no-overflow clear-fix">
-                            <span className="txtlabel">
-                                <Translate
-                                    component="span"
-                                    content="explorer.asset.summary.stealth_supply"
-                                />
-                            </span>
-                            <h3 className="txtlabel">
-                                {dynamicObject ? (
-                                    <FormattedAsset
-                                        amount={dynamicObject.get(
-                                            "confidential_supply"
-                                        )}
-                                        asset={coreAsset.get("id")}
-                                        decimalOffset={5}
-                                    />
-                                ) : null}
-                            </h3>
-                        </div>
-                    </div>
-                </div> */}
 
                 {/* Fourth row: transactions and blocks */}
-                <Row type="flex" justify="space-between">
-                    <Col span={12} className="mono-blockchain">
-                        <div ref="operationsText">
-                            <div className="mono-block-header">
-                                <Translate content="account.recent" />
+                <Row type="flex" justify="space-between" gutter={16}>
+                    <Col
+                        xs={24}
+                        sm={24}
+                        md={24}
+                        lg={12}
+                        xl={12}
+                        className="mono-blockchain"
+                    >
+                        <div className="gutter-box-tab">
+                            <div ref="operationsText">
+                                <div className="mono-block-header">
+                                    <Translate content="account.recent" />
+                                </div>
+                                <hr className="mono-hrtb" />
+                                <table className="mono-tb-blockchain">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                <Translate content="account.votes.info" />
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                </table>
                             </div>
-                            <hr className="mono-hrtb" />
-                            <table className="mono-tb-blockchain">
-                                <thead>
-                                    <tr>
-                                        <th>
-                                            <Translate content="account.votes.info" />
-                                        </th>
-                                    </tr>
-                                </thead>
-                            </table>
-                        </div>
-                        <div
-                            className="grid-block"
-                            style={{
-                                maxHeight: operationsHeight || "400px",
-                                overflow: "hidden"
-                            }}
-                            ref="operations"
-                        >
-                            <table className="mono-tb-blockchain">
-                                <tbody>{transactions}</tbody>
-                            </table>
+                            <div
+                                className="grid-block"
+                                style={{
+                                    maxHeight: operationsHeight || "400px",
+                                    overflow: "hidden"
+                                }}
+                                ref="operations"
+                            >
+                                <table className="mono-tb-blockchain">
+                                    <tbody>{transactions}</tbody>
+                                </table>
+                            </div>
                         </div>
                     </Col>
-                    <Col span={12} className="mono-blockchain">
-                        <div ref="blocksText">
-                            <div className="mono-block-header">
-                                <Translate
-                                    component="span"
-                                    content="explorer.blocks.recent"
-                                />
+                    <Col
+                        xs={24}
+                        sm={24}
+                        md={24}
+                        lg={12}
+                        xl={12}
+                        className="mono-blockchain"
+                    >
+                        <div className="gutter-box-tab">
+                            <div ref="blocksText">
+                                <div className="mono-block-header">
+                                    <Translate
+                                        component="span"
+                                        content="explorer.blocks.recent"
+                                    />
+                                </div>
                             </div>
-                        </div>
-                        <hr className="mono-hrtb" />
-                        <div
-                            className="grid-block vertical"
-                            style={{
-                                maxHeight: blocksHeight || "438px",
-                                overflow: "hidden"
-                            }}
-                            ref="blocks"
-                        >
-                            <table className="mono-tb-blockchain">
-                                <thead>
-                                    <tr>
-                                        <th>
-                                            <Translate
-                                                component="span"
-                                                content="explorer.block.id"
-                                            />
-                                        </th>
-                                        <th>
-                                            <Translate
-                                                component="span"
-                                                content="explorer.block.date"
-                                            />
-                                        </th>
-                                        <th>
-                                            <Translate
-                                                component="span"
-                                                content="explorer.block.witness"
-                                            />
-                                        </th>
-                                        <th className="mono-transaction-count">
-                                            <Translate
-                                                component="span"
-                                                content="explorer.block.count"
-                                            />
-                                        </th>
-                                    </tr>
-                                </thead>
+                            <hr className="mono-hrtb" />
+                            <div
+                                className="grid-block vertical"
+                                style={{
+                                    maxHeight: blocksHeight || "438px",
+                                    overflow: "hidden"
+                                }}
+                                ref="blocks"
+                            >
+                                <table className="mono-tb-blockchain">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                <Translate
+                                                    component="span"
+                                                    content="explorer.block.id"
+                                                />
+                                            </th>
+                                            <th>
+                                                <Translate
+                                                    component="span"
+                                                    content="explorer.block.date"
+                                                />
+                                            </th>
+                                            <th>
+                                                <Translate
+                                                    component="span"
+                                                    content="explorer.block.witness"
+                                                />
+                                            </th>
+                                            <th className="mono-transaction-count">
+                                                <Translate
+                                                    component="span"
+                                                    content="explorer.block.count"
+                                                />
+                                            </th>
+                                        </tr>
+                                    </thead>
 
-                                <TransitionWrapper
-                                    component="tbody"
-                                    transitionName="newrow"
-                                >
-                                    {blocks}
-                                </TransitionWrapper>
-                            </table>
+                                    <TransitionWrapper
+                                        component="tbody"
+                                        transitionName="newrow"
+                                    >
+                                        {blocks}
+                                    </TransitionWrapper>
+                                </table>
+                            </div>
                         </div>
                     </Col>
                 </Row>
