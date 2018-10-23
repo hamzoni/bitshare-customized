@@ -466,21 +466,6 @@ class Blocks extends React.Component {
                                             )}
                                         </h2>
                                     </div>
-                                    {/* <hr className="mono-hr" />
-                                    <div className="grid-content no-overflow">
-                                        <div className="txtlabel mono-text-block">
-                                            <Translate
-                                                component="span"
-                                                content="explorer.blocks.trx_per_block"
-                                            />
-                                        </div>
-                                        <TransactionChart
-                                            blocks={latestBlocks}
-                                            head_block={dynGlobalObject.get(
-                                                "head_block_number"
-                                            )}
-                                        />
-                                    </div> */}
                                 </div>
                             </Col>
                             <Col
@@ -548,116 +533,117 @@ class Blocks extends React.Component {
                             </Col>
                         </Row>
                     </Col>
-                </Row>
-
-                {/* Fourth row: transactions and blocks */}
-                <Row type="flex" justify="space-between" gutter={16}>
-                    <Col
-                        xs={24}
-                        sm={24}
-                        md={24}
-                        lg={12}
-                        xl={12}
-                        className="mono-blockchain"
-                    >
-                        <div className="gutter-box-tab">
-                            <div ref="operationsText">
-                                <div className="mono-block-header">
-                                    <Translate content="account.recent" />
-                                </div>
-                                <hr className="mono-hrtb" />
-                                <table className="mono-tb-blockchain">
-                                    <thead>
-                                        <tr>
-                                            <th>
-                                                <Translate content="account.votes.info" />
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                </table>
-                            </div>
-                            <div
-                                className="grid-block"
-                                style={{
-                                    maxHeight: operationsHeight || "400px",
-                                    overflow: "hidden"
-                                }}
-                                ref="operations"
+                    {/* Fourth row: transactions and blocks */}
+                    <Col span={24}>
+                        <Row type="flex" justify="space-between" gutter={16}>
+                            <Col
+                                xs={24}
+                                sm={24}
+                                md={24}
+                                lg={12}
+                                xl={12}
+                                className="mono-blockchain"
                             >
-                                <table className="mono-tb-blockchain">
-                                    <tbody>{transactions}</tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </Col>
-                    <Col
-                        xs={24}
-                        sm={24}
-                        md={24}
-                        lg={12}
-                        xl={12}
-                        className="mono-blockchain"
-                    >
-                        <div className="gutter-box-tab">
-                            <div ref="blocksText">
-                                <div className="mono-block-header">
-                                    <Translate
-                                        component="span"
-                                        content="explorer.blocks.recent"
-                                    />
-                                </div>
-                            </div>
-                            <hr className="mono-hrtb" />
-                            <div
-                                className="grid-block vertical"
-                                style={{
-                                    maxHeight: blocksHeight || "438px",
-                                    overflow: "hidden"
-                                }}
-                                ref="blocks"
-                            >
-                                <table className="mono-tb-blockchain">
-                                    <thead>
-                                        <tr>
-                                            <th>
-                                                <Translate
-                                                    component="span"
-                                                    content="explorer.block.id"
-                                                />
-                                            </th>
-                                            <th>
-                                                <Translate
-                                                    component="span"
-                                                    content="explorer.block.date"
-                                                />
-                                            </th>
-                                            <th>
-                                                <Translate
-                                                    component="span"
-                                                    content="explorer.block.witness"
-                                                />
-                                            </th>
-                                            <th className="mono-transaction-count">
-                                                <Translate
-                                                    component="span"
-                                                    content="explorer.block.count"
-                                                />
-                                            </th>
-                                        </tr>
-                                    </thead>
-
-                                    <TransitionWrapper
-                                        component="tbody"
-                                        transitionName="newrow"
+                                <div className="gutter-box-x">
+                                    <div ref="operationsText">
+                                        <div className="mono-block-header">
+                                            <Translate content="account.recent" />
+                                        </div>
+                                        <hr className="mono-hrtb" />
+                                        <table className="mono-tb-blockchain">
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        <Translate content="account.votes.info" />
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                    <div
+                                        className="grid-block"
+                                        style={{
+                                            maxHeight:
+                                                operationsHeight || "400px",
+                                            overflow: "hidden"
+                                        }}
+                                        ref="operations"
                                     >
-                                        {blocks}
-                                    </TransitionWrapper>
-                                </table>
-                            </div>
-                        </div>
+                                        <table className="mono-tb-blockchain">
+                                            <tbody>{transactions}</tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </Col>
+                            <Col
+                                xs={24}
+                                sm={24}
+                                md={24}
+                                lg={12}
+                                xl={12}
+                                className="mono-blockchain"
+                            >
+                                <div className="gutter-box-x">
+                                    <div ref="blocksText">
+                                        <div className="mono-block-header">
+                                            <Translate
+                                                component="span"
+                                                content="explorer.blocks.recent"
+                                            />
+                                        </div>
+                                    </div>
+                                    <hr className="mono-hrtb" />
+                                    <div
+                                        className="grid-block vertical"
+                                        style={{
+                                            maxHeight: blocksHeight || "438px",
+                                            overflow: "hidden"
+                                        }}
+                                        ref="blocks"
+                                    >
+                                        <table className="mono-tb-blockchain">
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        <Translate
+                                                            component="span"
+                                                            content="explorer.block.id"
+                                                        />
+                                                    </th>
+                                                    <th>
+                                                        <Translate
+                                                            component="span"
+                                                            content="explorer.block.date"
+                                                        />
+                                                    </th>
+                                                    <th>
+                                                        <Translate
+                                                            component="span"
+                                                            content="explorer.block.witness"
+                                                        />
+                                                    </th>
+                                                    <th className="mono-transaction-count">
+                                                        <Translate
+                                                            component="span"
+                                                            content="explorer.block.count"
+                                                        />
+                                                    </th>
+                                                </tr>
+                                            </thead>
+
+                                            <TransitionWrapper
+                                                component="tbody"
+                                                transitionName="newrow"
+                                            >
+                                                {blocks}
+                                            </TransitionWrapper>
+                                        </table>
+                                    </div>
+                                </div>
+                            </Col>
+                        </Row>
                     </Col>
                 </Row>
-                {/* f */}
             </div>
         );
     }

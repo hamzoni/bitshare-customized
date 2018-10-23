@@ -22,12 +22,6 @@ class Explorer extends React.Component {
                     content: BlocksContainer
                 },
                 {
-                    name: "assets",
-                    link: "/explorer/assets",
-                    translate: "explorer.assets.title",
-                    content: AssetsContainer
-                },
-                {
                     name: "accounts",
                     link: "/explorer/accounts",
                     translate: "explorer.accounts.title",
@@ -35,7 +29,7 @@ class Explorer extends React.Component {
                 },
                 {
                     name: "witnesses",
-                    link: "/explorer/witnesses",
+                    link: "/explorer/masternote",
                     translate: "explorer.witnesses.title",
                     content: Witnesses
                 },
@@ -44,12 +38,6 @@ class Explorer extends React.Component {
                     link: "/explorer/committee-members",
                     translate: "explorer.committee_members.title",
                     content: CommitteeMembers
-                },
-                {
-                    name: "markets",
-                    link: "/explorer/markets",
-                    translate: "markets.title",
-                    content: MarketsContainer
                 },
                 {
                     name: "fees",
