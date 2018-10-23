@@ -1260,7 +1260,8 @@
     }
     .menu-group.primary,
     .menu-group.primary .menu-bar {
-        background-color: $account-background;
+        background-color: transparent;
+        color: #fff;
         li {
             > a {
                 color: $account-dimmed;
@@ -1270,7 +1271,6 @@
             }
             > a:hover,
             > a.active {
-                background-color: $bg-color !important;
                 color: $primary-text-color;
                 .icon > svg > path {
                     fill: $primary-text-color;
@@ -2473,12 +2473,6 @@
 .mono-ex-block {
     background: #f5f5f5;
 }
-.gutter-box {
-    background: #fff;
-    padding: 2rem 0;
-    height: 100%;
-    border-radius: 10px;
-}
 @media screen and (max-width: 992px) {
     .mono-ex-block {
         margin-bottom: 1rem;
@@ -2539,6 +2533,7 @@ hr.mono-hr {
         background: #fafafa !important;
     }
 }
+
 .mono-tb-blockchain > tbody > tr {
     height: 70px; // line-height: 70px;
     > td:first-child {
@@ -2855,6 +2850,7 @@ hr.mono-hrtb {
 .mono-tab-header-fee > tr > th {
     border: none !important;
 }
+
 .ant-card {
     border: none !important;
 }
@@ -2869,4 +2865,13 @@ hr.mono-hrtb {
 }
 .mono-fix-padding {
     padding: 0 5% 0 5%;
+}
+.ant-tabs-nav-wrap {
+    color: #000;
+}
+.gutter-box {
+    background: #fff;
+    padding: 2rem 0;
+    height: 100%;
+    border-radius: 10px;
 }

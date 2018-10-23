@@ -413,7 +413,7 @@ class Blocks extends React.Component {
                                             }
                                         </h2>
                                     </div>
-                                    <hr className="mono-hr" />
+                                    {/* <hr className="mono-hr" />
                                     <div className="grid-content no-overflow">
                                         <div className="txtlabel mono-text-block">
                                             <Translate
@@ -427,7 +427,7 @@ class Blocks extends React.Component {
                                                 "head_block_number"
                                             )}
                                         />
-                                    </div>
+                                    </div> */}
                                 </div>
                             </Col>
                             {/*Colunm 3 */}
@@ -466,7 +466,7 @@ class Blocks extends React.Component {
                                             )}
                                         </h2>
                                     </div>
-                                    <hr className="mono-hr" />
+                                    {/* <hr className="mono-hr" />
                                     <div className="grid-content no-overflow">
                                         <div className="txtlabel mono-text-block">
                                             <Translate
@@ -480,7 +480,7 @@ class Blocks extends React.Component {
                                                 "head_block_number"
                                             )}
                                         />
-                                    </div>
+                                    </div> */}
                                 </div>
                             </Col>
                             <Col
@@ -524,7 +524,7 @@ class Blocks extends React.Component {
                                             )}
                                         </h2>
                                     </div>
-                                    <hr className="mono-hr" />
+                                    {/* <hr className="mono-hr" />
                                     <div className="grid-content no-overflow clear-fix">
                                         <span className="txtlabel mono-text-block">
                                             <Translate
@@ -543,7 +543,7 @@ class Blocks extends React.Component {
                                                 />
                                             ) : null}
                                         </h3>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </Col>
                         </Row>
