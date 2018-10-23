@@ -172,19 +172,6 @@ export default class DropDownMenu extends React.Component {
 
                 <li
                     className="dropdown-item"
-                    className={cnames(
-                        {active: active.indexOf("/settings") !== -1},
-                        "divider",
-                        "mobile-only",
-                        "has-submenu"
-                    )}
-                    onClick={this.props.toggleDropdownSubmenu}
-                >
-                    <Translate content="header.settings" />{" "}
-                </li>
-
-                <li
-                    className="dropdown-item"
                     className={cnames({
                         active: active.indexOf("/voting") !== -1,
                         disabled: !showAccountLinks
