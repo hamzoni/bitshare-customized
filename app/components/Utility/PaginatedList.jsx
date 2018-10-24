@@ -51,7 +51,7 @@ export default class PaginatedList extends React.Component {
         }
 
         return (
-            <div className="grid-content" style={this.props.style}>
+            <div style={this.props.style}>
                 <table className={this.props.className}>
                     {header ? <thead>{header}</thead> : null}
                     {this.props.withTransition && page === 1 ? (

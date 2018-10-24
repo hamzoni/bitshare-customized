@@ -877,7 +877,7 @@ class AccountPortfolioList extends React.Component {
             <div>
                 <PaginatedList
                     style={{padding: 0}}
-                    className="table dashboard-table table-hover"
+                    className="table dashboard-table table-hover mono-tb-dashboard"
                     rows={this._renderBalances(
                         this.props.balanceList,
                         this.props.optionalAssets,

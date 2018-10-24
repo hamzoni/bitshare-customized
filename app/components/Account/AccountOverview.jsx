@@ -550,7 +550,7 @@ class AccountOverview extends React.Component {
                                 )}
                             </Tab>
 
-                            <Tab
+                            {/* <Tab
                                 title="account.open_orders"
                                 subText={ordersValue}
                             >
@@ -571,9 +571,9 @@ class AccountOverview extends React.Component {
                                         {this.props.isMyAccount ? <td /> : null}
                                     </tr>
                                 </AccountOrders>
-                            </Tab>
+                            </Tab> */}
 
-                            <Tab
+                            {/* <Tab
                                 title="account.collaterals"
                                 subText={
                                     <span
@@ -609,7 +609,7 @@ class AccountOverview extends React.Component {
                                         </MarginPositions>
                                     </div>
                                 </div>
-                            </Tab>
+                            </Tab> */}
 
                             <Tab
                                 title="account.activity"

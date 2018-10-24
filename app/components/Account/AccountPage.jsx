@@ -64,7 +64,6 @@ class AccountPage extends React.Component {
             account,
             hiddenAssets
         } = this.props;
-
         if (!account) {
             return <Page404 />;
         }
@@ -97,6 +96,7 @@ class AccountPage extends React.Component {
                             exact
                             render={() => <AccountOverview {...passOnProps} />}
                         />
+
                         <Redirect
                             from={`/account/${account_name}/overview`}
                             to={`/account/${account_name}`}
@@ -194,18 +194,21 @@ class AccountPageStoreWrapper extends React.Component {
     }
 }
 
-export default connect(AccountPageStoreWrapper, {
-    listenTo() {
-        return [AccountStore, SettingsStore, WalletUnlockStore];
-    },
-    getProps() {
-        return {
-            myActiveAccounts: AccountStore.getState().myActiveAccounts,
-            searchAccounts: AccountStore.getState().searchAccounts,
-            settings: SettingsStore.getState().settings,
-            hiddenAssets: SettingsStore.getState().hiddenAssets,
-            wallet_locked: WalletUnlockStore.getState().locked,
-            viewSettings: SettingsStore.getState().viewSettings
-        };
+export default connect(
+    AccountPageStoreWrapper,
+    {
+        listenTo() {
+            return [AccountStore, SettingsStore, WalletUnlockStore];
+        },
+        getProps() {
+            return {
+                myActiveAccounts: AccountStore.getState().myActiveAccounts,
+                searchAccounts: AccountStore.getState().searchAccounts,
+                settings: SettingsStore.getState().settings,
+                hiddenAssets: SettingsStore.getState().hiddenAssets,
+                wallet_locked: WalletUnlockStore.getState().locked,
+                viewSettings: SettingsStore.getState().viewSettings
+            };
+        }
     }
-});
+);

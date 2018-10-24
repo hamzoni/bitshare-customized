@@ -300,7 +300,7 @@ class AccountOrders extends React.Component {
 
                 <PaginatedList
                     pageSize={20}
-                    className="table table-striped dashboard-table table-hover"
+                    className="table table-striped dashboard-table table-hover "
                     header={
                         <TableHeader
                             settings={this.props.settings}
@@ -316,15 +316,18 @@ class AccountOrders extends React.Component {
     }
 }
 
-AccountOrders = connect(AccountOrders, {
-    listenTo() {
-        return [SettingsStore];
-    },
-    getProps() {
-        return {
-            marketDirections: SettingsStore.getState().marketDirections
-        };
+AccountOrders = connect(
+    AccountOrders,
+    {
+        listenTo() {
+            return [SettingsStore];
+        },
+        getProps() {
+            return {
+                marketDirections: SettingsStore.getState().marketDirections
+            };
+        }
     }
-});
+);
 
 export default AccountOrders;

@@ -149,6 +149,12 @@ class App extends React.Component {
         clearInterval(this.syncCheckInterval);
     }
 
+    componentWillMount = () => {
+        if (location.pathname === "/") {
+            //this.props.history.push("");
+        }
+    };
+
     /**
      * Returns the current blocktime, or exception if not yet available
      * @returns {Date}
@@ -234,6 +240,8 @@ class App extends React.Component {
             }.bind(this)
         );
         updateGatewayBackers();
+        console.log(location.pathname);
+        //console.log(this.props.account.get("name"));
     }
 
     componentDidUpdate(prevProps) {

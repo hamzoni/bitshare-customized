@@ -223,7 +223,12 @@ class Tabs extends React.Component {
                     dataSource={tabs}
                     renderItem={item => <List.Item>{item}</List.Item>}
                 />
-                <div className={cnames("tab-content", contentClass)}>
+                <div
+                    className={cnames(
+                        "tab-content mono-bg-light-x",
+                        contentClass
+                    )}
+                >
                     {activeContent}
                 </div>
             </div>
