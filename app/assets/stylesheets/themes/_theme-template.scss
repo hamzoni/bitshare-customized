@@ -228,8 +228,7 @@
                 @include color(
                     $light-text-color,
                     lighten($super-light-panel-bg-color, 4%)
-                );
-                // color: $link-text-color;
+                ); // color: $link-text-color;
             }
         }
     }
@@ -686,7 +685,8 @@
             }
             > li > span {
                 color: $light-text-color;
-            } /* Hover state */
+            }
+            /* Hover state */
             li:hover > span {
                 @include color(
                     $light-text-color,
@@ -2589,8 +2589,8 @@ div.api-node-left {
     width: 100% !important;
     max-width: auto !important;
     border-radius: 10px !important;
-    padding: 17px 20px !important;
-    background: transparent;
+    padding: 14px 20px !important;
+    background: transparent !important;
 }
 .mono-input {
     background: white !important;

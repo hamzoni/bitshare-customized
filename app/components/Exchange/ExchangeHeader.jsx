@@ -7,7 +7,7 @@ import SettingsActions from "actions/SettingsActions";
 import PriceStatWithLabel from "./PriceStatWithLabel";
 import Translate from "react-translate-component";
 import counterpart from "counterpart";
-import {ChainStore} from "bitsharesjs";
+import {ChainStore} from "zcomjs";
 import ExchangeHeaderCollateral from "./ExchangeHeaderCollateral";
 import BaseModal from "../Modal/BaseModal";
 import ZfApi from "react-foundation-apps/src/utils/foundation-api";
