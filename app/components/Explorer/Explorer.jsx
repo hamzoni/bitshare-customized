@@ -28,9 +28,9 @@ class Explorer extends React.Component {
                     content: AccountsContainer
                 },
                 {
-                    name: "witnesses",
+                    name: "masters",
                     link: "/explorer/masternote",
-                    translate: "explorer.witnesses.title",
+                    translate: "explorer.masters.title",
                     content: Witnesses
                 },
                 {

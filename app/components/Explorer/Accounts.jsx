@@ -193,7 +193,7 @@ class Accounts extends React.Component {
                         content="explorer.accounts.title"
                     />
                     <input
-                        className="mono-input-witness"
+                        className="mono-input-master"
                         type="text"
                         placeholder="   Search Accounts"
                         value={this.state.searchTerm}

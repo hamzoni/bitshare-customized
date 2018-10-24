@@ -2,7 +2,7 @@ import React from "react";
 import {OrderRow, TableHeader} from "../Exchange/MyOpenOrders";
 import counterpart from "counterpart";
 import MarketsActions from "actions/MarketsActions";
-import {ChainStore} from "bitsharesjs";
+import {ChainStore} from "zcomjs";
 import {LimitOrder} from "common/MarketClasses";
 import {connect} from "alt-react";
 import SettingsStore from "stores/SettingsStore";
@@ -316,15 +316,18 @@ class AccountOrders extends React.Component {
     }
 }
 
-AccountOrders = connect(AccountOrders, {
-    listenTo() {
-        return [SettingsStore];
-    },
-    getProps() {
-        return {
-            marketDirections: SettingsStore.getState().marketDirections
-        };
+AccountOrders = connect(
+    AccountOrders,
+    {
+        listenTo() {
+            return [SettingsStore];
+        },
+        getProps() {
+            return {
+                marketDirections: SettingsStore.getState().marketDirections
+            };
+        }
     }
-});
+);
 
 export default AccountOrders;

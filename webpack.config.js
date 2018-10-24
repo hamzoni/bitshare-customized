@@ -386,10 +386,7 @@ module.exports = function(env) {
                     root_dir,
                     "node_modules/moment/moment.js"
                 ),
-                bitsharesjs$: path.resolve(
-                    root_dir,
-                    "node_modules/bitsharesjs/"
-                ),
+                zcomjs$: path.resolve(root_dir, "node_modules/zcomjs/"),
                 "bitshares-ui-style-guide$": path.resolve(
                     root_dir,
                     "node_modules/bitshares-ui-style-guide/dist/main.js"

@@ -3,7 +3,7 @@ import React from "react";
 import Immutable from "immutable";
 import ChainTypes from "../Utility/ChainTypes";
 import BindToChainState from "../Utility/BindToChainState";
-import {ChainStore} from "bitsharesjs";
+import {ChainStore} from "zcomjs";
 import {connect} from "alt-react";
 import SettingsActions from "actions/SettingsActions";
 import FormattedAsset from "../Utility/FormattedAsset";
@@ -197,11 +197,11 @@ class CommitteeMembers extends React.Component {
                             <Row>
                                 <Col span={19}>
                                     <Input
-                                        className="mono-input-witness"
+                                        className="mono-input-master"
                                         placeholder={
                                             "   " +
                                             counterpart.translate(
-                                                "explorer.witnesses.filter_by_name"
+                                                "explorer.masters.filter_by_name"
                                             )
                                         }
                                         onChange={this._onFilter.bind(this)}
@@ -209,7 +209,7 @@ class CommitteeMembers extends React.Component {
                                 </Col>
                                 <Col span={4} offset={1}>
                                     <Button
-                                        className="mono-btn-witness"
+                                        className="mono-btn-master"
                                         type="primary"
                                     >
                                         Search

@@ -112,7 +112,7 @@
         "options": {
             "memo_key": "Memo Anahtarı",
             "num_committee": "Gerekli Kurul Üyeleri",
-            "num_witnesses": "Gerekli Tanıklar"
+            "num_masters": "Gerekli Tanıklar"
         },
         "orders": "Emirler",
         "other_scam": "Bu hesap resmi olarak doğrulanmış değildir. Transfer işlemini gerçekleştirmeden önce lütfen alıcının kimliğinden emin olunuz.",
@@ -230,7 +230,7 @@
             "charge_market_fee": "Takas komisyonunu etkinkeştir",
             "committee_fed_asset": "Kurul üyelerinin fiyat beslemelerine müsade et",
             "condition": "Durum (maksimum 60 harf)",
-            "conflict_feed": "Cannot allow witnesses and committee members to provide feeds simultaneously",
+            "conflict_feed": "Cannot allow masters and committee members to provide feeds simultaneously",
             "core_exchange_rate": "Esas kur oranı",
             "current_issuer": "Şu anki sahip hesabı",
             "decimals": "Ondalık hane sayısı",
@@ -243,8 +243,8 @@
             "exists": "O dijital varlık zaten mevcut",
             "expiry": "Piyasa çözülüm tarihi",
             "feed_lifetime_sec": "Dakika olarak yayın ömrü",
-            "feed_not_allowed_1": "Cannot set feed producers on a witness- or committee-fed asset",
-            "feed_not_allowed_2": "Please disable the flags called 'Allow witnesses to provide feeds' and 'Allow committee members to provide feeds' in order to allow manual definition of feed producers",
+            "feed_not_allowed_1": "Cannot set feed producers on a master- or committee-fed asset",
+            "feed_not_allowed_2": "Please disable the flags called 'Allow masters to provide feeds' and 'Allow committee members to provide feeds' in order to allow manual definition of feed producers",
             "feed_producers": "Feed producers",
             "flags": "Özellikler",
             "force_settlement_delay_sec": "Zorunlu onay gecikmesi (dakika)",
@@ -283,7 +283,7 @@
             "update_owner_text": "The asset owner may change the owner to another account using this form:",
             "visible": "Hide asset from search and markets",
             "white_list": "İzin listesi gerektiren dijital varlık",
-            "witness_fed_asset": "Tanık hesapların fiyat beslemelerine müsade et"
+            "master_fed_asset": "Tanık hesapların fiyat beslemelerine müsade et"
         },
         "vesting": {
             "balance_number": "Bakiye #%(id)s",
@@ -297,8 +297,8 @@
             "active_short": "Active",
             "add_committee": "Ekle",
             "add_committee_label": "Kurul Üyesi",
-            "add_witness": "Ekle",
-            "add_witness_label": "Tanık",
+            "add_master": "Ekle",
+            "add_master_label": "Tanık",
             "already": "Hesap zaten listede",
             "approve_worker": "Kabul",
             "clear_proxy": "Vekili kaldır",
@@ -329,7 +329,7 @@
             "recycled": "Geri Dönüştürülen",
             "reject_worker": "Reddet",
             "remove_committee": "Kaldır",
-            "remove_witness": "Kaldır",
+            "remove_master": "Kaldır",
             "save_finish": "Click save to finish",
             "set_proxy": "Set a proxy here",
             "start": "Başlangıç tarihi",
@@ -352,7 +352,7 @@
             "votes_against": "Aleyhine oylar",
             "w_approved_by": "Tanık %(account)s tarafından onaylandı",
             "w_not_approved_by": "Tanık %(account)s tarafından onaylanmadı",
-            "witness": "Witness name",
+            "master": "Witness name",
             "worker_account": "Emekçi hesabı",
             "workers": "Bütçe Ögeleri",
             "workers_short": "Geliştiriciler"
@@ -680,11 +680,11 @@
             "title": "Blok",
             "transactions": "İşlem Sayısı",
             "trx": "İşlem",
-            "witness": "Tanık"
+            "master": "Tanık"
         },
         "blocks": {
             "active_committee_members": "Etkin kurul üyeleri",
-            "active_witnesses": "Etkin Tanık",
+            "active_masters": "Etkin Tanık",
             "avg_conf_time": "Ortalama teyit süresi",
             "block_time": "Blok süresi",
             "block_times": "Blok süreleri",
@@ -724,7 +724,7 @@
             "review": "Review",
             "title": "Teklif edilmiş işlemler"
         },
-        "witnesses": {
+        "masters": {
             "budget": "Kalan bütçe",
             "card": "Kart görünümü",
             "current": "Şimdiki tanık",
@@ -1248,10 +1248,10 @@
         "update_account": "{account} hesap verilerini güncelledi",
         "vesting_balance_withdraw": "{account} bekleyen bakiyeyi çekti - Miktar: {amount}",
         "whitelisted_by": "{lister} izin listesine {listee} adlı hesabı ekledi.",
-        "witness_create": "{account} tanık olmaya terfi edildi.",
-        "witness_pay": "Tanık ödemesi çekildi.",
-        "witness_receive": "Tanık alındı.",
-        "witness_update": "{account} tanık bilgilerini güncelledi.",
+        "master_create": "{account} tanık olmaya terfi edildi.",
+        "master_pay": "Tanık ödemesi çekildi.",
+        "master_receive": "Tanık alındı.",
+        "master_update": "{account} tanık bilgilerini güncelledi.",
         "worker_create": "{account} günlük {pay} ödemeli bir geliştirme teklifi sundu."
     },
     "page404": {
@@ -1600,9 +1600,9 @@
             "withdraw_permission_create": "Hesaptan çekme izni oluşturma",
             "withdraw_permission_delete": "Çekme izni silme",
             "withdraw_permission_update": "Hesaptan çekme izni güncelleme",
-            "witness_create": "Tanık oluşturma",
-            "witness_update": "Tanık güncelleme",
-            "witness_withdraw_pay": "Tanık maaş çekimi",
+            "master_create": "Tanık oluşturma",
+            "master_update": "Tanık güncelleme",
+            "master_withdraw_pay": "Tanık maaş çekimi",
             "worker_create": "Bütçe ögesi oluşturma"
         },
         "vesting_balance_create": "Bekletilen bakiyesi oluşturulan hesap:",

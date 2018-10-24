@@ -11,7 +11,7 @@ import LinkToAssetById from "../Utility/LinkToAssetById";
 import BindToChainState from "../Utility/BindToChainState";
 import ChainTypes from "../Utility/ChainTypes";
 import TranslateWithLinks from "../Utility/TranslateWithLinks";
-import {ChainStore, ChainTypes as grapheneChainTypes} from "bitsharesjs";
+import {ChainStore, ChainTypes as grapheneChainTypes} from "zcomjs";
 import account_constants from "chain/account_constants";
 import MemoText from "./MemoText";
 import ProposedOperation from "./ProposedOperation";
@@ -786,15 +786,15 @@ class Operation extends React.Component {
                 );
                 break;
 
-            case "witness_create":
+            case "master_create":
                 column = (
                     <span>
                         <TranslateWithLinks
-                            string="operation.witness_create"
+                            string="operation.master_create"
                             keys={[
                                 {
                                     type: "account",
-                                    value: op[1].witness_account,
+                                    value: op[1].master_account,
                                     arg: "account"
                                 }
                             ]}
@@ -804,15 +804,15 @@ class Operation extends React.Component {
 
                 break;
 
-            case "witness_update":
+            case "master_update":
                 column = (
                     <span>
                         <TranslateWithLinks
-                            string="operation.witness_update"
+                            string="operation.master_update"
                             keys={[
                                 {
                                     type: "account",
-                                    value: op[1].witness_account,
+                                    value: op[1].master_account,
                                     arg: "account"
                                 }
                             ]}
@@ -822,14 +822,14 @@ class Operation extends React.Component {
 
                 break;
 
-            case "witness_withdraw_pay":
-                console.log("witness_withdraw_pay:", op[1].witness_account);
-                if (current === op[1].witness_account) {
+            case "master_withdraw_pay":
+                console.log("master_withdraw_pay:", op[1].master_account);
+                if (current === op[1].master_account) {
                     column = (
                         <span>
                             <Translate
                                 component="span"
-                                content="transaction.witness_pay"
+                                content="transaction.master_pay"
                             />
                             &nbsp;
                             <FormattedAsset
@@ -841,7 +841,7 @@ class Operation extends React.Component {
                                 content="transaction.to"
                             />
                             &nbsp;
-                            {this.linkToAccount(op[1].witness_account)}
+                            {this.linkToAccount(op[1].master_account)}
                         </span>
                     );
                 } else {
@@ -861,7 +861,7 @@ class Operation extends React.Component {
                                 content="transaction.from"
                             />
                             &nbsp;
-                            {this.linkToAccount(op[1].witness_account)}
+                            {this.linkToAccount(op[1].master_account)}
                         </span>
                     );
                 }

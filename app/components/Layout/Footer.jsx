@@ -18,7 +18,7 @@ import LoadingIndicator from "../LoadingIndicator";
 import counterpart from "counterpart";
 import ChoiceModal from "../Modal/ChoiceModal";
 import ZfApi from "react-foundation-apps/src/utils/foundation-api";
-import {ChainStore} from "bitsharesjs";
+import {ChainStore} from "zcomjs";
 import ifvisible from "ifvisible";
 import {getWalletName} from "branding";
 

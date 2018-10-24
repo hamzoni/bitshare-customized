@@ -2,7 +2,7 @@ import React from "react";
 import Immutable from "immutable";
 import Translate from "react-translate-component";
 import accountUtils from "common/account_utils";
-import {ChainStore, FetchChainObjects} from "bitsharesjs";
+import {ChainStore, FetchChainObjects} from "zcomjs";
 import WorkerApproval from "./WorkerApproval";
 import VotingAccountsList from "./VotingAccountsList";
 import cnames from "classnames";
@@ -38,13 +38,13 @@ class AccountVoting extends React.Component {
             proxy_account_id: proxyId === "1.2.5" ? "" : proxyId, //"1.2.16",
             prev_proxy_account_id: proxyId === "1.2.5" ? "" : proxyId,
             current_proxy_input: proxyId === "1.2.5" ? "" : proxyName,
-            witnesses: null,
+            masters: null,
             committee: null,
             vote_ids: Immutable.Set(),
             proxy_vote_ids: Immutable.Set(),
             lastBudgetObject: props.initialBudget.get("id"),
             workerTableIndex: props.viewSettings.get("workerTableIndex", 1),
-            all_witnesses: Immutable.List(),
+            all_masters: Immutable.List(),
             all_committee: Immutable.List()
         };
         this.onProxyAccountFound = this.onProxyAccountFound.bind(this);
@@ -116,7 +116,7 @@ class AccountVoting extends React.Component {
         ]).then(res => {
             const [vote_objs, proxy_vote_objs] = res;
             function sortVoteObjects(objects) {
-                let witnesses = new Immutable.List();
+                let masters = new Immutable.List();
                 let committee = new Immutable.List();
                 let workers = new Immutable.Set();
                 objects.forEach(obj => {
@@ -126,32 +126,32 @@ class AccountVoting extends React.Component {
                     } else if ((account_id = obj.get("worker_account"))) {
                         // console.log( "worker: ", obj );
                         //     workers = workers.add(obj.get("id"));
-                    } else if ((account_id = obj.get("witness_account"))) {
-                        witnesses = witnesses.push(account_id);
+                    } else if ((account_id = obj.get("master_account"))) {
+                        masters = masters.push(account_id);
                     }
                 });
 
-                return {witnesses, committee, workers};
+                return {masters, committee, workers};
             }
 
-            let {witnesses, committee, workers} = sortVoteObjects(vote_objs);
+            let {masters, committee, workers} = sortVoteObjects(vote_objs);
             let {
-                witnesses: proxy_witnesses,
+                masters: proxy_masters,
                 committee: proxy_committee,
                 workers: proxy_workers
             } = sortVoteObjects(proxy_vote_objs || []);
             let state = {
                 proxy_account_id,
                 current_proxy_input,
-                witnesses: witnesses,
+                masters: masters,
                 committee: committee,
                 workers: workers,
-                proxy_witnesses: proxy_witnesses,
+                proxy_masters: proxy_masters,
                 proxy_committee: proxy_committee,
                 proxy_workers: proxy_workers,
                 vote_ids: vids,
                 proxy_vote_ids: proxy_vids,
-                prev_witnesses: witnesses,
+                prev_masters: masters,
                 prev_committee: committee,
                 prev_workers: workers,
                 prev_vote_ids: vids
@@ -163,22 +163,20 @@ class AccountVoting extends React.Component {
     isChanged(s = this.state) {
         return (
             s.proxy_account_id !== s.prev_proxy_account_id ||
-            s.witnesses !== s.prev_witnesses ||
+            s.masters !== s.prev_masters ||
             s.committee !== s.prev_committee ||
             !Immutable.is(s.vote_ids, s.prev_vote_ids)
         );
     }
 
-    _getVoteObjects(type = "witnesses", vote_ids) {
+    _getVoteObjects(type = "masters", vote_ids) {
         let current = this.state[`all_${type}`];
-        const isWitness = type === "witnesses";
+        const isWitness = type === "masters";
         let lastIdx;
         if (!vote_ids) {
             vote_ids = [];
             let active = this.props.globalObject
-                .get(
-                    isWitness ? "active_witnesses" : "active_committee_members"
-                )
+                .get(isWitness ? "active_masters" : "active_committee_members")
                 .sort((a, b) => {
                     return (
                         parseInt(a.split(".")[2], 10) -
@@ -202,7 +200,7 @@ class AccountVoting extends React.Component {
                             .map(a =>
                                 a.get(
                                     isWitness
-                                        ? "witness_account"
+                                        ? "master_account"
                                         : "committee_member_account"
                                 )
                             )
@@ -235,7 +233,7 @@ class AccountVoting extends React.Component {
         let new_options = {memo_key: updated_account.options.memo_key};
         // updated_account.new_options = updated_account.options;
         new_options.voting_account = new_proxy_id ? new_proxy_id : "1.2.5";
-        new_options.num_witness = this.state.witnesses.size;
+        new_options.num_master = this.state.masters.size;
         new_options.num_committee = this.state.committee.size;
 
         updateObject.new_options = new_options;
@@ -274,13 +272,13 @@ class AccountVoting extends React.Component {
         // Submit votes
         FetchChainObjects(
             ChainStore.getWitnessById,
-            this.state.witnesses.toArray(),
+            this.state.masters.toArray(),
             4000
         )
             .then(res => {
-                let witnesses_vote_ids = res.map(o => o.get("vote_id"));
+                let masters_vote_ids = res.map(o => o.get("vote_id"));
                 return Promise.all([
-                    Promise.resolve(witnesses_vote_ids),
+                    Promise.resolve(masters_vote_ids),
                     FetchChainObjects(
                         ChainStore.getCommitteeMemberById,
                         this.state.committee.toArray(),
@@ -321,7 +319,7 @@ class AccountVoting extends React.Component {
             {
                 proxy_account_id: s.prev_proxy_account_id,
                 current_proxy_input: s.prev_proxy_input,
-                witnesses: s.prev_witnesses,
+                masters: s.prev_masters,
                 committee: s.prev_committee,
                 workers: s.prev_workers,
                 vote_ids: s.prev_vote_ids
@@ -363,13 +361,13 @@ class AccountVoting extends React.Component {
 
     validateAccount(collection, account) {
         if (!account) return null;
-        if (collection === "witnesses") {
+        if (collection === "masters") {
             return FetchChainObjects(
                 ChainStore.getWitnessById,
                 [account.get("id")],
                 3000
             ).then(res => {
-                return res[0] ? null : "Not a witness";
+                return res[0] ? null : "Not a master";
             });
         }
         if (collection === "committee") {
@@ -393,7 +391,7 @@ class AccountVoting extends React.Component {
         ) {
             this.setState({
                 proxy_account_id: "",
-                proxy_witnesses: Immutable.Set(),
+                proxy_masters: Immutable.Set(),
                 proxy_committee: Immutable.Set(),
                 proxy_workers: Immutable.Set()
             });
@@ -769,10 +767,10 @@ class AccountVoting extends React.Component {
                             actionButtons={saveText}
                             tabsClass="account-overview no-padding bordered-header content-block"
                         >
-                            <Tab title="explorer.witnesses.title">
+                            <Tab title="explorer.masters.title">
                                 <div className={cnames("content-block")}>
                                     <div className="header-selector">
-                                        {/* <Link to="/help/voting/witness"><Icon name="question-circle" title="icons.question_cirlce" /></Link> */}
+                                        {/* <Link to="/help/voting/master"><Icon name="question-circle" title="icons.question_cirlce" /></Link> */}
                                         {proxyInput}
                                         <div
                                             style={{
@@ -785,32 +783,32 @@ class AccountVoting extends React.Component {
                                     </div>
 
                                     <VotingAccountsList
-                                        type="witness"
-                                        label="account.votes.add_witness_label"
-                                        items={this.state.all_witnesses}
+                                        type="master"
+                                        label="account.votes.add_master_label"
+                                        items={this.state.all_masters}
                                         validateAccount={this.validateAccount.bind(
                                             this,
-                                            "witnesses"
+                                            "masters"
                                         )}
                                         onAddItem={this.onAddItem.bind(
                                             this,
-                                            "witnesses"
+                                            "masters"
                                         )}
                                         onRemoveItem={this.onRemoveItem.bind(
                                             this,
-                                            "witnesses"
+                                            "masters"
                                         )}
                                         tabIndex={hasProxy ? -1 : 2}
                                         supported={
                                             this.state[
                                                 hasProxy
-                                                    ? "proxy_witnesses"
-                                                    : "witnesses"
+                                                    ? "proxy_masters"
+                                                    : "masters"
                                             ]
                                         }
                                         withSelector={false}
                                         active={globalObject.get(
-                                            "active_witnesses"
+                                            "active_masters"
                                         )}
                                         proxy={this.state.proxy_account_id}
                                     />
@@ -998,9 +996,11 @@ class AccountVoting extends React.Component {
                                                     style={{textAlign: "left"}}
                                                 >
                                                     <Translate content="account.votes.total_budget" />{" "}
-                                                    (<AssetName
+                                                    (
+                                                    <AssetName
                                                         name={preferredUnit}
-                                                    />)
+                                                    />
+                                                    )
                                                 </th>
                                                 <th
                                                     colSpan="2"
@@ -1084,9 +1084,11 @@ class AccountVoting extends React.Component {
                                                         fontSize: "0.8rem"
                                                     }}
                                                 >
-                                                    (<AssetName
+                                                    (
+                                                    <AssetName
                                                         name={preferredUnit}
-                                                    />)
+                                                    />
+                                                    )
                                                 </div>
                                             </th>
                                             {workerTableIndex === 2 ||
@@ -1094,16 +1096,18 @@ class AccountVoting extends React.Component {
                                                 <th
                                                     style={{textAlign: "right"}}
                                                 >
-                                                    <Translate content="explorer.witnesses.budget" />
+                                                    <Translate content="explorer.masters.budget" />
                                                     <div
                                                         style={{
                                                             paddingTop: 5,
                                                             fontSize: "0.8rem"
                                                         }}
                                                     >
-                                                        (<AssetName
+                                                        (
+                                                        <AssetName
                                                             name={preferredUnit}
-                                                        />)
+                                                        />
+                                                        )
                                                     </div>
                                                 </th>
                                             )}

@@ -10,11 +10,11 @@ import assetUtils from "common/asset_utils";
 import counterpart from "counterpart";
 import FormattedAsset from "../Utility/FormattedAsset";
 import AssetName from "../Utility/AssetName";
-import {ChainStore} from "bitsharesjs";
+import {ChainStore} from "zcomjs";
 import utils from "common/utils";
 import ls from "common/localStorage";
 import PaginatedList from "../Utility/PaginatedList";
-import {Apis} from "bitsharesjs-ws";
+import {Apis} from "zcomjs-ws";
 import {Row, Col, Radio, Table, Select, Input, Icon, Button} from "antd";
 
 const RadioButton = Radio.Button;
@@ -524,7 +524,7 @@ class Assets extends React.Component {
                     <Row>
                         <Col span={24}>
                             <Input
-                                className="mono-input-witness"
+                                className="mono-input-master"
                                 placeholder={"Quick Search"}
                                 value={this.state.filterSearch}
                                 onChange={this.handleFilterChange}

@@ -112,7 +112,7 @@
         "options": {
             "memo_key": "Llave Memo",
             "num_committee": "Miembros del Comité Deseados",
-            "num_witnesses": "Testigos Deseados"
+            "num_masters": "Testigos Deseados"
         },
         "orders": "Ordenes",
         "other_scam": "Esta cuenta no es conocida por ser una cuenta oficial, por favor verifique el destino antes de transferir",
@@ -230,7 +230,7 @@
             "charge_market_fee": "Habilitar tasa de mercado",
             "committee_fed_asset": "Permitir que los miembros del comité proveer feeds",
             "condition": "Condición (max 60 caracteres)",
-            "conflict_feed": "Cannot allow witnesses and committee members to provide feeds simultaneously",
+            "conflict_feed": "Cannot allow masters and committee members to provide feeds simultaneously",
             "core_exchange_rate": "Core Tasa de intercambio",
             "current_issuer": "Cuenta del propietario actual",
             "decimals": "Número de decimales",
@@ -243,8 +243,8 @@
             "exists": "Ese activo ya existe",
             "expiry": "Fecha de resolución del mercado",
             "feed_lifetime_sec": "Feed tiempo de vida en minutos",
-            "feed_not_allowed_1": "Cannot set feed producers on a witness- or committee-fed asset",
-            "feed_not_allowed_2": "Please disable the flags called 'Allow witnesses to provide feeds' and 'Allow committee members to provide feeds' in order to allow manual definition of feed producers",
+            "feed_not_allowed_1": "Cannot set feed producers on a master- or committee-fed asset",
+            "feed_not_allowed_2": "Please disable the flags called 'Allow masters to provide feeds' and 'Allow committee members to provide feeds' in order to allow manual definition of feed producers",
             "feed_producers": "Feed producers",
             "flags": "Banderas",
             "force_settlement_delay_sec": "Retardo para asentamientos forzados (minutos)",
@@ -283,7 +283,7 @@
             "update_owner_text": "The asset owner may change the owner to another account using this form:",
             "visible": "Ocultar activos desde la búsqueda y el mercados",
             "white_list": "Requerir que los titulares sean incluidos en la lista blanca",
-            "witness_fed_asset": "Permite a los testigos de proveer feeds"
+            "master_fed_asset": "Permite a los testigos de proveer feeds"
         },
         "vesting": {
             "balance_number": "Saldo #%(id)s",
@@ -297,8 +297,8 @@
             "active_short": "Activo",
             "add_committee": "Agregar",
             "add_committee_label": "Miembro del Comité",
-            "add_witness": "Agregar",
-            "add_witness_label": "Testigos",
+            "add_master": "Agregar",
+            "add_master_label": "Testigos",
             "already": "La cuenta ya está en la lista",
             "approve_worker": "Aprobar propuesta de trabajo",
             "clear_proxy": "Eliminar proxy",
@@ -329,7 +329,7 @@
             "recycled": "Reciclado",
             "reject_worker": "Rechazar propuesta de trabajo",
             "remove_committee": "Remover",
-            "remove_witness": "Remover",
+            "remove_master": "Remover",
             "save_finish": "Haga clic en guardar para finalizar",
             "set_proxy": "Set a proxy here",
             "start": "Fecha de inicio",
@@ -352,7 +352,7 @@
             "votes_against": "Votos en contra",
             "w_approved_by": "Testigos aprobados por %(account)s",
             "w_not_approved_by": "Testigos no aprobados por %(account)s",
-            "witness": "Nombre del testigo",
+            "master": "Nombre del testigo",
             "worker_account": "Cuenta del trabajador",
             "workers": "Presupuestos",
             "workers_short": "Trabajadores"
@@ -680,11 +680,11 @@
             "title": "Bloque",
             "transactions": "Nro de transacciones",
             "trx": "Transacción",
-            "witness": "Testigo"
+            "master": "Testigo"
         },
         "blocks": {
             "active_committee_members": "Mienbros del Comité activos",
-            "active_witnesses": "Testigos activos",
+            "active_masters": "Testigos activos",
             "avg_conf_time": "Tiempo de confirmación promedio",
             "block_time": "Tiempo entre bloques",
             "block_times": "Tiempo entre bloques",
@@ -724,7 +724,7 @@
             "review": "Review",
             "title": "Propuestas"
         },
-        "witnesses": {
+        "masters": {
             "budget": "Presupuesto restante",
             "card": "Ver tarjetas",
             "current": "Testigo actual",
@@ -1248,10 +1248,10 @@
         "update_account": "{account} actualizado sus datos de cuenta",
         "vesting_balance_withdraw": "{account} retiro del saldo de adquisición de {amount}",
         "whitelisted_by": "{lister} puso en la lista blanca de la cuenta {listee}",
-        "witness_create": "{account} se actualizó para convertirse en un testigo",
-        "witness_pay": "Retiró el pago de testigos a la cuenta",
-        "witness_receive": "Recibido testigo de testigo",
-        "witness_update": "{account} actualizar su información de testigo",
+        "master_create": "{account} se actualizó para convertirse en un testigo",
+        "master_pay": "Retiró el pago de testigos a la cuenta",
+        "master_receive": "Recibido testigo de testigo",
+        "master_update": "{account} actualizar su información de testigo",
         "worker_create": "{account} creó una propuesta de trabajador con pago diario de {pay}"
     },
     "page404": {
@@ -1600,9 +1600,9 @@
             "withdraw_permission_create": "Crear permisos de retiro",
             "withdraw_permission_delete": "Eliminar permisos de retiro",
             "withdraw_permission_update": "Actualizar permisos de retiro",
-            "witness_create": "Crear Testigo",
-            "witness_update": "Actualizar Testigo",
-            "witness_withdraw_pay": "Retirar pago del Testigo",
+            "master_create": "Crear Testigo",
+            "master_update": "Actualizar Testigo",
+            "master_withdraw_pay": "Retirar pago del Testigo",
             "worker_create": "Crear presupuesto de trabajo"
         },
         "vesting_balance_create": "ha creado el fondo de consolidación de",

@@ -16,7 +16,7 @@ import Icon from "../Icon/Icon";
 import PrivateKeyStore from "stores/PrivateKeyStore";
 import WalletUnlockActions from "actions/WalletUnlockActions";
 import ProposedOperation from "./ProposedOperation";
-import {ChainTypes} from "bitsharesjs";
+import {ChainTypes} from "zcomjs";
 let {operations} = ChainTypes;
 import ReactTooltip from "react-tooltip";
 import moment from "moment";
@@ -573,8 +573,8 @@ class Transaction extends React.Component {
                             );
                         } else {
                             console.log(
-                                "num witnesses: ",
-                                op[1].new_options.num_witness
+                                "num masters: ",
+                                op[1].new_options.num_master
                             );
                             console.log(
                                 "===============> NEW: ",
@@ -612,10 +612,10 @@ class Transaction extends React.Component {
                                     <td>
                                         <Translate
                                             component="span"
-                                            content="account.options.num_witnesses"
+                                            content="account.options.num_masters"
                                         />
                                     </td>
-                                    <td>{op[1].new_options.num_witness}</td>
+                                    <td>{op[1].new_options.num_master}</td>
                                 </tr>
                             );
                             rows.push(
@@ -1354,31 +1354,31 @@ class Transaction extends React.Component {
 
                     break;
 
-                case "witness_create":
+                case "master_create":
                     rows.push(
                         <tr key={key++}>
                             <td>
                                 <Translate
                                     component="span"
-                                    content="explorer.block.witness"
+                                    content="explorer.block.master"
                                 />
                             </td>
-                            <td>{this.linkToAccount(op[1].witness_account)}</td>
+                            <td>{this.linkToAccount(op[1].master_account)}</td>
                         </tr>
                     );
 
                     break;
 
-                case "witness_update":
+                case "master_update":
                     rows.push(
                         <tr key={key++}>
                             <td>
                                 <Translate
                                     component="span"
-                                    content="explorer.block.witness"
+                                    content="explorer.block.master"
                                 />
                             </td>
-                            <td>{this.linkToAccount(op[1].witness_account)}</td>
+                            <td>{this.linkToAccount(op[1].master_account)}</td>
                         </tr>
                     );
 

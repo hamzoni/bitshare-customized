@@ -7,7 +7,7 @@ import SettingsActions from "actions/SettingsActions";
 import PriceStatWithLabel from "./PriceStatWithLabel";
 import Translate from "react-translate-component";
 import counterpart from "counterpart";
-import {ChainStore} from "bitsharesjs";
+import {ChainStore} from "zcomjs";
 import ExchangeHeaderCollateral from "./ExchangeHeaderCollateral";
 import {Icon as AntIcon} from "bitshares-ui-style-guide";
 
@@ -406,7 +406,6 @@ export default class ExchangeHeader extends React.Component {
                                     onClick={this.props.onToggleSettings.bind(
                                         this
                                     )}
-                                    
                                 >
                                     <AntIcon
                                         type="setting"

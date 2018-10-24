@@ -82,8 +82,8 @@ export default class TitleUtils {
                 return "account.voting";
             case "wallet":
                 return "wallet.title";
-            case "witnesses":
-                return "explorer.witnesses.title";
+            case "masters":
+                return "explorer.masters.title";
             default:
                 return null;
         }

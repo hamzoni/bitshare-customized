@@ -256,7 +256,7 @@ class Blocks extends React.Component {
                                 />
                             </td>
                             <td>
-                                <LinkToWitnessById witness={block.witness} />
+                                <LinkToWitnessById master={block.master} />
                             </td>
                             <td className="mono-text-dark">
                                 {utils.format_number(
@@ -345,13 +345,13 @@ class Blocks extends React.Component {
                                         <span className="txtlabel mono-text-block">
                                             <Translate
                                                 component="span"
-                                                content="explorer.blocks.active_witnesses"
+                                                content="explorer.blocks.active_masters"
                                             />
                                         </span>
                                         <h2 className="txtlabel success mono-text-success">
                                             {
                                                 globalObject.get(
-                                                    "active_witnesses"
+                                                    "active_masters"
                                                 ).size
                                             }
                                         </h2>
@@ -619,7 +619,7 @@ class Blocks extends React.Component {
                                                     <th>
                                                         <Translate
                                                             component="span"
-                                                            content="explorer.block.witness"
+                                                            content="explorer.block.master"
                                                         />
                                                     </th>
                                                     <th className="mono-transaction-count">

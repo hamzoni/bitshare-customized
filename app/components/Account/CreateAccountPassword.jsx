@@ -12,7 +12,7 @@ import TransactionConfirmStore from "stores/TransactionConfirmStore";
 import LoadingIndicator from "../LoadingIndicator";
 import Translate from "react-translate-component";
 import counterpart from "counterpart";
-import {ChainStore, FetchChain, key} from "bitsharesjs";
+import {ChainStore, FetchChain, key} from "zcomjs";
 import ReactTooltip from "react-tooltip";
 import utils from "common/utils";
 import SettingsActions from "actions/SettingsActions";
@@ -258,7 +258,9 @@ class CreateAccountPassword extends React.Component {
 
                     <section className="form-group">
                         <label className="left-label">
-                            <Translate content="wallet.generated" />&nbsp;&nbsp;<span
+                            <Translate content="wallet.generated" />
+                            &nbsp;&nbsp;
+                            <span
                                 className="tooltip"
                                 data-html={true}
                                 data-tip={counterpart.translate(
@@ -691,11 +693,14 @@ class CreateAccountPassword extends React.Component {
 
 CreateAccountPassword = withRouter(CreateAccountPassword);
 
-export default connect(CreateAccountPassword, {
-    listenTo() {
-        return [AccountStore];
-    },
-    getProps() {
-        return {};
+export default connect(
+    CreateAccountPassword,
+    {
+        listenTo() {
+            return [AccountStore];
+        },
+        getProps() {
+            return {};
+        }
     }
-});
+);

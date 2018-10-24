@@ -95,7 +95,7 @@ class AccountPermissionRow extends React.Component {
                             suffix
                         )}
                     >
-                        <Translate content="account.votes.remove_witness" />
+                        <Translate content="account.votes.remove_master" />
                     </button>
                 </td>
             </tr>
@@ -242,7 +242,7 @@ class AccountPermissionsList extends React.Component {
                     onChange={this.onItemChange}
                     onAccountChanged={this.onItemAccountChange}
                     onAction={this.onAddItem}
-                    action_label="account.votes.add_witness"
+                    action_label="account.votes.add_master"
                     tabIndex={this.props.tabIndex}
                     allowPubKey={true}
                     disableActionButton={!this.state.weight_input}

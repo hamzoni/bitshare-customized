@@ -1,5 +1,5 @@
 import alt from "alt-instance";
-import {Apis} from "bitsharesjs-ws";
+import {Apis} from "zcomjs-ws";
 
 let latestBlocks = {};
 
@@ -16,7 +16,7 @@ class BlockchainActions {
                     dispatch({
                         header: {
                             timestamp: header.timestamp,
-                            witness: header.witness
+                            master: header.master
                         },
                         height
                     });

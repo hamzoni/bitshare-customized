@@ -1,5 +1,5 @@
-import {Apis} from "bitsharesjs-ws";
-import {ChainStore, FetchChain} from "bitsharesjs";
+import {Apis} from "zcomjs-ws";
+import {ChainStore, FetchChain} from "zcomjs";
 import {Tabs, Collapse, Icon as AntIcon} from "bitshares-ui-style-guide";
 import cnames from "classnames";
 import translator from "counterpart";
@@ -2643,11 +2643,12 @@ class Exchange extends React.Component {
                     style={{display: "block"}}
                     key={`actionCard_${actionCardIndex++}`}
                 >
-                    <div 
+                    <div
                         className="v-align no-padding align-center grid-block footer shrink column"
                         data-intro={translator.translate(
                             "walkthrough.my_markets"
-                        )}>
+                        )}
+                    >
                         <Tabs
                             defaultActiveKey="my-market"
                             activeKey={tabVerticalPanel}
@@ -2839,9 +2840,13 @@ class Exchange extends React.Component {
                             className="grid-block vertical no-padding ps-container"
                             id="CenterContent"
                             ref="center"
-                            data-intro={tinyScreen 
-                                ? translator.translate("walkthrough.collapsed_items") 
-                                : null}
+                            data-intro={
+                                tinyScreen
+                                    ? translator.translate(
+                                          "walkthrough.collapsed_items"
+                                      )
+                                    : null
+                            }
                         >
                             {!tinyScreen ? (
                                 <div>

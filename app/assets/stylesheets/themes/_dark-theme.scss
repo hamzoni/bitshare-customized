@@ -69,10 +69,10 @@ $explorer-tab-content-background-color: $bg-color;
 
 // * * * * * Witnesses
 
-$explorer--witnesses--info-bg: transparent;
-$explorer--witnesses--info-border: darken($account-header, 6%);
-$explorer--witnesses--info-table-title-color: $account-dimmed;
-$explorer--witnesses--info-table-text-color: #fff;
+$explorer--masters--info-bg: transparent;
+$explorer--masters--info-border: darken($account-header, 6%);
+$explorer--masters--info-table-title-color: $account-dimmed;
+$explorer--masters--info-table-text-color: #fff;
 
 // * * * * * Assets
 
@@ -136,10 +136,10 @@ $separator-line: rgba(23, 26, 37, 0.3);
         $modal-bg-color,
         $mobile-input-bg,
         $incognito-bg,
-        $explorer--witnesses--info-bg,
-        $explorer--witnesses--info-border,
-        $explorer--witnesses--info-table-title-color,
-        $explorer--witnesses--info-table-text-color,
+        $explorer--masters--info-bg,
+        $explorer--masters--info-border,
+        $explorer--masters--info-table-title-color,
+        $explorer--masters--info-table-text-color,
         $explorer--assets--bg,
         $negative-color-alternative,
         $positive-color-alternative,

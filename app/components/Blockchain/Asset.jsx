@@ -11,8 +11,8 @@ import HelpContent from "../Utility/HelpContent";
 import assetUtils from "common/asset_utils";
 import utils from "common/utils";
 import FormattedTime from "../Utility/FormattedTime";
-import {ChainStore} from "bitsharesjs";
-import {Apis} from "bitsharesjs-ws";
+import {ChainStore} from "zcomjs";
+import {Apis} from "zcomjs-ws";
 import {CallOrder, FeedPrice} from "common/MarketClasses";
 import Page404 from "../Page404/Page404";
 import FeePoolOperation from "../Account/FeePoolOperation";
@@ -863,7 +863,7 @@ class Asset extends React.Component {
 
     // return two tabs
     // one tab is for the price feed data from the
-    // witness for the given asset
+    // master for the given asset
     // the other tab is a list of the margin positions
     // for this asset (if it's a bitasset)
     renderMarginPositions(asset, sortedCallOrders) {

@@ -316,7 +316,7 @@ New features
 - #1379: Add Market Picker
 - #1276: Enable GDEX gateway
 - #1463: Handle non-existant assets in exchange and asset pages
-- Update bitsharesjs to enable new orders api
+- Update zcomjs to enable new orders api
 - #1288 - Extract FundFeePool from AccountAssetUpdate and use it in Asset
 - Added titles to all areas of the app to improve history navigation
 
@@ -363,7 +363,7 @@ Bug fixes and improvements
 - Filter nodes in AccessSettings to fix key warning
 - Update russian translations
 - Fix possible undefined error in AccountOverview
-- Add several witness-provuided API servers
+- Add several master-provuided API servers
 - Fix #1388
 - Fix #1367: Restore missing Linux launcher icon
 - Add a phishing account
@@ -438,7 +438,7 @@ Bug fixes and improvements
 - #984: Enable header menu items for all accounts
 - Fix #1272: Workaround for routerTransition being called multiple times
 - Fix #1281 and other references to bit assets
-- Update bitsharesjs for better handling of incoming proposed transactions
+- Update zcomjs for better handling of incoming proposed transactions
 - #1243: Translation fixes
 - Fix broken asset/gateway logic
 - #1278: Tab subtext disappears when collapsed
@@ -760,7 +760,7 @@ New features
 - Issue #364 - Present an error message that disallows the use of Incognito with the BTS wallet (#394)
 - Issue #311 - Allow for hiding user issued assets (#397)
 - Iss #43 - Notification for new version availability (#382)
-- Display all committee members and witnesses, fix #53
+- Display all committee members and masters, fix #53
 - #224 build automation (#371)
 - Iss #279 - When selecting a new Node under Settings -> Access, don't hard reload the browser (#380)
 
@@ -789,7 +789,7 @@ Bug fixes
 - Fix MyMarkets console errors
 - Fix 'span cannot appear as child of tbody' error
 - Fix warning in header (td in a) (#338)
-- Update bitsharesjs, #346, fix #304
+- Update zcomjs, #346, fix #304
 - Update apiLatencies after connection
 - Fix API nodes sorting #346
 
@@ -841,7 +841,7 @@ Bug fixes
 - Change positioning of some tooltips
 - Fix password score checker freezing on very long passwords
 - Hide 'something for nothing order history items
-- Update bitsharesjs to fix proposals array undefined error
+- Update zcomjs to fix proposals array undefined error
 - Fix 'Cannot use 'in' operator to search for 'translate'' error in api dropdown
 - Fix order rounding when modifying the 'Total' after clicking an order from the orderbook
 - Improve first-time brainkey lookup to check at least 10 positions
@@ -998,7 +998,7 @@ Bug fixes
 - Scroll orderbook to top when changing markets
 - Don't set feed price in MarketStore for markets without call orders
 - Fix setting of highestBid in MarketStore
-- Update bitsharesjs, fixes vesting balances not loading properly
+- Update zcomjs, fixes vesting balances not loading properly
 - Fix persistence of indicator settings
 - Fix PriceChart resize on switching to/from left orderbook
 - Update Dashboard markets, add loading indication until accounts are ready
@@ -1016,7 +1016,7 @@ Bug fixes
 --------
 - Fix Russian language selection
 - Fix proxy selection
-- Fix committee/witness pages
+- Fix committee/master pages
 - A bug when importing old BTS 1 balances has been fixed
 - App init flow has been improved
 - Fix asset creation precision slider
@@ -1061,7 +1061,7 @@ Bug fixes
 - Fix market flipping for UIAs
 - Fix several bugs related to hash-history react router config
 - Change Graphene to BitShares
-- Replace graphenejs-lib with bitsharesjs
+- Replace graphenejs-lib with zcomjs
 - Fix npm errors
 - Fix line breaks for memos with very long words
 - Make sure asset actions render properly in AccountOverview
@@ -1399,7 +1399,7 @@ New features
 
 Bug fixes
 --------
-- Sorting public keys by their converted address (per witness_node logic). #795
+- Sorting public keys by their converted address (per master_node logic). #795
 - Bug in BuySell fee asset selection
 - Show account names as links in account permissions list #790
 - Fix account selector issue
@@ -1417,7 +1417,7 @@ NEW FEATURES:
 - Add a 'Reset settings' button to Settings and InitError page
 - Split workers table into proposed and active workers
 - Remove negative votes
-- Add set of known proxies, add lists of active witnesses and cm's to voting pages
+- Add set of known proxies, add lists of active masters and cm's to voting pages
 - Add name replace for asset symbols in fee selection dropdown
 - Improve worker approve/reject logic and add status coloring
 - Add explanation of vesting balances

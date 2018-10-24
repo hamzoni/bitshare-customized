@@ -5,7 +5,7 @@ import Operation from "../Blockchain/Operation";
 import ChainTypes from "../Utility/ChainTypes";
 import BindToChainState from "../Utility/BindToChainState";
 import utils from "common/utils";
-import {ChainTypes as grapheneChainTypes, FetchChain} from "bitsharesjs";
+import {ChainTypes as grapheneChainTypes, FetchChain} from "zcomjs";
 import ps from "perfect-scrollbar";
 import counterpart from "counterpart";
 import Icon from "../Icon/Icon";
@@ -14,7 +14,7 @@ import PropTypes from "prop-types";
 import PaginatedList from "../Utility/PaginatedList";
 const {operations} = grapheneChainTypes;
 const alignLeft = {textAlign: "left"};
-import report from "bitshares-report";
+import report from "zcom-report";
 import LoadingIndicator from "../LoadingIndicator";
 const ops = Object.keys(operations);
 
@@ -283,7 +283,7 @@ class RecentTransactions extends React.Component {
                 "account_create",
                 "account_update",
                 "asset_create",
-                "witness_withdraw_pay",
+                "master_withdraw_pay",
                 "vesting_balance_withdraw"
             ].map(type => {
                 return (
