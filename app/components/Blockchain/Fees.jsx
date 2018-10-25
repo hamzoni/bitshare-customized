@@ -31,7 +31,8 @@ ops[21] = "master_update";
 // Define groups and their corresponding operation ids
 
 let fee_grouping = {
-    general: [0, 5, 6, 7, 8, 9, 20, 21, 22, 23, 24, 29, 30, 31, 38, 39, 40, 41]
+    general: [0, 5, 6, 7, 8, 9, 20, 21, 22, 23, 24, 29, 30, 31, 38]
+    //general: [0, 5, 6, 7, 8, 9, 20, 21, 22, 23, 24, 29, 30, 31, 38, 39, 40, 41]
 };
 
 // let fee_grouping = {

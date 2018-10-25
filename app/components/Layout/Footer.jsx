@@ -586,11 +586,11 @@ class Footer extends React.Component {
                         nodes={this.props.defaults.apiServer}
                         popup={true}
                     />
-                    <div style={{paddingTop: 15}}>
+                    {/* <div style={{paddingTop: 15}}>
                         <a onClick={this.onAccess.bind(this)}>
                             <Translate content="footer.advanced_settings" />
                         </a>
-                    </div>
+                    </div> */}
                 </div>
                 <div
                     className="introjs-launcher show-for-small-only"

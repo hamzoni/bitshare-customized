@@ -17,7 +17,7 @@ export function getWalletName() {
  * @returns {string}
  */
 export function getWalletURL() {
-    return "https://wallet.bitshares.org";
+    return "https://wallet.zcom.io";
 }
 
 /**
@@ -27,7 +27,7 @@ export function getWalletURL() {
  */
 export function getFaucet() {
     return {
-        url: "https://faucet.bitshares.eu/onboarding", // 2017-12-infrastructure worker proposal
+        url: "https://faucet.zcom.io/onboarding", // 2017-12-infrastructure worker proposal
         show: true,
         editable: false
     };
@@ -265,8 +265,7 @@ export function getFeaturedMarkets(quotes = []) {
         ["BTS", "RUDEX.DGB"],
         ["BTS", "XBTSX.STH"],
         ["BTS", "ZEPH"],
-        ["BTS", "HERTZ"]
-        ["BTS", "SPARKDEX.BTC"],
+        ["BTS", "HERTZ"][("BTS", "SPARKDEX.BTC")],
         ["BTS", "SPARKDEX.ETH"]
     ].filter(a => {
         if (!quotes.length) return true;
@@ -309,8 +308,9 @@ export function getAssetHideNamespaces() {
  */
 export function allowedGateway(gateway) {
     return (
-        ["OPEN", "RUDEX", "WIN", "BRIDGE", "GDEX", "XBTSX", "SPARKDEX"].indexOf(gateway) >=
-        0
+        ["OPEN", "RUDEX", "WIN", "BRIDGE", "GDEX", "XBTSX", "SPARKDEX"].indexOf(
+            gateway
+        ) >= 0
     );
 }
 
