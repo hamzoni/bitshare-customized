@@ -378,7 +378,7 @@ class RecentTransactions extends React.Component {
                         </div>
                     )}
                     <div className="header-selector">
-                        <div className="selector">
+                        {/* <div className="selector">
                             <div className={cnames("inline-block")}>
                                 {this.props.showFilters ? (
                                     <select
@@ -397,7 +397,7 @@ class RecentTransactions extends React.Component {
                                     </select>
                                 ) : null}
                             </div>
-                        </div>
+                        </div> */}
                         {this.state.accountHistoryError && (
                             <div
                                 className="has-error"
@@ -451,7 +451,7 @@ class RecentTransactions extends React.Component {
                             }
                             rows={display_history}
                             label="utility.total_x_operations"
-                            extraRow={action}
+                            // extraRow={action}
                         />
                     </div>
                     {this.state.fetchingAccountHistory && <LoadingIndicator />}
