@@ -2,7 +2,7 @@
 
  * [Introducción](index.md)
  * [Glosario](glossary.md)
- * [ZCOME](introduction/bitshares.md)
+ * [ZCOM](introduction/bitshares.md)
  * [Billetera](introduction/wallets.md)
  * [Backups](introduction/backups.md)
  * [Blockchain](introduction/blockchain.md)

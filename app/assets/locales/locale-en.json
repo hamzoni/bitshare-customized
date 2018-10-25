@@ -756,11 +756,11 @@
             "title": "Block",
             "transactions": "Transaction count",
             "trx": "Tx",
-            "master": "Masternote"
+            "master": "Masternode"
         },
         "blocks": {
             "active_committee_members": "Active committee members",
-            "active_masters": "Active masternote",
+            "active_masters": "Active masternode",
             "avg_conf_time": "Average confirmation time",
             "block_time": "Block time",
             "block_times": "Block times",
@@ -780,7 +780,7 @@
         },
         "committee_members": {
             "active": "Total number of active committee members",
-            "title": "Committee"
+            "title": "Committees"
         },
         "fees": {
             "fee": "Standard Fee",
@@ -803,7 +803,7 @@
         "masters": {
             "budget": "Remaining budget",
             "card": "Card view",
-            "current": "Current masternote",
+            "current": "Current masternode",
             "last_confirmed": "Last confirmed",
             "missed": "Blocks missed",
             "next_vote": "Next vote update",
@@ -811,7 +811,7 @@
             "pay": "Pay-per-block",
             "rank": "Rank",
             "table": "Table view",
-            "title": "Masternote",
+            "title": "Masternodes",
             "filter_by_name": "Filter By Name"
         },
         "workers": {

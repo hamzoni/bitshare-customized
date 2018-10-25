@@ -1,6 +1,6 @@
 #### Help
 
- * [ZCOME](introduction/bitshares.md)
+ * [ZCOM](introduction/bitshares.md)
  * [Wallet](introduction/wallets.md)
  * [Backups](introduction/backups.md)
  * [Blockchain](introduction/blockchain.md)

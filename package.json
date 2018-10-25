@@ -1,7 +1,7 @@
 {
     "name": "zcom",
     "version": "0.1.0",
-    "description": "Advanced wallet interface for the ZCOME financial blockchain.",
+    "description": "Advanced wallet interface for the ZCOM financial blockchain.",
     "homepage": "https://zcom.io",
     "author": "Sigve Kvalsvik <kvalsvik.crypto@gmail.com>",
     "contributors": [
@@ -83,7 +83,7 @@
     },
     "browsersList": "electron 1.7",
     "build": {
-        "productName": "ZCOME",
+        "productName": "ZCOM",
         "appId": "org.bitshares.graphene",
         "files": [
             "build/electron",
@@ -124,7 +124,7 @@
                 "AppImage",
                 "snap"
             ],
-            "synopsis": "ZCOME: Cryptocurrency and Decentralized Exchange"
+            "synopsis": "ZCOM: Cryptocurrency and Decentralized Exchange"
         },
         "directories": {
             "buildResources": "resources",

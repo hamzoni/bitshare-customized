@@ -29,7 +29,7 @@ class Explorer extends React.Component {
                 },
                 {
                     name: "masters",
-                    link: "/explorer/masternote",
+                    link: "/explorer/masternode",
                     translate: "explorer.masters.title",
                     content: Witnesses
                 },

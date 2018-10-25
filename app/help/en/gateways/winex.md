@@ -1,6 +1,6 @@
 # Winex Gateway Service
 
-Winex is a gateway service built on the ZCOME Exchange. A gateway service is responsible for moving cryptocurrencies to and from the ZCOME Exchange. They support a wide range of popular assets. You can easily identify those supported by Winex because they are prefixed with the word WIN.*. For example WIN.EOS etc.
+Winex is a gateway service built on the ZCOM Exchange. A gateway service is responsible for moving cryptocurrencies to and from the ZCOM Exchange. They support a wide range of popular assets. You can easily identify those supported by Winex because they are prefixed with the word WIN.*. For example WIN.EOS etc.
 
 ## Website
 [https://exchange.winex.pro/](https://exchange.winex.pro/)

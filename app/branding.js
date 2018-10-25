@@ -9,7 +9,7 @@
  * @returns {string}
  */
 export function getWalletName() {
-    return "ZCOME";
+    return "ZCOM";
 }
 
 /**
@@ -38,7 +38,8 @@ export function getFaucet() {
  * @returns {*}
  */
 export function getLogo() {
-    return require("assets/logo-ico-blue.png");
+    return require("assets/zcom.png");
+    //return require("assets/logo-ico-blue.png");
 }
 
 /**
