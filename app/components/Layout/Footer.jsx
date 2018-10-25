@@ -433,7 +433,8 @@ class Footer extends React.Component {
                                     />
                                 )}
                                 <span style={updateStyles}>
-                                    <Translate
+                                    {
+                                        /* <Translate
                                         content="footer.title"
                                         wallet_name={getWalletName()}
                                     />
@@ -450,7 +451,10 @@ class Footer extends React.Component {
                                         <span className="version">
                                             {version}
                                         </span>
-                                    )}
+                                    )} */
+
+                                        <span className="">Zcom project</span>
+                                    }
                                 </span>
 
                                 {state.newVersion && (
@@ -554,14 +558,14 @@ class Footer extends React.Component {
                                     </div>
                                 </div>
                                 <div className="grid-block">
-                                    <div
+                                    {/* <div
                                         className="introjs-launcher"
                                         onClick={() => {
                                             this.launchIntroJS();
                                         }}
                                     >
                                         <Translate content="global.help" />
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                         ) : (

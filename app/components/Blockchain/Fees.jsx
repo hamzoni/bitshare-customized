@@ -13,14 +13,34 @@ import {Card} from "bitshares-ui-style-guide";
 const {operations} = grapheneChainTypes;
 let ops = Object.keys(operations);
 
+ops[20] = "master_create";
+ops[21] = "master_update";
+
+// // Define groups and their corresponding operation ids
+// let fee_grouping = {
+//     general: [0, 25, 26, 27, 28, 32, 33, 37, 39, 40, 41],
+//     asset: [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 38, 42, 43, 44, 47, 48],
+//     market: [1, 2, 3, 4, 45, 46],
+//     account: [5, 6, 7, 8, 9],
+//     business: [20, 21, 22, 23, 24, 29, 30, 31, 34, 35, 36]
+// };
+
+// // Operations that require LTM
+// let ltm_required = [5, 7, 20, 21, 34];
+
 // Define groups and their corresponding operation ids
+
 let fee_grouping = {
-    general: [0, 25, 26, 27, 28, 32, 33, 37, 39, 40, 41],
-    asset: [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 38, 42, 43, 44, 47, 48],
-    market: [1, 2, 3, 4, 45, 46],
-    account: [5, 6, 7, 8, 9],
-    business: [20, 21, 22, 23, 24, 29, 30, 31, 34, 35, 36]
+    general: [0, 5, 6, 7, 8, 9, 20, 21, 22, 23, 24, 29, 30, 31, 38, 39, 40, 41]
 };
+
+// let fee_grouping = {
+//     general: [0, 5, 6, 7, 8, 9, 20, 21, 22, 23, 24, 29, 30, 31, 38, 39, 40, 41],
+//     asset: [],
+//     market: [],
+//     account: [],
+//     business: []
+// };
 
 // Operations that require LTM
 let ltm_required = [5, 7, 20, 21, 34];
@@ -193,7 +213,7 @@ class FeeGroup extends React.Component {
 
         return (
             <div className="asset-card">
-                <Card>{this.props.title.toUpperCase()}</Card>
+                {/* <Card>{this.props.title.toUpperCase()}</Card> */}
                 <table className="table ">
                     <thead className="mono-tab-header-fee">
                         <tr>
@@ -239,12 +259,12 @@ class Fees extends React.Component {
 
         return (
             <div className="grid-block vertical" style={{overflow: "visible"}}>
-                <div
+                {/* <div
                     className="grid-block small-12 shrink"
                     style={{overflow: "visible"}}
                 >
                     <HelpContent path={"components/Fees"} />
-                </div>
+                </div> */}
                 <div
                     className="grid-block small-12 "
                     style={{overflow: "visible"}}

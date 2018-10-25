@@ -271,7 +271,7 @@ class AccountVoting extends React.Component {
 
         // Submit votes
         FetchChainObjects(
-            ChainStore.getWitnessById,
+            ChainStore.getMasterById,
             this.state.masters.toArray(),
             4000
         )
@@ -363,7 +363,7 @@ class AccountVoting extends React.Component {
         if (!account) return null;
         if (collection === "masters") {
             return FetchChainObjects(
-                ChainStore.getWitnessById,
+                ChainStore.getMasterById,
                 [account.get("id")],
                 3000
             ).then(res => {

@@ -28,14 +28,12 @@ class WitnessRow extends React.Component {
     }
 
     // componentWillUnmount() {
-    //     ChainStore.unSubFrom("masters", ChainStore.getWitnessById( this.props.master.get("id") ).get("id"));
+    //     ChainStore.unSubFrom("masters", ChainStore.getMasterById( this.props.master.get("id") ).get("id"));
     // }
 
     render() {
         let {master, isCurrent, rank} = this.props;
-        let master_data = ChainStore.getWitnessById(
-            this.props.master.get("id")
-        );
+        let master_data = ChainStore.getMasterById(this.props.master.get("id"));
         if (!master_data) return null;
         let total_votes = master_data.get("total_votes");
 
@@ -163,7 +161,7 @@ class WitnessList extends React.Component {
                     let master = ChainStore.getObject(a.get("master_account"));
                     if (!master) return false;
 
-                    let master_data = ChainStore.getWitnessById(
+                    let master_data = ChainStore.getMasterById(
                         master.get("id")
                     );
                     if (!master_data) return false;
@@ -177,7 +175,7 @@ class WitnessList extends React.Component {
                         a.get("master_account")
                     );
 
-                    const master_data = ChainStore.getWitnessById(
+                    const master_data = ChainStore.getMasterById(
                         master.get("id")
                     );
 

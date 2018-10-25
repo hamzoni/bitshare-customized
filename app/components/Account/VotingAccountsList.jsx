@@ -16,7 +16,7 @@ function getWitnessOrCommittee(type, acct) {
         votes = 0,
         account;
     if (type === "master") {
-        account = ChainStore.getWitnessById(acct.get("id"));
+        account = ChainStore.getMasterById(acct.get("id"));
     } else if (type === "committee") {
         account = ChainStore.getCommitteeMemberById(acct.get("id"));
     }
