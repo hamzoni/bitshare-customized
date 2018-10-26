@@ -228,7 +228,8 @@
                 @include color(
                     $light-text-color,
                     lighten($super-light-panel-bg-color, 4%)
-                ); // color: $link-text-color;
+                );
+                // color: $link-text-color;
             }
         }
     }
@@ -685,8 +686,7 @@
             }
             > li > span {
                 color: $light-text-color;
-            }
-            /* Hover state */
+            } /* Hover state */
             li:hover > span {
                 @include color(
                     $light-text-color,
@@ -2497,7 +2497,6 @@ div.api-node-left {
     padding: 0.5rem 1rem;
     margin-bottom: 1px;
 }
-
 .api-node-url {
     color: #8e8e8f;
 }
@@ -2518,7 +2517,6 @@ div.api-node-left {
 .tq-eye-icon {
     float: right;
 }
-
 @media only screen and (max-width: 560px) {
     .api-node-operator,
     .tq-api-status {
@@ -2573,16 +2571,13 @@ div.api-node-left {
         float: right;
     }
 }
-
 .tq-right-setting {
     overflow: hidden !important;
 }
-
 .tq-label {
     margin-bottom: 1rem;
     color: #999999;
 }
-
 .tq-input,
 #username,
 #password {
@@ -2660,11 +2655,9 @@ div.api-node-left {
     padding: 1rem;
     border-radius: 10px;
 }
-
 .tq-max-width {
     width: 100% !important;
 }
-
 .tq-btn-ping-wrapper {
 }
 .tq-larger-wrapper-ast {
@@ -2677,7 +2670,6 @@ div.api-node-left {
 }
 .VAAlign {
 }
-
 // new code
 .mono-fliter > input[type="text"]#{$ant-fix} {
     background: white !important;
@@ -2688,4 +2680,42 @@ div.api-node-left {
 }
 .mono-pdleft {
     margin-left: 1rem;
+}
+.mono-bg-light-x {
+    background: #f5f5f5 !important;
+}
+.mono-list-item
+    > .ant-list
+    > .ant-spin-nested-loading
+    > .ant-spin-container
+    > .ant-row {
+    background: #f5f5f5 !important;
+}
+.mono-tb-dashboard {
+    border-collapse: separate !important;
+    border-spacing: 0 3px !important;
+    background: #f5f5f5;
+    > tbody > tr > td {
+        background: #fafafa !important;
+    }
+    > tbody > tr:hover > td {
+        background: #ffffff !important;
+    }
+}
+.mono-tb-dashboard > tbody > tr {
+    height: 70px;
+    > td:first-child {
+        text-align: center !important;
+        border-radius: 10px 0 0 10px;
+    }
+    > td:last-child {
+        border-radius: 0 10px 10px 0;
+    }
+}
+.mono-select-db {
+    background: #fafafa !important;
+    height: 50px !important;
+}
+.mono-bg-transparent {
+    background: transparent;
 }

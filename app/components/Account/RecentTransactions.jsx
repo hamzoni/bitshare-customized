@@ -374,13 +374,13 @@ class RecentTransactions extends React.Component {
                             </div>
                         </div>
                     )}
-                    <div className="header-selector">
+                    <div className="header-selector mono-bg-light-x">
                         <div className="selector">
                             <div className={cnames("inline-block mono-pdleft")}>
                                 {this.props.showFilters ? (
                                     <select
                                         data-place="left"
-                                        className="bts-select no-margin mono-pdleft"
+                                        className="bts-select no-margin mono-pdleft mono-select-db"
                                         value={this.state.filter}
                                         onChange={this._onChangeFilter.bind(
                                             this
@@ -401,7 +401,7 @@ class RecentTransactions extends React.Component {
                         )}
                     </div>
                     <div
-                        className="box-content grid-block no-margin"
+                        className="box-content no-margin mono-bg-light-x"
                         style={
                             !this.props.fullHeight
                                 ? {
@@ -414,7 +414,7 @@ class RecentTransactions extends React.Component {
                         <PaginatedList
                             withTransition
                             className={
-                                "table table-striped " +
+                                "table table-striped mono-tb-dashboard" +
                                 (compactView ? "compact" : "") +
                                 (this.props.dashboard
                                     ? " dashboard-table table-hover"

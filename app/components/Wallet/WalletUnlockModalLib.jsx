@@ -95,7 +95,7 @@ export const LoginButtons = ({onLogin, backupLogin}) => (
 
 export class CustomPasswordInput extends React.Component {
     render = () => (
-        <div className="content-block account-selector input-area">
+        <div className="content-block account-selector input-area mono-bg-transparent">
             <label className="left-label login-label">
                 <Translate content="settings.password" />
             </label>

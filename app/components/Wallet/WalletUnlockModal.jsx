@@ -159,7 +159,7 @@ class WalletUnlockModal extends React.Component {
         else ZfApi.publish(this.props.modalId, "close");
     }
 
-    validate = (password, account) => {
+    validate = (password, account, accountName) => {
         const {passwordLogin, resolve} = this.props;
         const {stopAskingForBackup} = this.state;
 
@@ -179,6 +179,8 @@ class WalletUnlockModal extends React.Component {
                 password_input.value = "";
                 if (cloudMode) AccountActions.setPasswordAccount(account);
             }
+            //console.log(accountName);
+            this.props.history.push(`/account/${accountName}`);
             WalletUnlockActions.change();
             if (stopAskingForBackup) WalletActions.setBackupDate();
             else if (this.shouldUseBackupLogin()) this.backup();
@@ -237,7 +239,8 @@ class WalletUnlockModal extends React.Component {
                     this.restoreBackup(password, () => this.validate(password));
                 } else {
                     const account = passwordLogin ? accountName : null;
-                    this.validate(password, account);
+                    this.validate(password, account, accountName);
+                    //
                 }
             });
         }
