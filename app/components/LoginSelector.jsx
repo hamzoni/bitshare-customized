@@ -16,16 +16,6 @@ import {Route} from "react-router-dom";
 import {getWalletName, getLogo} from "branding";
 var logo = getLogo();
 
-const FlagImage = ({flag, width = 50, height = 50}) => {
-    return (
-        <img
-            height={height}
-            width={width}
-            src={`${__BASE_URL__}language-dropdown/${flag.toUpperCase()}.png`}
-        />
-    );
-};
-
 class LoginSelector extends React.Component {
     constructor(props) {
         super(props);
@@ -36,23 +26,6 @@ class LoginSelector extends React.Component {
             currentLocale: SettingsStore.getState().settings.get("locale")
         };
     }
-
-    // componentDidUpdate() {
-    // const myAccounts = AccountStore.getMyAccounts();
-
-    // use ChildCount to make sure user is on /create-account page except /create-account/*
-    // to prevent redirect when user just registered and need to make backup of wallet or password
-    // const childCount = React.Children.count(this.props.children);
-
-    // do redirect to portfolio if user already logged in
-    // if (
-    //     this.props.history &&
-    //     Array.isArray(myAccounts) &&
-    //     myAccounts.length !== 0 &&
-    //     childCount === 0
-    // )
-    //     this.props.history.push("/account/" + this.props.currentAccount);
-    // }
 
     componentWillMount() {
         isIncognito(incognito => {
@@ -66,54 +39,6 @@ class LoginSelector extends React.Component {
 
     render() {
         const translator = require("counterpart");
-
-        const flagDropdown = (
-            <ActionSheet>
-                <ActionSheet.Button title="" style={{width: "64px"}}>
-                    <a
-                        style={{padding: "1rem", border: "none"}}
-                        className="button arrow-down"
-                    >
-                        <FlagImage flag={this.state.currentLocale} />
-                    </a>
-                </ActionSheet.Button>
-                <ActionSheet.Content>
-                    <ul className="no-first-element-top-border">
-                        {this.state.locales.map(locale => {
-                            return (
-                                <li key={locale}>
-                                    <a
-                                        onClick={e => {
-                                            e.preventDefault();
-                                            IntlActions.switchLocale(locale);
-                                            this.setState({
-                                                currentLocale: locale
-                                            });
-                                        }}
-                                    >
-                                        <div className="table-cell">
-                                            <FlagImage
-                                                width="20"
-                                                height="20"
-                                                flag={locale}
-                                            />
-                                        </div>
-                                        <div
-                                            className="table-cell"
-                                            style={{paddingLeft: 10}}
-                                        >
-                                            <Translate
-                                                content={"languages." + locale}
-                                            />
-                                        </div>
-                                    </a>
-                                </li>
-                            );
-                        })}
-                    </ul>
-                </ActionSheet.Content>
-            </ActionSheet>
-        );
 
         return (
             <div className="grid-block align-center" id="accountForm">
@@ -141,27 +66,13 @@ class LoginSelector extends React.Component {
                                 content="account.intro_text_1"
                                 component="p"
                             />
-
-                            <div className="shrink text-center">
-                                <div className="grp-menu-item overflow-visible account-drop-down">
-                                    <div
-                                        className="grp-menu-item overflow-visible"
-                                        style={{margin: "0 auto"}}
-                                        data-intro={translator.translate(
-                                            "walkthrough.language_flag"
-                                        )}
-                                    >
-                                        {flagDropdown}
-                                    </div>
-                                </div>
-                            </div>
                         </div>
 
                         <div className="grid-block account-login-options">
                             <Link
                                 id="account_login_button"
                                 to="/create-account/password"
-                                className="button primary"
+                                className="button primary tq-max-width"
                                 data-intro={translator.translate(
                                     "walkthrough.create_cloud_wallet"
                                 )}
@@ -170,7 +81,7 @@ class LoginSelector extends React.Component {
                             </Link>
 
                             <span
-                                className="button hollow primary"
+                                className="button hollow primary tq-max-width"
                                 onClick={() => {
                                     SettingsActions.changeSetting.defer({
                                         setting: "passwordLogin",
@@ -232,15 +143,18 @@ class LoginSelector extends React.Component {
     }
 }
 
-export default connect(LoginSelector, {
-    listenTo() {
-        return [AccountStore];
-    },
-    getProps() {
-        return {
-            currentAccount:
-                AccountStore.getState().currentAccount ||
-                AccountStore.getState().passwordAccount
-        };
+export default connect(
+    LoginSelector,
+    {
+        listenTo() {
+            return [AccountStore];
+        },
+        getProps() {
+            return {
+                currentAccount:
+                    AccountStore.getState().currentAccount ||
+                    AccountStore.getState().passwordAccount
+            };
+        }
     }
-});
+);

@@ -64,21 +64,6 @@ export default class SettingsEntry extends React.Component {
 
                 break;
 
-            case "themes":
-                value = selected;
-                options = defaults.map(entry => {
-                    let translationKey = "settings." + entry;
-                    let value = counterpart.translate(translationKey);
-
-                    return (
-                        <option key={entry} value={entry}>
-                            {value}
-                        </option>
-                    );
-                });
-
-                break;
-
             case "browser_notifications":
                 value = selected;
 

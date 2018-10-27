@@ -101,19 +101,6 @@ export default class AccountPermissionsMigrate extends React.Component {
 
         return (
             <div>
-                <p style={{maxWidth: "800px"}}>
-                    <Translate content="account.perm.password_model_1" />
-                </p>
-
-                <p style={{maxWidth: "800px"}}>
-                    <Translate content="wallet.password_model_1" />
-                </p>
-                <p style={{maxWidth: "800px"}}>
-                    <Translate unsafe content="wallet.password_model_2" />
-                </p>
-
-                <div className="divider" />
-
                 <form
                     style={{maxWidth: "40rem"}}
                     onSubmit={this.onSubmit.bind(this)}

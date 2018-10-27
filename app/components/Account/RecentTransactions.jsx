@@ -375,8 +375,12 @@ class RecentTransactions extends React.Component {
                         </div>
                     )}
                     <div className="header-selector mono-bg-light-x">
-                        <div className="selector">
-                            <div className={cnames("inline-block mono-pdleft")}>
+                        <div className="selector ">
+                            <div
+                                className={cnames(
+                                    "inline-block mono-no-padding"
+                                )}
+                            >
                                 {this.props.showFilters ? (
                                     <select
                                         data-place="left"

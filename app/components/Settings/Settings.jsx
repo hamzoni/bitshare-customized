@@ -13,7 +13,7 @@ import ResetSettings from "./ResetSettings";
 import BackupSettings from "./BackupSettings";
 import AccessSettings from "./AccessSettings";
 import {set} from "lodash-es";
-import {getAllowedLogins, getFaucet} from "../../branding";
+import {getAllowedLogins} from "../../branding";
 
 class Settings extends React.Component {
     constructor(props) {
@@ -27,13 +27,9 @@ class Settings extends React.Component {
         if (tabIndex >= 0) activeSetting = tabIndex;
 
         let general = [
-            "locale",
-            "unit",
             "browser_notifications",
             "showSettles",
-            "walletLockTimeout",
-            "themes",
-            "showAssetPercent"
+            "walletLockTimeout"
         ];
         // disable that the user can change login method if only one is allowed
         if (getAllowedLogins().length > 1) general.push("passwordLogin");
@@ -45,7 +41,7 @@ class Settings extends React.Component {
             menuEntries,
             settingEntries: {
                 general: general,
-                access: ["apiServer", "faucet_address"]
+                access: ["apiServer"]
             }
         };
 
@@ -101,8 +97,6 @@ class Settings extends React.Component {
         if (!props.settings.get("passwordLogin")) menuEntries.push("backup");
         if (!props.settings.get("passwordLogin")) menuEntries.push("restore");
         menuEntries.push("access");
-
-        if (getFaucet().show) menuEntries.push("faucet_address");
 
         menuEntries.push("reset");
 
@@ -164,12 +158,12 @@ class Settings extends React.Component {
                 }
                 break;
 
-            case "themes":
-                SettingsActions.changeSetting({
-                    setting: "themes",
-                    value: e.target.value
-                });
-                break;
+            // case "themes":
+            //     SettingsActions.changeSetting({
+            //         setting: "themes",
+            //         value: e.target.value
+            //     });
+            //     break;
 
             case "defaultMarkets":
                 break;
@@ -252,8 +246,6 @@ class Settings extends React.Component {
         let entries;
         let activeEntry = menuEntries[activeSetting] || menuEntries[0];
 
-        console.log(menuEntries);
-
         switch (activeEntry) {
             case "accounts":
                 entries = <AccountsSettings />;
@@ -282,28 +274,9 @@ class Settings extends React.Component {
             case "access":
                 entries = (
                     <AccessSettings
-                        faucet={settings.get("faucet_address")}
                         nodes={defaults.apiServer}
                         onChange={this._onChangeSetting.bind(this)}
                         triggerModal={this.triggerModal.bind(this)}
-                    />
-                );
-                break;
-            case "faucet_address":
-                entries = (
-                    <input
-                        disabled={!getFaucet().editable}
-                        type="text"
-                        className="settings-input tq-setting-faucet"
-                        defaultValue={settings.get("faucet_address")}
-                        onChange={
-                            getFaucet().editable
-                                ? this._onChangeSetting.bind(
-                                      this,
-                                      "faucet_address"
-                                  )
-                                : null
-                        }
                     />
                 );
                 break;

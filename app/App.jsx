@@ -410,7 +410,7 @@ class App extends React.Component {
                                 />
 
                                 {/* Help routes */}
-                                <Route exact path="/help" component={Help} />
+                                {/* <Route exact path="/help" component={Help} /> */}
                                 <Route
                                     exact
                                     path="/help/:path1"

@@ -183,9 +183,7 @@ class LoadingButton extends React.Component {
                     fixButtonWidth = true;
                     buttonInner = (
                         <span style={{float: "left"}}>
-                            <span className="tq-pinging-btn">
-                                {loadingMessage}
-                            </span>
+                            <span className="">{loadingMessage}</span>
                             <span>
                                 <LoadingIndicator type={"circle-small"} />
                             </span>
@@ -213,7 +211,7 @@ class LoadingButton extends React.Component {
             case "inside-feedback-resize":
                 if (this.state.loading) {
                     buttonInner = (
-                        <span className="tq-pinging-btn">
+                        <span className="">
                             <span>{loadingMessage}</span>
                             <span style={{float: "left"}}>
                                 <LoadingIndicator type={"circle-small"} />
@@ -225,7 +223,7 @@ class LoadingButton extends React.Component {
             case "right-feedback":
                 if (this.state.loading) {
                     rightElement = (
-                        <div className="disabled tq-pinging-btn">
+                        <div className="disabled ">
                             <span>
                                 <span
                                     style={{
@@ -252,7 +250,7 @@ class LoadingButton extends React.Component {
             case "left-feedback":
                 if (this.state.loading) {
                     leftElement = (
-                        <div className="disabled tq-pinging-btn">
+                        <div className="disabled ">
                             <span>
                                 <span
                                     style={{

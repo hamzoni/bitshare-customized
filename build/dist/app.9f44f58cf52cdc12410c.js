@@ -53875,7 +53875,7 @@
     },
     function(e, t) {
         e.exports =
-            '<p>Etkin izinler, bu hesaptaki fonları harcamaya izni olan hesapları belirler.</p>\n<p>Etkin izinler kolay bir şekilde çok-imzalı bir düzen kurmak için kullanılabilirler, daha fazla bilgi için <a href="accounts/permissions">izinler</a> bölümüne bakabilirsiniz.</p>\n';
+            '<p>Etkin izinler, bu hesaptaki fonları harcamaya izni olan hesapları belirler.</p>\n<p>Etkin izinler kolay bir şekilde çok-imzalı bir düzen kurmak için kullanılabilirler, daha fazla bilgi için <a href="">izinler</a> bölümüne bakabilirsiniz.</p>\n';
     },
     function(e, t) {
         e.exports =
@@ -54621,7 +54621,7 @@
                     "This is the amount of %(asset)s you have in open orders.",
                 in_open_value:
                     "This is the estimated value of the %(asset)s you have in open orders.",
-                intro_text_1: "Your Decentralized Exchange",
+                intro_text_1: "Zcom fastest crypto in the world",
                 intro_text_2:
                     "<b>The DEX</b> is inherently decentralized, enabling you to trade the BitShares core token (BTS) and a range of trustless price-stable, market-pegged assets such as bitUSD, bitCNY, bitBTC, bitGold and more. These assets can all be traded with <b>zero</b> counter-party risk, putting you in total control of your funds.",
                 intro_text_3:

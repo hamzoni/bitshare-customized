@@ -1,4 +1,4 @@
-# Permissions
+# Monochrome
 
 In BitShares, each account is separated into
 

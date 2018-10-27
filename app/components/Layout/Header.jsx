@@ -728,7 +728,7 @@ class Header extends React.Component {
                         onClick={this._toggleDropdownMenu}
                         className={cnames(
                             "menu-dropdown-wrapper dropdown-wrapper",
-                            {active: this.state.dropdownActive}
+                            {"active mono-active": this.state.dropdownActive}
                         )}
                     >
                         <div className="hamburger">{hamburger}</div>

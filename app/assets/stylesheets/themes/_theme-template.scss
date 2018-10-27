@@ -228,8 +228,7 @@
                 @include color(
                     $light-text-color,
                     lighten($super-light-panel-bg-color, 4%)
-                );
-                // color: $link-text-color;
+                ); // color: $link-text-color;
             }
         }
     }
@@ -686,7 +685,8 @@
             }
             > li > span {
                 color: $light-text-color;
-            } /* Hover state */
+            }
+            /* Hover state */
             li:hover > span {
                 @include color(
                     $light-text-color,
@@ -2351,7 +2351,7 @@
         color: #333;
     }
     > li.is-active {
-        border-bottom: 5px solid #054264 !important;
+        border-bottom: 5px solid #054264;
         > a > .tab-title {
             color: #003d65;
             font-weight: bold;
@@ -2718,4 +2718,22 @@ div.api-node-left {
 }
 .mono-bg-transparent {
     background: transparent;
+}
+.mono-history {
+    border: none !important;
+    text-align: left;
+    font-size: 20px;
+    > a > span.mono-fix-title {
+        font-weight: normal !important;
+        color: #4b5158 !important;
+    }
+}
+.mono-no-padding {
+    padding: 0 !important;
+}
+.mono-pd-drd {
+    margin-top: 26px !important;
+}
+.mono-active {
+    background: transparent !important;
 }

@@ -66,8 +66,7 @@ class HelpContent extends React.Component {
         let locale = this.props.locale || counterpart.getLocale() || "en";
 
         // Only load helpData for the current locale as well as the fallback 'en'
-        req
-            .keys()
+        req.keys()
             .filter(a => {
                 return (
                     a.indexOf(`/${locale}/`) !== -1 || a.indexOf("/en/") !== -1
@@ -193,7 +192,12 @@ class HelpContent extends React.Component {
             return null;
         }
 
-        return (
+        let path = location.pathname;
+        let isHelp = path.includes("/help");
+        //console.log(location.pathname.includes("/help"));
+        //let isHelp = true;
+
+        return isHelp ? (
             <div
                 style={this.props.style}
                 className="help-content"
@@ -201,6 +205,8 @@ class HelpContent extends React.Component {
                     __html: this.setVars(value, this.props.hide_issuer)
                 }}
             />
+        ) : (
+            ""
         );
     }
 }
