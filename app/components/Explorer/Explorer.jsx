@@ -4,7 +4,7 @@ import CommitteeMembers from "./CommitteeMembers";
 import BlocksContainer from "./BlocksContainer";
 import AccountsContainer from "./AccountsContainer";
 import counterpart from "counterpart";
-import {Tabs, Row, Col} from "antd";
+import {Tabs, Radio} from "antd";
 const TabPane = Tabs.TabPane;
 
 class Explorer extends React.Component {

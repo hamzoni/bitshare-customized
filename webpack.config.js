@@ -241,8 +241,6 @@ module.exports = function(env) {
         module: {
             rules: [
                 {
-                    // Test for a polyfill (or any file) and it won't be included in your
-                    // bundle
                     test: /node-fetch/,
                     use: "null-loader"
                 },
