@@ -247,7 +247,7 @@ module.exports = function(env) {
                     use: "null-loader"
                 },
                 {
-                    test: /\.jsx?$/,
+                    test: /\.jsx$/,
                     include: [
                         path.join(root_dir, "app"),
                         path.join(
