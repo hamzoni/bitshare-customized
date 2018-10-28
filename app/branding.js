@@ -38,7 +38,7 @@ export function getFaucet() {
  * @returns {*}
  */
 export function getLogo() {
-    return require("assets/logo-ico-blue.png");
+    return require("assets/logo2.png");
 }
 
 /**
@@ -265,8 +265,7 @@ export function getFeaturedMarkets(quotes = []) {
         ["BTS", "RUDEX.DGB"],
         ["BTS", "XBTSX.STH"],
         ["BTS", "ZEPH"],
-        ["BTS", "HERTZ"]
-        ["BTS", "SPARKDEX.BTC"],
+        ["BTS", "HERTZ"][("BTS", "SPARKDEX.BTC")],
         ["BTS", "SPARKDEX.ETH"]
     ].filter(a => {
         if (!quotes.length) return true;
@@ -309,8 +308,9 @@ export function getAssetHideNamespaces() {
  */
 export function allowedGateway(gateway) {
     return (
-        ["OPEN", "RUDEX", "WIN", "BRIDGE", "GDEX", "XBTSX", "SPARKDEX"].indexOf(gateway) >=
-        0
+        ["OPEN", "RUDEX", "WIN", "BRIDGE", "GDEX", "XBTSX", "SPARKDEX"].indexOf(
+            gateway
+        ) >= 0
     );
 }
 

@@ -16,21 +16,16 @@ import WalletUnlockStore from "stores/WalletUnlockStore";
 import WalletUnlockActions from "actions/WalletUnlockActions";
 import WalletManagerStore from "stores/WalletManagerStore";
 import cnames from "classnames";
-import TotalBalanceValue from "../Utility/TotalBalanceValue";
 import ReactTooltip from "react-tooltip";
 import {Apis} from "bitsharesjs-ws";
 import notify from "actions/NotificationActions";
 import AccountImage from "../Account/AccountImage";
 import {ChainStore} from "bitsharesjs";
 import WithdrawModal from "../Modal/WithdrawModalNew";
-import {List} from "immutable";
 import {withRouter} from "react-router-dom";
 
 import {getLogo} from "branding";
-
-const SUBMENUS = {
-    SETTINGS: "SETTINGS"
-};
+var logo = getLogo();
 
 class Header extends React.Component {
     constructor(props) {
@@ -664,13 +659,31 @@ class Header extends React.Component {
             );
         }
 
+        let dashboard = (
+            <a
+                className={cnames("logo", {
+                    active:
+                        active === "/" ||
+                        (active.indexOf("dashboard") !== -1 &&
+                            active.indexOf("account") === -1)
+                })}
+                onClick={this._onNavigate.bind(this, "/")}
+            >
+                <img style={{margin: 0, height: 40}} src={logo} />
+            </a>
+        );
+
         return (
             <div className="header-container" style={{minHeight: "64px"}}>
                 <div>
                     <div
                         className="header menu-group primary"
                         style={{flexWrap: "nowrap", justifyContent: "none"}}
-                    />
+                    >
+                        <ul className="menu-bar">
+                            <li>{dashboard}</li>
+                        </ul>
+                    </div>
                 </div>
                 <SendModal
                     id="send_modal_header"
