@@ -12,7 +12,7 @@ import SettingsActions from "actions/SettingsActions";
 import AssetName from "../Utility/AssetName";
 import cnames from "classnames";
 import Icon from "../Icon/Icon";
-import {ChainStore} from "bitsharesjs";
+import {ChainStore} from "zcomjs";
 import {LimitOrder, CallOrder} from "common/MarketClasses";
 import {EquivalentValueComponent} from "../Utility/EquivalentValueComponent";
 import {MarketPrice} from "../Utility/MarketPrice";

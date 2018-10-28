@@ -4,7 +4,7 @@ import BalanceComponent from "../Utility/BalanceComponent";
 import counterpart from "counterpart";
 import AmountSelector from "../Utility/AmountSelector";
 import AssetActions from "actions/AssetActions";
-import {ChainStore} from "bitsharesjs";
+import {ChainStore} from "zcomjs";
 import {Asset} from "common/MarketClasses";
 import AssetWrapper from "../Utility/AssetWrapper";
 

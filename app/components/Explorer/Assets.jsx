@@ -10,13 +10,13 @@ import assetUtils from "common/asset_utils";
 import counterpart from "counterpart";
 import FormattedAsset from "../Utility/FormattedAsset";
 import AssetName from "../Utility/AssetName";
-import {ChainStore} from "bitsharesjs";
+import {ChainStore} from "zcomjs";
 import cnames from "classnames";
 import utils from "common/utils";
 import LoadingIndicator from "../LoadingIndicator";
 import ls from "common/localStorage";
 import PaginatedList from "../Utility/PaginatedList";
-import {Apis} from "bitsharesjs-ws";
+import {Apis} from "zcomjs-ws";
 
 let accountStorage = new ls("__graphene__");
 

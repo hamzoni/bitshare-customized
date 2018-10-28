@@ -1,5 +1,5 @@
 import utils from "./utils";
-import {ChainStore, ChainTypes} from "bitsharesjs";
+import {ChainStore, ChainTypes} from "zcomjs";
 let {object_type} = ChainTypes;
 let opTypes = Object.keys(object_type);
 import {Asset} from "./MarketClasses";
@@ -275,7 +275,7 @@ const MarketUtils = {
             }
         } else if (!ask) {
             amount = this.limitByPrecision(
-                buy.amount / sell.amount * order.for_sale / quotePrecision,
+                ((buy.amount / sell.amount) * order.for_sale) / quotePrecision,
                 quote
             );
             value = order.for_sale / basePrecision;

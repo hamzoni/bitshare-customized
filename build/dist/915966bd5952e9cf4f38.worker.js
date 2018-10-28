@@ -21245,7 +21245,7 @@
                 saveSpec: null,
                 fetchSpec: "1.4.2"
             },
-            _requiredBy: ["/bitsharesjs", "/ecurve", "/steem-js-api"],
+            _requiredBy: ["/zcomjs", "/ecurve", "/steem-js-api"],
             _resolved: "https://registry.npmjs.org/bigi/-/bigi-1.4.2.tgz",
             _spec: "1.4.2",
             _where: "/home/taquy/Projects/VueJS/wallet-bs",
