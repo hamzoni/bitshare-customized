@@ -8,8 +8,6 @@ import LinkToWitnessById from "../Utility/LinkToWitnessById";
 import ChainTypes from "../Utility/ChainTypes";
 import BindToChainState from "../Utility/BindToChainState";
 import AssetWrapper from "../Utility/AssetWrapper";
-import TransactionChart from "./TransactionChart";
-import BlocktimeChart from "./BlocktimeChart";
 import classNames from "classnames";
 import utils from "common/utils";
 import Immutable from "immutable";
@@ -17,7 +15,10 @@ import TimeAgo from "../Utility/TimeAgo";
 import FormattedAsset from "../Utility/FormattedAsset";
 import Ps from "perfect-scrollbar";
 import TransitionWrapper from "../Utility/TransitionWrapper";
-import {Row, Col} from "antd";
+import {Row, Col, Button, Input} from "antd";
+import createBrowserHistory from "history/createBrowserHistory";
+
+const history = createBrowserHistory();
 
 require("../Blockchain/json-inspector.scss");
 
@@ -69,8 +70,12 @@ class Blocks extends React.Component {
         this.state = {
             animateEnter: false,
             operationsHeight: null,
-            blocksHeight: null
+            blocksHeight: null,
+            blockSearch: null
         };
+
+        this.performChange = this.performChange.bind(this);
+        this.performSearch = this.performSearch.bind(this);
 
         this._updateHeight = this._updateHeight.bind(this);
     }
@@ -177,6 +182,17 @@ class Blocks extends React.Component {
         Ps.update(oc);
         let blocks = this.refs.blocks;
         Ps.update(blocks);
+    }
+
+    performSearch(e) {
+        e.preventDefault();
+        let value = this.state.blockSearch;
+        history.push("/block/" + value);
+        window.location.reload();
+    }
+
+    performChange(e) {
+        this.setState({blockSearch: e.target.value});
     }
 
     render() {
@@ -309,7 +325,26 @@ class Blocks extends React.Component {
 
         return (
             <div ref="outerWrapper">
-                {/* First row of stats */}
+                <Row>
+                    <Col span={19}>
+                        <Input
+                            className="mono-input-witness"
+                            placeholder="Search Block..."
+                            value={this.state.blockSearch}
+                            onChange={this.performChange.bind(this)}
+                        />
+                    </Col>
+                    <Col span={4} offset={1}>
+                        <Button
+                            className="mono-btn-witness"
+                            type="primary"
+                            onClick={this.performSearch}
+                        >
+                            Search
+                        </Button>
+                    </Col>
+                </Row>
+
                 <Row>
                     {/*Colunm 1 */}
                     <Col span={24}>
@@ -413,21 +448,6 @@ class Blocks extends React.Component {
                                             }
                                         </h2>
                                     </div>
-                                    {/* <hr className="mono-hr" />
-                                    <div className="grid-content no-overflow">
-                                        <div className="txtlabel mono-text-block">
-                                            <Translate
-                                                component="span"
-                                                content="explorer.blocks.block_times"
-                                            />
-                                        </div>
-                                        <BlocktimeChart
-                                            blockTimes={blockTimes}
-                                            head_block_number={dynGlobalObject.get(
-                                                "head_block_number"
-                                            )}
-                                        />
-                                    </div> */}
                                 </div>
                             </Col>
                             {/*Colunm 3 */}

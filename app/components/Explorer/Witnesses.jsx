@@ -510,16 +510,6 @@ class Witnesses extends React.Component {
                                 </table>
                             </div>
 
-                            {/* <Input
-                                className="mono-input-witness"
-                                placeholder={"   " + counterpart.translate(
-                                    "explorer.witnesses.filter_by_name"
-                                )}
-                                onChange={this._onFilter.bind(this)}
-                                addonAfter={
-                                    <Button className="mono-btn-witness" type="primary" >Search</Button>
-                                }
-                            /> */}
                             <Row>
                                 <Col span={19}>
                                     <Input
