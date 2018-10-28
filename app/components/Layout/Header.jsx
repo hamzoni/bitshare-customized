@@ -1,5 +1,4 @@
 import React from "react";
-import {Link} from "react-router-dom";
 import {connect} from "alt-react";
 import AccountActions from "actions/AccountActions";
 import AccountStore from "stores/AccountStore";
@@ -25,15 +24,9 @@ import AccountImage from "../Account/AccountImage";
 import {ChainStore} from "bitsharesjs";
 import WithdrawModal from "../Modal/WithdrawModalNew";
 import {List} from "immutable";
-import DropDownMenu from "./HeaderDropdown";
 import {withRouter} from "react-router-dom";
 
 import {getLogo} from "branding";
-var logo = getLogo();
-
-// const FlagImage = ({flag, width = 20, height = 20}) => {
-//     return <img height={height} width={width} src={`${__BASE_URL__}language-dropdown/${flag.toUpperCase()}.png`} />;
-// };
 
 const SUBMENUS = {
     SETTINGS: "SETTINGS"
@@ -333,16 +326,10 @@ class Header extends React.Component {
         let maxHeight = Math.max(40, height - 67 - 36) + "px";
 
         const a = ChainStore.getAccount(currentAccount);
-        const showAccountLinks = !!a;
         const isMyAccount = !a
             ? false
             : AccountStore.isMyAccount(a) ||
               (passwordLogin && currentAccount === passwordAccount);
-        const enableDepositWithdraw =
-            !!a &&
-            Apis.instance() &&
-            Apis.instance().chain_id &&
-            Apis.instance().chain_id.substr(0, 8) === "4018d784";
 
         if (starredAccounts.size) {
             for (let i = tradingAccounts.length - 1; i >= 0; i--) {
@@ -356,52 +343,6 @@ class Header extends React.Component {
                 }
             });
         }
-
-        let myAccounts = AccountStore.getMyAccounts();
-        let myAccountCount = myAccounts.length;
-
-        let walletBalance =
-            myAccounts.length && this.props.currentAccount ? (
-                <div
-                    className="total-value"
-                    onClick={this._toggleAccountDropdownMenu}
-                >
-                    <TotalBalanceValue.AccountWrapper
-                        hiddenAssets={this.props.hiddenAssets}
-                        accounts={List([this.props.currentAccount])}
-                        noTip
-                        style={{minHeight: 15}}
-                    />
-                </div>
-            ) : null;
-
-        let dashboard = (
-            <a
-                className={cnames("logo", {
-                    active:
-                        active === "/" ||
-                        (active.indexOf("dashboard") !== -1 &&
-                            active.indexOf("account") === -1)
-                })}
-                onClick={this._onNavigate.bind(this, "/")}
-            >
-                <img style={{margin: 0, height: 40}} src={logo} />
-            </a>
-        );
-
-        let createAccountLink = myAccountCount === 0 ? true : null;
-
-        // let lock_unlock = ((!!this.props.current_wallet) || passwordLogin) ? (
-        //     <div className="grp-menu-item" >
-        //     { this.props.locked ?
-        //         <a style={{padding: "1rem"}} href onClick={this._toggleLock.bind(this)} data-class="unlock-tooltip" data-offset="{'left': 50}" data-tip={locked_tip} data-place="bottom" data-html><Icon className="icon-14px" name="locked" title="icons.locked.common" /></a>
-        //         : <a style={{padding: "1rem"}} href onClick={this._toggleLock.bind(this)} data-class="unlock-tooltip" data-offset="{'left': 50}" data-tip={unlocked_tip} data-place="bottom" data-html><Icon className="icon-14px" name="unlocked" title="icons.unlocked.common" /></a> }
-        //     </div>
-        // ) : null;
-
-        let tradeUrl = this.props.lastMarket
-            ? `/market/${this.props.lastMarket}`
-            : "/market/USD_BTS";
 
         // Account selector: Only active inside the exchange
         let account_display_name, accountsList;
@@ -463,23 +404,7 @@ class Header extends React.Component {
             }
         }
 
-        let hamburger = this.state.dropdownActive ? (
-            <Icon
-                className="icon-14px"
-                name="hamburger-x"
-                title="icons.hamburger_x"
-            />
-        ) : (
-            <Icon
-                className="icon-14px"
-                name="hamburger"
-                title="icons.hamburger"
-            />
-        );
-        const hasLocalWallet = !!WalletDb.getWallet();
-
         /* Dynamic Menu Item */
-        let dynamicMenuItem;
         if (active.indexOf("transfer") !== -1) {
             dynamicMenuItem = (
                 <a style={{flexFlow: "row"}} className={cnames({active: true})}>
@@ -739,149 +664,6 @@ class Header extends React.Component {
             );
         }
 
-        const submenus = {
-            [SUBMENUS.SETTINGS]: (
-                <ul
-                    className="dropdown header-menu header-submenu"
-                    style={{
-                        left: -200,
-                        top: 64,
-                        maxHeight: !this.state.dropdownActive ? 0 : maxHeight,
-                        overflowY: "auto"
-                    }}
-                >
-                    <li
-                        className="divider parent-item"
-                        onClick={this._toggleDropdownSubmenu.bind(
-                            this,
-                            undefined
-                        )}
-                    >
-                        <div className="table-cell">
-                            <span className="parent-item-icon">&lt;</span>
-                            <Translate
-                                content="header.settings"
-                                component="span"
-                                className="parent-item-name"
-                            />
-                        </div>
-                    </li>
-                    <li
-                        onClick={this._onNavigate.bind(
-                            this,
-                            "/settings/general"
-                        )}
-                    >
-                        <Translate
-                            content="settings.general"
-                            component="div"
-                            className="table-cell"
-                        />
-                    </li>
-                    {!this.props.settings.get("passwordLogin") && (
-                        <li
-                            onClick={this._onNavigate.bind(
-                                this,
-                                "/settings/wallet"
-                            )}
-                        >
-                            <Translate
-                                content="settings.wallet"
-                                component="div"
-                                className="table-cell"
-                            />
-                        </li>
-                    )}
-                    <li
-                        onClick={this._onNavigate.bind(
-                            this,
-                            "/settings/accounts"
-                        )}
-                    >
-                        <Translate
-                            content="settings.accounts"
-                            component="div"
-                            className="table-cell"
-                        />
-                    </li>
-
-                    {!this.props.settings.get("passwordLogin") && [
-                        <li
-                            key={"settings.password"}
-                            onClick={this._onNavigate.bind(
-                                this,
-                                "/settings/password"
-                            )}
-                        >
-                            <Translate
-                                content="settings.password"
-                                component="div"
-                                className="table-cell"
-                            />
-                        </li>,
-                        <li
-                            key={"settings.backup"}
-                            onClick={this._onNavigate.bind(
-                                this,
-                                "/settings/backup"
-                            )}
-                        >
-                            <Translate
-                                content="settings.backup"
-                                component="div"
-                                className="table-cell"
-                            />
-                        </li>
-                    ]}
-                    <li
-                        onClick={this._onNavigate.bind(
-                            this,
-                            "/settings/restore"
-                        )}
-                    >
-                        <Translate
-                            content="settings.restore"
-                            component="div"
-                            className="table-cell"
-                        />
-                    </li>
-                    <li
-                        onClick={this._onNavigate.bind(
-                            this,
-                            "/settings/access"
-                        )}
-                    >
-                        <Translate
-                            content="settings.access"
-                            component="div"
-                            className="table-cell"
-                        />
-                    </li>
-                    <li
-                        onClick={this._onNavigate.bind(
-                            this,
-                            "/settings/faucet_address"
-                        )}
-                    >
-                        <Translate
-                            content="settings.faucet_address"
-                            component="div"
-                            className="table-cell"
-                        />
-                    </li>
-                    <li
-                        onClick={this._onNavigate.bind(this, "/settings/reset")}
-                    >
-                        <Translate
-                            content="settings.reset"
-                            component="div"
-                            className="table-cell"
-                        />
-                    </li>
-                </ul>
-            )
-        };
-
         return (
             <div className="header-container" style={{minHeight: "64px"}}>
                 <div>
@@ -890,118 +672,6 @@ class Header extends React.Component {
                         style={{flexWrap: "nowrap", justifyContent: "none"}}
                     />
                 </div>
-
-                {/* <div
-                    className="truncated active-account"
-                    style={{cursor: "pointer"}}
-                >
-                    <div
-                        className="text account-name"
-                        onClick={this._toggleAccountDropdownMenu}
-                    >
-                        {currentAccount}
-                    </div>
-                    {walletBalance}
-
-                    {hasLocalWallet && (
-                        <ul
-                            className="dropdown header-menu local-wallet-menu"
-                            style={{
-                                right: 0,
-                                maxHeight: !this.state
-                                    .accountsListDropdownActive
-                                    ? 0
-                                    : maxHeight,
-                                overflowY: "auto",
-                                position: "absolute",
-                                width: "20em"
-                            }}
-                        >
-                            <li
-                                className={cnames(
-                                    {
-                                        active:
-                                            active.indexOf("/accounts") !== -1
-                                    },
-                                    "divider"
-                                )}
-                                onClick={this._onNavigate.bind(
-                                    this,
-                                    "/accounts"
-                                )}
-                            >
-                                <div className="table-cell">
-                                    <Icon
-                                        size="2x"
-                                        name="people"
-                                        title="icons.manage_accounts"
-                                    />
-                                </div>
-                                <div className="table-cell">
-                                    <Translate content="header.accounts_manage" />
-                                </div>
-                            </li>
-                            {accountsList}
-                        </ul>
-                    )}
-                </div> */}
-                {/* <div>
-                    {this.props.currentAccount == null ? null : (
-                        <span
-                            onClick={this._toggleLock.bind(this)}
-                            style={{cursor: "pointer"}}
-                        >
-                            <Icon
-                                className="lock-unlock"
-                                size="2x"
-                                name={this.props.locked ? "locked" : "unlocked"}
-                                title={
-                                    this.props.locked
-                                        ? "icons.locked.common"
-                                        : "icons.unlocked.common"
-                                }
-                            />
-                        </span>
-                    )}
-                </div> */}
-                {/* <div className="app-menu">
-                    <div
-                        onClick={this._toggleDropdownMenu}
-                        className={cnames(
-                            "menu-dropdown-wrapper dropdown-wrapper",
-                            {active: this.state.dropdownActive}
-                        )}
-                    >
-                        <div className="hamburger">{hamburger}</div>
-
-                        {(this.state.dropdownSubmenuActive &&
-                            submenus[this.state.dropdownSubmenuActiveItem] &&
-                            submenus[this.state.dropdownSubmenuActiveItem]) || (
-                            <DropDownMenu
-                                dropdownActive={this.state.dropdownActive}
-                                toggleLock={this._toggleLock.bind(this)}
-                                maxHeight={maxHeight}
-                                locked={this.props.locked}
-                                active={active}
-                                passwordLogin={passwordLogin}
-                                onNavigate={this._onNavigate.bind(this)}
-                                isMyAccount={isMyAccount}
-                                contacts={this.props.contacts}
-                                showAccountLinks={showAccountLinks}
-                                tradeUrl={tradeUrl}
-                                currentAccount={currentAccount}
-                                enableDepositWithdraw={enableDepositWithdraw}
-                                showDeposit={this._showDeposit.bind(this)}
-                                showWithdraw={this._showWithdraw.bind(this)}
-                                showSend={this._showSend.bind(this)}
-                                toggleDropdownSubmenu={this._toggleDropdownSubmenu.bind(
-                                    this,
-                                    SUBMENUS.SETTINGS
-                                )}
-                            />
-                        )}
-                    </div>
-                </div> */}
                 <SendModal
                     id="send_modal_header"
                     refCallback={e => {

@@ -300,12 +300,6 @@ class App extends React.Component {
         this.setState({height: window && window.innerHeight});
     }
 
-    // /** Non-static, used by passing notificationSystem via react Component refs */
-    // _addNotification(params) {
-    //     console.log("add notification:", this.refs, params);
-    //     this.refs.notificationSystem.addNotification(params);
-    // }
-
     render() {
         let {incognito, incognitoWarningDismissed} = this.state;
         let {walletMode, theme, location, match, ...others} = this.props;

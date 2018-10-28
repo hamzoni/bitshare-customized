@@ -1,12 +1,9 @@
 import React from "react";
 import Witnesses from "./Witnesses";
 import CommitteeMembers from "./CommitteeMembers";
-import FeesContainer from "../Blockchain/FeesContainer";
 import BlocksContainer from "./BlocksContainer";
-import AssetsContainer from "./AssetsContainer";
 import AccountsContainer from "./AccountsContainer";
 import counterpart from "counterpart";
-import MarketsContainer from "../Exchange/MarketsContainer";
 import {Tabs, Row, Col} from "antd";
 const TabPane = Tabs.TabPane;
 
@@ -38,12 +35,6 @@ class Explorer extends React.Component {
                     link: "/explorer/committee-members",
                     translate: "explorer.committee_members.title",
                     content: CommitteeMembers
-                },
-                {
-                    name: "fees",
-                    link: "/explorer/fees",
-                    translate: "fees.title",
-                    content: FeesContainer
                 }
             ]
         };
@@ -53,12 +44,10 @@ class Explorer extends React.Component {
         const onChange = value => {
             this.props.history.push(value);
         };
-        //console.log(this.props.location.pathname);
         let defaultActive =
             this.props.location.pathname === "/"
                 ? "/explorer/blocks"
                 : this.props.location.pathname;
-        console.log(defaultActive);
         return (
             <div className="mono-fix-padding">
                 <Tabs
