@@ -332,6 +332,13 @@ class Blocks extends React.Component {
                             placeholder="Search Block..."
                             value={this.state.blockSearch}
                             onChange={this.performChange.bind(this)}
+                            style={{
+                                color: "#aaa",
+                                background: "#fff",
+                                height: "45px",
+                                borderRadius: "8px",
+                                border: "none"
+                            }}
                         />
                     </Col>
                     <Col span={4} offset={1}>
@@ -339,13 +346,14 @@ class Blocks extends React.Component {
                             className="mono-btn-witness"
                             type="primary"
                             onClick={this.performSearch}
+                            style={{height: "45px", borderRadius: "10px"}}
                         >
                             Search
                         </Button>
                     </Col>
                 </Row>
 
-                <Row>
+                <Row style={{marginTop: "20px"}}>
                     {/*Colunm 1 */}
                     <Col span={24}>
                         <Row type="flex" justify="space-between" gutter={16}>
@@ -391,7 +399,7 @@ class Blocks extends React.Component {
                                             }
                                         </h2>
                                     </div>
-                                    <hr className="mono-hr" />
+                                    {/* <hr className="mono-hr" />
                                     <div className="grid-content no-overflow clear-fix">
                                         <span className="txtlabel mono-text-block">
                                             <Translate
@@ -410,7 +418,7 @@ class Blocks extends React.Component {
                                                 />
                                             ) : null}
                                         </h3>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </Col>
                             {/*Colunm 2 */}

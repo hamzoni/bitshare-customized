@@ -732,7 +732,7 @@
             "authorizing_account": "Authorizing account",
             "call_limit": "Call limit",
             "common_options": "Common options",
-            "count": "Transaction count",
+            "count": "Tx count",
             "date": "Date",
             "fee_payer": "Fee paying account",
             "feed_price": "Feed price",
@@ -754,7 +754,7 @@
             "short_limit": "Short limit",
             "time": "Time",
             "title": "Block",
-            "transactions": "Transaction count",
+            "transactions": "Tx count",
             "trx": "Tx",
             "master": "Masternode"
         },
