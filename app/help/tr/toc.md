@@ -2,11 +2,11 @@
 
  * [ Giriş ](index.md)
  * [Terimler Listesi](glossary.md)
- * [BitShares](introduction/bitshares.md)
+ * [ZCOM](introduction/bitshares.md)
  * [Cüzdan](introduction/wallets.md)
  * [Yedeklemeler](introduction/backups.md)
  * [Blokzinciri](introduction/blockchain.md)
- * [Tanık](introduction/witness.md)
+ * [Tanık](introduction/master.md)
  * [İşçiler](introduction/workers.md)
  * [Kurul Üyesi](introduction/committee.md)
  * [Hesaplar](accounts/general.md)

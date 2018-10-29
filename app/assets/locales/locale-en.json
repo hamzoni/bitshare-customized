@@ -51,7 +51,7 @@
         "in_open": "This is the amount of %(asset)s you have in open orders.",
         "in_open_value": "This is the estimated value of the %(asset)s you have in open orders.",
         "intro_text_1": "Your Decentralized Exchange",
-        "intro_text_2": "<b>The DEX</b> is inherently decentralized, enabling you to trade the BitShares core token (BTS) and a range of trustless price-stable, market-pegged assets such as bitUSD, bitCNY, bitBTC, bitGold and more. These assets can all be traded with <b>zero</b> counter-party risk, putting you in total control of your funds.",
+        "intro_text_2": "<b>The DEX</b> is inherently decentralized, enabling you to trade the Zcom core token (BTS) and a range of trustless price-stable, market-pegged assets such as bitUSD, bitCNY, bitBTC, bitGold and more. These assets can all be traded with <b>zero</b> counter-party risk, putting you in total control of your funds.",
         "intro_text_3": "<b>The DEX</b> also enables creation of user-issued assets (UIAs), which can be traded against any other UIAs or trustless assets on the platform.  One well-known issuer on The DEX is <b>OpenLedger</b>, offering a host of assets including BTC, ETH, STEEM, DASH, LTC, DOGE, and many more",
         "intro_text_4": "This gives cryptocurrency traders a unique blend of traditional and decentralized trading, all in a familiar exchange interface. Happy trading!",
         "intro_text_title": "Welcome to %(wallet_name)s",
@@ -112,7 +112,7 @@
         "options": {
             "memo_key": "Memo Key",
             "num_committee": "Desired Committee Members",
-            "num_witnesses": "Desired Witnesses"
+            "num_masters": "Desired Witnesses"
         },
         "orders": "Orders",
         "other_scam": "This account is not known to be an official account, please verify the destination before transferring",
@@ -231,7 +231,7 @@
             "charge_market_fee": "Enable market fee",
             "committee_fed_asset": "Allow committee members to provide feeds",
             "condition": "Condition (max 60 characters)",
-            "conflict_feed": "Cannot allow witnesses and committee members to provide feeds simultaneously",
+            "conflict_feed": "Cannot allow masters and committee members to provide feeds simultaneously",
             "core_exchange_rate": "Core exchange rate",
             "current_issuer": "Current owner account",
             "decimals": "Number of decimal points",
@@ -245,8 +245,8 @@
             "exists": "That asset already exists",
             "expiry": "Market resolution date",
             "feed_lifetime_sec": "Feed lifetime in minutes",
-            "feed_not_allowed_1": "Cannot set feed producers on a witness- or committee-fed asset",
-            "feed_not_allowed_2": "Please disable the flags called 'Allow witnesses to provide feeds' and 'Allow committee members to provide feeds' in order to allow manual definition of feed producers",
+            "feed_not_allowed_1": "Cannot set feed producers on a master- or committee-fed asset",
+            "feed_not_allowed_2": "Please disable the flags called 'Allow masters to provide feeds' and 'Allow committee members to provide feeds' in order to allow manual definition of feed producers",
             "feed_producers": "Feed producers",
             "flags": "Flags",
             "force_settlement_delay_sec": "Delay for forced settlements (minutes)",
@@ -287,7 +287,7 @@
             "update_owner_text": "The asset owner may change the owner to another account using this form:",
             "visible": "Hide asset from search and markets",
             "white_list": "Require holders to be white-listed",
-            "witness_fed_asset": "Allow witnesses to provide feeds"
+            "master_fed_asset": "Allow masters to provide feeds"
         },
         "vesting": {
             "balance_number": "Balance #%(id)s",
@@ -301,8 +301,8 @@
             "active_short": "Active",
             "add_committee": "Add",
             "add_committee_label": "Committee Member",
-            "add_witness": "Add",
-            "add_witness_label": "Witness",
+            "add_master": "Add",
+            "add_master_label": "Witness",
             "already": "Account is already in the list",
             "approve_worker": "Approve",
             "clear_proxy": "Remove proxy",
@@ -333,7 +333,7 @@
             "recycled": "Recycled",
             "reject_worker": "Reject",
             "remove_committee": "Remove",
-            "remove_witness": "Remove",
+            "remove_master": "Remove",
             "save_finish": "Click save to finish",
             "set_proxy": "Set a proxy here",
             "start": "Start date",
@@ -356,7 +356,7 @@
             "votes_against": "Votes against",
             "w_approved_by": "Witnesses approved by %(account)s",
             "w_not_approved_by": "Witnesses not approved by %(account)s",
-            "witness": "Witness name",
+            "master": "Witness name",
             "worker_account": "Worker account",
             "workers": "Budget Items",
             "workers_short": "Workers"
@@ -756,11 +756,11 @@
             "title": "Block",
             "transactions": "Transaction count",
             "trx": "Tx",
-            "witness": "Masternote"
+            "master": "Masternode"
         },
         "blocks": {
             "active_committee_members": "Active committee members",
-            "active_witnesses": "Active masternote",
+            "active_masters": "Active masternode",
             "avg_conf_time": "Average confirmation time",
             "block_time": "Block time",
             "block_times": "Block times",
@@ -780,7 +780,7 @@
         },
         "committee_members": {
             "active": "Total number of active committee members",
-            "title": "Committee"
+            "title": "Committees"
         },
         "fees": {
             "fee": "Standard Fee",
@@ -800,10 +800,10 @@
             "review": "Review",
             "title": "Proposed transactions"
         },
-        "witnesses": {
+        "masters": {
             "budget": "Remaining budget",
             "card": "Card view",
-            "current": "Current masternote",
+            "current": "Current masternode",
             "last_confirmed": "Last confirmed",
             "missed": "Blocks missed",
             "next_vote": "Next vote update",
@@ -811,7 +811,7 @@
             "pay": "Pay-per-block",
             "rank": "Rank",
             "table": "Table view",
-            "title": "Masternote",
+            "title": "Masternodes",
             "filter_by_name": "Filter By Name"
         },
         "workers": {
@@ -831,7 +831,7 @@
         }
     },
     "fees": {
-        "title": "Fee Schedule"
+        "title": "Fee infomation"
     },
     "footer": {
         "advanced_settings": "Advanced settings",
@@ -1267,7 +1267,7 @@
             "address_not_valid": "Invalid address",
             "amount": "Amount to Withdraw",
             "available": "Available: ",
-            "bitshares_account": "Send to %(wallet_name)s Account",
+            "Zcom_account": "Send to %(wallet_name)s Account",
             "cancel": "Cancel",
             "cannot_cover": "Insufficient funds!",
             "estimated_value": "Estimated Value",
@@ -1342,10 +1342,10 @@
         "update_account": "{account} updated their account data",
         "vesting_balance_withdraw": "{account} withdrew vesting balance of {amount}",
         "whitelisted_by": "{lister} whitelisted the account {listee}",
-        "witness_create": "{account} was upgraded to become a witness",
-        "witness_pay": "Withdrew witness pay to account",
-        "witness_receive": "Received witness from witness",
-        "witness_update": "{account} update its witness info",
+        "master_create": "{account} was upgraded to become a master",
+        "master_pay": "Withdrew master pay to account",
+        "master_receive": "Received master from master",
+        "master_update": "{account} update its master info",
         "worker_create": "{account} created a worker proposal with daily pay of {pay}"
     },
     "page404": {
@@ -1722,9 +1722,9 @@
             "withdraw_permission_create": "Create withdrawal permission",
             "withdraw_permission_delete": "Delete withdrawal permission",
             "withdraw_permission_update": "Update withdrawal permission",
-            "witness_create": "Create witness",
-            "witness_update": "Update witness",
-            "witness_withdraw_pay": "Witness pay withdrawal",
+            "master_create": "Create master",
+            "master_update": "Update master",
+            "master_withdraw_pay": "Witness pay withdrawal",
             "worker_create": "Create worker"
         },
         "vesting_balance_create": "created vesting balance of",
@@ -1831,7 +1831,7 @@
         "backup_brainkey": "Backup Brainkey",
         "backup_explain": "Clicking on the button below will generate a backup file with a .bin extension. This file is encrypted with your wallet password, and contains all the private keys for your accounts. It can be used to restore your wallet, or move it to a different computer/browser.",
         "backup_login": "Backup & login",
-        "backup_new_account": "Congratulations, you've just created a new account on the %(wallet_name)s exchange powered by the BitShares blockchain! It is strongly recommended that you make a backup of your wallet now. Without a backup there is no way to restore your account if something happens to your computer.",
+        "backup_new_account": "Congratulations, you've just created a new account on the %(wallet_name)s exchange powered by the Zcom blockchain! It is strongly recommended that you make a backup of your wallet now. Without a backup there is no way to restore your account if something happens to your computer.",
         "backup_warning": "It appears that your private key files are not backed up. For security reasons we recommend users do not log in without backing up their private keys.",
         "balance_claim_lookup": "Lookup balances",
         "balance_claims": "Balance Claims",
@@ -1898,7 +1898,7 @@
         "import_backup_choose": "Please select your backup file in the dialog below. This is completely safe as the file is not uploaded anywhere and never leaves your browser.",
         "import_balance": "Import balance(s)",
         "import_bts": "Import a BTS 0.9.3c key export",
-        "import_bts1": "Import from BitShares 0.9.3c",
+        "import_bts1": "Import from Zcom 0.9.3c",
         "import_key_success": "Successfully imported %(count)s keys.",
         "import_keys": "Import Keys",
         "import_keys_tool": "Key Import Tool",

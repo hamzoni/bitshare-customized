@@ -4,7 +4,7 @@ import Immutable from "immutable";
 import AccountImage from "../Account/AccountImage";
 import ChainTypes from "../Utility/ChainTypes";
 import BindToChainState from "../Utility/BindToChainState";
-import {ChainStore} from "bitsharesjs";
+import {ChainStore} from "zcomjs";
 import FormattedAsset from "../Utility/FormattedAsset";
 import Translate from "react-translate-component";
 import TimeAgo from "../Utility/TimeAgo";
@@ -19,36 +19,34 @@ require("./witnesses.scss");
 
 class WitnessRow extends React.Component {
     static propTypes = {
-        witness: ChainTypes.ChainAccount.isRequired
+        master: ChainTypes.ChainAccount.isRequired
     };
 
     _onRowClick(e) {
         e.preventDefault();
-        this.props.history.push(`/account/${this.props.witness.get("name")}`);
+        this.props.history.push(`/account/${this.props.master.get("name")}`);
     }
 
     // componentWillUnmount() {
-    //     ChainStore.unSubFrom("witnesses", ChainStore.getWitnessById( this.props.witness.get("id") ).get("id"));
+    //     ChainStore.unSubFrom("masters", ChainStore.getMasterById( this.props.master.get("id") ).get("id"));
     // }
 
     render() {
-        let {witness, isCurrent, rank} = this.props;
-        let witness_data = ChainStore.getWitnessById(
-            this.props.witness.get("id")
-        );
-        if (!witness_data) return null;
-        let total_votes = witness_data.get("total_votes");
+        let {master, isCurrent, rank} = this.props;
+        let master_data = ChainStore.getMasterById(this.props.master.get("id"));
+        if (!master_data) return null;
+        let total_votes = master_data.get("total_votes");
 
-        let witness_aslot = witness_data.get("last_aslot");
+        let master_aslot = master_data.get("last_aslot");
         let color = {};
-        if (this.props.most_recent - witness_aslot > 100) {
+        if (this.props.most_recent - master_aslot > 100) {
             color = {borderLeft: "1px solid #FCAB53"};
         } else {
             color = {borderLeft: "1px solid #50D2C2"};
         }
         let last_aslot_time = new Date(
             Date.now() -
-                (this.props.most_recent - witness_aslot) *
+                (this.props.most_recent - master_aslot) *
                     ChainStore.getObject("2.0.0").getIn([
                         "parameters",
                         "block_interval"
@@ -56,9 +54,9 @@ class WitnessRow extends React.Component {
                     1000
         );
 
-        let currentClass = isCurrent ? "active-witness" : "";
+        let currentClass = isCurrent ? "active-master" : "";
 
-        let missed = witness_data.get("total_missed");
+        let missed = master_data.get("total_missed");
         let missedClass = classNames(
             "txtlabel",
             {success: missed <= 500},
@@ -70,15 +68,15 @@ class WitnessRow extends React.Component {
         return (
             <tr className={currentClass} onClick={this._onRowClick.bind(this)}>
                 <td>{rank}</td>
-                <td style={color}>{witness.get("name")}</td>
+                <td style={color}>{master.get("name")}</td>
                 <td>
                     <TimeAgo time={new Date(last_aslot_time)} />
                 </td>
-                <td>{witness_data.get("last_confirmed_block_num")}</td>
+                <td>{master_data.get("last_confirmed_block_num")}</td>
                 <td className={missedClass}>{missed}</td>
                 <td>
                     <FormattedAsset
-                        amount={witness_data.get("total_votes")}
+                        amount={master_data.get("total_votes")}
                         asset="1.3.0"
                         decimalOffset={5}
                     />
@@ -92,7 +90,7 @@ WitnessRow = withRouter(WitnessRow);
 
 class WitnessList extends React.Component {
     static propTypes = {
-        witnesses: ChainTypes.ChainObjectsList.isRequired
+        masters: ChainTypes.ChainObjectsList.isRequired
     };
 
     constructor() {
@@ -122,17 +120,17 @@ class WitnessList extends React.Component {
     }
 
     render() {
-        let {witnesses, current, cardView, witnessList} = this.props;
+        let {masters, current, cardView, masterList} = this.props;
         let {sortBy, inverseSort} = this.state;
         let most_recent_aslot = 0;
         let ranks = {};
 
-        witnesses
+        masters
             .filter(a => {
                 if (!a) {
                     return false;
                 }
-                return witnessList.indexOf(a.get("id")) !== -1;
+                return masterList.indexOf(a.get("id")) !== -1;
             })
             .sort((a, b) => {
                 if (a && b) {
@@ -154,40 +152,38 @@ class WitnessList extends React.Component {
             });
 
         let dataSource = [];
-        if (witnesses.length > 0 && witnesses[1]) {
-            dataSource = witnesses
+        if (masters.length > 0 && masters[1]) {
+            dataSource = masters
                 .filter(a => {
                     if (!a) {
                         return false;
                     }
-                    let witness = ChainStore.getObject(
-                        a.get("witness_account")
-                    );
-                    if (!witness) return false;
+                    let master = ChainStore.getObject(a.get("master_account"));
+                    if (!master) return false;
 
-                    let witness_data = ChainStore.getWitnessById(
-                        witness.get("id")
+                    let master_data = ChainStore.getMasterById(
+                        master.get("id")
                     );
-                    if (!witness_data) return false;
+                    if (!master_data) return false;
 
-                    let name = witness.get("name");
+                    let name = master.get("name");
                     if (!name) return false;
                     return name.indexOf(this.props.filter) !== -1;
                 })
                 .map(a => {
-                    const witness = ChainStore.getObject(
-                        a.get("witness_account")
+                    const master = ChainStore.getObject(
+                        a.get("master_account")
                     );
 
-                    const witness_data = ChainStore.getWitnessById(
-                        witness.get("id")
+                    const master_data = ChainStore.getMasterById(
+                        master.get("id")
                     );
 
-                    let witness_aslot = witness_data.get("last_aslot");
+                    let master_aslot = master_data.get("last_aslot");
 
                     let last_aslot_time = new Date(
                         Date.now() -
-                            (this.props.current_aslot - witness_aslot) *
+                            (this.props.current_aslot - master_aslot) *
                                 ChainStore.getObject("2.0.0").getIn([
                                     "parameters",
                                     "block_interval"
@@ -197,17 +193,17 @@ class WitnessList extends React.Component {
 
                     return {
                         id: a.get("id"),
-                        key: witness.get("name"),
+                        key: master.get("name"),
                         rank: ranks[a.get("id")],
-                        name: witness.get("name"),
-                        signing_key: witness_data.get("signing_key"),
-                        url: witness_data.get("url"),
+                        name: master.get("name"),
+                        signing_key: master_data.get("signing_key"),
+                        url: master_data.get("url"),
                         lastConfirmedBlock: {
-                            id: witness_data.get("last_confirmed_block_num"),
+                            id: master_data.get("last_confirmed_block_num"),
                             timestamp: last_aslot_time.getTime()
                         },
-                        blocksMissed: witness_data.get("total_missed"),
-                        votes: witness_data.get("total_votes")
+                        blocksMissed: master_data.get("total_missed"),
+                        votes: master_data.get("total_votes")
                     };
                 });
         }
@@ -357,7 +353,7 @@ class WitnessList extends React.Component {
         const getRowClassName = record => {
             if (record.id === current) return "mono-row-explorer ";
             {
-                /*active-witness */
+                /*active-master */
             }
 
             return "mono-row-explorer";
@@ -422,11 +418,11 @@ class Witnesses extends React.Component {
         dynGlobalObject = dynGlobalObject.toJS();
         globalObject = globalObject.toJS();
 
-        let current = ChainStore.getObject(dynGlobalObject.current_witness),
+        let current = ChainStore.getObject(dynGlobalObject.current_master),
             currentAccount = null;
         if (current) {
             currentAccount = ChainStore.getObject(
-                current.get("witness_account")
+                current.get("master_account")
             );
         }
 
@@ -435,27 +431,27 @@ class Witnesses extends React.Component {
                 <div className="grid-block">
                     <div className="grid-block">
                         <div className="grid-content ">
-                            <div className="explore-witness--info">
+                            <div className="explore-master--info">
                                 <table>
                                     <thead>
                                         <tr>
                                             <th>
-                                                <Translate content="explorer.witnesses.current" />
+                                                <Translate content="explorer.masters.current" />
                                             </th>
                                             <th>
-                                                <Translate content="explorer.blocks.active_witnesses" />
+                                                <Translate content="explorer.blocks.active_masters" />
                                             </th>
                                             <th>
-                                                <Translate content="explorer.witnesses.participation" />
+                                                <Translate content="explorer.masters.participation" />
                                             </th>
                                             <th>
-                                                <Translate content="explorer.witnesses.pay" />
+                                                <Translate content="explorer.masters.pay" />
                                             </th>
                                             <th>
-                                                <Translate content="explorer.witnesses.budget" />
+                                                <Translate content="explorer.masters.budget" />
                                             </th>
                                             <th>
-                                                <Translate content="explorer.witnesses.next_vote" />
+                                                <Translate content="explorer.masters.next_vote" />
                                             </th>
                                         </tr>
                                     </thead>
@@ -469,7 +465,7 @@ class Witnesses extends React.Component {
                                             <td>
                                                 {
                                                     Object.keys(
-                                                        globalObject.active_witnesses
+                                                        globalObject.active_masters
                                                     ).length
                                                 }
                                             </td>
@@ -480,7 +476,7 @@ class Witnesses extends React.Component {
                                                 <FormattedAsset
                                                     amount={
                                                         globalObject.parameters
-                                                            .witness_pay_per_block
+                                                            .master_pay_per_block
                                                     }
                                                     asset="1.3.0"
                                                 />
@@ -489,7 +485,7 @@ class Witnesses extends React.Component {
                                                 {" "}
                                                 <FormattedAsset
                                                     amount={
-                                                        dynGlobalObject.witness_budget
+                                                        dynGlobalObject.master_budget
                                                     }
                                                     asset="1.3.0"
                                                 />
@@ -513,11 +509,11 @@ class Witnesses extends React.Component {
                             <Row>
                                 <Col span={19}>
                                     <Input
-                                        className="mono-input-witness"
+                                        className="mono-input-master"
                                         placeholder={
                                             "   " +
                                             counterpart.translate(
-                                                "explorer.witnesses.filter_by_name"
+                                                "explorer.masters.filter_by_name"
                                             )
                                         }
                                         onChange={this._onFilter.bind(this)}
@@ -525,7 +521,7 @@ class Witnesses extends React.Component {
                                 </Col>
                                 <Col span={4} offset={1}>
                                     <Button
-                                        className="mono-btn-witness"
+                                        className="mono-btn-master"
                                         type="primary"
                                     >
                                         Search
@@ -536,10 +532,10 @@ class Witnesses extends React.Component {
                             <WitnessList
                                 current_aslot={dynGlobalObject.current_aslot}
                                 current={current ? current.get("id") : null}
-                                witnesses={Immutable.List(
-                                    globalObject.active_witnesses
+                                masters={Immutable.List(
+                                    globalObject.active_masters
                                 )}
-                                witnessList={globalObject.active_witnesses}
+                                masterList={globalObject.active_masters}
                                 filter={this.state.filterWitness}
                                 cardView={this.state.cardView}
                             />

@@ -17,10 +17,10 @@ import WalletUnlockActions from "actions/WalletUnlockActions";
 import WalletManagerStore from "stores/WalletManagerStore";
 import cnames from "classnames";
 import ReactTooltip from "react-tooltip";
-import {Apis} from "bitsharesjs-ws";
+import {Apis} from "zcomjs-ws";
 import notify from "actions/NotificationActions";
 import AccountImage from "../Account/AccountImage";
-import {ChainStore} from "bitsharesjs";
+import {ChainStore} from "zcomjs";
 import WithdrawModal from "../Modal/WithdrawModalNew";
 import {withRouter} from "react-router-dom";
 

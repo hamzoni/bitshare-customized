@@ -2,11 +2,11 @@
 
  * [Introducción](index.md)
  * [Glosario](glossary.md)
- * [BitShares](introduction/bitshares.md)
+ * [ZCOM](introduction/bitshares.md)
  * [Billetera](introduction/wallets.md)
  * [Backups](introduction/backups.md)
  * [Blockchain](introduction/blockchain.md)
- * [Testigos](introduction/witness.md)
+ * [Testigos](introduction/master.md)
  * [Miembros del Comité](introduction/committee.md)
  * [Cuentas](accounts/general.md)
  * [Permisos](accounts/permissions.md)

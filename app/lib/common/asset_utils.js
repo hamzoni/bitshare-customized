@@ -11,7 +11,7 @@ export default class AssetUtils {
             disable_force_settle: false,
             global_settle: false,
             disable_confidential: false,
-            witness_fed_asset: false,
+            master_fed_asset: false,
             committee_fed_asset: false
         };
 

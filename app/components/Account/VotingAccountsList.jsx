@@ -2,7 +2,7 @@ import React from "react";
 import AccountSelector from "./AccountSelector";
 import Translate from "react-translate-component";
 import Icon from "../Icon/Icon";
-import {ChainStore} from "bitsharesjs";
+import {ChainStore} from "zcomjs";
 import ChainTypes from "../Utility/ChainTypes";
 import FormattedAsset from "../Utility/FormattedAsset";
 import BindToChainState from "../Utility/BindToChainState";
@@ -15,8 +15,8 @@ function getWitnessOrCommittee(type, acct) {
     let url = "",
         votes = 0,
         account;
-    if (type === "witness") {
-        account = ChainStore.getWitnessById(acct.get("id"));
+    if (type === "master") {
+        account = ChainStore.getMasterById(acct.get("id"));
     } else if (type === "committee") {
         account = ChainStore.getCommitteeMemberById(acct.get("id"));
     }
@@ -269,7 +269,7 @@ class VotingAccountsList extends React.Component {
                         onChange={this.onItemChange}
                         onAccountChanged={this.onItemAccountChange}
                         onAction={this.onAddItem}
-                        action_label="account.votes.add_witness"
+                        action_label="account.votes.add_master"
                         tabIndex={this.props.tabIndex}
                     />
                 ) : null}

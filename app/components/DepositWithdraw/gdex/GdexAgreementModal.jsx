@@ -350,23 +350,22 @@ class GdexAgreementModal extends React.Component {
                             referred to as the 'Company') is a company
                             incorporated under the laws in Singapore Republic,
                             GDEX (hereinafter referred to as 'GDEX' or 'the
-                            Gateway') is a cryptocurrency gateway to Bitshares
-                            which is operated by the company. The main access
-                            point for GDEX is https://gdex.io, GDEX is a gateway
-                            that provide cryptocurrency deposit and withdraw
-                            service (hereinafter referred to as 'the Service')
-                            to/from Bitshares. For the convenience of wording in
-                            this Agreement, the Company and the Gateway are
-                            referred to as 'We' or other applicable forms of
-                            first person pronouns in this Agreement. All natural
-                            persons or other subjects who use the Service shall
-                            be users of the Gateway. For the convenience of
-                            wording in this Agreement, the users are referred to
-                            as 'You' or any other applicable forms of the
-                            second-person pronouns. For the convenience of
-                            wording in this Agreement, you and us are
-                            collectively referred to as 'both parties', and
-                            individually as 'one party'.
+                            Gateway') is a cryptocurrency gateway to ZCOM which
+                            is operated by the company. The main access point
+                            for GDEX is https://gdex.io, GDEX is a gateway that
+                            provide cryptocurrency deposit and withdraw service
+                            (hereinafter referred to as 'the Service') to/from
+                            ZCOM. For the convenience of wording in this
+                            Agreement, the Company and the Gateway are referred
+                            to as 'We' or other applicable forms of first person
+                            pronouns in this Agreement. All natural persons or
+                            other subjects who use the Service shall be users of
+                            the Gateway. For the convenience of wording in this
+                            Agreement, the users are referred to as 'You' or any
+                            other applicable forms of the second-person
+                            pronouns. For the convenience of wording in this
+                            Agreement, you and us are collectively referred to
+                            as 'both parties', and individually as 'one party'.
                         </p>
                         <p>Important reminder:</p>
                         <p>We hereby remind you that:</p>
@@ -414,30 +413,29 @@ class GdexAgreementModal extends React.Component {
                             shall not be held liable in any manner whatsoever.
                         </p>
                         <p>
-                            5. You understand that Bitshares is a decentralized
+                            5. You understand that ZCOM is a decentralized
                             exchange based on blockchain, the basic account
                             service and the trade processing service are
-                            provided by Bitshares, there are also other
-                            institutions or single persons that issue assets
-                            and/or provide service on Bitshares. You understand
-                            that the Gateway is only used for you to
-                            deposit/withdraw cryptocurrency to/from Bitshares.
-                            The Gateway only undertake the due obligations for
-                            the availability of own issued assets (with 'GDEX.'
-                            as prefix of the name), do not undertake the due
-                            obligations for the account service and the trade
-                            processing service provided by Bitshares, do not
-                            undertake the due obligations for availability of
-                            the assets issued by other institutions or single
-                            persons.{" "}
+                            provided by ZCOM, there are also other institutions
+                            or single persons that issue assets and/or provide
+                            service on ZCOM. You understand that the Gateway is
+                            only used for you to deposit/withdraw cryptocurrency
+                            to/from ZCOM. The Gateway only undertake the due
+                            obligations for the availability of own issued
+                            assets (with 'GDEX.' as prefix of the name), do not
+                            undertake the due obligations for the account
+                            service and the trade processing service provided by
+                            ZCOM, do not undertake the due obligations for
+                            availability of the assets issued by other
+                            institutions or single persons.{" "}
                         </p>
                         <p>
-                            6. There are risk in both Internet and Bitshares,
-                            include but not limit to failure for software,
-                            hardware to connect to Internet, security risk for
-                            Bitshares accounting system. As the availability and
-                            reliability of Internet and Bitshares are not under
-                            our control, we do not undertake obligations for the
+                            6. There are risk in both Internet and ZCOM, include
+                            but not limit to failure for software, hardware to
+                            connect to Internet, security risk for ZCOM
+                            accounting system. As the availability and
+                            reliability of Internet and ZCOM are not under our
+                            control, we do not undertake obligations for the
                             loss caused by the risks mentioned above.
                         </p>
                         <p>
@@ -459,13 +457,16 @@ class GdexAgreementModal extends React.Component {
     }
 }
 
-export default connect(GdexAgreementModal, {
-    listenTo() {
-        return [SettingsStore];
-    },
-    getProps() {
-        return {
-            settings: SettingsStore.getState().settings
-        };
+export default connect(
+    GdexAgreementModal,
+    {
+        listenTo() {
+            return [SettingsStore];
+        },
+        getProps() {
+            return {
+                settings: SettingsStore.getState().settings
+            };
+        }
     }
-});
+);

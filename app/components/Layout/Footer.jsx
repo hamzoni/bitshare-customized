@@ -18,7 +18,7 @@ import LoadingIndicator from "../LoadingIndicator";
 import counterpart from "counterpart";
 import ChoiceModal from "../Modal/ChoiceModal";
 import ZfApi from "react-foundation-apps/src/utils/foundation-api";
-import {ChainStore} from "bitsharesjs";
+import {ChainStore} from "zcomjs";
 import ifvisible from "ifvisible";
 import {getWalletName} from "branding";
 
@@ -433,7 +433,8 @@ class Footer extends React.Component {
                                     />
                                 )}
                                 <span style={updateStyles}>
-                                    <Translate
+                                    {
+                                        /* <Translate
                                         content="footer.title"
                                         wallet_name={getWalletName()}
                                     />
@@ -450,7 +451,10 @@ class Footer extends React.Component {
                                         <span className="version">
                                             {version}
                                         </span>
-                                    )}
+                                    )} */
+
+                                        <span className="">Zcom project</span>
+                                    }
                                 </span>
 
                                 {state.newVersion && (
@@ -554,14 +558,14 @@ class Footer extends React.Component {
                                     </div>
                                 </div>
                                 <div className="grid-block">
-                                    <div
+                                    {/* <div
                                         className="introjs-launcher"
                                         onClick={() => {
                                             this.launchIntroJS();
                                         }}
                                     >
                                         <Translate content="global.help" />
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                         ) : (
@@ -582,11 +586,11 @@ class Footer extends React.Component {
                         nodes={this.props.defaults.apiServer}
                         popup={true}
                     />
-                    <div style={{paddingTop: 15}}>
+                    {/* <div style={{paddingTop: 15}}>
                         <a onClick={this.onAccess.bind(this)}>
                             <Translate content="footer.advanced_settings" />
                         </a>
-                    </div>
+                    </div> */}
                 </div>
                 <div
                     className="introjs-launcher show-for-small-only"

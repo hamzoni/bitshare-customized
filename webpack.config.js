@@ -71,7 +71,7 @@ module.exports = function(env) {
         new HtmlWebpackPlugin({
             template: "!!handlebars-loader!app/assets/index.hbs",
             templateParameters: {
-                title: "BitShares " + __VERSION__,
+                title: "Zcom " + __VERSION__,
                 INCLUDE_BASE: !!env.prod && !env.hash,
                 PRODUCTION: !!env.prod,
                 ELECTRON: !!env.electron
@@ -384,10 +384,7 @@ module.exports = function(env) {
                     root_dir,
                     "node_modules/moment/moment.js"
                 ),
-                bitsharesjs$: path.resolve(
-                    root_dir,
-                    "node_modules/bitsharesjs/"
-                ),
+                zcomjs$: path.resolve(root_dir, "node_modules/zcomjs/"),
                 "bitshares-ui-style-guide$": path.resolve(
                     root_dir,
                     "node_modules/bitshares-ui-style-guide/dist/main.js"

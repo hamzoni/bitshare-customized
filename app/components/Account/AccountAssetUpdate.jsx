@@ -4,7 +4,7 @@ import classnames from "classnames";
 import AssetActions from "actions/AssetActions";
 import HelpContent from "../Utility/HelpContent";
 import utils from "common/utils";
-import {ChainStore} from "bitsharesjs";
+import {ChainStore} from "zcomjs";
 import FormattedFee from "../Utility/FormattedFee";
 import counterpart from "counterpart";
 import ChainTypes from "../Utility/ChainTypes";
@@ -590,10 +590,7 @@ class AccountAssetUpdate extends React.Component {
                 );
             }
         }
-        if (
-            flagBooleans.committee_fed_asset &&
-            flagBooleans.witness_fed_asset
-        ) {
+        if (flagBooleans.committee_fed_asset && flagBooleans.master_fed_asset) {
             errors.conflict_producer = counterpart.translate(
                 "account.user_issued_assets.conflict_feed"
             );
@@ -1512,8 +1509,8 @@ class AccountAssetUpdate extends React.Component {
                                     <AssetFeedProducers
                                         asset={this.props.asset}
                                         account={this.props.account}
-                                        witnessFed={
-                                            flagBooleans["witness_fed_asset"]
+                                        masterFed={
+                                            flagBooleans["master_fed_asset"]
                                         }
                                         committeeFed={
                                             flagBooleans["committee_fed_asset"]

@@ -112,7 +112,7 @@
         "options": {
             "memo_key": "メモキー",
             "num_committee": "希望する委員",
-            "num_witnesses": "希望する証人"
+            "num_masters": "希望する証人"
         },
         "orders": "注文",
         "other_scam": "このアカウントは公式アカウントではありません。転送する前に宛先を確認してください。",
@@ -230,7 +230,7 @@
             "charge_market_fee": "取引手数料を有効にする",
             "committee_fed_asset": "委員にフィード供給を許可する",
             "condition": "条件 (最大60文字)",
-            "conflict_feed": "Cannot allow witnesses and committee members to provide feeds simultaneously",
+            "conflict_feed": "Cannot allow masters and committee members to provide feeds simultaneously",
             "core_exchange_rate": "中心為替レート",
             "current_issuer": "現在のオーナーアカウント",
             "decimals": "小数点以下の桁数",
@@ -243,8 +243,8 @@
             "exists": "そのアセットは既に存在します",
             "expiry": "市場解決日",
             "feed_lifetime_sec": "フィード寿命 (分)",
-            "feed_not_allowed_1": "Cannot set feed producers on a witness- or committee-fed asset",
-            "feed_not_allowed_2": "Please disable the flags called 'Allow witnesses to provide feeds' and 'Allow committee members to provide feeds' in order to allow manual definition of feed producers",
+            "feed_not_allowed_1": "Cannot set feed producers on a master- or committee-fed asset",
+            "feed_not_allowed_2": "Please disable the flags called 'Allow masters to provide feeds' and 'Allow committee members to provide feeds' in order to allow manual definition of feed producers",
             "feed_producers": "フィード作成者",
             "flags": "フラグ",
             "force_settlement_delay_sec": "強制決済の遅延 (分)",
@@ -283,7 +283,7 @@
             "update_owner_text": "The asset owner may change the owner to another account using this form:",
             "visible": "検索と市場からアセットを非表示にする",
             "white_list": "保有者はホワイトリストに登録されている必要がある",
-            "witness_fed_asset": "証人にフィード供給を許可する"
+            "master_fed_asset": "証人にフィード供給を許可する"
         },
         "vesting": {
             "balance_number": "残高 #%(id)s",
@@ -297,8 +297,8 @@
             "active_short": "アクティブ",
             "add_committee": "追加",
             "add_committee_label": "委員",
-            "add_witness": "追加",
-            "add_witness_label": "証人",
+            "add_master": "追加",
+            "add_master_label": "証人",
             "already": "アカウントは既にリストに入っています",
             "approve_worker": "承認",
             "clear_proxy": "代理人を削除",
@@ -329,7 +329,7 @@
             "recycled": "リサイクル",
             "reject_worker": "拒否",
             "remove_committee": "削除",
-            "remove_witness": "削除",
+            "remove_master": "削除",
             "save_finish": "Click save to finish",
             "set_proxy": "Set a proxy here",
             "start": "開始日",
@@ -352,7 +352,7 @@
             "votes_against": "反対投票",
             "w_approved_by": "%(account)sによって承認された証人",
             "w_not_approved_by": "%(account)sによって承認されていない証人",
-            "witness": "証人名",
+            "master": "証人名",
             "worker_account": "ワーカーアカウント",
             "workers": "予算項目",
             "workers_short": "ワーカー"
@@ -680,11 +680,11 @@
             "title": "ブロック",
             "transactions": "トランザクション数",
             "trx": "トランザクション",
-            "witness": "証人"
+            "master": "証人"
         },
         "blocks": {
             "active_committee_members": "アクティブな委員",
-            "active_witnesses": "アクティブな証人",
+            "active_masters": "アクティブな証人",
             "avg_conf_time": "平均確認時間",
             "block_time": "ブロックタイム",
             "block_times": "ブロックタイム",
@@ -724,7 +724,7 @@
             "review": "Review",
             "title": "提案された取引"
         },
-        "witnesses": {
+        "masters": {
             "budget": "残余予算",
             "card": "カードビュー",
             "current": "現在の証人",
@@ -769,7 +769,7 @@
         "loading": "ロード中...",
         "nosync": "ブロックチェーンは同期していません。同期が完了するまでお待ち下さい..",
         "synced": "同期しました",
-        "title": "BitShares",
+        "title": "ZCOM",
         "unsynced": "同期していません",
         "update_available": "更新があります"
     },
@@ -949,7 +949,7 @@
         "payments_beta": "送金 (ベータ)",
         "payments_legacy": "送金 (レガシー)",
         "settings": "設定",
-        "title": "BitShares UI",
+        "title": "ZCOM UI",
         "unlock": "ログイン (ウォレットをアンロック)",
         "unlock_password": "パスワードでログイン",
         "unlock_short": "ログイン",
@@ -996,7 +996,7 @@
             "borrow": "Borrow",
             "buy": "Buy"
         },
-        "download": "Download new version of BitShares UI",
+        "download": "Download new version of ZCOM UI",
         "excel": "Download .csv file",
         "eye": "Hide Node",
         "eye-striked": "Show Node",
@@ -1172,7 +1172,7 @@
             "address_not_valid": "無効なアドレス",
             "amount": "出金数量",
             "available": "利用可能: ",
-            "bitshares_account": "Send to Bitshares Account",
+            "bitshares_account": "Send to ZCOM Account",
             "cancel": "キャンセル",
             "cannot_cover": "この出金をするのに十分な資金がありません",
             "estimated_value": "推定価格",
@@ -1248,10 +1248,10 @@
         "update_account": "{account}はアカウント情報を更新しました",
         "vesting_balance_withdraw": "{account}は{amount}の権利確定残高を引き出しました",
         "whitelisted_by": "{lister}は{listee}をホワイトリストに登録しました",
-        "witness_create": "{account}は証人になるためのアップグレードをしました",
-        "witness_pay": "アカウントに証人報酬を引き出しました",
-        "witness_receive": "証人から証人を受け取りました",
-        "witness_update": "{account}は証人情報を更新しました",
+        "master_create": "{account}は証人になるためのアップグレードをしました",
+        "master_pay": "アカウントに証人報酬を引き出しました",
+        "master_receive": "証人から証人を受け取りました",
+        "master_update": "{account}は証人情報を更新しました",
         "worker_create": "{account}は日当{pay}でワーカー提案を作成しました"
     },
     "page404": {
@@ -1600,9 +1600,9 @@
             "withdraw_permission_create": "引き出し権限を作成",
             "withdraw_permission_delete": "引き出し権限を削除",
             "withdraw_permission_update": "引き出し権限を更新",
-            "witness_create": "証人を作成",
-            "witness_update": "証人を更新",
-            "witness_withdraw_pay": "証人報酬を引き出し",
+            "master_create": "証人を作成",
+            "master_update": "証人を更新",
+            "master_withdraw_pay": "証人報酬を引き出し",
             "worker_create": "ワーカーを作成"
         },
         "vesting_balance_create": "作成済み権利確定残高:",
@@ -1764,11 +1764,11 @@
         "has_wallet": "最初のBitSharesアカウントを作成すると、自動的にBitSharesウォレットも作成され、ブラウザに格納されます。このウォレットはあなたのパスワードで暗号化されており、アカウントに付属する秘密キーを含んでいます。このウォレットのバックアップを作成することが大切です！",
         "import_20_notice1": "BTS 2.0+ バックアップを最初にインポートする",
         "import_20_notice2": "(お持ちの場合)",
-        "import_backup": "BitShares 2.0バックアップ (.bin ファイル) をインポートする",
+        "import_backup": "ZCOM 2.0バックアップ (.bin ファイル) をインポートする",
         "import_backup_choose": "以下のダイアログでバックアップファイルを選択してください。ファイルはどこにもアップロードされず、ブラウザから離れないため、この操作は安全です。",
         "import_balance": "残高をインポートする",
         "import_bts": "BTS 0.9.3c キーエクスポートをインポートする",
-        "import_bts1": "BitShares 0.9.3cからインポートする",
+        "import_bts1": "ZCOM 0.9.3cからインポートする",
         "import_key_success": "%(count)s のキーが正常にインポートされました。",
         "import_keys": "キーのインポート",
         "import_keys_tool": "キーのインポートツール",

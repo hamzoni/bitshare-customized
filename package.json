@@ -1,8 +1,8 @@
 {
-    "name": "BitShares2-light",
-    "version": "2.0.181010-rc1",
-    "description": "Advanced wallet interface for the BitShares financial blockchain.",
-    "homepage": "https://github.com/bitshares/bitshares-ui",
+    "name": "zcom",
+    "version": "0.1.0",
+    "description": "Advanced wallet interface for the ZCOM financial blockchain.",
+    "homepage": "https://zcom.io",
     "author": "Sigve Kvalsvik <kvalsvik.crypto@gmail.com>",
     "contributors": [
         "James Calfee",
@@ -83,7 +83,7 @@
     },
     "browsersList": "electron 1.7",
     "build": {
-        "productName": "BitShares",
+        "productName": "ZCOM",
         "appId": "org.bitshares.graphene",
         "files": [
             "build/electron",
@@ -124,7 +124,7 @@
                 "AppImage",
                 "snap"
             ],
-            "synopsis": "BitShares: Cryptocurrency and Decentralized Exchange"
+            "synopsis": "ZCOM: Cryptocurrency and Decentralized Exchange"
         },
         "directories": {
             "buildResources": "resources",
@@ -137,9 +137,7 @@
         "alt-react": "git+https://github.com/bitshares/alt-react.git#d91addef51f58e41e9857ebb0dd9177cfbd3b583",
         "antd": "^3.10.1",
         "bignumber.js": "^4.0.0",
-        "bitshares-report": "^0.2.0",
         "bitshares-ui-style-guide": "git+https://github.com/bitshares/bitshares-ui-style-guide.git#f37e27b79a205410cdd23d5e3060eb382d999658",
-        "bitsharesjs": "^1.8.2",
         "browser-locale": "^1.0.3",
         "classnames": "^2.2.1",
         "cookies-js": "^1.2.1",
@@ -194,7 +192,9 @@
         "tcomb": "2.5.2",
         "whatwg-fetch": "^2.0.1",
         "xss": "^1.0.3",
-        "zxcvbn-async": "0.0.5"
+        "zxcvbn-async": "0.0.5",
+        "zcom-report": "^0.1.2",
+        "zcomjs": "^0.1.3"
     },
     "devDependencies": {
         "babel-core": "^6.26.3",

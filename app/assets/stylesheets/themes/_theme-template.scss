@@ -50,10 +50,10 @@
     $modal-bg-color,
     $mobile-input-bg,
     $incognito-bg,
-    $explorer--witnesses--info-bg,
-    $explorer--witnesses--info-border,
-    $explorer--witnesses--info-table-title-color,
-    $explorer--witnesses--info-table-text-color,
+    $explorer--masters--info-bg,
+    $explorer--masters--info-border,
+    $explorer--masters--info-table-title-color,
+    $explorer--masters--info-table-text-color,
     $explorer--assets--bg,
     $negative-color-alternative,
     $positive-color-alternative,
@@ -63,11 +63,11 @@
 ) {
     $hamburger-submenu-display-endpoint: 990px;
 
-    .explore-witness--info {
+    .explore-master--info {
         width: 100%;
 
-        border: 1px solid $explorer--witnesses--info-border;
-        background: $explorer--witnesses--info-bg;
+        border: 1px solid $explorer--masters--info-border;
+        background: $explorer--masters--info-bg;
 
         padding: 12px;
         border-radius: 5px;
@@ -78,7 +78,7 @@
             thead {
                 th {
                     font-weight: 400;
-                    color: $explorer--witnesses--info-table-title-color;
+                    color: $explorer--masters--info-table-title-color;
                     font-size: 14px;
                     padding-bottom: 8px;
                 }
@@ -86,7 +86,7 @@
 
             tbody {
                 td {
-                    color: $explorer--witnesses--info-table-text-color;
+                    color: $explorer--masters--info-table-text-color;
                 }
             }
         }
@@ -2688,8 +2688,8 @@ hr.mono-hrtb {
     text-transform: uppercase;
 }
 
-//witness
-.mono-input-witness {
+//master
+.mono-input-master {
     background: #fff !important;
     height: 70px !important;
     color: #333 !important;
@@ -2698,7 +2698,7 @@ hr.mono-hrtb {
     border: none !important;
 }
 
-.mono-btn-witness {
+.mono-btn-master {
     height: 70px !important;
     background: #054264 !important;
     width: 100%;

@@ -103,7 +103,7 @@ var trx = ["delegate_create", {"delegate_account":"1.2.15"}];
 var tr = $g.wallet.new_transaction(); tr.add_type_operation(trx[0], trx[1]); $g.wallet.sign_and_broadcast(tr)
 
 // Not working currently:
-var trx = ["account_update", {"account": "1.2.15", "num_witness":0,"num_committee":0, "vote": ["0:18"]}]
+var trx = ["account_update", {"account": "1.2.15", "num_master":0,"num_committee":0, "vote": ["0:18"]}]
 
 var trx = ["account_transfer", {"account_id":"1.2.12","new_owner":"1.2.5"}] // Crashes the node currently
 

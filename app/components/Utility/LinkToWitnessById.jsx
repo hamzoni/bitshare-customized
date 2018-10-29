@@ -5,12 +5,12 @@ import LinkToAccountById from "./LinkToAccountById";
 
 class LinkToWitnessById extends React.Component {
     static propTypes = {
-        witness: ChainTypes.ChainObject.isRequired
+        master: ChainTypes.ChainObject.isRequired
     };
 
     render() {
-        let witness_account = this.props.witness.get("witness_account");
-        return <LinkToAccountById account={witness_account} />;
+        let master_account = this.props.master.get("master_account");
+        return <LinkToAccountById account={master_account} />;
     }
 }
 LinkToWitnessById = BindToChainState(LinkToWitnessById);

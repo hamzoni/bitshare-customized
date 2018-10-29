@@ -8,7 +8,7 @@ import {
     TransactionHelper,
     FetchChain,
     ChainStore
-} from "bitsharesjs";
+} from "zcomjs";
 import counterpart from "counterpart";
 
 const ApplicationApi = {
@@ -57,7 +57,7 @@ const ApplicationApi = {
                     options: {
                         memo_key: memo_pubkey,
                         voting_account: "1.2.5",
-                        num_witness: 0,
+                        num_master: 0,
                         num_committee: 0,
                         votes: []
                     }
