@@ -112,7 +112,7 @@
         "options": {
             "memo_key": "备注公钥",
             "num_committee": "信任理事会成员",
-            "num_witnesses": "信任见证人"
+            "num_masters": "信任见证人"
         },
         "orders": "委单",
         "other_scam": "这个账户不是已知的官方账号，请反复核实后进行转账操作。",
@@ -230,7 +230,7 @@
             "charge_market_fee": "收取交易手续费",
             "committee_fed_asset": "允许理事会成员提供喂价",
             "condition": "条件 (最多60个字符)",
-            "conflict_feed": "Cannot allow witnesses and committee members to provide feeds simultaneously",
+            "conflict_feed": "Cannot allow masters and committee members to provide feeds simultaneously",
             "core_exchange_rate": "手续费汇率",
             "current_issuer": "当前发行人",
             "decimals": "小数位数",
@@ -283,7 +283,7 @@
             "update_owner_text": "The asset owner may change the owner to another account using this form:",
             "visible": "在搜索与市场中隐藏资产",
             "white_list": "要求资产持有人预先加入白名单",
-            "witness_fed_asset": "允许见证人提供喂价"
+            "master_fed_asset": "允许见证人提供喂价"
         },
         "vesting": {
             "balance_number": "余额 #%(id)s",
@@ -297,8 +297,8 @@
             "active_short": "活跃",
             "add_committee": "添加",
             "add_committee_label": "理事会成员",
-            "add_witness": "添加",
-            "add_witness_label": "见证人",
+            "add_master": "添加",
+            "add_master_label": "见证人",
             "already": "账户已经在列表中",
             "approve_worker": "赞成",
             "clear_proxy": "移除投票代理",
@@ -329,7 +329,7 @@
             "recycled": "已回收",
             "reject_worker": "反对",
             "remove_committee": "移除",
-            "remove_witness": "移除",
+            "remove_master": "移除",
             "save_finish": "点击“保存修改”完成投票",
             "set_proxy": "Set a proxy here",
             "start": "开始时间",
@@ -352,7 +352,7 @@
             "votes_against": "反对票数",
             "w_approved_by": "账户%(account)s赞同的见证人",
             "w_not_approved_by": "账户%(account)s未赞同的见证人",
-            "witness": "见证人账户名",
+            "master": "见证人账户名",
             "worker_account": "预算项目账户",
             "workers": "预算项目",
             "workers_short": "预算项目"
@@ -673,11 +673,11 @@
             "title": "区块",
             "transactions": "交易数量",
             "trx": "交易",
-            "witness": "见证人"
+            "master": "见证人"
         },
         "blocks": {
             "active_committee_members": "活跃理事会成员",
-            "active_witnesses": "活跃见证人",
+            "active_masters": "活跃见证人",
             "avg_conf_time": "交易平均确认时间",
             "block_time": "区块生成时间",
             "block_times": "区块生成时间",
@@ -717,7 +717,7 @@
             "review": "Review",
             "title": "提案"
         },
-        "witnesses": {
+        "masters": {
             "budget": "剩余预算",
             "card": "卡片视图",
             "current": "当前见证人",
@@ -1239,10 +1239,10 @@
         "update_account": "{account} 更新了账户信息",
         "vesting_balance_withdraw": "{account} 提取了解冻金额 {amount}",
         "whitelisted_by": "{lister} 将 {listee} 加入白名单",
-        "witness_create": "{account} 升级到见证人",
-        "witness_pay": "将见证人收入提取到账户",
-        "witness_receive": "已从见证人处获取见证",
-        "witness_update": "{account} 更新了见证人信息",
+        "master_create": "{account} 升级到见证人",
+        "master_pay": "将见证人收入提取到账户",
+        "master_receive": "已从见证人处获取见证",
+        "master_update": "{account} 更新了见证人信息",
         "worker_create": "{account} 创建了预算提案，请求每日支付 {pay}"
     },
     "page404": {
@@ -1591,9 +1591,9 @@
             "withdraw_permission_create": "授权提款",
             "withdraw_permission_delete": "删除提款授权",
             "withdraw_permission_update": "更新提款授权",
-            "witness_create": "创建见证人",
-            "witness_update": "更新见证人",
-            "witness_withdraw_pay": "领取见证人报酬",
+            "master_create": "创建见证人",
+            "master_update": "更新见证人",
+            "master_withdraw_pay": "领取见证人报酬",
             "worker_create": "创建预算项目"
         },
         "vesting_balance_create": "创建待解冻余额",

@@ -723,10 +723,12 @@ class SettingsStore {
     }
 
     onUpdateUnits() {
-        // this.defaults.unit = getUnits(this._getChainId());
-        // if (this.defaults.unit.indexOf(this.settings.get("unit")) === -1) {
-        //     this.settings = this.settings.set("unit", this.defaults.unit[0]);
-        // }
+        console.log("ChainID ", this._getChainId());
+        console.log("unit ", getUnits(this._getChainId()));
+        this.defaults.unit = getUnits(this._getChainId());
+        if (this.defaults.unit.indexOf(this.settings.get("unit")) === -1) {
+            this.settings = this.settings.set("unit", this.defaults.unit[0]);
+        }
     }
 }
 

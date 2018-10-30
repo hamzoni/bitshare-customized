@@ -73,9 +73,7 @@
                         {
                             key: "render",
                             value: function() {
-                                var e = this.props.witness.get(
-                                    "witness_account"
-                                );
+                                var e = this.props.master.get("master_account");
                                 return r.a.createElement(i.a, {account: e});
                             }
                         }
@@ -83,7 +81,7 @@
                     t
                 );
             })();
-            (c.propTypes = {witness: a.a.ChainObject.isRequired}),
+            (c.propTypes = {master: a.a.ChainObject.isRequired}),
                 (c = Object(l.a)(c)),
                 (t.a = c);
         },
@@ -481,7 +479,7 @@
                                                                     component:
                                                                         "span",
                                                                     content:
-                                                                        "explorer.block.witness"
+                                                                        "explorer.block.master"
                                                                 }
                                                             ),
                                                             ":",
@@ -490,8 +488,8 @@
                                                                 ? r.a.createElement(
                                                                       k.a,
                                                                       {
-                                                                          witness:
-                                                                              o.witness
+                                                                          master:
+                                                                              o.master
                                                                       }
                                                                   )
                                                                 : null

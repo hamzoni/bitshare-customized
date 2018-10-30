@@ -112,7 +112,7 @@
         "options": {
             "memo_key": "Memo Key",
             "num_committee": "Desired Committee Members",
-            "num_witnesses": "Desired Witnesses"
+            "num_masters": "Desired Masters"
         },
         "orders": "Orders",
         "other_scam": "This account is not known to be an official account, please verify the destination before transferring",
@@ -172,7 +172,7 @@
         "propose_from": "Propose From",
         "qty": "Qty",
         "quote": "Quote",
-        "recent": "Recent activity",
+        "recent": "Recent history",
         "reset_orders": "Reset",
         "restore": "Restore",
         "search": "Search for an account",
@@ -231,7 +231,7 @@
             "charge_market_fee": "Enable market fee",
             "committee_fed_asset": "Allow committee members to provide feeds",
             "condition": "Condition (max 60 characters)",
-            "conflict_feed": "Cannot allow witnesses and committee members to provide feeds simultaneously",
+            "conflict_feed": "Cannot allow masters and committee members to provide feeds simultaneously",
             "core_exchange_rate": "Core exchange rate",
             "current_issuer": "Current owner account",
             "decimals": "Number of decimal points",
@@ -245,8 +245,8 @@
             "exists": "That asset already exists",
             "expiry": "Market resolution date",
             "feed_lifetime_sec": "Feed lifetime in minutes",
-            "feed_not_allowed_1": "Cannot set feed producers on a witness- or committee-fed asset",
-            "feed_not_allowed_2": "Please disable the flags called 'Allow witnesses to provide feeds' and 'Allow committee members to provide feeds' in order to allow manual definition of feed producers",
+            "feed_not_allowed_1": "Cannot set feed producers on a master- or committee-fed asset",
+            "feed_not_allowed_2": "Please disable the flags called 'Allow masters to provide feeds' and 'Allow committee members to provide feeds' in order to allow manual definition of feed producers",
             "feed_producers": "Feed producers",
             "flags": "Flags",
             "force_settlement_delay_sec": "Delay for forced settlements (minutes)",
@@ -287,7 +287,7 @@
             "update_owner_text": "The asset owner may change the owner to another account using this form:",
             "visible": "Hide asset from search and markets",
             "white_list": "Require holders to be white-listed",
-            "witness_fed_asset": "Allow witnesses to provide feeds"
+            "master_fed_asset": "Allow masters to provide feeds"
         },
         "vesting": {
             "balance_number": "Balance #%(id)s",
@@ -301,8 +301,8 @@
             "active_short": "Active",
             "add_committee": "Add",
             "add_committee_label": "Committee Member",
-            "add_witness": "Add",
-            "add_witness_label": "Witness",
+            "add_master": "Add",
+            "add_master_label": "Master",
             "already": "Account is already in the list",
             "approve_worker": "Approve",
             "clear_proxy": "Remove proxy",
@@ -333,7 +333,7 @@
             "recycled": "Recycled",
             "reject_worker": "Reject",
             "remove_committee": "Remove",
-            "remove_witness": "Remove",
+            "remove_master": "Remove",
             "save_finish": "Click save to finish",
             "set_proxy": "Set a proxy here",
             "start": "Start date",
@@ -354,9 +354,9 @@
             "url": "Webpage",
             "votes": "Votes",
             "votes_against": "Votes against",
-            "w_approved_by": "Witnesses approved by %(account)s",
-            "w_not_approved_by": "Witnesses not approved by %(account)s",
-            "witness": "Witness name",
+            "w_approved_by": "Masters approved by %(account)s",
+            "w_not_approved_by": "Masters not approved by %(account)s",
+            "master": "Master name",
             "worker_account": "Worker account",
             "workers": "Budget Items",
             "workers_short": "Workers"
@@ -683,11 +683,11 @@
             "title": "Block",
             "transactions": "Transaction count",
             "trx": "Tx",
-            "witness": "Witness"
+            "master": "Master"
         },
         "blocks": {
             "active_committee_members": "Active committee members",
-            "active_witnesses": "Active Witnesses",
+            "active_masters": "Active Masters",
             "avg_conf_time": "Average confirmation time",
             "block_time": "Block time",
             "block_times": "Block times",
@@ -727,10 +727,10 @@
             "review": "Review",
             "title": "Proposed transactions"
         },
-        "witnesses": {
+        "masters": {
             "budget": "Remaining budget",
             "card": "Card view",
-            "current": "Current witness",
+            "current": "Current master",
             "last_confirmed": "Last confirmed",
             "missed": "Blocks missed",
             "next_vote": "Next vote update",
@@ -738,7 +738,7 @@
             "pay": "Pay-per-block",
             "rank": "Rank",
             "table": "Table view",
-            "title": "Witnesses",
+            "title": "Masters",
             "filter_by_name": "Filter By Name"
         },
         "workers": {
@@ -1255,10 +1255,10 @@
         "update_account": "{account} updated their account data",
         "vesting_balance_withdraw": "{account} withdrew vesting balance of {amount}",
         "whitelisted_by": "{lister} whitelisted the account {listee}",
-        "witness_create": "{account} was upgraded to become a witness",
-        "witness_pay": "Withdrew witness pay to account",
-        "witness_receive": "Received witness from witness",
-        "witness_update": "{account} update its witness info",
+        "master_create": "{account} was upgraded to become a master",
+        "master_pay": "Withdrew master pay to account",
+        "master_receive": "Received master from master",
+        "master_update": "{account} update its master info",
         "worker_create": "{account} created a worker proposal with daily pay of {pay}"
     },
     "page404": {
@@ -1619,9 +1619,9 @@
             "withdraw_permission_create": "Create withdrawal permission",
             "withdraw_permission_delete": "Delete withdrawal permission",
             "withdraw_permission_update": "Update withdrawal permission",
-            "witness_create": "Create witness",
-            "witness_update": "Update witness",
-            "witness_withdraw_pay": "Witness pay withdrawal",
+            "master_create": "Create master",
+            "master_update": "Update master",
+            "master_withdraw_pay": "Master pay withdrawal",
             "worker_create": "Create worker"
         },
         "vesting_balance_create": "created vesting balance of",

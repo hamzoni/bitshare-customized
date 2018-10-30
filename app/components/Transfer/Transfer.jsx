@@ -710,7 +710,7 @@ class Transfer extends React.Component {
 
                         {/* TODO: show remaining balance */}
                     </form>
-                    <div className="grid-content small-12 medium-6 large-4 large-offset-1 right-column">
+                    {/* <div className="grid-content small-12 medium-6 large-4 large-offset-1 right-column">
                         <div className="grid-content no-padding">
                             <RecentTransactions
                                 accountsList={accountsList}
@@ -720,7 +720,7 @@ class Transfer extends React.Component {
                                 fullHeight={true}
                             />
                         </div>
-                    </div>
+                    </div> */}
 
                     <div className="grid-content medium-6 large-4" />
                 </div>

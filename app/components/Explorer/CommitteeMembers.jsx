@@ -193,7 +193,7 @@ class CommitteeMembers extends React.Component {
                         <div className="grid-content">
                             <Input
                                 placeholder={counterpart.translate(
-                                    "explorer.witnesses.filter_by_name"
+                                    "explorer.masters.filter_by_name"
                                 )}
                                 onChange={this._onFilter.bind(this)}
                                 style={{

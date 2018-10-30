@@ -6,7 +6,7 @@
  * [Cüzdan](introduction/wallets.md)
  * [Yedeklemeler](introduction/backups.md)
  * [Blokzinciri](introduction/blockchain.md)
- * [Tanık](introduction/witness.md)
+ * [Tanık](introduction/master.md)
  * [İşçiler](introduction/workers.md)
  * [Kurul Üyesi](introduction/committee.md)
  * [Hesaplar](accounts/general.md)

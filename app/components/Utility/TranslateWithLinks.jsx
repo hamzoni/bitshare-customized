@@ -55,15 +55,16 @@ export default class TranslateWithLinks extends React.Component {
     linkToAsset(symbol_or_id) {
         const {noLink, noTip} = this.props;
         if (!symbol_or_id) return <span>-</span>;
-        return utils.is_object_id(symbol_or_id) ? (
-            <LinkToAssetById asset={symbol_or_id} noLink={noLink} />
-        ) : noLink ? (
-            <AssetName name={symbol_or_id} dataPlace="top" noTip={noTip} />
-        ) : (
-            <Link to={`/asset/${symbol_or_id}`}>
-                <AssetName name={symbol_or_id} dataPlace="top" noTip={noTip} />
-            </Link>
-        );
+        return <AssetName name={symbol_or_id} dataPlace="top" noTip={noTip} />;
+        // return utils.is_object_id(symbol_or_id) ? (
+        //     <LinkToAssetById asset={symbol_or_id} noLink={noLink} />
+        // ) : noLink ? (
+        //     <AssetName name={symbol_or_id} dataPlace="top" noTip={noTip} />
+        // ) : (
+        //     <Link to={`/asset/${symbol_or_id}`}>
+        //         <AssetName name={symbol_or_id} dataPlace="top" noTip={noTip} />
+        //     </Link>
+        // );
     }
 
     render() {
@@ -88,7 +89,8 @@ export default class TranslateWithLinks extends React.Component {
                                     asset={key.value.asset_id}
                                     decimalOffset={key.decimalOffset}
                                     hide_asset
-                                />&nbsp;
+                                />
+                                &nbsp;
                                 {this.linkToAsset(key.value.asset_id)}
                             </span>
                         );

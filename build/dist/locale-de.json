@@ -112,7 +112,7 @@
         "options": {
             "memo_key": "Memo-Schlüssel",
             "num_committee": "Gewünschte Größe des Komitees",
-            "num_witnesses": "Gewünschte Anzahl Witnesses"
+            "num_masters": "Gewünschte Anzahl Masters"
         },
         "orders": "Anweisungen",
         "other_scam": "This account is not known to be an official account, please verify the destination before transferring",
@@ -230,7 +230,7 @@
             "charge_market_fee": "Marktgebühren aktivieren",
             "committee_fed_asset": "Erlaube Kommittee einen Feed bereit zustellen",
             "condition": "Condition (max 60 characters)",
-            "conflict_feed": "Cannot allow witnesses and committee members to provide feeds simultaneously",
+            "conflict_feed": "Cannot allow masters and committee members to provide feeds simultaneously",
             "core_exchange_rate": "Kernwechselrate",
             "current_issuer": "Aktueller Eigentümer",
             "decimals": "Number of decimal points",
@@ -243,8 +243,8 @@
             "exists": "Dieses Asset existiert bereits",
             "expiry": "Market resolution date",
             "feed_lifetime_sec": "Feed lifetime in minutes",
-            "feed_not_allowed_1": "Cannot set feed producers on a witness- or committee-fed asset",
-            "feed_not_allowed_2": "Please disable the flags called 'Allow witnesses to provide feeds' and 'Allow committee members to provide feeds' in order to allow manual definition of feed producers",
+            "feed_not_allowed_1": "Cannot set feed producers on a master- or committee-fed asset",
+            "feed_not_allowed_2": "Please disable the flags called 'Allow masters to provide feeds' and 'Allow committee members to provide feeds' in order to allow manual definition of feed producers",
             "feed_producers": "Feed producers",
             "flags": "Schalter",
             "force_settlement_delay_sec": "Delay for forced settlements (minutes)",
@@ -283,7 +283,7 @@
             "update_owner_text": "The asset owner may change the owner to another account using this form:",
             "visible": "Hide asset from search and markets",
             "white_list": "Setze Whitelisting eines Eigentümers voraus",
-            "witness_fed_asset": "Erlaube Witnesses einen Feed bereit zustellen"
+            "master_fed_asset": "Erlaube Masters einen Feed bereit zustellen"
         },
         "vesting": {
             "balance_number": "Guthaben #%(id)s",
@@ -297,8 +297,8 @@
             "active_short": "Aktiv",
             "add_committee": "Hinzufügen",
             "add_committee_label": "Mitglied des Komitees",
-            "add_witness": "Hinzufügen",
-            "add_witness_label": "Witness",
+            "add_master": "Hinzufügen",
+            "add_master_label": "Master",
             "already": "Account is already in the list",
             "approve_worker": "Budgetpunkt bestätigen",
             "clear_proxy": "Proxy entfernen",
@@ -329,7 +329,7 @@
             "recycled": "Recycelt",
             "reject_worker": "Budgetpunkt ablehnen",
             "remove_committee": "Entfernen",
-            "remove_witness": "Entfernen",
+            "remove_master": "Entfernen",
             "save_finish": "Click save to finish",
             "set_proxy": "Set a proxy here",
             "start": "Start Datum",
@@ -350,9 +350,9 @@
             "url": "Webseite",
             "votes": "Stimmen",
             "votes_against": "Gegenstimmen",
-            "w_approved_by": "Witnesses approved by %(account)s",
-            "w_not_approved_by": "Witnesses not approved by %(account)s",
-            "witness": "Witness name",
+            "w_approved_by": "Masters approved by %(account)s",
+            "w_not_approved_by": "Masters not approved by %(account)s",
+            "master": "Master name",
             "worker_account": "Worker-Konto",
             "workers": "Budgetpunkte",
             "workers_short": "Worker"
@@ -673,11 +673,11 @@
             "title": "Block",
             "transactions": "Anzahl der Transaktionen",
             "trx": "Transaktion",
-            "witness": "Witness"
+            "master": "Master"
         },
         "blocks": {
             "active_committee_members": "Aktive Kommittee-Mitglieder",
-            "active_witnesses": "Aktive Witnesses",
+            "active_masters": "Aktive Masters",
             "avg_conf_time": "mittlere Bestätigungszeit",
             "block_time": "Block-Zeit",
             "block_times": "Block-Zeiten",
@@ -717,10 +717,10 @@
             "review": "Review",
             "title": "Vorschlag"
         },
-        "witnesses": {
+        "masters": {
             "budget": "Übriges Budget",
             "card": "Kartenansicht",
-            "current": "Aktueller Witness",
+            "current": "Aktueller Master",
             "last_confirmed": "Zuletzt bestätigt",
             "missed": "verpasste Blöcke",
             "next_vote": "Aktualisierung der Stimmen",
@@ -728,7 +728,7 @@
             "pay": "Bezahlung pro Block",
             "rank": "Rang",
             "table": "Tabellenansicht",
-            "title": "Witnesses",
+            "title": "Masters",
             "filter_by_name": "Nach Name filtern"
         },
         "workers": {
@@ -1232,10 +1232,10 @@
         "update_account": "{account} hat seine Kontodetails aktualisiert",
         "vesting_balance_withdraw": "{account} hat zugesichertes Guthaben {amount} beansprucht",
         "whitelisted_by": "{lister} hat Konto {listee} weißgelistet",
-        "witness_create": "{account} ist jetzt ein Witness",
-        "witness_pay": "{account} hat Witness-Guthaben eingezogen.",
-        "witness_receive": "Received witness from {witness}",
-        "witness_update": "{account} hat seine Witness aktualisiert",
+        "master_create": "{account} ist jetzt ein Master",
+        "master_pay": "{account} hat Master-Guthaben eingezogen.",
+        "master_receive": "Received master from {master}",
+        "master_update": "{account} hat seine Master aktualisiert",
         "worker_create": "{account} created a worker proposal with daily pay of {pay}"
     },
     "page404": {
@@ -1584,9 +1584,9 @@
             "withdraw_permission_create": "Einzugsermächtigung erstellen",
             "withdraw_permission_delete": "Einzugsermächtigung aufgehoben",
             "withdraw_permission_update": "Einzugsermächtigung aktualisiert",
-            "witness_create": "Witness erstellen",
-            "witness_update": "Witness ändern",
-            "witness_withdraw_pay": "Witnesslohn ausbezahlen",
+            "master_create": "Master erstellen",
+            "master_update": "Master ändern",
+            "master_withdraw_pay": "Masterlohn ausbezahlen",
             "worker_create": "Budgetpunkt erstellt"
         },
         "vesting_balance_create": "Ein Sperrfristguthaben wurde erzeugt",

@@ -65,12 +65,12 @@ $explorer-tab-content-background-color: $tab-content-background-color;
 
 // * * * Explorer
 
-// * * * * * Witnesses
+// * * * * * Masters
 
-$explorer--witnesses--info-bg: $account-cells;
-$explorer--witnesses--info-border: $header-color;
-$explorer--witnesses--info-table-title-color: darken(#fff, 50%);
-$explorer--witnesses--info-table-text-color: #fff;
+$explorer--masters--info-bg: $account-cells;
+$explorer--masters--info-border: $header-color;
+$explorer--masters--info-table-title-color: darken(#fff, 50%);
+$explorer--masters--info-table-text-color: #fff;
 
 // * * * * * Assets
 
@@ -130,10 +130,10 @@ $explorer--assets--bg: $bg-color;
         $modal-bg-color,
         $mobile-input-bg,
         $incognito-bg,
-        $explorer--witnesses--info-bg,
-        $explorer--witnesses--info-border,
-        $explorer--witnesses--info-table-title-color,
-        $explorer--witnesses--info-table-text-color,
+        $explorer--masters--info-bg,
+        $explorer--masters--info-border,
+        $explorer--masters--info-table-title-color,
+        $explorer--masters--info-table-text-color,
         $explorer--assets--bg
     );
 }

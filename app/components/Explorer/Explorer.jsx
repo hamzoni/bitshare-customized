@@ -1,6 +1,6 @@
 import React from "react";
 import {Tabs, Tab} from "../Utility/Tabs";
-import Witnesses from "./Witnesses";
+import Masters from "./Masters";
 import CommitteeMembers from "./CommitteeMembers";
 import FeesContainer from "../Blockchain/FeesContainer";
 import BlocksContainer from "./BlocksContainer";
@@ -33,10 +33,10 @@ class Explorer extends React.Component {
                     content: AccountsContainer
                 },
                 {
-                    name: "witnesses",
-                    link: "/explorer/witnesses",
-                    translate: "explorer.witnesses.title",
-                    content: Witnesses
+                    name: "masters",
+                    link: "/explorer/masters",
+                    translate: "explorer.masters.title",
+                    content: Masters
                 },
                 {
                     name: "committee_members",

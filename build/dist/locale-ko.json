@@ -112,7 +112,7 @@
         "options": {
             "memo_key": "메모 키",
             "num_committee": "선호 위원 수",
-            "num_witnesses": "선호 증인 수"
+            "num_masters": "선호 증인 수"
         },
         "orders": "주문내역",
         "other_scam": "This account is not known to be an official account, please verify the destination before transferring",
@@ -230,7 +230,7 @@
             "charge_market_fee": "Enable market fee",
             "committee_fed_asset": "Allow committee members to provide feeds",
             "condition": "Condition (max 60 characters)",
-            "conflict_feed": "Cannot allow witnesses and committee members to provide feeds simultaneously",
+            "conflict_feed": "Cannot allow masters and committee members to provide feeds simultaneously",
             "core_exchange_rate": "Core exchange rate",
             "current_issuer": "Current owner account",
             "decimals": "Number of decimal points",
@@ -243,8 +243,8 @@
             "exists": "That asset already exists",
             "expiry": "Market resolution date",
             "feed_lifetime_sec": "Feed lifetime in minutes",
-            "feed_not_allowed_1": "Cannot set feed producers on a witness- or committee-fed asset",
-            "feed_not_allowed_2": "Please disable the flags called 'Allow witnesses to provide feeds' and 'Allow committee members to provide feeds' in order to allow manual definition of feed producers",
+            "feed_not_allowed_1": "Cannot set feed producers on a master- or committee-fed asset",
+            "feed_not_allowed_2": "Please disable the flags called 'Allow masters to provide feeds' and 'Allow committee members to provide feeds' in order to allow manual definition of feed producers",
             "feed_producers": "Feed producers",
             "flags": "Flags",
             "force_settlement_delay_sec": "Delay for forced settlements (minutes)",
@@ -283,7 +283,7 @@
             "update_owner_text": "The asset owner may change the owner to another account using this form:",
             "visible": "Hide asset from search and markets",
             "white_list": "Require holders to be white-listed",
-            "witness_fed_asset": "Allow witnesses to provide feeds"
+            "master_fed_asset": "Allow masters to provide feeds"
         },
         "vesting": {
             "balance_number": "Balance #%(id)s",
@@ -297,8 +297,8 @@
             "active_short": "Active",
             "add_committee": "추가",
             "add_committee_label": "위원",
-            "add_witness": "추가",
-            "add_witness_label": "증인",
+            "add_master": "추가",
+            "add_master_label": "증인",
             "already": "Account is already in the list",
             "approve_worker": "Approve worker proposal",
             "clear_proxy": "Remove proxy",
@@ -329,7 +329,7 @@
             "recycled": "Recycled",
             "reject_worker": "Reject worker proposal",
             "remove_committee": "제거",
-            "remove_witness": "제거",
+            "remove_master": "제거",
             "save_finish": "Click save to finish",
             "set_proxy": "Set a proxy here",
             "start": "Start date",
@@ -350,9 +350,9 @@
             "url": "웹페이지",
             "votes": "득표수",
             "votes_against": "Votes against",
-            "w_approved_by": "Witnesses approved by %(account)s",
-            "w_not_approved_by": "Witnesses not approved by %(account)s",
-            "witness": "Witness name",
+            "w_approved_by": "Masters approved by %(account)s",
+            "w_not_approved_by": "Masters not approved by %(account)s",
+            "master": "Master name",
             "worker_account": "Worker account",
             "workers": "예산 항목",
             "workers_short": "Workers"
@@ -673,11 +673,11 @@
             "title": "블록",
             "transactions": "거래 수",
             "trx": "거래",
-            "witness": "증인"
+            "master": "증인"
         },
         "blocks": {
             "active_committee_members": "활동중인 위원",
-            "active_witnesses": "활동중인 증인",
+            "active_masters": "활동중인 증인",
             "avg_conf_time": "평균 승인시간",
             "block_time": "블록 타임",
             "block_times": "블록 타임",
@@ -717,7 +717,7 @@
             "review": "Review",
             "title": "제안서"
         },
-        "witnesses": {
+        "masters": {
             "budget": "남은 예산",
             "card": "카드뷰",
             "current": "현재 증인",
@@ -1232,10 +1232,10 @@
         "update_account": "{account} updated their account data",
         "vesting_balance_withdraw": "{account} withdrew vesting balance of {amount}",
         "whitelisted_by": "{lister} whitelisted the account {listee}",
-        "witness_create": "{account} was upgraded to become a witness",
-        "witness_pay": "Withdrew witness pay to account",
-        "witness_receive": "Received witness from witness",
-        "witness_update": "{account} update its witness info",
+        "master_create": "{account} was upgraded to become a master",
+        "master_pay": "Withdrew master pay to account",
+        "master_receive": "Received master from master",
+        "master_update": "{account} update its master info",
         "worker_create": "{account} created a worker proposal with daily pay of {pay}"
     },
     "page404": {
@@ -1584,9 +1584,9 @@
             "withdraw_permission_create": "출금권한 생성",
             "withdraw_permission_delete": "출금권한 삭제",
             "withdraw_permission_update": "출금권한 업데이트",
-            "witness_create": "증인 생성",
-            "witness_update": "증인 업데이트",
-            "witness_withdraw_pay": "증인 봉급 인출",
+            "master_create": "증인 생성",
+            "master_update": "증인 업데이트",
+            "master_withdraw_pay": "증인 봉급 인출",
             "worker_create": "예산 항목 생성"
         },
         "vesting_balance_create": "created vesting balance of",

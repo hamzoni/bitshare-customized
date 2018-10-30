@@ -1536,9 +1536,7 @@
                         {
                             key: "render",
                             value: function() {
-                                var e = this.props.witness.get(
-                                    "witness_account"
-                                );
+                                var e = this.props.master.get("master_account");
                                 return r.a.createElement(i.a, {account: e});
                             }
                         }
@@ -1546,7 +1544,7 @@
                     t
                 );
             })();
-            (c.propTypes = {witness: o.a.ChainObject.isRequired}),
+            (c.propTypes = {master: o.a.ChainObject.isRequired}),
                 (c = Object(s.a)(c)),
                 (t.a = c);
         },
@@ -4176,15 +4174,15 @@
                                 e.preventDefault(),
                                     this.props.history.push(
                                         "/account/" +
-                                            this.props.witness.get("name")
+                                            this.props.master.get("name")
                                     );
                             }
                         },
                         {
                             key: "render",
                             value: function() {
-                                var e = f.ChainStore.getWitnessById(
-                                    this.props.witness.get("id")
+                                var e = f.ChainStore.getMasterById(
+                                    this.props.master.get("id")
                                 );
                                 if (!e) return null;
                                 var t = e.get("total_votes"),
@@ -4220,7 +4218,7 @@
                                             "#",
                                             this.props.rank,
                                             ": ",
-                                            this.props.witness.get("name")
+                                            this.props.master.get("name")
                                         ),
                                         r.a.createElement(
                                             "div",
@@ -4229,7 +4227,7 @@
                                                 "div",
                                                 {className: "text-center"},
                                                 r.a.createElement(u.a, {
-                                                    account: this.props.witness.get(
+                                                    account: this.props.master.get(
                                                         "name"
                                                     ),
                                                     size: {
@@ -4318,7 +4316,7 @@
                     t
                 );
             })();
-            (T.propTypes = {witness: p.a.ChainAccount.isRequired}),
+            (T.propTypes = {master: p.a.ChainAccount.isRequired}),
                 (T = Object(m.a)(T)),
                 (T = Object(w.a)(T));
             var N = (function(e) {
@@ -4343,7 +4341,7 @@
                                 e.preventDefault(),
                                     this.props.history.push(
                                         "/account/" +
-                                            this.props.witness.get("name")
+                                            this.props.master.get("name")
                                     );
                             }
                         },
@@ -4351,11 +4349,11 @@
                             key: "render",
                             value: function() {
                                 var e = this.props,
-                                    t = e.witness,
+                                    t = e.master,
                                     n = e.isCurrent,
                                     a = e.rank,
-                                    o = f.ChainStore.getWitnessById(
-                                        this.props.witness.get("id")
+                                    o = f.ChainStore.getMasterById(
+                                        this.props.master.get("id")
                                     );
                                 if (!o) return null;
                                 o.get("total_votes");
@@ -4376,7 +4374,7 @@
                                                 ]) *
                                                 1e3
                                     ),
-                                    c = n ? "active-witness" : "",
+                                    c = n ? "active-master" : "",
                                     u = o.get("total_missed"),
                                     p = E()(
                                         "txtlabel",
@@ -4426,7 +4424,7 @@
                     t
                 );
             })();
-            (N.propTypes = {witness: p.a.ChainAccount.isRequired}),
+            (N.propTypes = {master: p.a.ChainAccount.isRequired}),
                 (N = Object(m.a)(N)),
                 (N = Object(w.a)(N));
             var P = (function(e) {
@@ -4471,9 +4469,9 @@
                             value: function() {
                                 var e = this,
                                     t = this.props,
-                                    n = t.witnesses,
+                                    n = t.masters,
                                     a = t.current,
-                                    o = (t.cardView, t.witnessList),
+                                    o = (t.cardView, t.masterList),
                                     s = this.state,
                                     i = (s.sortBy, s.inverseSort, 0),
                                     l = {};
@@ -4507,11 +4505,11 @@
                                         .filter(function(t) {
                                             if (!t) return !1;
                                             var n = f.ChainStore.getObject(
-                                                t.get("witness_account")
+                                                t.get("master_account")
                                             );
                                             if (!n) return !1;
                                             if (
-                                                !f.ChainStore.getWitnessById(
+                                                !f.ChainStore.getMasterById(
                                                     n.get("id")
                                                 )
                                             )
@@ -4524,9 +4522,9 @@
                                         })
                                         .map(function(t) {
                                             var n = f.ChainStore.getObject(
-                                                    t.get("witness_account")
+                                                    t.get("master_account")
                                                 ),
-                                                a = f.ChainStore.getWitnessById(
+                                                a = f.ChainStore.getMasterById(
                                                     n.get("id")
                                                 ),
                                                 r = a.get("last_aslot"),
@@ -4763,7 +4761,7 @@
                                 return r.a.createElement(O.Table, {
                                     rowClassName: function(e) {
                                         return e.id === a
-                                            ? "active-witness"
+                                            ? "active-master"
                                             : "";
                                     },
                                     columns: u,
@@ -4776,7 +4774,7 @@
                     t
                 );
             })();
-            (P.propTypes = {witnesses: p.a.ChainObjectsList.isRequired}),
+            (P.propTypes = {masters: p.a.ChainObjectsList.isRequired}),
                 (P = Object(m.a)(P, {show_loader: !0})),
                 (P = Object(w.a)(P));
             var A = (function(e) {
@@ -4788,7 +4786,7 @@
                     );
                     return (
                         (n.state = {
-                            filterWitness: e.filterWitness || "",
+                            filterMaster: e.filterMaster || "",
                             cardView: e.cardView
                         }),
                         n
@@ -4802,10 +4800,10 @@
                             value: function(e) {
                                 e.preventDefault(),
                                     this.setState({
-                                        filterWitness: e.target.value.toLowerCase()
+                                        filterMaster: e.target.value.toLowerCase()
                                     }),
                                     v.a.changeViewSetting({
-                                        filterWitness: e.target.value.toLowerCase()
+                                        filterMaster: e.target.value.toLowerCase()
                                     });
                             }
                         },
@@ -4828,13 +4826,13 @@
                                     n = e.globalObject;
                                 (t = t.toJS()), (n = n.toJS());
                                 var a = f.ChainStore.getObject(
-                                        t.current_witness
+                                        t.current_master
                                     ),
                                     o = null;
                                 return (
                                     a &&
                                         (o = f.ChainStore.getObject(
-                                            a.get("witness_account")
+                                            a.get("master_account")
                                         )),
                                     r.a.createElement(
                                         "div",
@@ -4855,7 +4853,7 @@
                                                         "div",
                                                         {
                                                             className:
-                                                                "explore-witness--info"
+                                                                "explore-master--info"
                                                         },
                                                         r.a.createElement(
                                                             "table",
@@ -4873,7 +4871,7 @@
                                                                             b.a,
                                                                             {
                                                                                 content:
-                                                                                    "explorer.witnesses.current"
+                                                                                    "explorer.masters.current"
                                                                             }
                                                                         )
                                                                     ),
@@ -4884,7 +4882,7 @@
                                                                             b.a,
                                                                             {
                                                                                 content:
-                                                                                    "explorer.blocks.active_witnesses"
+                                                                                    "explorer.blocks.active_masters"
                                                                             }
                                                                         )
                                                                     ),
@@ -4895,7 +4893,7 @@
                                                                             b.a,
                                                                             {
                                                                                 content:
-                                                                                    "explorer.witnesses.participation"
+                                                                                    "explorer.masters.participation"
                                                                             }
                                                                         )
                                                                     ),
@@ -4906,7 +4904,7 @@
                                                                             b.a,
                                                                             {
                                                                                 content:
-                                                                                    "explorer.witnesses.pay"
+                                                                                    "explorer.masters.pay"
                                                                             }
                                                                         )
                                                                     ),
@@ -4917,7 +4915,7 @@
                                                                             b.a,
                                                                             {
                                                                                 content:
-                                                                                    "explorer.witnesses.budget"
+                                                                                    "explorer.masters.budget"
                                                                             }
                                                                         )
                                                                     ),
@@ -4928,7 +4926,7 @@
                                                                             b.a,
                                                                             {
                                                                                 content:
-                                                                                    "explorer.witnesses.next_vote"
+                                                                                    "explorer.masters.next_vote"
                                                                             }
                                                                         )
                                                                     )
@@ -4953,7 +4951,7 @@
                                                                         "td",
                                                                         null,
                                                                         Object.keys(
-                                                                            n.active_witnesses
+                                                                            n.active_masters
                                                                         ).length
                                                                     ),
                                                                     r.a.createElement(
@@ -4971,7 +4969,7 @@
                                                                                 amount:
                                                                                     n
                                                                                         .parameters
-                                                                                        .witness_pay_per_block,
+                                                                                        .master_pay_per_block,
                                                                                 asset:
                                                                                     "1.3.0"
                                                                             }
@@ -4985,7 +4983,7 @@
                                                                             h.a,
                                                                             {
                                                                                 amount:
-                                                                                    t.witness_budget,
+                                                                                    t.master_budget,
                                                                                 asset:
                                                                                     "1.3.0"
                                                                             }
@@ -5011,7 +5009,7 @@
                                                     ),
                                                     r.a.createElement(O.Input, {
                                                         placeholder: i.a.translate(
-                                                            "explorer.witnesses.filter_by_name"
+                                                            "explorer.masters.filter_by_name"
                                                         ),
                                                         onChange: this._onFilter.bind(
                                                             this
@@ -5033,13 +5031,13 @@
                                                         current: a
                                                             ? a.get("id")
                                                             : null,
-                                                        witnesses: c.a.List(
-                                                            n.active_witnesses
+                                                        masters: c.a.List(
+                                                            n.active_masters
                                                         ),
-                                                        witnessList:
-                                                            n.active_witnesses,
+                                                        masterList:
+                                                            n.active_masters,
                                                         filter: this.state
-                                                            .filterWitness,
+                                                            .filterMaster,
                                                         cardView: this.state
                                                             .cardView
                                                     })
@@ -5098,9 +5096,9 @@
                             cardView: k.a
                                 .getState()
                                 .viewSettings.get("cardView"),
-                            filterWitness: k.a
+                            filterMaster: k.a
                                 .getState()
-                                .viewSettings.get("filterWitness")
+                                .viewSettings.get("filterMaster")
                         };
                     }
                 })),
@@ -5365,7 +5363,7 @@
                                                 {className: "grid-content"},
                                                 r.a.createElement(O.Input, {
                                                     placeholder: i.a.translate(
-                                                        "explorer.witnesses.filter_by_name"
+                                                        "explorer.masters.filter_by_name"
                                                     ),
                                                     onChange: this._onFilter.bind(
                                                         this
@@ -6801,8 +6799,8 @@
                                                             r.a.createElement(
                                                                 ue.a,
                                                                 {
-                                                                    witness:
-                                                                        e.witness
+                                                                    master:
+                                                                        e.master
                                                                 }
                                                             )
                                                         ),
@@ -7021,7 +7019,7 @@
                                                         r.a.createElement(b.a, {
                                                             component: "span",
                                                             content:
-                                                                "explorer.blocks.active_witnesses"
+                                                                "explorer.blocks.active_masters"
                                                         })
                                                     ),
                                                     r.a.createElement(
@@ -7030,9 +7028,8 @@
                                                             className:
                                                                 "txtlabel success"
                                                         },
-                                                        a.get(
-                                                            "active_witnesses"
-                                                        ).size
+                                                        a.get("active_masters")
+                                                            .size
                                                     )
                                                 )
                                             ),
@@ -7475,7 +7472,7 @@
                                                                                 component:
                                                                                     "span",
                                                                                 content:
-                                                                                    "explorer.block.witness"
+                                                                                    "explorer.block.master"
                                                                             }
                                                                         )
                                                                     ),
@@ -9384,9 +9381,9 @@
                                     content: ft
                                 },
                                 {
-                                    name: "witnesses",
-                                    link: "/explorer/witnesses",
-                                    translate: "explorer.witnesses.title",
+                                    name: "masters",
+                                    link: "/explorer/masters",
+                                    translate: "explorer.masters.title",
                                     content: B
                                 },
                                 {

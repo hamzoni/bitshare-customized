@@ -144,7 +144,7 @@ export default class DropDownMenu extends React.Component {
                     <Translate content="header.explorer" />
                 </li>
 
-                <li
+                {/* <li
                     className="dropdown-item"
                     className={
                         "dropdown-item " +
@@ -156,7 +156,7 @@ export default class DropDownMenu extends React.Component {
                     //onClick={this.props.onNavigate.bind(this, "/transfer")}
                 >
                     <Translate content="header.payments_legacy" />
-                </li>
+                </li> */}
 
                 <li
                     className="dropdown-item"
@@ -170,7 +170,7 @@ export default class DropDownMenu extends React.Component {
                     <Translate content="header.settings" />
                 </li>
 
-                <li
+                {/* <li
                     className="dropdown-item"
                     className={cnames({
                         active: active.indexOf("/voting") !== -1,
@@ -182,9 +182,9 @@ export default class DropDownMenu extends React.Component {
                     )}
                 >
                     <Translate content="account.voting" />
-                </li>
+                </li> */}
 
-                {showAccountLinks ? (
+                {/* {showAccountLinks ? (
                     <li
                         className="dropdown-item"
                         className={cnames(
@@ -197,7 +197,7 @@ export default class DropDownMenu extends React.Component {
                     >
                         <Translate content="explorer.accounts.title" />
                     </li>
-                ) : null}
+                ) : null} */}
             </ul>
         );
     }

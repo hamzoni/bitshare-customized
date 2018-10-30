@@ -863,7 +863,7 @@ class Asset extends React.Component {
 
     // return two tabs
     // one tab is for the price feed data from the
-    // witness for the given asset
+    // master for the given asset
     // the other tab is a list of the margin positions
     // for this asset (if it's a bitasset)
     renderMarginPositions(asset, sortedCallOrders) {

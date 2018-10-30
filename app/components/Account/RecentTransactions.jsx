@@ -273,26 +273,26 @@ class RecentTransactions extends React.Component {
         style = style ? style : {width: "100%", height: "100%"};
 
         let options = null;
-        if (true || this.props.showFilters) {
-            options = [
-                "all",
-                "transfer",
-                "limit_order_create",
-                "limit_order_cancel",
-                "fill_order",
-                "account_create",
-                "account_update",
-                "asset_create",
-                "witness_withdraw_pay",
-                "vesting_balance_withdraw"
-            ].map(type => {
-                return (
-                    <option value={type} key={type}>
-                        {counterpart.translate("transaction.trxTypes." + type)}
-                    </option>
-                );
-            });
-        }
+        // if (true || this.props.showFilters) {
+        //     options = [
+        //         "all",
+        //         "transfer",
+        //         "limit_order_create",
+        //         "limit_order_cancel",
+        //         "fill_order",
+        //         "account_create",
+        //         "account_update",
+        //         "asset_create",
+        //         "master_withdraw_pay",
+        //         "vesting_balance_withdraw"
+        //     ].map(type => {
+        //         return (
+        //             <option value={type} key={type}>
+        //                 {counterpart.translate("transaction.trxTypes." + type)}
+        //             </option>
+        //         );
+        //     });
+        // }
 
         let display_history = history.length
             ? history.slice(0, limit).map(o => {
@@ -361,7 +361,7 @@ class RecentTransactions extends React.Component {
         return (
             <div className="recent-transactions no-overflow" style={style}>
                 <div className="generic-bordered-box">
-                    {this.props.dashboard ? null : (
+                    {/* {this.props.dashboard ? null : (
                         <div ref="header">
                             <div className="block-content-header">
                                 <span>
@@ -373,9 +373,9 @@ class RecentTransactions extends React.Component {
                                 </span>
                             </div>
                         </div>
-                    )}
+                    )} */}
                     <div className="header-selector mono-bg-light-x">
-                        <div className="selector ">
+                        {/* <div className="selector ">
                             <div
                                 className={cnames(
                                     "inline-block mono-no-padding"
@@ -394,7 +394,7 @@ class RecentTransactions extends React.Component {
                                     </select>
                                 ) : null}
                             </div>
-                        </div>
+                        </div> */}
                         {this.state.accountHistoryError && (
                             <div
                                 className="has-error"
@@ -431,30 +431,28 @@ class RecentTransactions extends React.Component {
                                         style={alignLeft}
                                     >
                                         {/* <Translate content="account.transactions.id" /> */}
-                                        Status
+                                        Transaction ID
                                     </th>
                                     <th
                                         className="column-hide-tiny"
                                         style={alignLeft}
                                     >
                                         {/* <Translate content="account.transactions.type" /> */}
-                                        Transaction ID
+                                        Transaction Type
                                     </th>
                                     <th style={alignLeft}>
                                         {/* <Translate content="account.transactions.info" /> */}
-                                        Sender
+                                        Transaction Content
                                     </th>
                                     <th>
                                         {/* <Translate content="account.transactions.time" /> */}
-                                        Type
+                                        Timestamp
                                     </th>
-                                    <th>Amount</th>
-                                    <th>Time</th>
                                 </tr>
                             }
                             rows={display_history}
                             label="utility.total_x_operations"
-                            extraRow={action}
+                            // extraRow={action}
                         />
                     </div>
                     {this.state.fetchingAccountHistory && <LoadingIndicator />}

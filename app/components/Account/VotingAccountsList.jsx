@@ -11,12 +11,12 @@ import counterpart from "counterpart";
 import PropTypes from "prop-types";
 import sanitize from "sanitize";
 
-function getWitnessOrCommittee(type, acct) {
+function getMasterOrCommittee(type, acct) {
     let url = "",
         votes = 0,
         account;
-    if (type === "witness") {
-        account = ChainStore.getWitnessById(acct.get("id"));
+    if (type === "master") {
+        account = ChainStore.getMasterById(acct.get("id"));
     } else if (type === "committee") {
         account = ChainStore.getCommitteeMemberById(acct.get("id"));
     }
@@ -58,7 +58,7 @@ class AccountItemRow extends React.Component {
         let {account, type, action, isActive} = this.props;
         let item_id = account.get("id");
 
-        let {url, votes} = getWitnessOrCommittee(type, account);
+        let {url, votes} = getMasterOrCommittee(type, account);
 
         let link =
             url && url.length > 0 && url.indexOf("http") === -1
@@ -201,14 +201,8 @@ class VotingAccountsList extends React.Component {
                 return true;
             })
             .sort((a, b) => {
-                let {votes: a_votes} = getWitnessOrCommittee(
-                    this.props.type,
-                    a
-                );
-                let {votes: b_votes} = getWitnessOrCommittee(
-                    this.props.type,
-                    b
-                );
+                let {votes: a_votes} = getMasterOrCommittee(this.props.type, a);
+                let {votes: b_votes} = getMasterOrCommittee(this.props.type, b);
                 if (a_votes !== b_votes) {
                     return parseInt(b_votes, 10) - parseInt(a_votes, 10);
                 } else if (a.get("name") > b.get("name")) {
@@ -226,7 +220,7 @@ class VotingAccountsList extends React.Component {
                         ? "remove"
                         : "add";
                 let isActive = this.props.active.includes(
-                    getWitnessOrCommittee(this.props.type, i).id
+                    getMasterOrCommittee(this.props.type, i).id
                 );
                 return (
                     <AccountItemRow
@@ -271,7 +265,7 @@ class VotingAccountsList extends React.Component {
                         onChange={this.onItemChange}
                         onAccountChanged={this.onItemAccountChange}
                         onAction={this.onAddItem}
-                        action_label="account.votes.add_witness"
+                        action_label="account.votes.add_master"
                         tabIndex={this.props.tabIndex}
                     />
                 ) : null}

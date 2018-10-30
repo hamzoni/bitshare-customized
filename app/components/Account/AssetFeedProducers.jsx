@@ -27,9 +27,9 @@ export default class AccountFeedProducers extends React.Component {
     }
 
     render() {
-        const {witnessFed, committeeFed} = this.props;
+        const {masterFed, committeeFed} = this.props;
 
-        if (witnessFed || committeeFed) {
+        if (masterFed || committeeFed) {
             return (
                 <div className="grid-content small-12 large-8 large-offset-2">
                     <Translate

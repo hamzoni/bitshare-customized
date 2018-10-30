@@ -13788,7 +13788,7 @@ div:last-child .exchange-bordered {
     /* Table view account */
 }
 
-.darkTheme .explore-witness--info {
+.darkTheme .explore-master--info {
     width: 100%;
     border: 1px solid #565656;
     background: transparent;
@@ -13796,18 +13796,18 @@ div:last-child .exchange-bordered {
     border-radius: 5px;
 }
 
-.darkTheme .explore-witness--info table {
+.darkTheme .explore-master--info table {
     width: 100%;
 }
 
-.darkTheme .explore-witness--info table thead th {
+.darkTheme .explore-master--info table thead th {
     font-weight: 400;
     color: #afafaf;
     font-size: 14px;
     padding-bottom: 8px;
 }
 
-.darkTheme .explore-witness--info table tbody td {
+.darkTheme .explore-master--info table tbody td {
     color: #fff;
 }
 
@@ -16454,7 +16454,7 @@ div:last-child .exchange-bordered {
     /* Table view account */
 }
 
-.lightTheme .explore-witness--info {
+.lightTheme .explore-master--info {
     width: 100%;
     border: 1px solid #a2a2a2;
     background: transparent;
@@ -16462,18 +16462,18 @@ div:last-child .exchange-bordered {
     border-radius: 5px;
 }
 
-.lightTheme .explore-witness--info table {
+.lightTheme .explore-master--info table {
     width: 100%;
 }
 
-.lightTheme .explore-witness--info table thead th {
+.lightTheme .explore-master--info table thead th {
     font-weight: 400;
     color: #8f8f8f;
     font-size: 14px;
     padding-bottom: 8px;
 }
 
-.lightTheme .explore-witness--info table tbody td {
+.lightTheme .explore-master--info table tbody td {
     color: #5c5c5c;
 }
 
@@ -19127,7 +19127,7 @@ div:last-child .exchange-bordered {
     /* Table view account */
 }
 
-.midnightTheme .explore-witness--info {
+.midnightTheme .explore-master--info {
     width: 100%;
     border: 1px solid #484848;
     background: #27384b;
@@ -19135,18 +19135,18 @@ div:last-child .exchange-bordered {
     border-radius: 5px;
 }
 
-.midnightTheme .explore-witness--info table {
+.midnightTheme .explore-master--info table {
     width: 100%;
 }
 
-.midnightTheme .explore-witness--info table thead th {
+.midnightTheme .explore-master--info table thead th {
     font-weight: 400;
     color: gray;
     font-size: 14px;
     padding-bottom: 8px;
 }
 
-.midnightTheme .explore-witness--info table tbody td {
+.midnightTheme .explore-master--info table tbody td {
     color: #fff;
 }
 

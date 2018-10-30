@@ -651,7 +651,7 @@ class CallOrder {
 
         /*
         * The call price is DEBT * MCR / COLLATERAL. This calculation is already
-        * done by the witness_node before returning the orders so it is not necessary
+        * done by the master_node before returning the orders so it is not necessary
         * to deal with the MCR (maintenance collateral ratio) here.
         */
         this.call_price = new Price({

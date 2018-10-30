@@ -16,7 +16,7 @@ class BlockchainActions {
                     dispatch({
                         header: {
                             timestamp: header.timestamp,
-                            witness: header.witness
+                            master: header.master
                         },
                         height
                     });

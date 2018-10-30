@@ -13,7 +13,7 @@ kavramlarını tanımlar.
  * [Cüzdan](introduction/wallets.md)
  * [Yedekler](introduction/backups.md)
  * [Blokzinciri](introduction/blockchain.md)
- * [Tanıklar](introduction/witness.md)
+ * [Tanıklar](introduction/master.md)
  * [İşçiler](introduction/workers.md)
  * [Kurul Üyeleri](introduction/committee.md)
 

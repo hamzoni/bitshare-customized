@@ -661,41 +661,41 @@ class ProposedOperation extends React.Component {
                 );
                 break;
 
-            case "witness_create":
+            case "master_create":
                 column = (
                     <span>
                         <Translate
                             component="span"
-                            content="proposal.witness_create"
+                            content="proposal.master_create"
                         />
                         &nbsp;
-                        {this.linkToAccount(op[1].witness_account)}
+                        {this.linkToAccount(op[1].master_account)}
                     </span>
                 );
 
                 break;
 
-            case "witness_update":
+            case "master_update":
                 column = (
                     <span>
                         <Translate
                             component="span"
-                            content="proposal.witness_update"
+                            content="proposal.master_update"
                         />
                         &nbsp;
-                        {this.linkToAccount(op[1].witness_account)}
+                        {this.linkToAccount(op[1].master_account)}
                     </span>
                 );
 
                 break;
 
-            case "witness_withdraw_pay":
-                if (current === op[1].witness_account) {
+            case "master_withdraw_pay":
+                if (current === op[1].master_account) {
                     column = (
                         <span>
                             <Translate
                                 component="span"
-                                content="proposal.witness_pay"
+                                content="proposal.master_pay"
                             />
                             &nbsp;
                             <FormattedAsset
@@ -705,7 +705,7 @@ class ProposedOperation extends React.Component {
                             />
                             <Translate component="span" content="proposal.to" />
                             &nbsp;
-                            {this.linkToAccount(op[1].witness_account)}
+                            {this.linkToAccount(op[1].master_account)}
                         </span>
                     );
                 } else {
@@ -726,7 +726,7 @@ class ProposedOperation extends React.Component {
                                 content="proposal.from"
                             />
                             &nbsp;
-                            {this.linkToAccount(op[1].witness_account)}
+                            {this.linkToAccount(op[1].master_account)}
                         </span>
                     );
                 }

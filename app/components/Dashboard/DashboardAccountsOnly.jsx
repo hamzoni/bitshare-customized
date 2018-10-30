@@ -153,7 +153,7 @@ class Accounts extends React.Component {
                         segmented={false}
                         tabsClass="account-overview no-padding bordered-header content-block"
                     >
-                        <Tab title="account.contacts">
+                        {/* <Tab title="account.contacts">
                             <div className="generic-bordered-box">
                                 <div className="box-content">
                                     <DashboardList
@@ -171,7 +171,7 @@ class Accounts extends React.Component {
                                     />
                                 </div>
                             </div>
-                        </Tab>
+                        </Tab> */}
                         <Tab title="account.recent">
                             <RecentTransactions
                                 accountsList={myActiveAccounts}

@@ -7033,14 +7033,14 @@
                         location: "Nuremberg",
                         region: "Western Europe",
                         country: "Germany",
-                        operator: "Witness: openledger-dc",
+                        operator: "Master: openledger-dc",
                         contact: "telegram:mtopenledger"
                     },
                     {
                         url: "wss://openledger.hk/ws",
                         region: "Southeastern Asia",
                         country: "Singapore",
-                        operator: "Witness: openledger-dc",
+                        operator: "Master: openledger-dc",
                         contact: "telegram:mtopenledger"
                     },
                     {
@@ -7048,7 +7048,7 @@
                         location: "Quebec",
                         region: "Northern America",
                         country: "Canada",
-                        operator: "Witness: openledger-dc",
+                        operator: "Master: openledger-dc",
                         contact: "telegram:mtopenledger"
                     },
                     {
@@ -7062,7 +7062,7 @@
                         region: "Eastern Asia",
                         country: "China",
                         location: "Hong Kong",
-                        operator: "Witness: abc123",
+                        operator: "Master: abc123",
                         contact: "QQ:58291;email:58291@qq.com"
                     },
                     {
@@ -7085,7 +7085,7 @@
                         region: "Western Europe",
                         country: "Germany",
                         location: "Munich",
-                        operator: "Witness: sc-ol",
+                        operator: "Master: sc-ol",
                         contact: "telegram:startail"
                     },
                     {
@@ -7093,20 +7093,20 @@
                         region: "Eastern Asia",
                         country: "China",
                         location: "Shanghai",
-                        operator: "Witness: gdex-witness",
+                        operator: "Master: gdex-master",
                         contact: "telegram:BrianZhang"
                     },
                     {
                         url: "wss://dex.rnglab.org",
                         location: "Netherlands",
-                        operator: "Witness: rnglab"
+                        operator: "Master: rnglab"
                     },
                     {
                         url: "wss://la.dexnode.net/ws",
                         region: "Northern America",
                         country: "U.S.A.",
                         location: "Los Angeles",
-                        operator: "Witness: Sahkan",
+                        operator: "Master: Sahkan",
                         contact: "telegram:Sahkan_bitshares"
                     },
                     {
@@ -7114,7 +7114,7 @@
                         region: "Northern America",
                         country: "U.S.A.",
                         location: "Dallas",
-                        operator: "Witness: Sahkan",
+                        operator: "Master: Sahkan",
                         contact: "telegram:Sahkan_bitshares"
                     },
                     {
@@ -7122,7 +7122,7 @@
                         region: "North America",
                         country: "U.S.A.",
                         location: "Kansas City",
-                        operator: "Witness: xeldal",
+                        operator: "Master: xeldal",
                         contact: "telegram:xeldal"
                     },
                     {
@@ -7134,7 +7134,7 @@
                         region: "Western Europe",
                         country: "Germany",
                         location: "Falkenstein",
-                        operator: "Witness: blckchnd",
+                        operator: "Master: blckchnd",
                         contact:
                             "email:admin@blckchnd.com;telegram:ruslansalikhov;github:blckchnd"
                     },
@@ -7143,7 +7143,7 @@
                         region: "Eastern Europe",
                         country: "Russia",
                         location: "Moscow",
-                        operator: "Witness: blckchnd",
+                        operator: "Master: blckchnd",
                         contact:
                             "email:admin@blckchnd.com;telegram:ruslansalikhov;github:blckchnd"
                     },
@@ -7152,7 +7152,7 @@
                         region: "Western Europe",
                         country: "Germany",
                         location: "Falkenstein",
-                        operator: "Witness: blckchnd",
+                        operator: "Master: blckchnd",
                         contact:
                             "email:admin@blckchnd.com;telegram:ruslansalikhov;github:blckchnd"
                     },
@@ -7161,7 +7161,7 @@
                         region: "Northern America",
                         country: "U.S.A.",
                         location: "Kansas City",
-                        operator: "Witness: delegate.ihashfury",
+                        operator: "Master: delegate.ihashfury",
                         contact: "telegram:ihashfury"
                     },
                     {
@@ -7169,7 +7169,7 @@
                         region: "Western Europe",
                         country: "France",
                         location: "Paris",
-                        operator: "Witness: delegate.ihashfury",
+                        operator: "Master: delegate.ihashfury",
                         contact: "telegram:ihashfury"
                     },
                     {
@@ -7177,7 +7177,7 @@
                         region: "North America",
                         country: "U.S.A.",
                         location: "New Jersey",
-                        operator: "Witness: delegate-zhaomu",
+                        operator: "Master: delegate-zhaomu",
                         contact: "telegram:lzmlam;wechat:lzmlam"
                     },
                     {
@@ -7205,7 +7205,7 @@
                         url: "wss://ws.winex.pro",
                         region: "Southeastern Asia",
                         location: "Singapore",
-                        operator: "Witness: winex.witness",
+                        operator: "Master: winex.master",
                         contact: "telegram:zmaxin"
                     },
                     {
@@ -7213,21 +7213,21 @@
                         region: "Northern America",
                         country: "U.S.A.",
                         location: "Virginia",
-                        operator: "Witness: in.abit",
+                        operator: "Master: in.abit",
                         contact: "telegram:abitmore"
                     },
                     {
                         url: "wss://api.btsxchng.com",
                         location:
                             "Global (Asia Pacific (Singapore) / US East (N. Virginia) / EU (London))",
-                        operator: "Witness: elmato"
+                        operator: "Master: elmato"
                     },
                     {
                         url: "wss://api.bts.network/",
                         region: "North America",
                         country: "U.S.A.",
                         location: "Virginia",
-                        operator: "Witness: fox",
+                        operator: "Master: fox",
                         contact: "telegram:ryanRfox"
                     },
                     {
@@ -7235,14 +7235,14 @@
                         region: "Northern Europe",
                         country: "Finland",
                         location: "Helsinki",
-                        operator: "Witness: roelandp",
+                        operator: "Master: roelandp",
                         contact: "telegram:roelandp"
                     },
                     {
                         url: "wss://api.bitshares.bhuz.info/ws",
                         region: "Northern America",
                         country: "Canada",
-                        operator: "Witness: bhuz",
+                        operator: "Master: bhuz",
                         contact: "telegram:bhuzor"
                     },
                     {
@@ -7250,7 +7250,7 @@
                         region: "Northern America",
                         country: "Canada",
                         location: "Montreal",
-                        operator: "Witness: delegate-1.lafona",
+                        operator: "Master: delegate-1.lafona",
                         contact: "telegram:lafona"
                     },
                     {
@@ -7258,27 +7258,27 @@
                         region: "North America",
                         country: "U.S.A.",
                         location: "New Jersey",
-                        operator: "Witness: witness.yao",
+                        operator: "Master: master.yao",
                         contact: "telegram:imyao"
                     },
                     {
                         url: "wss://api.btsgo.net/ws",
                         region: "Asia",
                         location: "Singapore",
-                        operator: "Witness: xn-delegate",
+                        operator: "Master: xn-delegate",
                         contact: "wechat:Necklace"
                     },
                     {
                         url: "wss://bts.proxyhosts.info/wss",
                         location: "Germany",
-                        operator: "Witness: verbaltech2"
+                        operator: "Master: verbaltech2"
                     },
                     {
                         url: "wss://bts.open.icowallet.net/ws",
                         region: "Eastern Asia",
                         country: "China",
                         location: "Hangzhou",
-                        operator: "Witness: magicwallet.witness",
+                        operator: "Master: magicwallet.master",
                         contact: "telegram:plus_wave"
                     },
                     {
@@ -7286,7 +7286,7 @@
                         region: "Asia",
                         country: "China",
                         location: "Shenzhen",
-                        operator: "Witness: crazybit",
+                        operator: "Master: crazybit",
                         contact: "telegram:crazybits;wechat:JamesCai"
                     },
                     {
@@ -7294,7 +7294,7 @@
                         region: "South China",
                         country: "China",
                         location: "Changsha",
-                        operator: "Witness: delegate.freedom",
+                        operator: "Master: delegate.freedom",
                         contact: "telegram:eggplant"
                     },
                     {
@@ -7302,7 +7302,7 @@
                         region: "North China",
                         country: "China",
                         location: "Hangzhou",
-                        operator: "Witness: delegate.freedom",
+                        operator: "Master: delegate.freedom",
                         contact: "telegram:eggplant"
                     },
                     {
@@ -7310,7 +7310,7 @@
                         region: "Eastern Asia",
                         country: "China",
                         location: "Beijing",
-                        operator: "Witness: witness.hiblockchain",
+                        operator: "Master: master.hiblockchain",
                         contact: "telegram:vianull;wechat:strugglingl"
                     },
                     {
@@ -7318,7 +7318,7 @@
                         region: "Eastern Asia",
                         country: "Japan",
                         location: "Tokyo",
-                        operator: "Witness: xman",
+                        operator: "Master: xman",
                         contact: "wechat:hidpos;email:hellobts@qq.com"
                     },
                     {
@@ -7326,7 +7326,7 @@
                         region: "Eastern Asia",
                         country: "China",
                         location: "Hong Kong",
-                        operator: "Witness: witness.still",
+                        operator: "Master: master.still",
                         contact: "telegram:gordoor;wechat:overyard"
                     },
                     {
@@ -7334,7 +7334,7 @@
                         region: "Southeastern Asia",
                         country: "Korea",
                         location: "Seoul",
-                        operator: "Witness: clockwork",
+                        operator: "Master: clockwork",
                         contact: "telegram:clockworkgr"
                     },
                     {
@@ -7342,7 +7342,7 @@
                         region: "Eastern Asia",
                         country: "China",
                         location: "Shandong",
-                        operator: "Witness: liuye",
+                        operator: "Master: liuye",
                         contact: "email:work@liuye.tech"
                     },
                     {
@@ -7350,7 +7350,7 @@
                         region: "Western Europe",
                         country: "Germany",
                         location: "Munich",
-                        operator: "Witness: Bangzi",
+                        operator: "Master: Bangzi",
                         contact: "telegram:Bangzi"
                     },
                     {
@@ -7358,7 +7358,7 @@
                         region: "Western Europe",
                         country: "France",
                         location: "Paris",
-                        operator: "Witness: zapata42-witness",
+                        operator: "Master: zapata42-master",
                         contact: "telegram:Zapata_42"
                     },
                     {
@@ -7390,7 +7390,7 @@
                         region: "TESTNET - Western Europe",
                         country: "France",
                         location: "Paris",
-                        operator: "Witness: zapata42-witness",
+                        operator: "Master: zapata42-master",
                         contact: "telegram:Zapata_42"
                     }
                 ],
@@ -16752,7 +16752,7 @@
                 disable_force_settle: 16,
                 global_settle: 32,
                 disable_confidential: 64,
-                witness_fed_asset: 128,
+                master_fed_asset: 128,
                 committee_fed_asset: 256
             },
             uia_permission_mask: [
@@ -18071,7 +18071,7 @@
                                             options: {
                                                 memo_key: n,
                                                 voting_account: "1.2.5",
-                                                num_witness: 0,
+                                                num_master: 0,
                                                 num_committee: 0,
                                                 votes: []
                                             }
@@ -18388,7 +18388,7 @@
                                                       header: {
                                                           timestamp:
                                                               n.timestamp,
-                                                          witness: n.witness
+                                                          master: n.master
                                                       },
                                                       height: e
                                                   });
@@ -22122,7 +22122,7 @@
                                     disable_force_settle: !1,
                                     global_settle: !1,
                                     disable_confidential: !1,
-                                    witness_fed_asset: !1,
+                                    master_fed_asset: !1,
                                     committee_fed_asset: !1
                                 };
                             if ("all" === e) {
@@ -24232,46 +24232,46 @@
                                                 })
                                             ));
                                         break;
-                                    case "witness_create":
+                                    case "master_create":
                                         d = r.a.createElement(
                                             "span",
                                             null,
                                             r.a.createElement(c.a, {
                                                 component: "span",
                                                 content:
-                                                    "proposal.witness_create"
+                                                    "proposal.master_create"
                                             }),
                                             " ",
                                             this.linkToAccount(
-                                                t[1].witness_account
+                                                t[1].master_account
                                             )
                                         );
                                         break;
-                                    case "witness_update":
+                                    case "master_update":
                                         d = r.a.createElement(
                                             "span",
                                             null,
                                             r.a.createElement(c.a, {
                                                 component: "span",
                                                 content:
-                                                    "proposal.witness_update"
+                                                    "proposal.master_update"
                                             }),
                                             " ",
                                             this.linkToAccount(
-                                                t[1].witness_account
+                                                t[1].master_account
                                             )
                                         );
                                         break;
-                                    case "witness_withdraw_pay":
+                                    case "master_withdraw_pay":
                                         d =
-                                            a === t[1].witness_account
+                                            a === t[1].master_account
                                                 ? r.a.createElement(
                                                       "span",
                                                       null,
                                                       r.a.createElement(c.a, {
                                                           component: "span",
                                                           content:
-                                                              "proposal.witness_pay"
+                                                              "proposal.master_pay"
                                                       }),
                                                       " ",
                                                       r.a.createElement(i.a, {
@@ -24287,7 +24287,7 @@
                                                       }),
                                                       " ",
                                                       this.linkToAccount(
-                                                          t[1].witness_account
+                                                          t[1].master_account
                                                       )
                                                   )
                                                 : r.a.createElement(
@@ -24313,7 +24313,7 @@
                                                       }),
                                                       " ",
                                                       this.linkToAccount(
-                                                          t[1].witness_account
+                                                          t[1].master_account
                                                       )
                                                   );
                                         break;
@@ -31389,52 +31389,52 @@
                                             })
                                         ));
                                     break;
-                                case "witness_create":
+                                case "master_create":
                                     l = r.a.createElement(
                                         "span",
                                         null,
                                         r.a.createElement(x.a, {
-                                            string: "operation.witness_create",
+                                            string: "operation.master_create",
                                             keys: [
                                                 {
                                                     type: "account",
-                                                    value: n[1].witness_account,
+                                                    value: n[1].master_account,
                                                     arg: "account"
                                                 }
                                             ]
                                         })
                                     );
                                     break;
-                                case "witness_update":
+                                case "master_update":
                                     l = r.a.createElement(
                                         "span",
                                         null,
                                         r.a.createElement(x.a, {
-                                            string: "operation.witness_update",
+                                            string: "operation.master_update",
                                             keys: [
                                                 {
                                                     type: "account",
-                                                    value: n[1].witness_account,
+                                                    value: n[1].master_account,
                                                     arg: "account"
                                                 }
                                             ]
                                         })
                                     );
                                     break;
-                                case "witness_withdraw_pay":
+                                case "master_withdraw_pay":
                                     console.log(
-                                        "witness_withdraw_pay:",
-                                        n[1].witness_account
+                                        "master_withdraw_pay:",
+                                        n[1].master_account
                                     ),
                                         (l =
-                                            a === n[1].witness_account
+                                            a === n[1].master_account
                                                 ? r.a.createElement(
                                                       "span",
                                                       null,
                                                       r.a.createElement(u.a, {
                                                           component: "span",
                                                           content:
-                                                              "transaction.witness_pay"
+                                                              "transaction.master_pay"
                                                       }),
                                                       " ",
                                                       r.a.createElement(o.a, {
@@ -31448,7 +31448,7 @@
                                                       }),
                                                       " ",
                                                       this.linkToAccount(
-                                                          n[1].witness_account
+                                                          n[1].master_account
                                                       )
                                                   )
                                                 : r.a.createElement(
@@ -31471,7 +31471,7 @@
                                                       }),
                                                       " ",
                                                       this.linkToAccount(
-                                                          n[1].witness_account
+                                                          n[1].master_account
                                                       )
                                                   ));
                                     break;
@@ -41726,10 +41726,10 @@
                                                                   )
                                                               )
                                                             : (console.log(
-                                                                  "num witnesses: ",
+                                                                  "num masters: ",
                                                                   t[1]
                                                                       .new_options
-                                                                      .num_witness
+                                                                      .num_master
                                                               ),
                                                               console.log(
                                                                   "===============> NEW: ",
@@ -41813,7 +41813,7 @@
                                                                                   component:
                                                                                       "span",
                                                                                   content:
-                                                                                      "account.options.num_witnesses"
+                                                                                      "account.options.num_masters"
                                                                               }
                                                                           )
                                                                       ),
@@ -41822,7 +41822,7 @@
                                                                           null,
                                                                           t[1]
                                                                               .new_options
-                                                                              .num_witness
+                                                                              .num_master
                                                                       )
                                                                   )
                                                               ),
@@ -43210,7 +43210,7 @@
                                                     )
                                                 );
                                                 break;
-                                            case "witness_create":
+                                            case "master_create":
                                                 l.push(
                                                     r.a.createElement(
                                                         "tr",
@@ -43224,7 +43224,7 @@
                                                                     component:
                                                                         "span",
                                                                     content:
-                                                                        "explorer.block.witness"
+                                                                        "explorer.block.master"
                                                                 }
                                                             )
                                                         ),
@@ -43233,13 +43233,13 @@
                                                             null,
                                                             e.linkToAccount(
                                                                 t[1]
-                                                                    .witness_account
+                                                                    .master_account
                                                             )
                                                         )
                                                     )
                                                 );
                                                 break;
-                                            case "witness_update":
+                                            case "master_update":
                                                 l.push(
                                                     r.a.createElement(
                                                         "tr",
@@ -43253,7 +43253,7 @@
                                                                     component:
                                                                         "span",
                                                                     content:
-                                                                        "explorer.block.witness"
+                                                                        "explorer.block.master"
                                                                 }
                                                             )
                                                         ),
@@ -43262,7 +43262,7 @@
                                                             null,
                                                             e.linkToAccount(
                                                                 t[1]
-                                                                    .witness_account
+                                                                    .master_account
                                                             )
                                                         )
                                                     )
@@ -51519,8 +51519,8 @@
                                         return "account.voting";
                                     case "wallet":
                                         return "wallet.title";
-                                    case "witnesses":
-                                        return "explorer.witnesses.title";
+                                    case "masters":
+                                        return "explorer.masters.title";
                                     default:
                                         return null;
                                 }
@@ -53310,7 +53310,7 @@
             "./en/components/AccountVoting.md": 1260,
             "./en/components/AccountVotingCommittee.md": 1261,
             "./en/components/AccountVotingProxy.md": 1262,
-            "./en/components/AccountVotingWitnesses.md": 1263,
+            "./en/components/AccountVotingMasters.md": 1263,
             "./en/components/AccountVotingWorkers.md": 1264,
             "./en/components/BorrowModal.md": 1265,
             "./en/components/BorrowModalPrediction.md": 1266,
@@ -53356,7 +53356,7 @@
             "./ru/components/AccountVoting.md": 1306,
             "./ru/components/AccountVotingCommittee.md": 1307,
             "./ru/components/AccountVotingProxy.md": 1308,
-            "./ru/components/AccountVotingWitnesses.md": 1309,
+            "./ru/components/AccountVotingMasters.md": 1309,
             "./ru/components/AccountVotingWorkers.md": 1310,
             "./ru/components/BorrowModal.md": 1311,
             "./ru/components/BorrowModalPrediction.md": 1312,
@@ -53378,7 +53378,7 @@
             "./ru/introduction/bridges_gateways.md": 1328,
             "./ru/introduction/committee.md": 1329,
             "./ru/introduction/wallets.md": 1330,
-            "./ru/introduction/witness.md": 1331,
+            "./ru/introduction/master.md": 1331,
             "./ru/introduction/workers.md": 1332,
             "./ru/toc.md": 1333,
             "./tr/accounts/general.md": 1334,
@@ -53398,7 +53398,7 @@
             "./tr/components/AccountVoting.md": 1348,
             "./tr/components/AccountVotingCommittee.md": 1349,
             "./tr/components/AccountVotingProxy.md": 1350,
-            "./tr/components/AccountVotingWitnesses.md": 1351,
+            "./tr/components/AccountVotingMasters.md": 1351,
             "./tr/components/AccountVotingWorkers.md": 1352,
             "./tr/components/BorrowModal.md": 1353,
             "./tr/components/DepositWithdraw.md": 1354,
@@ -53414,7 +53414,7 @@
             "./tr/introduction/blockchain.md": 1364,
             "./tr/introduction/committee.md": 1365,
             "./tr/introduction/wallets.md": 1366,
-            "./tr/introduction/witness.md": 1367,
+            "./tr/introduction/master.md": 1367,
             "./tr/introduction/workers.md": 1368,
             "./tr/toc.md": 1369,
             "./zh/accounts/general.md": 1370,
@@ -53433,7 +53433,7 @@
             "./zh/components/AccountVoting.md": 1383,
             "./zh/components/AccountVotingCommittee.md": 1384,
             "./zh/components/AccountVotingProxy.md": 1385,
-            "./zh/components/AccountVotingWitnesses.md": 1386,
+            "./zh/components/AccountVotingMasters.md": 1386,
             "./zh/components/AccountVotingWorkers.md": 1387,
             "./zh/components/BorrowModal.md": 1388,
             "./zh/components/DepositWithdraw.md": 1389,
@@ -53450,7 +53450,7 @@
             "./zh/introduction/bridges_gateways.md": 1400,
             "./zh/introduction/committee.md": 1401,
             "./zh/introduction/wallets.md": 1402,
-            "./zh/introduction/witness.md": 1403,
+            "./zh/introduction/master.md": 1403,
             "./zh/introduction/workers.md": 1404,
             "./zh/toc.md": 1405
         };
@@ -53507,7 +53507,7 @@
     },
     function(e, t) {
         e.exports =
-            '<h1 id="privatized-bitassets">Privatized BitAssets</h1>\n<p>Privatized BitAssets serve those customers that would like to issue a market\npegged asset but do not want the witnesses to publish the prices. Instead, when\ncreating a <em>privatized</em> bitasset, the issuer can define a set of authorities that\nare allowed to publish the price for that particular asset. The issuer can\nfurther define all kinds of fees involving this asset and make a profit.</p>\n<p>This feature is of particular interest for exchanges and institutes that have\naccess to real-time prices and would like to increase exposure and volume.</p>\n';
+            '<h1 id="privatized-bitassets">Privatized BitAssets</h1>\n<p>Privatized BitAssets serve those customers that would like to issue a market\npegged asset but do not want the masters to publish the prices. Instead, when\ncreating a <em>privatized</em> bitasset, the issuer can define a set of authorities that\nare allowed to publish the price for that particular asset. The issuer can\nfurther define all kinds of fees involving this asset and make a profit.</p>\n<p>This feature is of particular interest for exchanges and institutes that have\naccess to real-time prices and would like to increase exposure and volume.</p>\n';
     },
     function(e, t) {
         e.exports =
@@ -53535,7 +53535,7 @@
     },
     function(e, t) {
         e.exports =
-            '<h3 id="voting">Voting</h3>\n<p>Voting in BitShares is important for both the security and the development of the network. Votes determine which Witnesses are selected to handle the network, which Committee Members have the power to vote on important policies and which Worker Proposals are accepted to improve or expand features.</p>\n<p>If you don&#39;t fully understand the various roles listed above, you may choose to delegate your voting power to a Proxy, who can then vote on your behalf. If you do choose to use a Proxy, you will be unable to vote for Witnesses, Committee Members and Worker Proposals. You can always release your proxy at a later date if you decide to participate in the full voting process.</p>\n<p><strong>Be sure to select Publish Changes once you&#39;ve made your selection.</strong></p>\n';
+            '<h3 id="voting">Voting</h3>\n<p>Voting in BitShares is important for both the security and the development of the network. Votes determine which Masters are selected to handle the network, which Committee Members have the power to vote on important policies and which Worker Proposals are accepted to improve or expand features.</p>\n<p>If you don&#39;t fully understand the various roles listed above, you may choose to delegate your voting power to a Proxy, who can then vote on your behalf. If you do choose to use a Proxy, you will be unable to vote for Masters, Committee Members and Worker Proposals. You can always release your proxy at a later date if you decide to participate in the full voting process.</p>\n<p><strong>Be sure to select Publish Changes once you&#39;ve made your selection.</strong></p>\n';
     },
     function(e, t) {
         e.exports =
@@ -53543,11 +53543,11 @@
     },
     function(e, t) {
         e.exports =
-            '<p>If you don&#39;t fully understand the roles of Witnesses, Committee Members and Workers, you may elect to choose a Proxy. A proxy is an account that you trust to make decisions about the Bitshares network on your behalf. You may find people proposing to act as proxies in the BitShares forum at <a href="https://bitsharestalk.org/index.php/board,75.0.html">BitSharestalk</a>. Additionally, you may choose from the list below, or you can manually enter any account you choose.</p>\n<p><strong>Be sure to select publish changes above once you&#39;ve made your selection</strong>.</p>\n';
+            '<p>If you don&#39;t fully understand the roles of Masters, Committee Members and Workers, you may elect to choose a Proxy. A proxy is an account that you trust to make decisions about the Bitshares network on your behalf. You may find people proposing to act as proxies in the BitShares forum at <a href="https://bitsharestalk.org/index.php/board,75.0.html">BitSharestalk</a>. Additionally, you may choose from the list below, or you can manually enter any account you choose.</p>\n<p><strong>Be sure to select publish changes above once you&#39;ve made your selection</strong>.</p>\n';
     },
     function(e, t) {
         e.exports =
-            '<p><a href="introduction/witness">Witnesses</a> are the block producers of BitShares. They validate transactions and ensure the safety of the network. You may vote for as many witnesses as you&#39;d like, and they will all receive the same amount of votes. Witness proposals can be found here: <a href="https://bitsharestalk.org/index.php/board,75.0.html">BitSharestalk - Stakeholder Proposals Board</a>.</p>\n';
+            '<p><a href="introduction/master">Masters</a> are the block producers of BitShares. They validate transactions and ensure the safety of the network. You may vote for as many masters as you&#39;d like, and they will all receive the same amount of votes. Master proposals can be found here: <a href="https://bitsharestalk.org/index.php/board,75.0.html">BitSharestalk - Stakeholder Proposals Board</a>.</p>\n';
     },
     function(e, t) {
         e.exports =
@@ -53579,7 +53579,7 @@
     },
     function(e, t) {
         e.exports =
-            '<h1 id="short-selling-bitassets">Short Selling BitAssets</h1>\n<p>In order to increase your exposure to BTS and offer liquidity to BitAssets, such\nas USD, EUR, GOLD, etc., you can go <em>borrow</em> this bitAsset from the network and\n<em>sell it short</em>. We will here briefly describe the procedure.</p>\n<h2 id="borrowing">Borrowing</h2>\n<p>The BitShares network is capable of issuing any amount of any BitAsset and lend\nit out to participants given enough collateral.</p>\n<ul>\n<li><em>settlement price</em>: The price for 1 BTS as it is traded on external exchanges.</li>\n<li><em>maintenance collateral ratio</em> (MCR): A ratio defined by the witnesses as minimum required collateral ratio</li>\n<li><em>maximum short squeeze ratio</em> (MSQR): A ratio defined by the witnesses as to how far shorts are protected against short squeezes</li>\n<li><em>short squeeze protection</em> (SQP): Defines the most that a margin position will ever be forced to pay to cover </li>\n<li><em>call price</em> (CP): The price at which short/borrow positions are margin called</li>\n</ul>\n<h3 id="margin-call">Margin Call</h3>\n<p>The BitShares network is capable of margin calling those positions that do not\nhave enough collateral to back their borrowed bitAssets. A margin call will\noccur any time the highest bid is less than the <em>call price</em> and greater than\n<em>SQP</em>.\nThe margin position will be forced to sell its collateral anytime the highest\noffer to buy the collateral is less than the call price (x/BTS).</p>\n<pre><code>SQP = settlement price / MSQR\ncall price = DEBT / COLLATERAL * MCR\n</code></pre><p>The margin call will take the collateral, buy shares of borrowed bitAsset at\nmarket rates up to the SQP and close the position. The remaining BTS of the\ncollateral are returned to the customer.</p>\n<h3 id="settlement">Settlement</h3>\n<p>Holders of any bitAsset can request a settlement at a <em>fair price</em> at any time.\nThe settlement closes the borrow/short positions with lowest collateral ratio\nand sells the collateral for the settlement.</p>\n<h2 id="selling">Selling</h2>\n<p>After borrowing bitAssets, they can be sold free at any of the corresponding\nmarkets at any price a buyer is willing to pay. With this step, the\nshort-selling is now complete and you are short that particular bitAsset.</p>\n<h2 id="updating-collateral-ratio">Updating Collateral Ratio</h2>\n<p>At any time, the holder of a borrow/short position can modify the collateral\nratio in order to flexibly adjust to market behavior. If the collateral ratio is\nincrease, an additional amount of BTS is locked as collateral, while reducing\nthe collateral ratio will require an amount of the corresponding BitAsset to be\npayed back to the network.</p>\n<h2 id="covering">Covering</h2>\n<p>To close a borrow/short position, one must hold the borrowed amount of that\nparticular bitAsset to hand it over to the BitShares network. After that, the\nBitAssets are reduced from the corresponding supply and the collateral is\nreleased and given back to its owner.</p>\n';
+            '<h1 id="short-selling-bitassets">Short Selling BitAssets</h1>\n<p>In order to increase your exposure to BTS and offer liquidity to BitAssets, such\nas USD, EUR, GOLD, etc., you can go <em>borrow</em> this bitAsset from the network and\n<em>sell it short</em>. We will here briefly describe the procedure.</p>\n<h2 id="borrowing">Borrowing</h2>\n<p>The BitShares network is capable of issuing any amount of any BitAsset and lend\nit out to participants given enough collateral.</p>\n<ul>\n<li><em>settlement price</em>: The price for 1 BTS as it is traded on external exchanges.</li>\n<li><em>maintenance collateral ratio</em> (MCR): A ratio defined by the masters as minimum required collateral ratio</li>\n<li><em>maximum short squeeze ratio</em> (MSQR): A ratio defined by the masters as to how far shorts are protected against short squeezes</li>\n<li><em>short squeeze protection</em> (SQP): Defines the most that a margin position will ever be forced to pay to cover </li>\n<li><em>call price</em> (CP): The price at which short/borrow positions are margin called</li>\n</ul>\n<h3 id="margin-call">Margin Call</h3>\n<p>The BitShares network is capable of margin calling those positions that do not\nhave enough collateral to back their borrowed bitAssets. A margin call will\noccur any time the highest bid is less than the <em>call price</em> and greater than\n<em>SQP</em>.\nThe margin position will be forced to sell its collateral anytime the highest\noffer to buy the collateral is less than the call price (x/BTS).</p>\n<pre><code>SQP = settlement price / MSQR\ncall price = DEBT / COLLATERAL * MCR\n</code></pre><p>The margin call will take the collateral, buy shares of borrowed bitAsset at\nmarket rates up to the SQP and close the position. The remaining BTS of the\ncollateral are returned to the customer.</p>\n<h3 id="settlement">Settlement</h3>\n<p>Holders of any bitAsset can request a settlement at a <em>fair price</em> at any time.\nThe settlement closes the borrow/short positions with lowest collateral ratio\nand sells the collateral for the settlement.</p>\n<h2 id="selling">Selling</h2>\n<p>After borrowing bitAssets, they can be sold free at any of the corresponding\nmarkets at any price a buyer is willing to pay. With this step, the\nshort-selling is now complete and you are short that particular bitAsset.</p>\n<h2 id="updating-collateral-ratio">Updating Collateral Ratio</h2>\n<p>At any time, the holder of a borrow/short position can modify the collateral\nratio in order to flexibly adjust to market behavior. If the collateral ratio is\nincrease, an additional amount of BTS is locked as collateral, while reducing\nthe collateral ratio will require an amount of the corresponding BitAsset to be\npayed back to the network.</p>\n<h2 id="covering">Covering</h2>\n<p>To close a borrow/short position, one must hold the borrowed amount of that\nparticular bitAsset to hand it over to the BitShares network. After that, the\nBitAssets are reduced from the corresponding supply and the collateral is\nreleased and given back to its owner.</p>\n';
     },
     function(e, t) {
         e.exports =
@@ -53611,7 +53611,7 @@
     },
     function(e, t) {
         e.exports =
-            '<h1 id="graphene-help">Graphene Help</h1>\n<p>BitShares 2.0 is a Financial Smart Contracts platform that is based on the\n<a href="https://github.com/cryptonomex/graphene">Graphene</a> technology built by\n<a href="http://cryptonomex.com">Cryptonomex</a>. You can see Graphene as a toolkit or\ntechnology for real-time blockchains.</p>\n<p>This help section gives a brief overview and describes the most basic concepts\nof this application.</p>\n<h2 id="introduction">Introduction</h2>\n<ul>\n<li><a href="introduction/bitshares.md">BitShares</a></li>\n<li><a href="introduction/wallets.md">Wallet</a></li>\n<li><a href="introduction/backups.md">Backups</a></li>\n<li><a href="introduction/blockchain.md">Blockchain</a></li>\n<li><a href="introduction/witness.md">Witnesses</a></li>\n<li><a href="introduction/workers.md">Workers</a></li>\n<li><a href="introduction/committee.md">Committe Members</a></li>\n</ul>\n<h2 id="accounts">Accounts</h2>\n<ul>\n<li><a href="accounts/general.md">Introduction</a></li>\n<li><a href="accounts/permissions.md">Permissions</a></li>\n<li><a href="accounts/membership.md">Memberships</a></li>\n</ul>\n<h2 id="assets">Assets</h2>\n<ul>\n<li><a href="assets/mpa.md">Market Pegged Assets</a> (BitUSD, BitEUR, BitGOLD, Bit*,...)</li>\n<li><a href="assets/uia.md">User Issued Assets</a></li>\n<li><a href="assets/privbitassets.md">Privatized BitAssets</a></li>\n</ul>\n<h2 id="decentralized-exchange">Decentralized Exchange</h2>\n<ul>\n<li><a href="dex/introduction.md">Introduction</a></li>\n<li><a href="dex/trading.md">Trading</a></li>\n<li><a href="dex/shorting.md">Short Selling BitAssets</a></li>\n</ul>\n<hr>\n<p><a href="glossary.md">Glossary</a></p>\n';
+            '<h1 id="graphene-help">Graphene Help</h1>\n<p>BitShares 2.0 is a Financial Smart Contracts platform that is based on the\n<a href="https://github.com/cryptonomex/graphene">Graphene</a> technology built by\n<a href="http://cryptonomex.com">Cryptonomex</a>. You can see Graphene as a toolkit or\ntechnology for real-time blockchains.</p>\n<p>This help section gives a brief overview and describes the most basic concepts\nof this application.</p>\n<h2 id="introduction">Introduction</h2>\n<ul>\n<li><a href="introduction/bitshares.md">BitShares</a></li>\n<li><a href="introduction/wallets.md">Wallet</a></li>\n<li><a href="introduction/backups.md">Backups</a></li>\n<li><a href="introduction/blockchain.md">Blockchain</a></li>\n<li><a href="introduction/master.md">Masters</a></li>\n<li><a href="introduction/workers.md">Workers</a></li>\n<li><a href="introduction/committee.md">Committe Members</a></li>\n</ul>\n<h2 id="accounts">Accounts</h2>\n<ul>\n<li><a href="accounts/general.md">Introduction</a></li>\n<li><a href="accounts/permissions.md">Permissions</a></li>\n<li><a href="accounts/membership.md">Memberships</a></li>\n</ul>\n<h2 id="assets">Assets</h2>\n<ul>\n<li><a href="assets/mpa.md">Market Pegged Assets</a> (BitUSD, BitEUR, BitGOLD, Bit*,...)</li>\n<li><a href="assets/uia.md">User Issued Assets</a></li>\n<li><a href="assets/privbitassets.md">Privatized BitAssets</a></li>\n</ul>\n<h2 id="decentralized-exchange">Decentralized Exchange</h2>\n<ul>\n<li><a href="dex/introduction.md">Introduction</a></li>\n<li><a href="dex/trading.md">Trading</a></li>\n<li><a href="dex/shorting.md">Short Selling BitAssets</a></li>\n</ul>\n<hr>\n<p><a href="glossary.md">Glossary</a></p>\n';
     },
     function(e, t) {
         e.exports =
@@ -53623,7 +53623,7 @@
     },
     function(e, t) {
         e.exports =
-            '<h1 id="blockchain">Blockchain</h1>\n<p>As most crypto currencies, Graphene makes use of a blockchain to update\nparticipants about transfers and market activities. Since blocks always refer to\nthe previous block, we get a chain of blocks (blockchain) that contains all\ntransactions every made in the network. Because the blockchain is a publicly\naccessible and auditable ledger, everyone can take a closer look and verify\ntransfers as well as market orders and order books.</p>\n<p>Of course, this web wallet offers a block explorer to assist you with your\naudit.</p>\n<h2 id="consensus-mechanism">Consensus Mechanism</h2>\n<p>Who exactly is allows to <em>produce</em> a block at which time instant is defined by a\nconsensus mechanism called <em>Delegated Proof of Stake</em>. In essence, the\nshareholders of BitShares (holders of the BTS token) can cast a vote for their\npreferred block producers on the blockchain. Those so called <em>witnesses</em> with\nthe most votes are allowed to produce blocks.</p>\n<h2 id="transactions">Transactions</h2>\n<p>The Graphene blockchain technology offers a variety of transaction types. Users\nare not only able to simply transfer assets between each other, but there are\nalso transactions to interact with the decentralized exchange. Most of these\ntransaction types are labeled with a self-explaining tag, others require more\nknowledge about the inner workings of the company.</p>\n';
+            '<h1 id="blockchain">Blockchain</h1>\n<p>As most crypto currencies, Graphene makes use of a blockchain to update\nparticipants about transfers and market activities. Since blocks always refer to\nthe previous block, we get a chain of blocks (blockchain) that contains all\ntransactions every made in the network. Because the blockchain is a publicly\naccessible and auditable ledger, everyone can take a closer look and verify\ntransfers as well as market orders and order books.</p>\n<p>Of course, this web wallet offers a block explorer to assist you with your\naudit.</p>\n<h2 id="consensus-mechanism">Consensus Mechanism</h2>\n<p>Who exactly is allows to <em>produce</em> a block at which time instant is defined by a\nconsensus mechanism called <em>Delegated Proof of Stake</em>. In essence, the\nshareholders of BitShares (holders of the BTS token) can cast a vote for their\npreferred block producers on the blockchain. Those so called <em>masters</em> with\nthe most votes are allowed to produce blocks.</p>\n<h2 id="transactions">Transactions</h2>\n<p>The Graphene blockchain technology offers a variety of transaction types. Users\nare not only able to simply transfer assets between each other, but there are\nalso transactions to interact with the decentralized exchange. Most of these\ntransaction types are labeled with a self-explaining tag, others require more\nknowledge about the inner workings of the company.</p>\n';
     },
     function(e, t) {
         e.exports =
@@ -53639,7 +53639,7 @@
     },
     function(e, t) {
         e.exports =
-            '<h1 id="voting">Voting</h1>\n<blockquote>\n<p>Voting is important in Bitshares in the same way it is important to the community in which you live. The weight of your vote is directly correlated to the number of BTS you own. If you aren&#39;t heavily involved in the community, you are encouraged to choose a proxy who represents your interests. If you would like to be more involved in the community, check out these <a href="/help/introduction/bitshares">channels</a>.</p>\n</blockquote>\n<h2 id="proxy">Proxy</h2>\n<p>You may choose to <strong>not</strong> be active in the governance of Bitshares. If this is the case, it&#39;s important that you choose someone in the Bitshares community who you identify with and set that entity as your proxy. This gives them to the power to vote on your behalf with your BTS shares backing their vote. This is similar to electing a representative.</p>\n<h2 id="witnesses">Witnesses</h2>\n<p>Witnesses are entities that work for the blockchain by constructing new blocks. Their role is similar to the role of miners for Bitcoin and other blockchains. Each witness is approved by the shareholders and constructs and signs blocks from validated transactions. Every transaction made in the network is required to be validated by all witnesses.</p>\n<h3 id="consensus-mechanism">Consensus Mechanism</h3>\n<p>Who exactly is allowed to <em>produce</em> a block at which time instant is defined by a\nconsensus mechanism called <em>Delegated Proof of Stake</em>. In essence, you, the\nshareholders of BitShares can cast a vote for your preferred block producers on the blockchain. Those <em>witnesses</em> with the most votes are allowed to produce blocks.</p>\n<h2 id="committee">Committee</h2>\n<p>The committee is a set of entities that are approved by the shareholders and set policy for the Bitshares blockchain including:</p>\n<ul>\n<li>Transaction and trading fees</li>\n<li>Blockchain parameters, such as block size, block interval</li>\n<li>Referral and vesting parameters such as cash back percentage and vesting periods</li>\n</ul>\n<h2 id="workers">Workers</h2>\n<p>Workers are proposals to perform a service in return for a salary from the blockchain. A worker proposal contains at a minimum the following information:</p>\n<ul>\n<li>A start and end date</li>\n<li>A daily pay</li>\n<li>A maximum total pay</li>\n<li>A link to a webpage where the worker proposal is explained</li>\n</ul>\n<h3 id="worker-lifecycle">Worker Lifecycle</h3>\n<h4 id="proposed">Proposed</h4>\n<p>These worker proposals have been submitted to the blockchain and are being actively voted on. In order to become active, they must exceed the refund400k worker in total votes.</p>\n<h4 id="active">Active</h4>\n<p>These worker proposals have exceeded the threshold and are being actively paid. Active workers can be defunded if their vote threshold is reduced below the refund400k worker level.</p>\n<h4 id="expired">Expired</h4>\n<p>These worker proposals are displayed for historical purposes. You will find propsals that have ended based upon their end date.</p>\n<h3 id="worker-budget-mechanics">Worker budget mechanics</h3>\n<p>Workers receive pay from a fixed daily budget on a first-come, first-serve basis until there are no more funds left.</p>\n<ul>\n<li>A daily total budget of 400k BTS for all workers</li>\n<li>5 worker proposals with a positive votes total, with daily pay requests of 100k BTS each</li>\n</ul>\n<p>Now the four workers with the most votes will all receive 100k BTS each per day, but once they&#39;ve been paid the worker budget is empty. Therefore the fifth worker will receive nothing.</p>\n';
+            '<h1 id="voting">Voting</h1>\n<blockquote>\n<p>Voting is important in Bitshares in the same way it is important to the community in which you live. The weight of your vote is directly correlated to the number of BTS you own. If you aren&#39;t heavily involved in the community, you are encouraged to choose a proxy who represents your interests. If you would like to be more involved in the community, check out these <a href="/help/introduction/bitshares">channels</a>.</p>\n</blockquote>\n<h2 id="proxy">Proxy</h2>\n<p>You may choose to <strong>not</strong> be active in the governance of Bitshares. If this is the case, it&#39;s important that you choose someone in the Bitshares community who you identify with and set that entity as your proxy. This gives them to the power to vote on your behalf with your BTS shares backing their vote. This is similar to electing a representative.</p>\n<h2 id="masters">Masters</h2>\n<p>Masters are entities that work for the blockchain by constructing new blocks. Their role is similar to the role of miners for Bitcoin and other blockchains. Each master is approved by the shareholders and constructs and signs blocks from validated transactions. Every transaction made in the network is required to be validated by all masters.</p>\n<h3 id="consensus-mechanism">Consensus Mechanism</h3>\n<p>Who exactly is allowed to <em>produce</em> a block at which time instant is defined by a\nconsensus mechanism called <em>Delegated Proof of Stake</em>. In essence, you, the\nshareholders of BitShares can cast a vote for your preferred block producers on the blockchain. Those <em>masters</em> with the most votes are allowed to produce blocks.</p>\n<h2 id="committee">Committee</h2>\n<p>The committee is a set of entities that are approved by the shareholders and set policy for the Bitshares blockchain including:</p>\n<ul>\n<li>Transaction and trading fees</li>\n<li>Blockchain parameters, such as block size, block interval</li>\n<li>Referral and vesting parameters such as cash back percentage and vesting periods</li>\n</ul>\n<h2 id="workers">Workers</h2>\n<p>Workers are proposals to perform a service in return for a salary from the blockchain. A worker proposal contains at a minimum the following information:</p>\n<ul>\n<li>A start and end date</li>\n<li>A daily pay</li>\n<li>A maximum total pay</li>\n<li>A link to a webpage where the worker proposal is explained</li>\n</ul>\n<h3 id="worker-lifecycle">Worker Lifecycle</h3>\n<h4 id="proposed">Proposed</h4>\n<p>These worker proposals have been submitted to the blockchain and are being actively voted on. In order to become active, they must exceed the refund400k worker in total votes.</p>\n<h4 id="active">Active</h4>\n<p>These worker proposals have exceeded the threshold and are being actively paid. Active workers can be defunded if their vote threshold is reduced below the refund400k worker level.</p>\n<h4 id="expired">Expired</h4>\n<p>These worker proposals are displayed for historical purposes. You will find propsals that have ended based upon their end date.</p>\n<h3 id="worker-budget-mechanics">Worker budget mechanics</h3>\n<p>Workers receive pay from a fixed daily budget on a first-come, first-serve basis until there are no more funds left.</p>\n<ul>\n<li>A daily total budget of 400k BTS for all workers</li>\n<li>5 worker proposals with a positive votes total, with daily pay requests of 100k BTS each</li>\n</ul>\n<p>Now the four workers with the most votes will all receive 100k BTS each per day, but once they&#39;ve been paid the worker budget is empty. Therefore the fifth worker will receive nothing.</p>\n';
     },
     function(e, t) {
         e.exports =
@@ -53647,7 +53647,7 @@
     },
     function(e, t) {
         e.exports =
-            '<h4 id="indice">Indice</h4>\n<ul>\n<li><a href="index.md">Introducción</a></li>\n<li><a href="glossary.md">Glosario</a></li>\n<li><a href="introduction/bitshares.md">BitShares</a></li>\n<li><a href="introduction/wallets.md">Billetera</a></li>\n<li><a href="introduction/backups.md">Backups</a></li>\n<li><a href="introduction/blockchain.md">Blockchain</a></li>\n<li><a href="introduction/witness.md">Testigos</a></li>\n<li><a href="introduction/committee.md">Miembros del Comité</a></li>\n<li><a href="accounts/general.md">Cuentas</a></li>\n<li><a href="accounts/permissions.md">Permisos</a></li>\n<li><a href="accounts/membership.md">Membresías</a></li>\n<li><a href="assets/mpa.md">Market Pegged Assets</a> (BitUSD, BitEUR, BitGOLD, Bit*,...)</li>\n<li><a href="assets/uia.md">Activos Emitidos por Usuarios</a></li>\n<li><a href="assets/privbitassets.md">BitAssets Privados</a></li>\n<li><a href="dex/introduction.md">Exchange Descentralizado</a></li>\n<li><a href="dex/trading.md">Trading</a></li>\n<li><a href="dex/shorting.md">Short Selling BitAssets</a></li>\n</ul>\n';
+            '<h4 id="indice">Indice</h4>\n<ul>\n<li><a href="index.md">Introducción</a></li>\n<li><a href="glossary.md">Glosario</a></li>\n<li><a href="introduction/bitshares.md">BitShares</a></li>\n<li><a href="introduction/wallets.md">Billetera</a></li>\n<li><a href="introduction/backups.md">Backups</a></li>\n<li><a href="introduction/blockchain.md">Blockchain</a></li>\n<li><a href="introduction/master.md">Testigos</a></li>\n<li><a href="introduction/committee.md">Miembros del Comité</a></li>\n<li><a href="accounts/general.md">Cuentas</a></li>\n<li><a href="accounts/permissions.md">Permisos</a></li>\n<li><a href="accounts/membership.md">Membresías</a></li>\n<li><a href="assets/mpa.md">Market Pegged Assets</a> (BitUSD, BitEUR, BitGOLD, Bit*,...)</li>\n<li><a href="assets/uia.md">Activos Emitidos por Usuarios</a></li>\n<li><a href="assets/privbitassets.md">BitAssets Privados</a></li>\n<li><a href="dex/introduction.md">Exchange Descentralizado</a></li>\n<li><a href="dex/trading.md">Trading</a></li>\n<li><a href="dex/shorting.md">Short Selling BitAssets</a></li>\n</ul>\n';
     },
     function(e, t) {
         e.exports =
@@ -53731,7 +53731,7 @@
     },
     function(e, t) {
         e.exports =
-            '<p><a href="introduction/witness">Делегаты</a> - это производители блоков BitShares. Они подтверждают транзакции и обеспечивают безопасность сети. Вы можете проголосовать за стольких делегатов, за скольких пожелаете, и все они получат одинаковое количество голосов. Предлагаемые кандидатуры делегатов можно найти здесь: <a href="https://bitsharestalk.org/index.php/board,75.0.html">BitSharestalk - Stakeholder Proposals Board</a>.</p>\n';
+            '<p><a href="introduction/master">Делегаты</a> - это производители блоков BitShares. Они подтверждают транзакции и обеспечивают безопасность сети. Вы можете проголосовать за стольких делегатов, за скольких пожелаете, и все они получат одинаковое количество голосов. Предлагаемые кандидатуры делегатов можно найти здесь: <a href="https://bitsharestalk.org/index.php/board,75.0.html">BitSharestalk - Stakeholder Proposals Board</a>.</p>\n';
     },
     function(e, t) {
         e.exports =
@@ -53791,7 +53791,7 @@
     },
     function(e, t) {
         e.exports =
-            '<h1 id="-graphene">Помощь Graphene</h1>\n<p>BitShares 2.0 - это платформа Финансовых Смарт-Контрактов, постороенная на технологии <a href="https://github.com/cryptonomex/graphene">Graphene</a>, созданной <a href="http://cryptonomex.com">Cryptonomex</a>. Graphene можно рассматривать как набор инструментов или технологию для создания блокчейнов работающих в режиме реального времени.</p>\n<p>Этот раздел помощи дает краткий обзор и описывает основные понятия этого приложения.</p>\n<h2 id="-">Введение</h2>\n<ul>\n<li><a href="introduction/bitshares.md">BitShares</a></li>\n<li><a href="introduction/wallets.md">Кошелек</a></li>\n<li><a href="introduction/backups.md">Резервные копии</a></li>\n<li><a href="introduction/blockchain.md">Блокчейн</a></li>\n<li><a href="introduction/witness.md">Делегаты</a></li>\n<li><a href="introduction/workers.md">Работники</a></li>\n<li><a href="introduction/committee.md">Члены Комитета</a></li>\n</ul>\n<h2 id="-">Аккаунты</h2>\n<ul>\n<li><a href="accounts/general.md">Введение</a></li>\n<li><a href="accounts/permissions.md">Разрешения</a></li>\n<li><a href="accounts/membership.md">Членство</a></li>\n</ul>\n<h2 id="-">Активы</h2>\n<ul>\n<li><a href="assets/mpa.md">Привязанные к рынку активы</a> (BitUSD, BitEUR, BitGOLD, Bit*,...)</li>\n<li><a href="assets/uia.md">Эмитированные пользователем активы</a></li>\n<li><a href="assets/privbitassets.md">Приватизированные BitAssets</a></li>\n</ul>\n<h2 id="-">Децентрализованная биржа</h2>\n<ul>\n<li><a href="dex/introduction.md">Введение</a></li>\n<li><a href="dex/trading.md">Торговля</a></li>\n<li><a href="dex/shorting.md">Короткая продажа BitAssets</a></li>\n</ul>\n<hr>\n<p><a href="glossary.md">Глоссарий</a></p>\n';
+            '<h1 id="-graphene">Помощь Graphene</h1>\n<p>BitShares 2.0 - это платформа Финансовых Смарт-Контрактов, постороенная на технологии <a href="https://github.com/cryptonomex/graphene">Graphene</a>, созданной <a href="http://cryptonomex.com">Cryptonomex</a>. Graphene можно рассматривать как набор инструментов или технологию для создания блокчейнов работающих в режиме реального времени.</p>\n<p>Этот раздел помощи дает краткий обзор и описывает основные понятия этого приложения.</p>\n<h2 id="-">Введение</h2>\n<ul>\n<li><a href="introduction/bitshares.md">BitShares</a></li>\n<li><a href="introduction/wallets.md">Кошелек</a></li>\n<li><a href="introduction/backups.md">Резервные копии</a></li>\n<li><a href="introduction/blockchain.md">Блокчейн</a></li>\n<li><a href="introduction/master.md">Делегаты</a></li>\n<li><a href="introduction/workers.md">Работники</a></li>\n<li><a href="introduction/committee.md">Члены Комитета</a></li>\n</ul>\n<h2 id="-">Аккаунты</h2>\n<ul>\n<li><a href="accounts/general.md">Введение</a></li>\n<li><a href="accounts/permissions.md">Разрешения</a></li>\n<li><a href="accounts/membership.md">Членство</a></li>\n</ul>\n<h2 id="-">Активы</h2>\n<ul>\n<li><a href="assets/mpa.md">Привязанные к рынку активы</a> (BitUSD, BitEUR, BitGOLD, Bit*,...)</li>\n<li><a href="assets/uia.md">Эмитированные пользователем активы</a></li>\n<li><a href="assets/privbitassets.md">Приватизированные BitAssets</a></li>\n</ul>\n<h2 id="-">Децентрализованная биржа</h2>\n<ul>\n<li><a href="dex/introduction.md">Введение</a></li>\n<li><a href="dex/trading.md">Торговля</a></li>\n<li><a href="dex/shorting.md">Короткая продажа BitAssets</a></li>\n</ul>\n<hr>\n<p><a href="glossary.md">Глоссарий</a></p>\n';
     },
     function(e, t) {
         e.exports =
@@ -53899,7 +53899,7 @@
     },
     function(e, t) {
         e.exports =
-            '<p><a href="introduction/witness">Taniklar</a> BitShares&#39;in blok üreticileridirler. İşlemlerin geçerliliklerini teyit eder ve ağın güvenliğini sağlarlar. Dilediğiniz kadar tanığa oy verebilirsiniz, hepsi aynı miktarda alır. Tanık tekliflerini buradan takip edebilirsiniz: <a href="https://bitsharestalk.org/index.php/board,75.0.html">BitSharestalk - Stakeholder Proposals Board</a>.</p>\n';
+            '<p><a href="introduction/master">Taniklar</a> BitShares&#39;in blok üreticileridirler. İşlemlerin geçerliliklerini teyit eder ve ağın güvenliğini sağlarlar. Dilediğiniz kadar tanığa oy verebilirsiniz, hepsi aynı miktarda alır. Tanık tekliflerini buradan takip edebilirsiniz: <a href="https://bitsharestalk.org/index.php/board,75.0.html">BitSharestalk - Stakeholder Proposals Board</a>.</p>\n';
     },
     function(e, t) {
         e.exports =
@@ -53939,7 +53939,7 @@
     },
     function(e, t) {
         e.exports =
-            '<h1 id="graphene-yard-m">Graphene Yardım</h1>\n<p>BitShares 2.0 , <a href="http://cryptonomex.com">Cryptonomex</a> tarafından inşa edilmiş olan\n<a href="https://github.com/cryptonomex/graphene">Graphene</a> teknolojisine dayanan bir \nFinansal-Akıllı-Kontratlar platformudur. Graphene&#39;i  gerçek-zamanlı blokzincirleri için \nbir araç takımı yada bir teknoloji olarak da görebilirsiniz.</p>\n<p>Bu yardım bölümü özet bir genel bakış sağlar ve bu uygulamanın en temel \nkavramlarını tanımlar.</p>\n<h2 id="takdim">Takdim</h2>\n<ul>\n<li><a href="introduction/bitshares.md">BitShares</a></li>\n<li><a href="introduction/wallets.md">Cüzdan</a></li>\n<li><a href="introduction/backups.md">Yedekler</a></li>\n<li><a href="introduction/blockchain.md">Blokzinciri</a></li>\n<li><a href="introduction/witness.md">Tanıklar</a></li>\n<li><a href="introduction/workers.md">İşçiler</a></li>\n<li><a href="introduction/committee.md">Kurul Üyeleri</a></li>\n</ul>\n<h2 id="hesaplar">Hesaplar</h2>\n<ul>\n<li><a href="accounts/general.md">Giriş</a></li>\n<li><a href="accounts/permissions.md">İzinler</a></li>\n<li><a href="accounts/membership.md">Üyelikler</a></li>\n</ul>\n<h2 id="aktifler">Aktifler</h2>\n<ul>\n<li><a href="assets/mpa.md">Piyasa Sabitli Varlıklar</a> (BitUSD, BitEUR, BitGOLD, Bit*,...)</li>\n<li><a href="assets/uia.md">Kullanıcı Aktifleri</a></li>\n<li><a href="assets/privbitassets.md">Özelleştirilmiş Varlıklar</a></li>\n</ul>\n<h2 id="merkezsiz-da-t-k-borsa">Merkezsiz/Dağıtık Borsa</h2>\n<ul>\n<li><a href="dex/introduction.md">Giriş</a></li>\n<li><a href="dex/trading.md">Alış/Satış</a></li>\n<li><a href="dex/shorting.md">BitAktif Kısa Satışları</a></li>\n</ul>\n<hr>\n<p><a href="glossary.md">Terimler</a></p>\n';
+            '<h1 id="graphene-yard-m">Graphene Yardım</h1>\n<p>BitShares 2.0 , <a href="http://cryptonomex.com">Cryptonomex</a> tarafından inşa edilmiş olan\n<a href="https://github.com/cryptonomex/graphene">Graphene</a> teknolojisine dayanan bir \nFinansal-Akıllı-Kontratlar platformudur. Graphene&#39;i  gerçek-zamanlı blokzincirleri için \nbir araç takımı yada bir teknoloji olarak da görebilirsiniz.</p>\n<p>Bu yardım bölümü özet bir genel bakış sağlar ve bu uygulamanın en temel \nkavramlarını tanımlar.</p>\n<h2 id="takdim">Takdim</h2>\n<ul>\n<li><a href="introduction/bitshares.md">BitShares</a></li>\n<li><a href="introduction/wallets.md">Cüzdan</a></li>\n<li><a href="introduction/backups.md">Yedekler</a></li>\n<li><a href="introduction/blockchain.md">Blokzinciri</a></li>\n<li><a href="introduction/master.md">Tanıklar</a></li>\n<li><a href="introduction/workers.md">İşçiler</a></li>\n<li><a href="introduction/committee.md">Kurul Üyeleri</a></li>\n</ul>\n<h2 id="hesaplar">Hesaplar</h2>\n<ul>\n<li><a href="accounts/general.md">Giriş</a></li>\n<li><a href="accounts/permissions.md">İzinler</a></li>\n<li><a href="accounts/membership.md">Üyelikler</a></li>\n</ul>\n<h2 id="aktifler">Aktifler</h2>\n<ul>\n<li><a href="assets/mpa.md">Piyasa Sabitli Varlıklar</a> (BitUSD, BitEUR, BitGOLD, Bit*,...)</li>\n<li><a href="assets/uia.md">Kullanıcı Aktifleri</a></li>\n<li><a href="assets/privbitassets.md">Özelleştirilmiş Varlıklar</a></li>\n</ul>\n<h2 id="merkezsiz-da-t-k-borsa">Merkezsiz/Dağıtık Borsa</h2>\n<ul>\n<li><a href="dex/introduction.md">Giriş</a></li>\n<li><a href="dex/trading.md">Alış/Satış</a></li>\n<li><a href="dex/shorting.md">BitAktif Kısa Satışları</a></li>\n</ul>\n<hr>\n<p><a href="glossary.md">Terimler</a></p>\n';
     },
     function(e, t) {
         e.exports =
@@ -53971,7 +53971,7 @@
     },
     function(e, t) {
         e.exports =
-            '<h4 id="i-indekiler">İçindekiler</h4>\n<ul>\n<li><a href="index.md"> Giriş </a></li>\n<li><a href="glossary.md">Terimler Listesi</a></li>\n<li><a href="introduction/bitshares.md">BitShares</a></li>\n<li><a href="introduction/wallets.md">Cüzdan</a></li>\n<li><a href="introduction/backups.md">Yedeklemeler</a></li>\n<li><a href="introduction/blockchain.md">Blokzinciri</a></li>\n<li><a href="introduction/witness.md">Tanık</a></li>\n<li><a href="introduction/workers.md">İşçiler</a></li>\n<li><a href="introduction/committee.md">Kurul Üyesi</a></li>\n<li><a href="accounts/general.md">Hesaplar</a></li>\n<li><a href="accounts/permissions.md">İzinler</a></li>\n<li><a href="accounts/membership.md">Üyelikler</a></li>\n<li><a href="assets/mpa.md">Piyasaya Sabitli Aktifler</a> (BitUSD, BitEUR, BitGOLD, Bit*,...)</li>\n<li><a href="assets/uia.md">Kullanıcı Aktifler</a></li>\n<li><a href="assets/privbitassets.md">Özelleştirilmiş BitAktifler</a></li>\n<li><a href="dex/introduction.md">Merkezsiz/dağıtık Borsa</a></li>\n<li><a href="dex/trading.md">Alış-Satış/Trade</a></li>\n<li><a href="dex/shorting.md">BitAktiflerin Kısa Satışları</a></li>\n</ul>\n';
+            '<h4 id="i-indekiler">İçindekiler</h4>\n<ul>\n<li><a href="index.md"> Giriş </a></li>\n<li><a href="glossary.md">Terimler Listesi</a></li>\n<li><a href="introduction/bitshares.md">BitShares</a></li>\n<li><a href="introduction/wallets.md">Cüzdan</a></li>\n<li><a href="introduction/backups.md">Yedeklemeler</a></li>\n<li><a href="introduction/blockchain.md">Blokzinciri</a></li>\n<li><a href="introduction/master.md">Tanık</a></li>\n<li><a href="introduction/workers.md">İşçiler</a></li>\n<li><a href="introduction/committee.md">Kurul Üyesi</a></li>\n<li><a href="accounts/general.md">Hesaplar</a></li>\n<li><a href="accounts/permissions.md">İzinler</a></li>\n<li><a href="accounts/membership.md">Üyelikler</a></li>\n<li><a href="assets/mpa.md">Piyasaya Sabitli Aktifler</a> (BitUSD, BitEUR, BitGOLD, Bit*,...)</li>\n<li><a href="assets/uia.md">Kullanıcı Aktifler</a></li>\n<li><a href="assets/privbitassets.md">Özelleştirilmiş BitAktifler</a></li>\n<li><a href="dex/introduction.md">Merkezsiz/dağıtık Borsa</a></li>\n<li><a href="dex/trading.md">Alış-Satış/Trade</a></li>\n<li><a href="dex/shorting.md">BitAktiflerin Kısa Satışları</a></li>\n</ul>\n';
     },
     function(e, t) {
         e.exports =
@@ -54039,7 +54039,7 @@
     },
     function(e, t) {
         e.exports =
-            '<p><a href="introduction/witness">见证人</a> 是BitShares系统中区块的生产者。他们验证交易数据并维护网络安全。你可以投票选举你信任的人成为见证人。投票时，你选择的候选人将获得你投出的相同票数。见证人的竞选帖可在这里找到<a href="https://bitsharestalk.org/index.php/board,75.0.html">BitSharestalk - Stakeholder Proposals Board</a>。</p>\n';
+            '<p><a href="introduction/master">见证人</a> 是BitShares系统中区块的生产者。他们验证交易数据并维护网络安全。你可以投票选举你信任的人成为见证人。投票时，你选择的候选人将获得你投出的相同票数。见证人的竞选帖可在这里找到<a href="https://bitsharestalk.org/index.php/board,75.0.html">BitSharestalk - Stakeholder Proposals Board</a>。</p>\n';
     },
     function(e, t) {
         e.exports =
@@ -54079,7 +54079,7 @@
     },
     function(e, t) {
         e.exports =
-            '<h1 id="graphene-">Graphene 石墨烯</h1>\n<p>BitShares(比特股) 2.0 是一个金融智能合约平台，该平台基于<a href="http://cryptonomex.com">Cryptonomex</a>公司研发的<a href="https://github.com/cryptonomex/graphene">Graphene(石墨烯)</a>技术开发。Graphene(石墨烯)是一个开发工具包，同时也是实时区块链的技术实现。</p>\n<p>本帮助文档旨在提供用户一个系统概述，并解释系统中的一些基本概念。</p>\n<h2 id="-">简介</h2>\n<ul>\n<li><a href="introduction/bitshares.md">BitShares(比特股)</a></li>\n<li><a href="introduction/wallets.md">钱包</a></li>\n<li><a href="introduction/backups.md">备份</a></li>\n<li><a href="introduction/blockchain.md">区块链</a></li>\n<li><a href="introduction/witness.md">见证人</a></li>\n<li><a href="introduction/workers.md">预算项目</a></li>\n<li><a href="introduction/committee.md">理事会</a></li>\n</ul>\n<h2 id="-">账户</h2>\n<ul>\n<li><a href="accounts/general.md">介绍</a></li>\n<li><a href="accounts/permissions.md">权限</a></li>\n<li><a href="accounts/membership.md">会员级别</a></li>\n</ul>\n<h2 id="-">资产</h2>\n<ul>\n<li><a href="assets/mpa.md">市场锚定资产</a> (BitUSD, BitEUR, BitGOLD, Bit*,...)</li>\n<li><a href="assets/uia.md">用户发行资产</a></li>\n<li><a href="assets/privbitassets.md">私有比特资产</a></li>\n</ul>\n<h2 id="-">去中心化交易所</h2>\n<ul>\n<li><a href="dex/introduction.md">介绍</a></li>\n<li><a href="dex/trading.md">交易</a></li>\n<li><a href="dex/shorting.md">卖空比特资产</a></li>\n</ul>\n<hr>\n<p><a href="glossary.md">词汇表</a></p>\n';
+            '<h1 id="graphene-">Graphene 石墨烯</h1>\n<p>BitShares(比特股) 2.0 是一个金融智能合约平台，该平台基于<a href="http://cryptonomex.com">Cryptonomex</a>公司研发的<a href="https://github.com/cryptonomex/graphene">Graphene(石墨烯)</a>技术开发。Graphene(石墨烯)是一个开发工具包，同时也是实时区块链的技术实现。</p>\n<p>本帮助文档旨在提供用户一个系统概述，并解释系统中的一些基本概念。</p>\n<h2 id="-">简介</h2>\n<ul>\n<li><a href="introduction/bitshares.md">BitShares(比特股)</a></li>\n<li><a href="introduction/wallets.md">钱包</a></li>\n<li><a href="introduction/backups.md">备份</a></li>\n<li><a href="introduction/blockchain.md">区块链</a></li>\n<li><a href="introduction/master.md">见证人</a></li>\n<li><a href="introduction/workers.md">预算项目</a></li>\n<li><a href="introduction/committee.md">理事会</a></li>\n</ul>\n<h2 id="-">账户</h2>\n<ul>\n<li><a href="accounts/general.md">介绍</a></li>\n<li><a href="accounts/permissions.md">权限</a></li>\n<li><a href="accounts/membership.md">会员级别</a></li>\n</ul>\n<h2 id="-">资产</h2>\n<ul>\n<li><a href="assets/mpa.md">市场锚定资产</a> (BitUSD, BitEUR, BitGOLD, Bit*,...)</li>\n<li><a href="assets/uia.md">用户发行资产</a></li>\n<li><a href="assets/privbitassets.md">私有比特资产</a></li>\n</ul>\n<h2 id="-">去中心化交易所</h2>\n<ul>\n<li><a href="dex/introduction.md">介绍</a></li>\n<li><a href="dex/trading.md">交易</a></li>\n<li><a href="dex/shorting.md">卖空比特资产</a></li>\n</ul>\n<hr>\n<p><a href="glossary.md">词汇表</a></p>\n';
     },
     function(e, t) {
         e.exports =
@@ -54115,7 +54115,7 @@
     },
     function(e, t) {
         e.exports =
-            '<h4 id="-">目录</h4>\n<ul>\n<li><a href="index.md">介绍</a></li>\n<li><a href="glossary.md">词汇表</a></li>\n<li><a href="introduction/bitshares.md">BitShares比特股</a></li>\n<li><a href="introduction/wallets.md">钱包</a></li>\n<li><a href="introduction/backups.md">备份</a></li>\n<li><a href="introduction/blockchain.md">区块链</a></li>\n<li><a href="introduction/witness.md">见证人</a></li>\n<li><a href="introduction/witness.md">预算项目</a></li>\n<li><a href="introduction/committee.md">理事会成员</a></li>\n<li><a href="accounts/general.md">账户</a></li>\n<li><a href="accounts/permissions.md">权限</a></li>\n<li><a href="accounts/membership.md">会员等级</a></li>\n<li><a href="assets/mpa.md">市场锚定资产</a> (BitUSD, BitEUR, BitGOLD, Bit*,...)</li>\n<li><a href="assets/uia.md">用户发行资产</a></li>\n<li><a href="assets/privbitassets.md">私有比特资产</a></li>\n<li><a href="dex/introduction.md">去中心化交易所</a></li>\n<li><a href="dex/trading.md">交易</a></li>\n<li><a href="dex/shorting.md">卖空比特资产</a></li>\n</ul>\n';
+            '<h4 id="-">目录</h4>\n<ul>\n<li><a href="index.md">介绍</a></li>\n<li><a href="glossary.md">词汇表</a></li>\n<li><a href="introduction/bitshares.md">BitShares比特股</a></li>\n<li><a href="introduction/wallets.md">钱包</a></li>\n<li><a href="introduction/backups.md">备份</a></li>\n<li><a href="introduction/blockchain.md">区块链</a></li>\n<li><a href="introduction/master.md">见证人</a></li>\n<li><a href="introduction/master.md">预算项目</a></li>\n<li><a href="introduction/committee.md">理事会成员</a></li>\n<li><a href="accounts/general.md">账户</a></li>\n<li><a href="accounts/permissions.md">权限</a></li>\n<li><a href="accounts/membership.md">会员等级</a></li>\n<li><a href="assets/mpa.md">市场锚定资产</a> (BitUSD, BitEUR, BitGOLD, Bit*,...)</li>\n<li><a href="assets/uia.md">用户发行资产</a></li>\n<li><a href="assets/privbitassets.md">私有比特资产</a></li>\n<li><a href="dex/introduction.md">去中心化交易所</a></li>\n<li><a href="dex/trading.md">交易</a></li>\n<li><a href="dex/shorting.md">卖空比特资产</a></li>\n</ul>\n';
     },
     ,
     ,
@@ -54690,7 +54690,7 @@
                 options: {
                     memo_key: "Memo Key",
                     num_committee: "Desired Committee Members",
-                    num_witnesses: "Desired Witnesses"
+                    num_masters: "Desired Masters"
                 },
                 orders: "Orders",
                 other_scam:
@@ -54824,7 +54824,7 @@
                         "Allow committee members to provide feeds",
                     condition: "Condition (max 60 characters)",
                     conflict_feed:
-                        "Cannot allow witnesses and committee members to provide feeds simultaneously",
+                        "Cannot allow masters and committee members to provide feeds simultaneously",
                     core_exchange_rate: "Core exchange rate",
                     current_issuer: "Current owner account",
                     decimals: "Number of decimal points",
@@ -54841,9 +54841,9 @@
                     expiry: "Market resolution date",
                     feed_lifetime_sec: "Feed lifetime in minutes",
                     feed_not_allowed_1:
-                        "Cannot set feed producers on a witness- or committee-fed asset",
+                        "Cannot set feed producers on a master- or committee-fed asset",
                     feed_not_allowed_2:
-                        "Please disable the flags called 'Allow witnesses to provide feeds' and 'Allow committee members to provide feeds' in order to allow manual definition of feed producers",
+                        "Please disable the flags called 'Allow masters to provide feeds' and 'Allow committee members to provide feeds' in order to allow manual definition of feed producers",
                     feed_producers: "Feed producers",
                     flags: "Flags",
                     force_settlement_delay_sec:
@@ -54893,7 +54893,7 @@
                         "The asset owner may change the owner to another account using this form:",
                     visible: "Hide asset from search and markets",
                     white_list: "Require holders to be white-listed",
-                    witness_fed_asset: "Allow witnesses to provide feeds"
+                    master_fed_asset: "Allow masters to provide feeds"
                 },
                 vesting: {
                     balance_number: "Balance #%(id)s",
@@ -54908,8 +54908,8 @@
                     active_short: "Active",
                     add_committee: "Add",
                     add_committee_label: "Committee Member",
-                    add_witness: "Add",
-                    add_witness_label: "Witness",
+                    add_master: "Add",
+                    add_master_label: "Master",
                     already: "Account is already in the list",
                     approve_worker: "Approve",
                     clear_proxy: "Remove proxy",
@@ -54941,7 +54941,7 @@
                     recycled: "Recycled",
                     reject_worker: "Reject",
                     remove_committee: "Remove",
-                    remove_witness: "Remove",
+                    remove_master: "Remove",
                     save_finish: "Click save to finish",
                     set_proxy: "Set a proxy here",
                     start: "Start date",
@@ -54962,9 +54962,9 @@
                     url: "Webpage",
                     votes: "Votes",
                     votes_against: "Votes against",
-                    w_approved_by: "Witnesses approved by %(account)s",
-                    w_not_approved_by: "Witnesses not approved by %(account)s",
-                    witness: "Witness name",
+                    w_approved_by: "Masters approved by %(account)s",
+                    w_not_approved_by: "Masters not approved by %(account)s",
+                    master: "Master name",
                     worker_account: "Worker account",
                     workers: "Budget Items",
                     workers_short: "Workers"
@@ -55309,11 +55309,11 @@
                     title: "Block",
                     transactions: "Transaction count",
                     trx: "Tx",
-                    witness: "Witness"
+                    master: "Master"
                 },
                 blocks: {
                     active_committee_members: "Active committee members",
-                    active_witnesses: "Active Witnesses",
+                    active_masters: "Active Masters",
                     avg_conf_time: "Average confirmation time",
                     block_time: "Block time",
                     block_times: "Block times",
@@ -55353,10 +55353,10 @@
                     review: "Review",
                     title: "Proposed transactions"
                 },
-                witnesses: {
+                masters: {
                     budget: "Remaining budget",
                     card: "Card view",
-                    current: "Current witness",
+                    current: "Current master",
                     last_confirmed: "Last confirmed",
                     missed: "Blocks missed",
                     next_vote: "Next vote update",
@@ -55364,7 +55364,7 @@
                     pay: "Pay-per-block",
                     rank: "Rank",
                     table: "Table view",
-                    title: "Witnesses",
+                    title: "Masters",
                     filter_by_name: "Filter By Name"
                 },
                 workers: {
@@ -55918,10 +55918,10 @@
                 vesting_balance_withdraw:
                     "{account} withdrew vesting balance of {amount}",
                 whitelisted_by: "{lister} whitelisted the account {listee}",
-                witness_create: "{account} was upgraded to become a witness",
-                witness_pay: "Withdrew witness pay to account",
-                witness_receive: "Received witness from witness",
-                witness_update: "{account} update its witness info",
+                master_create: "{account} was upgraded to become a master",
+                master_pay: "Withdrew master pay to account",
+                master_receive: "Received master from master",
+                master_update: "{account} update its master info",
                 worker_create:
                     "{account} created a worker proposal with daily pay of {pay}"
             },
@@ -56332,9 +56332,9 @@
                     withdraw_permission_create: "Create withdrawal permission",
                     withdraw_permission_delete: "Delete withdrawal permission",
                     withdraw_permission_update: "Update withdrawal permission",
-                    witness_create: "Create witness",
-                    witness_update: "Update witness",
-                    witness_withdraw_pay: "Witness pay withdrawal",
+                    master_create: "Create master",
+                    master_update: "Update master",
+                    master_withdraw_pay: "Master pay withdrawal",
                     worker_create: "Create worker"
                 },
                 vesting_balance_create: "created vesting balance of",

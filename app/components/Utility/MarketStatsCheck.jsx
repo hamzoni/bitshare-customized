@@ -75,88 +75,81 @@ class MarketStatsCheck extends React.Component {
 
     _startUpdates(props) {
         /* Only run this every x seconds */
-        if (!!this.updatesTimer) return;
-        this.updatesTimer = setTimeout(() => {
-            this.updatesTimer = null;
-        }, 10 * 1000);
-        let {coreAsset, fromAssets, fromAsset, toAsset} = props;
-        if (!fromAssets && fromAsset) fromAssets = [fromAsset];
-
-        let directMarkets = fromAssets
-            .map(asset => {
-                let {marketName: directMarket} = marketUtils.getMarketName(
-                    props.toAsset,
-                    asset
-                );
-                let useDirectMarket = this._useDirectMarket({
-                    toAsset,
-                    fromAsset: asset,
-                    allMarketStats: props.allMarketStats
-                });
-
-                if (useDirectMarket && toAsset.get("id") !== asset.get("id")) {
-                    if (!this.directStatsIntervals[directMarket]) {
-                        setTimeout(() => {
-                            this.directStatsIntervals[
-                                directMarket
-                            ] = MarketsActions.getMarketStatsInterval(
-                                5 * 60 * 1000,
-                                asset,
-                                toAsset
-                            );
-                        }, 50);
-                    }
-                }
-                // else if (this.directStatsIntervals[directMarket]) {
-                //     console.log(directMarket, "directStatsIntervals exists, clearing");
-                //     this.directStatsIntervals[directMarket]();
-                // }
-
-                return useDirectMarket ? directMarket : null;
-            })
-            .filter(a => !!a);
-
-        let indirectAssets = fromAssets.filter(f => {
-            let {marketName: directMarket} = marketUtils.getMarketName(
-                props.toAsset,
-                f
-            );
-
-            return directMarkets.indexOf(directMarket) === -1;
-        });
-
-        if (coreAsset && indirectAssets.length) {
-            // From assets
-            indirectAssets.forEach(asset => {
-                if (asset && asset.get("id") !== coreAsset.get("id")) {
-                    let {marketName} = marketUtils.getMarketName(
-                        coreAsset,
-                        asset
-                    );
-                    if (!this.fromStatsIntervals[marketName]) {
-                        setTimeout(() => {
-                            this.fromStatsIntervals[
-                                marketName
-                            ] = MarketsActions.getMarketStatsInterval(
-                                5 * 60 * 1000,
-                                coreAsset,
-                                asset
-                            );
-                        }, 50);
-                    }
-                }
-            });
-
-            // To asset
-            if (props.toAsset.get("id") !== coreAsset.get("id")) {
-                // wrap this in a timeout to prevent dispatch in the middle of a dispatch
-                this.toStatsInterval = MarketsActions.getMarketStatsInterval(
-                    5 * 60 * 1000,
-                    coreAsset,
-                    props.toAsset
-                );
-            }
-        }
+        // if (!!this.updatesTimer) return;
+        // this.updatesTimer = setTimeout(() => {
+        //     this.updatesTimer = null;
+        // }, 10 * 1000);
+        // let {coreAsset, fromAssets, fromAsset, toAsset} = props;
+        // if (!fromAssets && fromAsset) fromAssets = [fromAsset];
+        // let directMarkets = fromAssets
+        //     .map(asset => {
+        //         let {marketName: directMarket} = marketUtils.getMarketName(
+        //             props.toAsset,
+        //             asset
+        //         );
+        //         let useDirectMarket = this._useDirectMarket({
+        //             toAsset,
+        //             fromAsset: asset,
+        //             allMarketStats: props.allMarketStats
+        //         });
+        //         if (useDirectMarket && toAsset.get("id") !== asset.get("id")) {
+        //             if (!this.directStatsIntervals[directMarket]) {
+        //                 setTimeout(() => {
+        //                     this.directStatsIntervals[
+        //                         directMarket
+        //                     ] = MarketsActions.getMarketStatsInterval(
+        //                         5 * 60 * 1000,
+        //                         asset,
+        //                         toAsset
+        //                     );
+        //                 }, 50);
+        //             }
+        //         }
+        //         // else if (this.directStatsIntervals[directMarket]) {
+        //         //     console.log(directMarket, "directStatsIntervals exists, clearing");
+        //         //     this.directStatsIntervals[directMarket]();
+        //         // }
+        //         return useDirectMarket ? directMarket : null;
+        //     })
+        //     .filter(a => !!a);
+        // let indirectAssets = fromAssets.filter(f => {
+        //     let {marketName: directMarket} = marketUtils.getMarketName(
+        //         props.toAsset,
+        //         f
+        //     );
+        //     return directMarkets.indexOf(directMarket) === -1;
+        // });
+        // if (coreAsset && indirectAssets.length) {
+        //     // From assets
+        //     indirectAssets.forEach(asset => {
+        //         if (asset && asset.get("id") !== coreAsset.get("id")) {
+        //             let {marketName} = marketUtils.getMarketName(
+        //                 coreAsset,
+        //                 asset
+        //             );
+        //             if (!this.fromStatsIntervals[marketName]) {
+        //                 setTimeout(() => {
+        //                     this.fromStatsIntervals[
+        //                         marketName
+        //                     ] = MarketsActions.getMarketStatsInterval(
+        //                         5 * 60 * 1000,
+        //                         coreAsset,
+        //                         asset
+        //                     );
+        //                 }, 50);
+        //             }
+        //         }
+        //     });
+        //     // To asset
+        //     if (props.toAsset.get("id") !== coreAsset.get("id")) {
+        //         // wrap this in a timeout to prevent dispatch in the middle of a dispatch
+        //         this.toStatsInterval = MarketsActions.getMarketStatsInterval(
+        //             5 * 60 * 1000,
+        //             coreAsset,
+        //             props.toAsset
+        //         );
+        //     }
+        // }
     }
 
     _stopUpdates() {

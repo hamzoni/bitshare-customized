@@ -340,7 +340,7 @@ Bug fixes and improvements
 - Filter nodes in AccessSettings to fix key warning
 - Update russian translations
 - Fix possible undefined error in AccountOverview
-- Add several witness-provuided API servers
+- Add several master-provuided API servers
 - Fix #1388
 - Fix #1367: Restore missing Linux launcher icon
 - Add a phishing account
@@ -737,7 +737,7 @@ New features
 - Issue #364 - Present an error message that disallows the use of Incognito with the BTS wallet (#394)
 - Issue #311 - Allow for hiding user issued assets (#397)
 - Iss #43 - Notification for new version availability (#382)
-- Display all committee members and witnesses, fix #53
+- Display all committee members and masters, fix #53
 - #224 build automation (#371)
 - Iss #279 - When selecting a new Node under Settings -> Access, don't hard reload the browser (#380)
 
@@ -993,7 +993,7 @@ Bug fixes
 --------
 - Fix Russian language selection
 - Fix proxy selection
-- Fix committee/witness pages
+- Fix committee/master pages
 - A bug when importing old BTS 1 balances has been fixed
 - App init flow has been improved
 - Fix asset creation precision slider
@@ -1376,7 +1376,7 @@ New features
 
 Bug fixes
 --------
-- Sorting public keys by their converted address (per witness_node logic). #795
+- Sorting public keys by their converted address (per master_node logic). #795
 - Bug in BuySell fee asset selection
 - Show account names as links in account permissions list #790
 - Fix account selector issue
@@ -1394,7 +1394,7 @@ NEW FEATURES:
 - Add a 'Reset settings' button to Settings and InitError page
 - Split workers table into proposed and active workers
 - Remove negative votes
-- Add set of known proxies, add lists of active witnesses and cm's to voting pages
+- Add set of known proxies, add lists of active masters and cm's to voting pages
 - Add name replace for asset symbols in fee selection dropdown
 - Improve worker approve/reject logic and add status coloring
 - Add explanation of vesting balances

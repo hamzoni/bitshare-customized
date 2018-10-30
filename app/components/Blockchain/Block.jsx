@@ -7,7 +7,7 @@ import Transaction from "./Transaction";
 import Translate from "react-translate-component";
 import ChainTypes from "../Utility/ChainTypes";
 import BindToChainState from "../Utility/BindToChainState";
-import LinkToWitnessById from "../Utility/LinkToWitnessById";
+import LinkToMasterById from "../Utility/LinkToMasterById";
 import {Element, Events, animateScroll as scroll, scroller} from "react-scroll";
 
 class TransactionList extends React.Component {
@@ -184,7 +184,10 @@ class Block extends React.Component {
                     component="span"
                     content="explorer.block.title"
                 />
-                <a onClick={this.toggleInput.bind(this)}>&nbsp;#{height}</a>
+                <a onClick={this.toggleInput.bind(this)}>
+                    &nbsp;#
+                    {height}
+                </a>
             </span>
         );
 
@@ -199,7 +202,8 @@ class Block extends React.Component {
                                     <Translate
                                         component="span"
                                         content="explorer.block.date"
-                                    />:{" "}
+                                    />
+                                    :{" "}
                                     {block ? (
                                         <FormattedDate
                                             value={block.timestamp}
@@ -210,11 +214,12 @@ class Block extends React.Component {
                                 <li>
                                     <Translate
                                         component="span"
-                                        content="explorer.block.witness"
-                                    />:{" "}
+                                        content="explorer.block.master"
+                                    />
+                                    :{" "}
                                     {block ? (
-                                        <LinkToWitnessById
-                                            witness={block.witness}
+                                        <LinkToMasterById
+                                            master={block.master}
                                         />
                                     ) : null}
                                 </li>
@@ -222,14 +227,15 @@ class Block extends React.Component {
                                     <Translate
                                         component="span"
                                         content="explorer.block.previous"
-                                    />: {block ? block.previous : null}
+                                    />
+                                    : {block ? block.previous : null}
                                 </li>
                                 <li>
                                     <Translate
                                         component="span"
                                         content="explorer.block.transactions"
-                                    />:{" "}
-                                    {block ? block.transactions.length : null}
+                                    />
+                                    : {block ? block.transactions.length : null}
                                 </li>
                             </ul>
                             <div

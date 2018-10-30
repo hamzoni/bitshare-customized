@@ -864,7 +864,7 @@
                         api: "database_api",
                         method: "get_current_median_history_price"
                     },
-                    {api: "database_api", method: "get_witness_schedule"},
+                    {api: "database_api", method: "get_master_schedule"},
                     {api: "database_api", method: "get_hardfork_version"},
                     {
                         api: "database_api",
@@ -1023,26 +1023,26 @@
                     },
                     {
                         api: "database_api",
-                        method: "get_witnesses",
-                        params: ["witnessIds"]
+                        method: "get_masters",
+                        params: ["masterIds"]
                     },
                     {
                         api: "database_api",
-                        method: "get_witness_by_account",
+                        method: "get_master_by_account",
                         params: ["accountName"]
                     },
                     {
                         api: "database_api",
-                        method: "get_witnesses_by_vote",
+                        method: "get_masters_by_vote",
                         params: ["from", "limit"]
                     },
                     {
                         api: "database_api",
-                        method: "lookup_witness_accounts",
+                        method: "lookup_master_accounts",
                         params: ["lowerBoundName", "limit"]
                     },
-                    {api: "database_api", method: "get_witness_count"},
-                    {api: "database_api", method: "get_active_witnesses"},
+                    {api: "database_api", method: "get_master_count"},
+                    {api: "database_api", method: "get_active_masters"},
                     {api: "database_api", method: "get_miner_queue"},
                     {
                         api: "database_api",

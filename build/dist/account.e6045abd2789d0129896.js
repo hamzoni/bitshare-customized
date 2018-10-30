@@ -2023,7 +2023,7 @@
                                     "account_create",
                                     "account_update",
                                     "asset_create",
-                                    "witness_withdraw_pay",
+                                    "master_withdraw_pay",
                                     "vesting_balance_withdraw"
                                 ].map(function(e) {
                                     return s.a.createElement(
@@ -12065,7 +12065,7 @@
                                 value: function() {
                                     var e = this,
                                         t = this.props,
-                                        a = t.witnessFed,
+                                        a = t.masterFed,
                                         n = t.committeeFed;
                                     return a || n
                                         ? s.a.createElement(
@@ -12897,7 +12897,7 @@
                                                 }
                                             )),
                                         n.committee_fed_asset &&
-                                            n.witness_fed_asset &&
+                                            n.master_fed_asset &&
                                             (i.conflict_producer = K.a.translate(
                                                 "account.user_issued_assets.conflict_feed"
                                             )),
@@ -14337,8 +14337,8 @@
                                                                       account: this
                                                                           .props
                                                                           .account,
-                                                                      witnessFed:
-                                                                          c.witness_fed_asset,
+                                                                      masterFed:
+                                                                          c.master_fed_asset,
                                                                       committeeFed:
                                                                           c.committee_fed_asset,
                                                                       producers: this
@@ -16685,7 +16685,7 @@
                                                 },
                                                 s.a.createElement(A.a, {
                                                     content:
-                                                        "account.votes.remove_witness"
+                                                        "account.votes.remove_master"
                                                 })
                                             )
                                         )
@@ -16867,7 +16867,7 @@
                                                 .onItemAccountChange,
                                             onAction: this.onAddItem,
                                             action_label:
-                                                "account.votes.add_witness",
+                                                "account.votes.add_master",
                                             tabIndex: this.props.tabIndex,
                                             allowPubKey: !0,
                                             disableActionButton: !this.state
@@ -20622,8 +20622,8 @@
                     n = 0,
                     s = void 0;
                 return (
-                    "witness" === e
-                        ? (s = W.ChainStore.getWitnessById(t.get("id")))
+                    "master" === e
+                        ? (s = W.ChainStore.getMasterById(t.get("id")))
                         : "committee" === e &&
                           (s = W.ChainStore.getCommitteeMemberById(
                               t.get("id")
@@ -20928,7 +20928,7 @@
                                                   .onItemAccountChange,
                                               onAction: this.onAddItem,
                                               action_label:
-                                                  "account.votes.add_witness",
+                                                  "account.votes.add_master",
                                               tabIndex: this.props.tabIndex
                                           })
                                         : null,
@@ -21176,7 +21176,7 @@
                             proxy_account_id: "1.2.5" === n ? "" : n,
                             prev_proxy_account_id: "1.2.5" === n ? "" : n,
                             current_proxy_input: "1.2.5" === n ? "" : s,
-                            witnesses: null,
+                            masters: null,
                             committee: null,
                             vote_ids: h.a.Set(),
                             proxy_vote_ids: h.a.Set(),
@@ -21185,7 +21185,7 @@
                                 "workerTableIndex",
                                 1
                             ),
-                            all_witnesses: h.a.List(),
+                            all_masters: h.a.List(),
                             all_committee: h.a.List()
                         }),
                         (a.onProxyAccountFound = a.onProxyAccountFound.bind(a)),
@@ -21309,37 +21309,37 @@
                                                           "worker_account"
                                                       )) ||
                                                       ((n = e.get(
-                                                          "witness_account"
+                                                          "master_account"
                                                       )) &&
                                                           (t = t.push(n)));
                                             }),
                                             {
-                                                witnesses: t,
+                                                masters: t,
                                                 committee: a,
                                                 workers: n
                                             }
                                         );
                                     }
                                     var l = o(s),
-                                        u = l.witnesses,
+                                        u = l.masters,
                                         m = l.committee,
                                         d = l.workers,
                                         f = o(r || []),
-                                        b = f.witnesses,
+                                        b = f.masters,
                                         g = f.committee,
                                         _ = f.workers,
                                         v = {
                                             proxy_account_id: n,
                                             current_proxy_input: i,
-                                            witnesses: u,
+                                            masters: u,
                                             committee: m,
                                             workers: d,
-                                            proxy_witnesses: b,
+                                            proxy_masters: b,
                                             proxy_committee: g,
                                             proxy_workers: _,
                                             vote_ids: c,
                                             proxy_vote_ids: p,
-                                            prev_witnesses: u,
+                                            prev_masters: u,
                                             prev_committee: m,
                                             prev_workers: d,
                                             prev_vote_ids: c
@@ -21359,7 +21359,7 @@
                                 return (
                                     e.proxy_account_id !==
                                         e.prev_proxy_account_id ||
-                                    e.witnesses !== e.prev_witnesses ||
+                                    e.masters !== e.prev_masters ||
                                     e.committee !== e.prev_committee ||
                                     !h.a.is(e.vote_ids, e.prev_vote_ids)
                                 );
@@ -21373,10 +21373,10 @@
                                         arguments.length > 0 &&
                                         void 0 !== arguments[0]
                                             ? arguments[0]
-                                            : "witnesses",
+                                            : "masters",
                                     a = arguments[1],
                                     n = this.state["all_" + t],
-                                    s = "witnesses" === t,
+                                    s = "masters" === t,
                                     r = void 0;
                                 if (a)
                                     r = parseInt(
@@ -21389,7 +21389,7 @@
                                         this.props.globalObject
                                             .get(
                                                 s
-                                                    ? "active_witnesses"
+                                                    ? "active_masters"
                                                     : "active_committee_members"
                                             )
                                             .sort(function(e, t) {
@@ -21428,7 +21428,7 @@
                                                     .map(function(e) {
                                                         return e.get(
                                                             s
-                                                                ? "witness_account"
+                                                                ? "master_account"
                                                                 : "committee_member_account"
                                                         );
                                                     })
@@ -21461,7 +21461,7 @@
                                     n = {account: a.id},
                                     s = {memo_key: a.options.memo_key};
                                 (s.voting_account = e || "1.2.5"),
-                                    (s.num_witness = this.state.witnesses.size),
+                                    (s.num_master = this.state.masters.size),
                                     (s.num_committee = this.state.committee.size),
                                     (n.new_options = s),
                                     (n.fee = {
@@ -21486,8 +21486,8 @@
                                         (r = l(r, e.get("vote_against"))));
                                 }),
                                     Object(W.FetchChainObjects)(
-                                        W.ChainStore.getWitnessById,
-                                        this.state.witnesses.toArray(),
+                                        W.ChainStore.getMasterById,
+                                        this.state.masters.toArray(),
                                         4e3
                                     )
                                         .then(function(e) {
@@ -21548,7 +21548,7 @@
                                                 t.prev_proxy_account_id,
                                             current_proxy_input:
                                                 t.prev_proxy_input,
-                                            witnesses: t.prev_witnesses,
+                                            masters: t.prev_masters,
                                             committee: t.prev_committee,
                                             workers: t.prev_workers,
                                             vote_ids: t.prev_vote_ids
@@ -21597,15 +21597,15 @@
                             key: "validateAccount",
                             value: function(e, t) {
                                 return t
-                                    ? "witnesses" === e
+                                    ? "masters" === e
                                         ? Object(W.FetchChainObjects)(
-                                              W.ChainStore.getWitnessById,
+                                              W.ChainStore.getMasterById,
                                               [t.get("id")],
                                               3e3
                                           ).then(function(e) {
                                               return e[0]
                                                   ? null
-                                                  : "Not a witness";
+                                                  : "Not a master";
                                           })
                                         : "committee" === e
                                             ? Object(W.FetchChainObjects)(
@@ -21632,7 +21632,7 @@
                                             this.state.proxy_account_id)) &&
                                     this.setState({
                                         proxy_account_id: "",
-                                        proxy_witnesses: h.a.Set(),
+                                        proxy_masters: h.a.Set(),
                                         proxy_committee: h.a.Set(),
                                         proxy_workers: h.a.Set()
                                     }),
@@ -22098,7 +22098,7 @@
                                                     q.a,
                                                     {
                                                         title:
-                                                            "explorer.witnesses.title"
+                                                            "explorer.masters.title"
                                                     },
                                                     s.a.createElement(
                                                         "div",
@@ -22128,22 +22128,22 @@
                                                             )
                                                         ),
                                                         s.a.createElement(ma, {
-                                                            type: "witness",
+                                                            type: "master",
                                                             label:
-                                                                "account.votes.add_witness_label",
+                                                                "account.votes.add_master_label",
                                                             items: this.state
-                                                                .all_witnesses,
+                                                                .all_masters,
                                                             validateAccount: this.validateAccount.bind(
                                                                 this,
-                                                                "witnesses"
+                                                                "masters"
                                                             ),
                                                             onAddItem: this.onAddItem.bind(
                                                                 this,
-                                                                "witnesses"
+                                                                "masters"
                                                             ),
                                                             onRemoveItem: this.onRemoveItem.bind(
                                                                 this,
-                                                                "witnesses"
+                                                                "masters"
                                                             ),
                                                             tabIndex: o
                                                                 ? -1
@@ -22151,12 +22151,12 @@
                                                             supported: this
                                                                 .state[
                                                                 o
-                                                                    ? "proxy_witnesses"
-                                                                    : "witnesses"
+                                                                    ? "proxy_masters"
+                                                                    : "masters"
                                                             ],
                                                             withSelector: !1,
                                                             active: l.get(
-                                                                "active_witnesses"
+                                                                "active_masters"
                                                             ),
                                                             proxy: this.state
                                                                 .proxy_account_id
@@ -22727,7 +22727,7 @@
                                                                               A.a,
                                                                               {
                                                                                   content:
-                                                                                      "explorer.witnesses.budget"
+                                                                                      "explorer.masters.budget"
                                                                               }
                                                                           ),
                                                                           s.a.createElement(

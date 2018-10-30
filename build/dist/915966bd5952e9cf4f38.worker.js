@@ -9574,7 +9574,7 @@
                 asset: 3,
                 force_settlement: 4,
                 committee_member: 5,
-                witness: 6,
+                master: 6,
                 limit_order: 7,
                 call_order: 8,
                 custom: 9,
@@ -9598,10 +9598,10 @@
                 account_transaction_history: 9,
                 blinded_balance: 10,
                 chain_property: 11,
-                witness_schedule: 12,
+                master_schedule: 12,
                 budget_record: 13
             },
-            vote_type: {committee: 0, witness: 1, worker: 2},
+            vote_type: {committee: 0, master: 1, worker: 2},
             operations: {
                 transfer: 0,
                 limit_order_create: 1,
@@ -9623,8 +9623,8 @@
                 asset_settle: 17,
                 asset_global_settle: 18,
                 asset_publish_feed: 19,
-                witness_create: 20,
-                witness_update: 21,
+                master_create: 20,
+                master_update: 21,
                 proposal_create: 22,
                 proposal_update: 23,
                 proposal_delete: 24,
@@ -13711,7 +13711,7 @@
                 p = s.a.impl_object_type,
                 d = Object(c.a)(),
                 _ = parseInt(l.operation_history, 10),
-                g = "1." + parseInt(l.witness, 10) + ".",
+                g = "1." + parseInt(l.master, 10) + ".",
                 v = "1." + parseInt(l.committee_member, 10) + ".",
                 y = "1." + parseInt(l.account, 10) + ".",
                 b = JSON.parse(
@@ -13751,7 +13751,7 @@
                 return (
                     (t.prototype.clearCache = function() {
                         (this.subbed_accounts = new Set()),
-                            (this.subbed_witnesses = new Set()),
+                            (this.subbed_masters = new Set()),
                             (this.subbed_committee = new Set()),
                             (this.objects_by_id = new Map()),
                             (this.accounts_by_name = new Map()),
@@ -13762,7 +13762,7 @@
                             (this.get_account_refs_of_keys_calls = new Set()),
                             (this.get_account_refs_of_accounts_calls = new Set()),
                             (this.account_history_requests = new Map()),
-                            (this.witness_by_account_id = new Map()),
+                            (this.master_by_account_id = new Map()),
                             (this.workers = new Set()),
                             (this.committee_by_account_id = new Map()),
                             (this.objects_by_vote_id = new Map()),
@@ -14269,7 +14269,7 @@
                                 );
                             if (0 === t.search("1.2.") && !i)
                                 return this.fetchFullAccount(t, n);
-                            0 === t.search(g) && this._subTo("witnesses", t),
+                            0 === t.search(g) && this._subTo("masters", t),
                                 0 === t.search(v) &&
                                     this._subTo("committee", t);
                             var f = this.objects_by_id.get(t);
@@ -14344,14 +14344,14 @@
                             this.getObject(t, !1, !1, !0);
                         }
                     }),
-                    (t.prototype.getWitnessById = function(t) {
-                        var e = this.witness_by_account_id.get(t);
+                    (t.prototype.getMasterById = function(t) {
+                        var e = this.master_by_account_id.get(t);
                         if (void 0 !== e)
                             return (
-                                e && this._subTo("witnesses", e),
+                                e && this._subTo("masters", e),
                                 e ? this.getObject(e) : null
                             );
-                        this.fetchWitnessByAccount(t);
+                        this.fetchMasterByAccount(t);
                     }),
                     (t.prototype.getCommitteeMemberById = function(t) {
                         var e = this.committee_by_account_id.get(t);
@@ -14380,23 +14380,23 @@
                                 }, r);
                         });
                     }),
-                    (t.prototype.fetchWitnessByAccount = function(t) {
+                    (t.prototype.fetchMasterByAccount = function(t) {
                         var e = this;
                         return new Promise(function(r, n) {
                             o.a
                                 .instance()
                                 .db_api()
-                                .exec("get_witness_by_account", [t])
+                                .exec("get_master_by_account", [t])
                                 .then(function(n) {
                                     if (n) {
-                                        e._subTo("witnesses", n.id),
-                                            (e.witness_by_account_id = e.witness_by_account_id.set(
-                                                n.witness_account,
+                                        e._subTo("masters", n.id),
+                                            (e.master_by_account_id = e.master_by_account_id.set(
+                                                n.master_account,
                                                 n.id
                                             ));
                                         var i = e._updateObject(n, !0);
                                         r(i);
-                                    } else (e.witness_by_account_id = e.witness_by_account_id.set(t, null)), e.notifySubscribers(), r(null);
+                                    } else (e.master_by_account_id = e.master_by_account_id.set(t, null)), e.notifySubscribers(), r(null);
                                 }, n);
                         });
                     }),
@@ -14712,9 +14712,8 @@
                                 )
                                     return;
                                 break;
-                            case "witness":
-                                if (!this._isSubbedTo("witnesses", t.id))
-                                    return;
+                            case "master":
+                                if (!this._isSubbedTo("masters", t.id)) return;
                                 break;
                             case "committee_member":
                                 if (!this._isSubbedTo("committee", t.id))
@@ -14784,11 +14783,10 @@
                                     );
                                 }
                                 break;
-                            case "witness":
-                                if (!this._isSubbedTo("witnesses", t.id))
-                                    return;
-                                this.witness_by_account_id.set(
-                                    t.witness_account,
+                            case "master":
+                                if (!this._isSubbedTo("masters", t.id)) return;
+                                this.master_by_account_id.set(
+                                    t.master_account,
                                     t.id
                                 ),
                                     this.objects_by_vote_id.set(
@@ -14949,9 +14947,7 @@
                                                         g.length
                                                     ) == g;
                                                 e._subTo(
-                                                    n
-                                                        ? "witnesses"
-                                                        : "committee",
+                                                    n ? "masters" : "committee",
                                                     t[r].id
                                                 ),
                                                     e._updateObject(t[r]);
@@ -23852,10 +23848,10 @@
             r.d(n, "asset_publish_feed_operation_fee_parameters", function() {
                 return J;
             }),
-            r.d(n, "witness_create_operation_fee_parameters", function() {
+            r.d(n, "master_create_operation_fee_parameters", function() {
                 return G;
             }),
-            r.d(n, "witness_update_operation_fee_parameters", function() {
+            r.d(n, "master_update_operation_fee_parameters", function() {
                 return X;
             }),
             r.d(n, "proposal_create_operation_fee_parameters", function() {
@@ -24080,10 +24076,10 @@
             r.d(n, "asset_publish_feed", function() {
                 return se;
             }),
-            r.d(n, "witness_create", function() {
+            r.d(n, "master_create", function() {
                 return ae;
             }),
-            r.d(n, "witness_update", function() {
+            r.d(n, "master_update", function() {
                 return ue;
             }),
             r.d(n, "op_wrapper", function() {
@@ -24292,8 +24288,8 @@
             Y = new O("asset_settle_operation_fee_parameters", {fee: c}),
             Z = new O("asset_global_settle_operation_fee_parameters", {fee: c}),
             J = new O("asset_publish_feed_operation_fee_parameters", {fee: c}),
-            G = new O("witness_create_operation_fee_parameters", {fee: c}),
-            X = new O("witness_update_operation_fee_parameters", {fee: f}),
+            G = new O("master_create_operation_fee_parameters", {fee: c}),
+            X = new O("master_update_operation_fee_parameters", {fee: f}),
             $ = new O("proposal_create_operation_fee_parameters", {
                 fee: c,
                 price_per_kbyte: u
@@ -24434,26 +24430,26 @@
             jt = new O("signed_block", {
                 previous: l(20),
                 timestamp: B,
-                witness: _("witness"),
+                master: _("master"),
                 transaction_merkle_root: l(20),
                 extensions: w(y),
-                witness_signature: l(65),
+                master_signature: l(65),
                 transactions: d(Ot)
             }),
             At = new O("block_header", {
                 previous: l(20),
                 timestamp: B,
-                witness: _("witness"),
+                master: _("master"),
                 transaction_merkle_root: l(20),
                 extensions: w(y)
             }),
             Lt = new O("signed_block_header", {
                 previous: l(20),
                 timestamp: B,
-                witness: _("witness"),
+                master: _("master"),
                 transaction_merkle_root: l(20),
                 extensions: w(y),
-                witness_signature: l(65)
+                master_signature: l(65)
             }),
             Mt = new O("memo_data", {from: E, to: E, nonce: c, message: l()}),
             Dt = new O("transfer", {
@@ -24505,7 +24501,7 @@
             Nt = new O("account_options", {
                 memo_key: E,
                 voting_account: _("account"),
-                num_witness: a,
+                num_master: a,
                 num_committee: a,
                 votes: w(v),
                 extensions: w(y)
@@ -24651,16 +24647,16 @@
                 feed: oe,
                 extensions: w(y)
             }),
-            ae = new O("witness_create", {
+            ae = new O("master_create", {
                 fee: It,
-                witness_account: _("account"),
+                master_account: _("account"),
                 url: h,
                 block_signing_key: E
             }),
-            ue = new O("witness_update", {
+            ue = new O("master_update", {
                 fee: It,
-                witness: _("witness"),
-                witness_account: _("account"),
+                master: _("master"),
+                master_account: _("account"),
                 new_url: T(h),
                 new_signing_key: T(E)
             }),
@@ -24748,7 +24744,7 @@
                 maximum_proposal_lifetime: u,
                 maximum_asset_whitelist_authorities: s,
                 maximum_asset_feed_publishers: s,
-                maximum_witness_count: a,
+                maximum_master_count: a,
                 maximum_committee_count: a,
                 maximum_authority_membership: a,
                 reserve_percent_of_fee: a,
@@ -24758,7 +24754,7 @@
                 cashback_vesting_threshold: f,
                 count_non_member_votes: p,
                 allow_non_member_whitelists: p,
-                witness_pay_per_block: f,
+                master_pay_per_block: f,
                 worker_budget_per_day: f,
                 max_predicate_opcode: a,
                 fee_liquidation_threshold: f,

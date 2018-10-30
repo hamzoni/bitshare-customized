@@ -31,7 +31,7 @@ class AccountOverview extends React.Component {
             ), // alphabetical A -> B, numbers high to low
             shownAssets: props.viewSettings.get("shownAssets", "active"),
             alwaysShowAssets: [
-                "BTS"
+                "ZCOM"
                 // "USD",
                 // "CNY",
                 // "OPEN.BTC",
@@ -248,6 +248,7 @@ class AccountOverview extends React.Component {
             call_orders = account.get("call_orders").toJS();
         let includedPortfolioList, hiddenPortfolioList;
         let account_balances = account.get("balances");
+
         let includedBalancesList = Immutable.List(),
             hiddenBalancesList = Immutable.List();
         call_orders.forEach(callID => {

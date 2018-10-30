@@ -854,7 +854,7 @@
                                     "account_create",
                                     "account_update",
                                     "asset_create",
-                                    "witness_withdraw_pay",
+                                    "master_withdraw_pay",
                                     "vesting_balance_withdraw"
                                 ].map(function(e) {
                                     return r.a.createElement(

@@ -320,6 +320,7 @@ class AccountPortfolioList extends React.Component {
         const emptyCell = "-";
         balanceList.forEach(balance => {
             let balanceObject = ChainStore.getObject(balance);
+            console.log("Balance object: ", balanceObject);
             if (!balanceObject) return;
             let asset_type = balanceObject.get("asset_type");
             let asset = ChainStore.getObject(asset_type);

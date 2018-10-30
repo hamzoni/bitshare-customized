@@ -4,7 +4,7 @@ import BlockchainActions from "actions/BlockchainActions";
 import Translate from "react-translate-component";
 import {FormattedDate} from "react-intl";
 import Operation from "../Blockchain/Operation";
-import LinkToWitnessById from "../Utility/LinkToWitnessById";
+import LinkToMasterById from "../Utility/LinkToMasterById";
 import ChainTypes from "../Utility/ChainTypes";
 import BindToChainState from "../Utility/BindToChainState";
 import AssetWrapper from "../Utility/AssetWrapper";
@@ -251,7 +251,7 @@ class Blocks extends React.Component {
                                 />
                             </td>
                             <td>
-                                <LinkToWitnessById witness={block.witness} />
+                                <LinkToMasterById master={block.master} />
                             </td>
                             <td>
                                 {utils.format_number(
@@ -315,7 +315,8 @@ class Blocks extends React.Component {
                                 />
                             </span>
                             <h2>
-                                #{utils.format_number(
+                                #
+                                {utils.format_number(
                                     dynGlobalObject.get("head_block_number"),
                                     0
                                 )}
@@ -364,11 +365,11 @@ class Blocks extends React.Component {
                             <span className="txtlabel">
                                 <Translate
                                     component="span"
-                                    content="explorer.blocks.active_witnesses"
+                                    content="explorer.blocks.active_masters"
                                 />
                             </span>
                             <h2 className="txtlabel success">
-                                {globalObject.get("active_witnesses").size}
+                                {globalObject.get("active_masters").size}
                             </h2>
                         </div>
                     </div>
@@ -576,7 +577,7 @@ class Blocks extends React.Component {
                                             <th>
                                                 <Translate
                                                     component="span"
-                                                    content="explorer.block.witness"
+                                                    content="explorer.block.master"
                                                 />
                                             </th>
                                             <th>

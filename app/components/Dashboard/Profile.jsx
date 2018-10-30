@@ -29,7 +29,7 @@ import {withRouter} from "react-router-dom";
 import CreateAccoutModal from "../CreateAccountModal";
 import {Link} from "react-router-dom";
 import {Row, Col, Modal, Button} from "antd";
-import SendModalDasboard from "../Modal/SendModalDasboard";
+import SendModalDashboard from "../Modal/SendModalDashboard";
 
 import {getLogo} from "branding";
 var logo = getLogo();
@@ -475,10 +475,7 @@ class Header extends React.Component {
                         <Col xs={10} sm={8} md={4} lg={4} xl={4}>
                             <span>Zcom Balance</span>
                             <br />
-                            <span className="mono-fbold">
-                                {walletBalance}
-                                .00 Zcom
-                            </span>
+                            <span className="mono-fbold">{walletBalance}</span>
                             <span style={{float: "right"}}>0.00 $</span>
                         </Col>
                     </Row>
@@ -510,12 +507,14 @@ class Header extends React.Component {
                                 onOk={this.handleOk}
                                 onCancel={this.handleCancel}
                             >
-                                <SendModalDasboard
+                                <SendModalDashboard
                                     onCloseModal={this.handleCancel.bind(this)}
-                                    // refCallback={e => {
-                                    //     if (e) this.send_modal = e;
-                                    // }}
-                                    //from_name={currentAccount}
+                                    id="send_modal_portfolio"
+                                    refCallback={e => {
+                                        if (e) this.send_modal = e;
+                                    }}
+                                    from_name={currentAccount}
+                                    asset_id="1.3.0"
                                 />
                             </Modal>
                         </Col>
