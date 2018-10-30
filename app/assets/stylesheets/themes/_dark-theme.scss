@@ -1,0 +1,139 @@
+@import "theme-template";
+
+// variables
+
+$light-text-color: #333;
+$dark-text-color: #333;
+$primary-text-color: #333;
+$secondary-text-color: darken($primary-text-color, 20%);
+$inactive-text-color: darken($primary-text-color, 30%);
+$link-text-color: #1ec3fa;
+$error-text-color: #ff3950;
+
+$settings-select-bg: #f5f5f5;
+$settings-select-color: darken($primary-text-color, 20%);
+$settings-api-node-border-color: #00808e;
+$main-content-margin-block-bg-color: #f5f5f5;
+$bg-color: #f5f5f5;
+$panel-bg-color: #f0f0f0;
+$light-panel-bg-color: #f0f0f0;
+$super-light-panel-bg-color: lighten($light-panel-bg-color, 20%);
+$settings-menu-hover-bg: lighten($light-panel-bg-color, 20%);
+$settings-menu-active-bg: lighten($light-panel-bg-color, 20%);
+$button-bg-color: #049cce;
+$secondary-button-bg-color: #999999;
+$input-background: #ffffff;
+
+$alert-color: $error-text-color;
+$info-color: #a0d3e8;
+$success-color: #7bd500;
+$warning-color: #fcab53;
+$fee-color: $secondary-text-color;
+
+// Exchange colors
+$bid-color: #6ba583;
+$ask-color: #e3745b;
+$call-color: #bbbf2b;
+$positive-color: #258a14;
+$negative-color: #ff3950;
+$row-accent-color: #3c3c3c;
+$header-color: #003d65;
+
+// Account table view colors
+$account-header: #f5f5f5;
+$account-cells: #fafafa;
+$account-green: #7ed321;
+$account-primarytext: #003d65;
+$account-dimmed: #afafaf;
+$account-border: #f5f5f5;
+$account-background: #f5f5f5;
+$account-tabs-background: #f5f5f5;
+
+$pulsate-green-start: $account-green;
+$pulsate-green-end: #aaf25c;
+$pulsate-red-start: $negative-color;
+$pulsate-red-end: #ef4040;
+
+$modal-bg-color: #4b5158;
+
+$mobile-input-bg: #2d2d2d;
+
+$slider-thumb-color: #f00;
+
+$incognito-bg: #ff3950;
+
+$tab-content-background-color: lighten($account-header, 4%);
+$explorer-tab-content-background-color: $bg-color;
+
+// * * * Explorer
+
+// * * * * * Witnesses
+
+$explorer--witnesses--info-bg: transparent;
+$explorer--witnesses--info-border: darken($account-header, 6%);
+$explorer--witnesses--info-table-title-color: $account-dimmed;
+$explorer--witnesses--info-table-text-color: #fff;
+
+// * * * * * Assets
+
+$explorer--assets--bg: $bg-color;
+
+// * * *
+
+.darkTheme {
+    @include theme(
+        $explorer-tab-content-background-color,
+        $tab-content-background-color,
+        $primary-text-color,
+        $bg-color,
+        $dark-text-color,
+        $inactive-text-color,
+        $link-text-color,
+        $light-text-color,
+        $secondary-text-color,
+        $success-color,
+        $info-color,
+        $warning-color,
+        $alert-color,
+        $super-light-panel-bg-color,
+        $panel-bg-color,
+        $button-bg-color,
+        $secondary-button-bg-color,
+        $fee-color,
+        $bid-color,
+        $ask-color,
+        $call-color,
+        $light-panel-bg-color,
+        $positive-color,
+        $negative-color,
+        $row-accent-color,
+        $header-color,
+        $input-background,
+        $account-header,
+        $account-cells,
+        $account-green,
+        $account-primarytext,
+        $account-dimmed,
+        $account-border,
+        $account-background,
+        $account-tabs-background,
+        $pulsate-green-start,
+        $pulsate-green-end,
+        $pulsate-red-start,
+        $pulsate-red-end,
+        $settings-select-bg,
+        $settings-select-color,
+        $settings-menu-hover-bg,
+        $settings-menu-active-bg,
+        $settings-api-node-border-color,
+        $main-content-margin-block-bg-color,
+        $modal-bg-color,
+        $mobile-input-bg,
+        $incognito-bg,
+        $explorer--witnesses--info-bg,
+        $explorer--witnesses--info-border,
+        $explorer--witnesses--info-table-title-color,
+        $explorer--witnesses--info-table-text-color,
+        $explorer--assets--bg
+    );
+}
