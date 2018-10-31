@@ -96,7 +96,7 @@ class LoginSelector extends React.Component {
                             </span>
                         </div>
 
-                        <div className="additional-account-options">
+                        {/* <div className="additional-account-options">
                             <h5 style={{textAlign: "center"}}>
                                 <TranslateWithLinks
                                     string="account.optional.formatter"
@@ -124,7 +124,7 @@ class LoginSelector extends React.Component {
                                     ]}
                                 />
                             </h5>
-                        </div>
+                        </div> */}
 
                         <Route
                             path="/create-account/wallet"

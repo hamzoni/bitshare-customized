@@ -665,7 +665,7 @@ class AccountVoting extends React.Component {
             });
 
         let actionButtons = (
-            <Row type="flex" justify="end">
+            <Row type="flex" justify="end" style={{marginBottom: 15}}>
                 <Col span={11} offset={1}>
                     <Button
                         type="primary"
@@ -767,7 +767,7 @@ class AccountVoting extends React.Component {
                                             lg={14}
                                             xl={16}
                                         >
-                                            {proxyInput}
+                                            {/* {proxyInput} */}
                                         </Col>
                                         <Col
                                             xs={16}
@@ -823,7 +823,7 @@ class AccountVoting extends React.Component {
                                             lg={14}
                                             xl={16}
                                         >
-                                            {proxyInput}
+                                            {/* {proxyInput} */}
                                         </Col>
                                         <Col
                                             xs={16}

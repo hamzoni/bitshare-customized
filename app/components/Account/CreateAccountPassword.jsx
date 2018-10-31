@@ -538,7 +538,9 @@ class CreateAccountPassword extends React.Component {
                 <div
                     style={{width: "100%"}}
                     onClick={() => {
-                        this.props.history.push("/");
+                        this.props.history.push(
+                            `/account/${this.state.accountName}`
+                        );
                     }}
                     className="button"
                 >

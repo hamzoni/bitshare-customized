@@ -13447,7 +13447,7 @@
                               e.version || (e.version = "1.0");
                               e.timestamp ||
                                   (e.timestamp = new Date().getTime());
-                              e.outerChannel || (e.outerChannel = "Bitshares");
+                              e.outerChannel || (e.outerChannel = "Zcom");
                               var a = JSON.stringify(e);
                               if (Ae[a]) return;
                               (Ae[a] = !0),
@@ -13487,7 +13487,7 @@
                 e.requestChannel || (e.requestChannel = 0),
                     e.version || (e.version = "1.0"),
                     e.timestamp || (e.timestamp = new Date().getTime()),
-                    e.outerChannel || (e.outerChannel = "Bitshares");
+                    e.outerChannel || (e.outerChannel = "Zcom");
                 var n = JSON.stringify(e);
                 if (!Ae[n])
                     return (
@@ -17105,7 +17105,7 @@
                                             s.a.createElement(
                                                 "p",
                                                 null,
-                                                "OBSIDIAN TECHNOLOGY CO. PTE. LTD. (hereinafter referred to as the 'Company') is a company incorporated under the laws in Singapore Republic, GDEX (hereinafter referred to as 'GDEX' or 'the Gateway') is a cryptocurrency gateway to Bitshares which is operated by the company. The main access point for GDEX is https://gdex.io, GDEX is a gateway that provide cryptocurrency deposit and withdraw service (hereinafter referred to as 'the Service') to/from Bitshares. For the convenience of wording in this Agreement, the Company and the Gateway are referred to as 'We' or other applicable forms of first person pronouns in this Agreement. All natural persons or other subjects who use the Service shall be users of the Gateway. For the convenience of wording in this Agreement, the users are referred to as 'You' or any other applicable forms of the second-person pronouns. For the convenience of wording in this Agreement, you and us are collectively referred to as 'both parties', and individually as 'one party'."
+                                                "OBSIDIAN TECHNOLOGY CO. PTE. LTD. (hereinafter referred to as the 'Company') is a company incorporated under the laws in Singapore Republic, GDEX (hereinafter referred to as 'GDEX' or 'the Gateway') is a cryptocurrency gateway to Zcom which is operated by the company. The main access point for GDEX is https://gdex.io, GDEX is a gateway that provide cryptocurrency deposit and withdraw service (hereinafter referred to as 'the Service') to/from Zcom. For the convenience of wording in this Agreement, the Company and the Gateway are referred to as 'We' or other applicable forms of first person pronouns in this Agreement. All natural persons or other subjects who use the Service shall be users of the Gateway. For the convenience of wording in this Agreement, the users are referred to as 'You' or any other applicable forms of the second-person pronouns. For the convenience of wording in this Agreement, you and us are collectively referred to as 'both parties', and individually as 'one party'."
                                             ),
                                             s.a.createElement(
                                                 "p",
@@ -17140,13 +17140,13 @@
                                             s.a.createElement(
                                                 "p",
                                                 null,
-                                                "5. You understand that Bitshares is a decentralized exchange based on blockchain, the basic account service and the trade processing service are provided by Bitshares, there are also other institutions or single persons that issue assets and/or provide service on Bitshares. You understand that the Gateway is only used for you to deposit/withdraw cryptocurrency to/from Bitshares. The Gateway only undertake the due obligations for the availability of own issued assets (with 'GDEX.' as prefix of the name), do not undertake the due obligations for the account service and the trade processing service provided by Bitshares, do not undertake the due obligations for availability of the assets issued by other institutions or single persons.",
+                                                "5. You understand that Zcom is a decentralized exchange based on blockchain, the basic account service and the trade processing service are provided by Zcom, there are also other institutions or single persons that issue assets and/or provide service on Zcom. You understand that the Gateway is only used for you to deposit/withdraw cryptocurrency to/from Zcom. The Gateway only undertake the due obligations for the availability of own issued assets (with 'GDEX.' as prefix of the name), do not undertake the due obligations for the account service and the trade processing service provided by Zcom, do not undertake the due obligations for availability of the assets issued by other institutions or single persons.",
                                                 " "
                                             ),
                                             s.a.createElement(
                                                 "p",
                                                 null,
-                                                "6. There are risk in both Internet and Bitshares, include but not limit to failure for software, hardware to connect to Internet, security risk for Bitshares accounting system. As the availability and reliability of Internet and Bitshares are not under our control, we do not undertake obligations for the loss caused by the risks mentioned above."
+                                                "6. There are risk in both Internet and Zcom, include but not limit to failure for software, hardware to connect to Internet, security risk for Zcom accounting system. As the availability and reliability of Internet and Zcom are not under our control, we do not undertake obligations for the loss caused by the risks mentioned above."
                                             ),
                                             s.a.createElement(
                                                 "p",

@@ -4,8 +4,8 @@
 
 >If you have an issue related to a Gateway provider, please be sure to contact them directly. See Gateways in the left menu.
 
-### Bitshares Chat
-You can chat with other member of the Bitshares community in real time at:
+### Zcom Chat
+You can chat with other member of the Zcom community in real time at:
 
 - [Telegram](https://t.me/BitSharesDEX)
 - [Discord](https://discord.gg/GsjQfAJ)
