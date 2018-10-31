@@ -68,13 +68,12 @@ class RecentTransactions extends React.Component {
     }
 
     _setHeaderHeight() {
-        let height = this.refs.header.offsetHeight;
-
-        if (height !== this.state.headerHeight) {
-            this.setState({
-                headerHeight: height
-            });
-        }
+        // let height = this.refs.header.offsetHeight;
+        // if (height !== this.state.headerHeight) {
+        //     this.setState({
+        //         headerHeight: height
+        //     });
+        // }
     }
 
     shouldComponentUpdate(nextProps, nextState) {

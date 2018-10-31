@@ -88,6 +88,7 @@ class AccountPermissionRow extends React.Component {
                 <td>{this.props.weights[item_id]}</td>
                 <td>
                     <button
+                        disabled={true}
                         className="button"
                         onClick={this.props.onRemoveItem.bind(
                             this,
@@ -233,7 +234,7 @@ class AccountPermissionsList extends React.Component {
 
         return (
             <div>
-                <AccountSelector
+                {/* <AccountSelector
                     label={this.props.label}
                     error={error}
                     placeholder={this.props.placeholder}
@@ -260,7 +261,7 @@ class AccountPermissionsList extends React.Component {
                         onKeyDown={this.onWeightKeyDown.bind(this)}
                         tabIndex={this.props.tabIndex + 1}
                     />
-                </AccountSelector>
+                </AccountSelector> */}
 
                 <div style={{paddingTop: "2rem"}}>
                     <table className="table">

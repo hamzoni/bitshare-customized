@@ -359,7 +359,7 @@ class AccountPermissions extends React.Component {
                             }
                         >
                             <Tab title="account.perm.active">
-                                <HelpContent path="components/AccountPermActive" />
+                                {/* <HelpContent path="components/AccountPermActive" />
                                 <form className="threshold">
                                     <label className="horizontal">
                                         <Translate content="account.perm.threshold" />{" "}
@@ -377,7 +377,7 @@ class AccountPermissions extends React.Component {
                                             tabIndex={1}
                                         />
                                     </label>
-                                </form>
+                                </form> */}
                                 <AccountPermissionsList
                                     label="account.perm.add_permission_label"
                                     accounts={active_accounts}
@@ -410,7 +410,7 @@ class AccountPermissions extends React.Component {
                             </Tab>
 
                             <Tab title="account.perm.owner">
-                                <HelpContent path="components/AccountPermOwner" />
+                                {/* <HelpContent path="components/AccountPermOwner" />
                                 <form className="threshold">
                                     <label className="horizontal">
                                         <Translate content="account.perm.threshold" />{" "}
@@ -428,7 +428,7 @@ class AccountPermissions extends React.Component {
                                             tabIndex={4}
                                         />
                                     </label>
-                                </form>
+                                </form> */}
                                 <AccountPermissionsList
                                     label="account.perm.add_permission_label"
                                     accounts={owner_accounts}
@@ -461,10 +461,10 @@ class AccountPermissions extends React.Component {
                             </Tab>
 
                             <Tab title="account.perm.memo_key">
-                                <HelpContent
+                                {/* <HelpContent
                                     style={{maxWidth: "800px"}}
                                     path="components/AccountPermMemo"
-                                />
+                                /> */}
                                 <PubKeyInput
                                     ref="memo_key"
                                     value={this.state.memo_key}
@@ -475,7 +475,7 @@ class AccountPermissions extends React.Component {
                                 />
                             </Tab>
 
-                            <Tab title="account.perm.password_model">
+                            {/* <Tab title="account.perm.password_model">
                                 <AccountPermissionsMigrate
                                     active={this.state.password_active}
                                     owner={this.state.password_owner}
@@ -505,20 +505,8 @@ class AccountPermissions extends React.Component {
                                     )}
                                     onSetMemo={this.onMemoKeyChanged.bind(this)}
                                 />
-                            </Tab>
+                            </Tab> */}
                         </Tabs>
-
-                        <div className="tab-content" style={{padding: 10}}>
-                            <div className="divider" />
-
-                            <RecentTransactions
-                                accountsList={accountsList}
-                                limit={25}
-                                compactView={false}
-                                filter="account_update"
-                                style={{paddingBottom: "2rem"}}
-                            />
-                        </div>
                     </div>
                 </div>
             </div>

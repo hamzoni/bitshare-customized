@@ -52322,7 +52322,7 @@
     ,
     ,
     function(e, t, n) {
-        e.exports = n.p + "favicon.ico";
+        e.exports = n.p + "zcom_favicon.ico";
     },
     ,
     ,
