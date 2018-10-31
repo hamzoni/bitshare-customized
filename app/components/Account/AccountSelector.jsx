@@ -392,7 +392,10 @@ class AccountSelector extends React.Component {
                         </div>
                     ) : null}
                     <div className="input-area">
-                        <div className="inline-label input-wrapper">
+                        <div
+                            className="inline-label input-wrapper"
+                            style={{background: "#fff"}}
+                        >
                             {account && account.accountType === "pubkey" ? (
                                 <div className="account-image">
                                     <Icon
@@ -450,7 +453,9 @@ class AccountSelector extends React.Component {
                                             "pubkey"
                                                 ? null
                                                 : "lowercase",
-                                        fontVariant: "initial"
+                                        fontVariant: "initial",
+                                        color: "#fff",
+                                        background: "#fff"
                                     }}
                                     name="username"
                                     className="mono-input"

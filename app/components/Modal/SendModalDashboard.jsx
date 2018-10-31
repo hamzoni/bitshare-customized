@@ -24,7 +24,7 @@ import classnames from "classnames";
 import {getWalletName} from "branding";
 import {Button, Row, Col} from "antd";
 
-class SendModalDashboard extends React.Component {
+class SendModal extends React.Component {
     constructor(props) {
         super(props);
         this.state = this.getInitialState(props);
@@ -74,63 +74,32 @@ class SendModalDashboard extends React.Component {
         });
     }
 
-    // onClose = e => {
-    //     e.preventDefault();
-    //     //ZfApi.unsubscribe("transaction_confirm_actions");
-    //     this.setState({
-    //         open: false,
-    //         from_name: "",
-    //         to_name: "",
-    //         from_account: null,
-    //         to_account: null,
-    //         orig_account: null,
-    //         amount: "",
-    //         asset_id: null,
-    //         asset: null,
-    //         memo: "",
-    //         error: null,
-    //         knownScammer: null,
-    //         propose: false,
-    //         propose_account: "",
-    //         feeAsset: null,
-    //         fee_asset_id: "1.3.0",
-    //         feeAmount: new Asset({amount: 0}),
-    //         feeStatus: {},
-    //         maxAmount: false,
-    //         hidden: false
-    //     });
-    // };
-
-    onClose(publishClose = true) {
-        ZfApi.unsubscribe("transaction_confirm_actions");
-        this.setState(
-            {
-                open: false,
-                from_name: "",
-                to_name: "",
-                from_account: null,
-                to_account: null,
-                orig_account: null,
-                amount: "",
-                asset_id: null,
-                asset: null,
-                memo: "",
-                error: null,
-                knownScammer: null,
-                propose: false,
-                propose_account: "",
-                feeAsset: null,
-                fee_asset_id: "1.3.0",
-                feeAmount: new Asset({amount: 0}),
-                feeStatus: {},
-                maxAmount: false,
-                hidden: false
-            },
-            () => {
-                if (publishClose) ZfApi.publish(this.props.id, "close");
-            }
-        );
-    }
+    onClose = e => {
+        e.preventDefault();
+        //ZfApi.unsubscribe("transaction_confirm_actions");
+        this.setState({
+            open: false,
+            from_name: "",
+            to_name: "",
+            from_account: null,
+            to_account: null,
+            orig_account: null,
+            amount: "",
+            asset_id: null,
+            asset: null,
+            memo: "",
+            error: null,
+            knownScammer: null,
+            propose: false,
+            propose_account: "",
+            feeAsset: null,
+            fee_asset_id: "1.3.0",
+            feeAmount: new Asset({amount: 0}),
+            feeStatus: {},
+            maxAmount: false,
+            hidden: false
+        });
+    };
 
     onSubmit(e) {
         e.preventDefault();
@@ -457,7 +426,7 @@ class SendModalDashboard extends React.Component {
         );
     }
 
-    onMemoChanged(e) {
+    onMemoChanged = e => {
         let {asset_types} = this._getAvailableAssets();
         let {from_account, from_error, maxAmount} = this.state;
         if (
@@ -474,7 +443,7 @@ class SendModalDashboard extends React.Component {
             );
         }
         this.setState({memo: e.target.value}, this._updateFee);
-    }
+    };
 
     onTrxIncluded(confirm_store_state) {
         if (
@@ -497,7 +466,8 @@ class SendModalDashboard extends React.Component {
             to_account,
             to_name,
             from_account,
-            from_name
+            from_name,
+            memo
         } = this.state;
         e.preventDefault();
 
@@ -757,10 +727,10 @@ class SendModalDashboard extends React.Component {
                                 //style={{ marginBottom: 0 }}
                                 //rows="3"
                                 type="text"
-                                value={memo}
+                                //value={memo}
                                 placeholder="Textbox"
                                 tabIndex={tabIndex++}
-                                onChange={this.onMemoChanged.bind(this)}
+                                onChange={this.onMemoChanged}
                             />
                             {/* warning */}
                             {this.state.propose ? (
@@ -888,16 +858,14 @@ class SendModalDashboard extends React.Component {
     }
 }
 
-class SendModalDashboardConnectWrapper extends React.Component {
+class SendModalConnectWrapper extends React.Component {
     render() {
-        return (
-            <SendModalDashboard {...this.props} ref={this.props.refCallback} />
-        );
+        return <SendModal {...this.props} ref={this.props.refCallback} />;
     }
 }
 
-SendModalDashboardConnectWrapper = connect(
-    SendModalDashboardConnectWrapper,
+SendModalConnectWrapper = connect(
+    SendModalConnectWrapper,
     {
         listenTo() {
             return [AccountStore];
@@ -912,4 +880,4 @@ SendModalDashboardConnectWrapper = connect(
     }
 );
 
-export default SendModalDashboardConnectWrapper;
+export default SendModalConnectWrapper;

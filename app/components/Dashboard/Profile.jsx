@@ -29,7 +29,8 @@ import {withRouter} from "react-router-dom";
 import CreateAccoutModal from "../CreateAccountModal";
 import {Link} from "react-router-dom";
 import {Row, Col, Modal, Button} from "antd";
-import SendModalDashboard from "../Modal/SendModalDashboard";
+// import SendModalDashboard from "../Modal/SendModalDashboard";
+import SendModal from "../Modal/SendModal";
 
 import {getLogo} from "branding";
 var logo = getLogo();
@@ -497,18 +498,16 @@ class Header extends React.Component {
                             </Modal>
                         </Col>
                         <Col span={6} className="mono-btn-light">
-                            <Link to="/" onClick={this.showModalSend}>
-                                Send
-                            </Link>
-                            <Modal
+                            <Link to="/transfer">Send</Link>
+                            {/* <Modal
                                 title={null}
                                 footer={null}
                                 visible={this.state.visibleSend}
                                 onOk={this.handleOk}
                                 onCancel={this.handleCancel}
                             >
-                                <SendModalDashboard
-                                    onCloseModal={this.handleCancel.bind(this)}
+                                <SendModal
+                                    // onCloseModal={this.handleCancel.bind(this)}
                                     id="send_modal_portfolio"
                                     refCallback={e => {
                                         if (e) this.send_modal = e;
@@ -516,7 +515,7 @@ class Header extends React.Component {
                                     from_name={currentAccount}
                                     asset_id="1.3.0"
                                 />
-                            </Modal>
+                            </Modal> */}
                         </Col>
                         <Col span={6} className="mono-btn-light">
                             <Link to={`/account/${currentAccount}/voting`}>

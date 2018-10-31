@@ -128,6 +128,7 @@ class CreateAccountModal extends React.Component {
                                 content="header.create_account"
                                 component="h4"
                                 className="align-left"
+                                style={{textAlign: "center"}}
                             />
                         </div>
 
@@ -152,10 +153,12 @@ class CreateAccountModal extends React.Component {
                                             component="p"
                                             style={{
                                                 float: "left",
-                                                color: "#333"
+                                                color: "#333",
+                                                textAlign: "center",
+                                                marginTop: "15px"
                                             }}
                                         />
-                                        {flagDropdown}
+                                        {/* {flagDropdown} */}
                                     </div>
                                 </div>
                             </div>
@@ -189,7 +192,7 @@ class CreateAccountModal extends React.Component {
                             </span>
                         </div>
 
-                        <div className="additional-account-options">
+                        {/* <div className="additional-account-options">
                             <h5 style={{textAlign: "center"}}>
                                 <TranslateWithLinks
                                     string="account.optional.formatter"
@@ -217,7 +220,7 @@ class CreateAccountModal extends React.Component {
                                     ]}
                                 />
                             </h5>
-                        </div>
+                        </div> */}
                         <CreateAccountPassword />
                     </div>
                 </div>

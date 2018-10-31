@@ -114,7 +114,10 @@ class AmountSelector extends React.Component {
                     component="label"
                     content={this.props.label}
                 />
-                <div className="inline-label input-wrapper mono-bdbt">
+                <div
+                    className="inline-label input-wrapper"
+                    style={{background: "#fff"}}
+                >
                     <input
                         disabled={this.props.disabled}
                         type="text"

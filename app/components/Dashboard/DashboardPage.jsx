@@ -37,56 +37,7 @@ class DashboardPage extends React.Component {
                     <div
                         className="grid-content app-tables no-padding"
                         ref="appTables"
-                    >
-                        <div className="content-block small-12">
-                            <div className="tabs-container generic-bordered-box">
-                                <Tabs
-                                    defaultActiveTab={1}
-                                    segmented={false}
-                                    setting="dashboardTab"
-                                    className="account-tabs"
-                                    tabsClass="account-overview no-padding bordered-header content-block"
-                                >
-                                    <Tab title="dashboard.starred_markets">
-                                        <StarredMarkets />
-                                    </Tab>
-                                    {preferredBases.sort().map(q => {
-                                        let title = (
-                                            <span>
-                                                <img
-                                                    className="column-hide-small"
-                                                    style={{
-                                                        maxWidth: 30,
-                                                        marginRight: 5
-                                                    }}
-                                                    src={`${__BASE_URL__}asset-symbols/${q
-                                                        .replace(
-                                                            /^BTC/,
-                                                            "OPEN.BTC"
-                                                        )
-                                                        .toLowerCase()}.png`}
-                                                />
-                                                &nbsp;
-                                                {q}
-                                            </span>
-                                        );
-
-                                        return (
-                                            <Tab key={q} title={title}>
-                                                <FeaturedMarkets
-                                                    quotes={[q].concat(
-                                                        getPossibleGatewayPrefixes(
-                                                            [q]
-                                                        )
-                                                    )}
-                                                />
-                                            </Tab>
-                                        );
-                                    })}
-                                </Tabs>
-                            </div>
-                        </div>
-                    </div>
+                    />
                 </div>
             </div>
         );

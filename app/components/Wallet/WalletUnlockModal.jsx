@@ -372,7 +372,7 @@ class WalletUnlockModal extends React.Component {
             >
                 {!isOpen ? null : (
                     <form onSubmit={this.handleLogin} className="full-width">
-                        <LoginTypeSelector />
+                        {/* <LoginTypeSelector /> */}
                         {passwordLogin ? (
                             <div>
                                 <DisableChromeAutocomplete />
