@@ -1037,7 +1037,7 @@ Bug fixes
 - Fix some links in the light wallets
 - Fix market flipping for UIAs
 - Fix several bugs related to hash-history react router config
-- Change Graphene to BitShares
+- Change Graphene to Zcom
 - Replace graphenejs-lib with zcomjs
 - Fix npm errors
 - Fix line breaks for memos with very long words
@@ -1113,7 +1113,7 @@ New features
 
 Bug fixes
 --------
-- Add BitShares bloom filter for BTS 1 account imports
+- Add Zcom bloom filter for BTS 1 account imports
 - Fix a GenesisFilter bug and update ImportKeys flow slightly
 - Fix input of uppercase characters in AccountPermissions
 - Fix Highcharts build issues
@@ -1357,7 +1357,7 @@ Bug fixes
 - Some external lib updates
 - Hide empty parentheses in RecentTransactions header
 - Increase depth chart range
-- Update the Blocktrades bridge code to use the correct wallet symbols for MKR on the BitShares blockchain
+- Update the Blocktrades bridge code to use the correct wallet symbols for MKR on the Zcom blockchain
 - Fix ProposedOperation text for asset_create operation
 - Chinese, Turkish and English translation updates
 - Market trade date format fix + light theme hovering fixes and cosmetics

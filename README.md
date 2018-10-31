@@ -1,15 +1,15 @@
-BitShares-UI
+Zcom-UI
 ============
 [中文版](README_zh.md)
 
-This is a light wallet that connects to a BitShares API provided by the *master_node* executable.
+This is a light wallet that connects to a Zcom API provided by the *master_node* executable.
 
 
 It *stores all keys locally* in the browser, *never exposing your keys to anyone* as it signs transactions locally before transmitting them to the API server which then broadcasts them to the blockchain network. The wallet is encrypted with a password of your choosing and encrypted in a browser database.
 
 ## Getting started
 
-BitShares-UI depends node Node.js, and version 6+ is required.
+Zcom-UI depends node Node.js, and version 6+ is required.
 
 On Ubuntu and OSX, the easiest way to install Node is to use the [Node Version Manager](https://github.com/creationix/nvm).
 
@@ -48,7 +48,7 @@ Once the compilation is done the GUI will be available in your browser at: `loca
 
 
 ## Testnet
-By default bitshares-ui connects to the live BitShares network, but it's very easy to switch it to the testnet run by Xeroc. To do so, open the UI in a browser, go to Settings, then under Access, select the *Public Testnet Server* in the dropdown menu. You should also change the faucet if you need to create an account, the testnet faucet address is https://testnet.bitshares.eu.
+By default bitshares-ui connects to the live Zcom network, but it's very easy to switch it to the testnet run by Xeroc. To do so, open the UI in a browser, go to Settings, then under Access, select the *Public Testnet Server* in the dropdown menu. You should also change the faucet if you need to create an account, the testnet faucet address is https://testnet.bitshares.eu.
 
 The UI will reload and connect to the testnet, where you can use the faucet to create an account and receive an initial sum of test BTS.
 
@@ -92,7 +92,7 @@ Please work off the staging branch and make pull requests to that branch. The ma
 
 The Zcom UI team is supported by this [worker proposal](http://www.bitshares.foundation/workers/2018-02-bitshares-ui). It provides the funds needed to pay the coordinator and the bounties and the Zcom Foundation.
 
-If you would like to get involved, we have a [Telegram chatroom](https://t.me/BitSharesDEX) where you can ask questions and get help. You may also join [BitShares on Discord](https://discord.gg/GsjQfAJ)
+If you would like to get involved, we have a [Telegram chatroom](https://t.me/BitSharesDEX) where you can ask questions and get help. You may also join [Zcom on Discord](https://discord.gg/GsjQfAJ)
 
 - Coordinator: Bill Butler, @billbutler
 - Lead Developer: Sigve Kvalsvik, @sigvek

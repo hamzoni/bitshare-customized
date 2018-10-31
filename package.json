@@ -1,7 +1,7 @@
 {
-    "name": "BitShares2-light",
-    "version": "2.0.180815-rc1",
-    "description": "Advanced wallet interface for the BitShares financial blockchain.",
+    "name": "Zcom-wallet-ui",
+    "version": "1.0.0",
+    "description": "Advanced wallet interface for the Zcom financial blockchain.",
     "homepage": "https://github.com/bitshares/bitshares-ui",
     "author": "Sigve Kvalsvik <kvalsvik.crypto@gmail.com>",
     "contributors": [
@@ -82,7 +82,7 @@
     },
     "browsersList": "electron 1.7",
     "build": {
-        "productName": "BitShares",
+        "productName": "Zcom",
         "appId": "org.bitshares.graphene",
         "files": [
             "build/electron",
@@ -122,7 +122,7 @@
                 "deb",
                 "AppImage"
             ],
-            "synopsis": "BitShares: Cryptocurrency and Decentralized Exchange"
+            "synopsis": "Zcom: Cryptocurrency and Decentralized Exchange"
         },
         "directories": {
             "buildResources": "resources",

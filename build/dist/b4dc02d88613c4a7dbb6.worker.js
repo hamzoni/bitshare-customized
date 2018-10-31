@@ -14969,7 +14969,7 @@
                 expire_in_secs_proposal: 86400,
                 review_in_secs_committee: 86400,
                 networks: {
-                    BitShares: {
+                    Zcom: {
                         core_asset: "BTS",
                         address_prefix: "BTS",
                         chain_id:
