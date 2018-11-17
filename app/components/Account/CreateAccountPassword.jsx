@@ -544,7 +544,7 @@ class CreateAccountPassword extends React.Component {
                     }}
                     className="button"
                 >
-                    <Translate content="wallet.ok_done" />
+                    GO TO DASHBOARD
                 </div>
             </div>
         );

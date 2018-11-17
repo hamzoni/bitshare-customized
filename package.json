@@ -142,6 +142,7 @@
         "cookies-js": "^1.2.1",
         "copy-webpack-plugin": "^4.5.1",
         "counterpart": "^0.18.5",
+        "crypto-js": "^3.1.9-1",
         "event-emitter": "^0.3.4",
         "file-saver": "^1.3.3",
         "foundation-apps": "git+https://github.com/zurb/foundation-apps.git",
@@ -149,6 +150,7 @@
         "ifvisible": "^1.1.0",
         "immutable": "3.8.2",
         "indexeddbshim": "^2.2.1",
+        "install": "^0.12.2",
         "intl": "^1.2.5",
         "intro.js": "^2.8.0-alpha.1",
         "jdenticon": "git+https://github.com/cryptonomex/jdenticon.git",
@@ -160,6 +162,7 @@
         "moment-timezone": "^0.5.16",
         "node-rsa": "^0.4.2",
         "notifyjs": "^3.0.0",
+        "npm": "^6.4.1",
         "numeral": "2.0.4",
         "object-assign": "^4.0.1",
         "perfect-scrollbar": "git+https://github.com/bitshares/perfect-scrollbar.git",
@@ -192,10 +195,9 @@
         "tcomb": "2.5.2",
         "whatwg-fetch": "^2.0.1",
         "xss": "^1.0.3",
-        "zxcvbn-async": "0.0.5",
         "zcom-report": "^0.1.2",
-        "zcomjs": "^0.1.3"
-
+        "zcomjs": "^0.1.3",
+        "zxcvbn-async": "0.0.5"
     },
     "devDependencies": {
         "babel-core": "^6.26.3",

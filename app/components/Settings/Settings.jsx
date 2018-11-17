@@ -26,13 +26,9 @@ class Settings extends React.Component {
             : props.viewSettings.get("activeSetting", 0);
         if (tabIndex >= 0) activeSetting = tabIndex;
 
-        let general = [
-            "browser_notifications",
-            "showSettles",
-            "walletLockTimeout"
-        ];
+        let general = ["browser_notifications", "walletLockTimeout"];
         // disable that the user can change login method if only one is allowed
-        if (getAllowedLogins().length > 1) general.push("passwordLogin");
+        //if (getAllowedLogins().length > 1) general.push("passwordLogin");
         general.push("reset");
 
         this.state = {
@@ -197,12 +193,13 @@ class Settings extends React.Component {
             case "showSettles":
             case "showAssetPercent":
             case "passwordLogin":
-                let reference = defaults[setting][0];
-                if (reference.translate) reference = reference.translate;
-                SettingsActions.changeSetting({
-                    setting,
-                    value: e.target.value === reference
-                });
+                // let reference = defaults[setting][0];
+                // if (reference.translate) reference = reference.translate;
+                // SettingsActions.changeSetting({
+                //     setting,
+                //     value: e.target.value === reference
+                // });
+                // break;
                 break;
 
             case "unit":
