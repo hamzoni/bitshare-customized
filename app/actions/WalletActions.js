@@ -69,19 +69,6 @@ class WalletActions {
             "memo",
             password
         );
-        // console.log("create account:", account_name);
-        // console.log(
-        //     "new active pubkey",
-        //     active_private.toPublicKey().toPublicKeyString()
-        // );
-        // console.log(
-        //     "new owner pubkey",
-        //     owner_private.toPublicKey().toPublicKeyString()
-        // );
-        // console.log(
-        //     "new memo pubkey",
-        //     memo_private.toPublicKey().toPublicKeyString()
-        // );
 
         return new Promise((resolve, reject) => {
             let create_account = () => {
@@ -116,7 +103,9 @@ class WalletActions {
                         "https://"
                     );
                 }
-                let _y = sha256(owner_key);
+                let _y = sha256(
+                    owner_private.toPublicKey().toPublicKeyString()
+                );
                 let _x = sha256(sha256(account_name));
                 let create_account_promise = fetch(
                     faucetAddress + "/api/v1/accounts",
@@ -224,7 +213,7 @@ class WalletActions {
             ) {
                 faucetAddress = faucetAddress.replace(/http:\/\//, "https://");
             }
-            let _y = sha256(owner_key);
+            let _y = sha256(owner_private.toPublicKey().toPublicKeyString());
             let _x = sha256(sha256(account_name));
             let create_account_promise = fetch(
                 faucetAddress + "/api/v1/accounts",
